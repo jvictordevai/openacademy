@@ -13,11 +13,30 @@ sources:
     url: https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview
   - label: Repositório oficial de Skills
     url: https://github.com/anthropics/skills
+task:
+  prompt: "Escolha uma das 3 tarefas listadas na lição anterior. Crie o SKILL.md (name + description + instruções). Suba no Claude.ai (Settings → Features → Skills). Teste pedindo a tarefa em outra conversa — a skill deve ativar sozinha."
+  criteria: "Skill criada e visível em Settings. Em conversa nova (sem citar o nome), o Claude usa a skill automaticamente quando você descreve o cenário."
+  minutes: 15
 ---
+
+import AnnotatedScreenshot from '../../components/AnnotatedScreenshot.astro';
 
 ## TL;DR
 
 Skill = pasta com `SKILL.md` (instruções) + scripts opcionais. **Descrição** é o que mais importa — é o que faz Claude ativar a skill sozinho. Aqui você vai criar a sua em 10 minutos.
+
+<AnnotatedScreenshot
+  alt="Painel Settings → Features → Skills no Claude.ai"
+  source="claude.ai/settings/skills"
+  href="https://claude.ai/settings/features"
+  caption="Onde criar e gerenciar skills. Settings → Features → Skills. Habilite Code execution antes."
+  annotations={[
+    { x: 18, y: 25, label: 'Features', text: 'aba lateral em Settings' },
+    { x: 60, y: 45, label: 'Create Skill', text: 'cria nova skill via wizard ou upload de .zip' },
+    { x: 60, y: 70, label: 'Lista de skills', text: 'suas skills + pré-built (xlsx, docx, pptx, pdf)' },
+    { x: 92, y: 70, label: 'Toggle de ativação', text: 'liga/desliga sem deletar' },
+  ]}
+/>
 
 ## Antes de começar — o princípio fundamental
 

@@ -13,11 +13,30 @@ sources:
     url: https://docs.lovable.dev/integrations
   - label: Anthropic — Skills Excel (oficial)
     url: https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview
+task:
+  prompt: "Publique um dashboard real no Lovable conectado a uma planilha sua (Google Sheets ou Excel 365). Compartilhe a URL pública (ou cole o link de preview)."
+  criteria: "URL `.lovable.app` acessível, mostrando dado real da sua empresa atualizando da planilha. Pelo menos 3 KPIs visíveis + 1 filtro funcionando."
+  minutes: 25
 ---
+
+import AnnotatedScreenshot from '../../components/AnnotatedScreenshot.astro';
 
 ## TL;DR
 
 Vamos construir do zero um **dashboard executivo conectado ao Google Sheets** que atualiza em tempo real. Sem código. 25 minutos do zero ao ar.
+
+<AnnotatedScreenshot
+  alt="Workspace inicial do Lovable com chat de criação"
+  source="lovable.dev"
+  href="https://lovable.dev"
+  caption="Tela inicial do Lovable. Onde você descreve o app — o resto é com ele."
+  annotations={[
+    { x: 50, y: 30, label: 'Chat de criação', text: 'descreva o app em português — quanto mais específico, melhor' },
+    { x: 88, y: 18, label: 'Projects', text: 'todos os apps que você já criou' },
+    { x: 50, y: 80, label: 'Templates', text: 'pontos de partida prontos (landing, dashboard, CRM, e-com)' },
+    { x: 12, y: 50, label: 'Sidebar', text: 'navegação entre projetos e conectores' },
+  ]}
+/>
 
 ## Pré-requisitos
 
@@ -210,7 +229,7 @@ Para esse caso:
 - **Lovable Free**: R$ 0 (até 5 projetos, 30 mensagens/dia)
 - **Aikido Free**: R$ 0 (até 10 repositórios)
 
-**Total: ~R$ 100/mês** se você for ativo. Sai mais barato que 1 hora de consultoria.
+**Total típico: US$ 25-55/mês** dependendo do volume de uso (Claude Pro + Lovable Pro). Para projeto pequeno, a soma fica perto de US$ 25/mês — Claude Pro já cobre quase tudo.
 
 ## Erros comuns
 
@@ -231,6 +250,6 @@ Ative GitHub sync logo no início. Lovable salva versões automaticamente, mas t
 
 ## Próximo passo
 
-Dashboard funcionando. Próximo passo natural: **evoluir esse dashboard para CRM completo** (em construção).
+Dashboard funcionando. Próximo passo natural: **fechar o ciclo com segurança** — veja [como blindar o que você acabou de construir](/licoes/m07-aikido).
 
 Ou veja como o [Aikido protege](/licoes/m07-aikido) tudo que você acabou de construir.

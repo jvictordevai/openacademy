@@ -5,7 +5,14 @@ import LessonTOC from '../components/LessonTOC.astro';
 import SourceList from '../components/SourceList.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import ReadingProgress from '../components/ReadingProgress.astro';
+import TaskBox from '../components/TaskBox.astro';
 import { getCollection } from 'astro:content';
+
+interface LessonTask {
+  prompt: string;
+  criteria: string;
+  minutes: number;
+}
 
 interface Props {
   frontmatter: {
@@ -17,6 +24,7 @@ interface Props {
     difficulty: 'iniciante' | 'intermediario' | 'avancado';
     sources: Array<{ label: string; url: string }>;
     tags: string[];
+    task?: LessonTask;
   };
   headings: Array<{ depth: number; slug: string; text: string }>;
   slug: string;
@@ -93,6 +101,15 @@ const difficultyLabel = {
         <div class="prose-deck">
           <slot />
         </div>
+
+        {frontmatter.task && (
+          <TaskBox
+            prompt={frontmatter.task.prompt}
+            criteria={frontmatter.task.criteria}
+            minutes={frontmatter.task.minutes}
+            lessonSlug={slug}
+          />
+        )}
 
         <SourceList sources={frontmatter.sources} />
 

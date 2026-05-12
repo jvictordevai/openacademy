@@ -1,0 +1,118 @@
+---
+title: Hands-on — Conectar Google Drive e Gmail
+module: m04
+order: 2
+description: Passo a passo prático com screenshots. Em 8 minutos, Claude lê seus arquivos e emails sem você copiar nada.
+minutes: 7
+difficulty: iniciante
+tags: [conectores, hands-on, drive, gmail]
+sources:
+  - label: Anthropic — Connectors (oficial)
+    url: https://claude.com/integrations
+  - label: Claude.ai Help — conectar Google
+    url: https://support.claude.com/en/articles/12012084-using-tools-on-claude-ai
+task:
+  prompt: "Conecte Google Drive e Gmail no seu Claude.ai. Em uma conversa nova, peça: 'Liste os 5 arquivos mais recentes do meu Drive e me dê 1 frase de resumo de cada.' Cole a saída."
+  criteria: "Saída lista 5 arquivos reais com nome exato + resumo. Tempo total da execução abaixo de 5 minutos."
+  minutes: 8
+---
+
+import AnnotatedScreenshot from '../../components/AnnotatedScreenshot.astro';
+import Pegadinhas from '../../components/Pegadinhas.astro';
+
+## TL;DR
+
+Conectar Google Drive + Gmail no Claude leva 3 minutos. Daí em diante, em qualquer conversa, ele lê arquivos e emails seus por nome.
+
+## Pré-requisitos
+
+1. Claude **Pro, Team ou Enterprise** (Free não tem conectores)
+2. Conta Google (pessoal ou Workspace)
+3. Permissão de admin se for conta corporativa com restrições
+
+## Passo a passo (8 min)
+
+### 1 · Abrir Settings → Connectors
+
+Clique no seu avatar (canto superior direito) → **Settings** → **Connectors** na lateral.
+
+<AnnotatedScreenshot
+  alt="Settings → Connectors com lista de integrações disponíveis"
+  source="claude.ai/settings/connectors"
+  href="https://claude.ai/settings/connectors"
+  caption="Lista completa de conectores oficiais. Cada um abre fluxo OAuth próprio."
+  annotations={[
+    { x: 14, y: 30, label: 'Connectors', text: 'aba lateral em Settings' },
+    { x: 55, y: 30, label: 'Lista de serviços', text: 'Google, Atlassian, Notion, HubSpot, Stripe, Zapier…' },
+    { x: 85, y: 30, label: 'Botão Connect', text: 'inicia OAuth — autoriza no serviço externo' },
+    { x: 55, y: 70, label: 'Status', text: 'verde = ativo, cinza = desconectado' },
+  ]}
+/>
+
+### 2 · Conectar Google Drive
+
+1. Encontre **Google Drive** na lista
+2. Clique **Connect**
+3. Você é redirecionado para o Google → faz login
+4. Escolha:
+   - **My Drive inteiro** (recomendado se conta pessoal)
+   - **Pastas específicas** (recomendado se conta corporativa)
+5. Autorize → volta para o Claude
+6. Status fica **verde — Connected**
+
+> **Tempo**: 60-90 segundos.
+
+### 3 · Conectar Gmail
+
+Mesmo fluxo. Diferença importante:
+
+- **Escopo "leitura apenas"** se você só quer que ele resuma
+- **Escopo "leitura + enviar"** se quer que ele responda emails por você (cuidado — sempre confirma antes de enviar)
+
+### 4 · Testar na prática
+
+Abra **nova conversa** (não na atual). Cole este prompt:
+
+```text
+Liste os 5 arquivos modificados nos últimos 7 dias no meu Drive.
+Para cada um: nome + 1 frase descrevendo o conteúdo.
+```
+
+Em 10-20 segundos: lista real, com nomes verdadeiros. Claude **leu** os arquivos.
+
+### 5 · Combinar com Gmail
+
+```text
+Pegue os emails não lidos da última semana.
+Classifique em: AÇÃO / INFORMATIVO / IGNORAR.
+Para os AÇÃO, sugira resposta em 3 linhas no meu tom (formal-direto, português).
+```
+
+Em 30-60 segundos: triagem completa do inbox.
+
+## O que muda na sua semana
+
+Antes:
+
+1. Abre Drive → busca arquivo → copia conteúdo → cola no chat
+2. Abre Gmail → lê email por email → decide manual
+3. Faz isso todo dia
+
+Depois:
+
+1. Pergunta direto pro Claude. Ele acessa, lê, responde.
+2. Sua semana ganha 3-5 horas.
+
+<Pegadinhas
+  items={[
+    "<strong>Conta corporativa pode bloquear OAuth.</strong> Se aparecer 'admin restrictions', peça pro TI liberar Claude.ai como third-party app no Workspace Admin Console.",
+    "<strong>Escopo mínimo.</strong> Não autorize 'enviar email' se não vai usar. Reduz superfície de risco.",
+    "<strong>Refresh automático.</strong> Drive pode levar 1-2 minutos pra refletir mudança recente em arquivo novo. Não é bug.",
+    "<strong>Dados sensíveis.</strong> Se Drive contém info confidencial (folha, contratos), considere conectar via Claude Enterprise com ZDR.",
+    "<strong>Sair do conector ≠ revogar.</strong> Desconectar no Claude não revoga o OAuth no Google. Pra revogar completo, vá em <a href='https://myaccount.google.com/permissions'>myaccount.google.com/permissions</a>.",
+  ]}
+/>
+
+## Próximo passo
+
+Aplique tudo isso na prática real: [Análise completa de planilha com Claude](/licoes/m05-analise-pratica).

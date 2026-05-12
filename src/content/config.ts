@@ -27,6 +27,11 @@ const lessons = defineCollection({
       url: z.string().url(),
     })).default([]),
     tags: z.array(z.string()).default([]),
+    task: z.object({
+      prompt: z.string(),
+      criteria: z.string(),
+      minutes: z.number().default(5),
+    }).optional(),
   }),
 });
 

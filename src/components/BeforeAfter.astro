@@ -1,0 +1,36 @@
+---
+interface Props {
+  from: string;
+  to: string;
+  impact?: string;
+  label?: string;
+}
+
+const { from, to, impact, label } = Astro.props;
+---
+
+<div class="not-prose my-6 rounded-2xl border border-white/10 bg-ink-900/40 overflow-hidden">
+  {label && (
+    <div class="px-5 py-2 border-b border-white/10 bg-white/[0.02] font-mono text-[10px] uppercase tracking-[0.2em] text-ink-400">
+      {label}
+    </div>
+  )}
+  <div class="grid sm:grid-cols-[1fr_auto_1fr] gap-0 items-stretch">
+    <div class="p-5 sm:border-r border-white/10">
+      <div class="font-mono text-[10px] uppercase tracking-wider text-ink-400 mb-2">Antes</div>
+      <p class="text-ink-300 text-[15px] leading-relaxed line-through decoration-accent-ember/40">
+        {from}
+      </p>
+    </div>
+    <div class="hidden sm:grid place-items-center px-4 py-5 text-accent-blue font-mono">→</div>
+    <div class="p-5 border-t sm:border-t-0 border-white/10 bg-accent-blue/[0.03]">
+      <div class="font-mono text-[10px] uppercase tracking-wider text-accent-blue mb-2">Depois</div>
+      <p class="text-ink-100 text-[15px] leading-relaxed font-medium">{to}</p>
+      {impact && (
+        <div class="mt-3 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-mint/10 border border-accent-mint/30 font-mono text-[11px] text-accent-mint">
+          {impact}
+        </div>
+      )}
+    </div>
+  </div>
+</div>

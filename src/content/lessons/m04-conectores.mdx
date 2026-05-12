@@ -13,11 +13,30 @@ sources:
     url: https://modelcontextprotocol.io
   - label: Catálogo de conectores Claude.ai
     url: https://claude.com/integrations
+task:
+  prompt: "Conecte um conector real (Drive ou Gmail). Em uma conversa nova, peça ao Claude: 'resuma o documento/email mais recente em 3 linhas'. Cole a saída."
+  criteria: "Conector ativo nas suas Settings. Saída do Claude cita arquivo ou email por nome (não resposta genérica). Resumo tem no máximo 3 linhas."
+  minutes: 8
 ---
+
+import AnnotatedScreenshot from '../../components/AnnotatedScreenshot.astro';
 
 ## TL;DR
 
 Conector é uma ponte oficial entre Claude e um sistema externo (Drive, Gmail, HubSpot, etc). Você faz login uma vez. Daí em diante, o Claude **lê, escreve e age** nessas ferramentas como se fosse você.
+
+<AnnotatedScreenshot
+  alt="Painel de Conectores no Claude.ai"
+  source="claude.ai/settings/connectors"
+  href="https://claude.ai/settings/connectors"
+  caption="Onde ativar conectores. Settings → Connectors. Cada um exige login OAuth uma única vez."
+  annotations={[
+    { x: 18, y: 18, label: 'Connectors', text: 'aba lateral em Settings' },
+    { x: 70, y: 35, label: 'Botão Connect', text: 'inicia fluxo OAuth do serviço' },
+    { x: 70, y: 65, label: 'Escopo OAuth', text: 'autoriza apenas o necessário (leitura ou leitura+escrita)' },
+    { x: 92, y: 18, label: 'Status ativo', text: 'verde = conectado, cinza = desconectado' },
+  ]}
+/>
 
 ## Por que isso muda o jogo
 

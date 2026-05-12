@@ -1571,6 +1571,299 @@ Termine com:
 - Sinal para PAUSA — quando NÃO decidir ainda faz sentido
 </tarefa>`,
   },
+
+  // ============== AMPLIAÇÃO: CASOS PRÁTICOS ADICIONAIS ==============
+  {
+    id: 'canvas-modelo-negocio',
+    title: 'Business Model Canvas a partir de descrição',
+    category: 'operacional',
+    goal: 'Modelo de negócio estruturado em 1 página partindo de 1 parágrafo',
+    template: `Você é estrategista de negócio. Construa Business Model Canvas a partir da descrição abaixo.
+
+<descricao_do_negocio>
+[1-3 PARÁGRAFOS DESCREVENDO O QUE VOCÊ FAZ, PARA QUEM, COMO COBRA]
+</descricao_do_negocio>
+
+<tarefa>
+Devolva canvas completo com 9 blocos:
+1. SEGMENTOS DE CLIENTE — quem paga (com perfil específico)
+2. PROPOSTA DE VALOR — o que muda na vida deles
+3. CANAIS — como chegam até você
+4. RELACIONAMENTO — como você os mantém
+5. FONTES DE RECEITA — quais cobranças e modelo
+6. RECURSOS-CHAVE — o que precisa pra operar
+7. ATIVIDADES-CHAVE — o que você faz no dia a dia
+8. PARCERIAS-CHAVE — quem você precisa ao lado
+9. ESTRUTURA DE CUSTO — onde sai o dinheiro
+
+Para cada bloco:
+- O que você descreveu (cite a frase ou inferência)
+- 1 gap óbvio (algo que está implícito mas precisa ser explícito)
+- 1 risco principal
+</tarefa>
+
+<formato>
+Tabela markdown com 9 linhas + 1 parágrafo de "leitura cruzada" mostrando inconsistências entre blocos.
+</formato>`,
+  },
+  {
+    id: 'analise-cac-ltv',
+    title: 'Análise CAC × LTV × Payback',
+    category: 'financeiro',
+    goal: 'Saber se o canal de aquisição compensa — sem viés de quem rodou a campanha',
+    template: `Você é growth analyst sênior.
+
+<contexto>
+Negócio: [SaaS / e-commerce / serviço]
+Ticket médio: R$ [X] / mês ou R$ [X] / pedido
+Margem bruta: [Y]%
+Retenção média: [Z] meses ou [Z]% YoY
+</contexto>
+
+<dados>
+[ANEXAR planilha por canal: investimento · leads · clientes · receita gerada · período]
+</dados>
+
+<tarefa>
+1. Calcule CAC por canal (investimento ÷ clientes adquiridos)
+2. Calcule LTV por canal (ticket × margem × retenção média)
+3. Calcule LTV/CAC e payback em meses
+4. Sanity check:
+   - Algum canal com LTV/CAC &gt; 5? Provavelmente erro de medição (ou ouro escondido)
+   - Algum canal com payback &gt; 18 meses? Risco de capital
+5. Recomende: dobrar onde · cortar onde · investigar onde
+6. Aponte custo escondido não considerado (folha do CS, devolução, custo de processamento)
+</tarefa>
+
+<formato>
+- Tabela: canal · CAC · LTV · ratio · payback · veredito
+- Top 3 ações priorizadas
+- 1 pergunta de auditoria (o que pode estar errado nos números)
+</formato>`,
+  },
+  {
+    id: 'roteiro-demo-produto',
+    title: 'Roteiro de demo de 15 minutos por persona',
+    category: 'comercial',
+    goal: 'Demo que fecha, não tour de funcionalidade',
+    template: `Você é AE veterano. Construa roteiro de demo de 15 min.
+
+<contexto>
+Produto: [DESCRIÇÃO]
+Persona alvo desta demo: [CARGO + SETOR + TAMANHO EMPRESA]
+Dor principal dela: [DOR ESPECÍFICA]
+Decisor final: [SE OUTRA PESSOA]
+Concorrente que está sendo considerado: [SE SOUBER]
+</contexto>
+
+<tarefa>
+Roteiro estruturado:
+
+1. ABERTURA (2 min)
+   - Reconfirmar agenda
+   - Reconfirmar dor + impacto em R$
+   - Setting expectation: "ao final, você decide se faz sentido próxima conversa"
+
+2. DEMO ESPECÍFICA (10 min)
+   - Mostrar APENAS 3 features ligadas DIRETO à dor declarada
+   - Para cada: aqui é o antes (pain) · aqui é como resolvemos · aqui é o ROI mensurável
+   - Pular o resto. Ferramenta tem mais 50 features, demo não é tour.
+
+3. PROVA SOCIAL (1 min)
+   - 1 caso de cliente parecido (não 10) — nome, métrica, prazo
+
+4. ESPECIFICIDADE (1 min)
+   - "Pelo que vi até aqui, isso resolveria seu X em Y tempo?"
+   - Forçar resposta concreta
+
+5. PRÓXIMO PASSO (1 min)
+   - Não "vou mandar email". Marcar reunião com decisor.
+   - Data, hora, agenda da próxima.
+
+Para cada bloco, escreva o que falar e o que NÃO falar.
+</tarefa>`,
+  },
+  {
+    id: 'plano-recuperacao-cliente',
+    title: 'Win-back de cliente que cancelou (últimos 90d)',
+    category: 'comercial',
+    goal: 'Reabrir conversa com cliente perdido sem parecer carente',
+    template: `Você é CS Manager experiente em reativação.
+
+<contexto>
+Cliente: [NOME + perfil]
+Cancelou em: [QUANTOS DIAS ATRÁS]
+Motivo declarado: [O QUE ELE DISSE]
+Motivo real provável: [SUA HIPÓTESE]
+Tempo total de uso antes de cancelar: [PERÍODO]
+Última nota NPS: [SE TIVER]
+Valor de contrato anterior: R$ [X]
+</contexto>
+
+<tarefa>
+Plano de win-back em 3 etapas:
+
+1. DIAGNÓSTICO (semana 1)
+   - Email pessoal (escreva o draft): 3-4 linhas, sem pitch, perguntando o que poderia ter sido melhor.
+   - Resposta esperada: confirma motivo ou revela outro.
+
+2. OFERTA (semana 2)
+   - Se motivo foi preço: oferta específica (50% off 3 primeiros meses, sem permanência).
+   - Se motivo foi feature: confirma se o que ele queria existe agora — vídeo demo de 90s.
+   - Se motivo foi atendimento: nova pessoa do nosso time atende ele exclusivo.
+   - Para cada caso, escreva email/mensagem com o gancho.
+
+3. CONVITE (semana 3)
+   - Reunião de 30 min — sem compromisso de compra. Honesto.
+   - Se aceitar: agenda clara do que vai discutir.
+
+Critério de parada:
+- Sem resposta após 3 toques → arquiva por 6 meses.
+- Resposta negativa firme → arquiva. Não insiste.
+</tarefa>`,
+  },
+  {
+    id: 'comunicado-aumento-preco',
+    title: 'Email + FAQ anunciando reajuste sem churn',
+    category: 'marketing',
+    goal: 'Aumentar preço sem perder mais que 10% da base',
+    template: `Você é CMO experiente em pricing communication.
+
+<contexto>
+Produto: [NOME]
+Preço atual: R$ [X] / mês
+Preço novo: R$ [Y] / mês (aumento de [%])
+Último reajuste: [QUANDO]
+Justificativa real do aumento: [CUSTO, FEATURE NOVA, INFLAÇÃO]
+Carência sugerida pra clientes atuais: [Y MESES ANTES DO NOVO PREÇO]
+</contexto>
+
+<tarefa>
+Gere DOIS materiais:
+
+1. EMAIL para clientes ativos:
+   - Assunto: claro, sem suspense (não "Uma novidade importante!")
+   - Abertura: agradecer pelo tempo de cliente (com dado real — "há 14 meses conosco")
+   - O QUE muda + QUANDO + QUANTO
+   - POR QUE (1-2 frases honestas — sem "para servir melhor")
+   - O QUE NÃO muda (manter ancoragem)
+   - Como conversar se for desafio (canal direto, não "responda este email")
+   - PS com gesto de boa fé (ex: grandfathered se pagar antes de X)
+
+2. FAQ INTERNA pro time de CS:
+   - Top 8 objeções esperadas
+   - Resposta padrão para cada (3 níveis de desconto autorizado)
+   - O que NÃO ceder
+   - Quando escalar pra você
+
+Tom: honesto, firme, profissional. Sem desculpa nem agressão.
+</tarefa>`,
+  },
+  {
+    id: 'politica-home-office',
+    title: 'Política de home office / híbrido (clara, não ambígua)',
+    category: 'rh',
+    goal: 'Regra clara que reduz fricção e cobrança',
+    template: `Você é Head of People. Escreva política de remoto/híbrido.
+
+<contexto>
+Empresa: [TAMANHO + SETOR]
+Cultura atual: [REMOTA / HÍBRIDA / PRESENCIAL]
+Realidade: [QUANTOS DIAS NO ESCRITÓRIO HOJE NA PRÁTICA]
+Decisão que se quer comunicar: [MUDAR PARA HÍBRIDO 3x · MANTER 100% REMOTO · OUTRO]
+Motivo: [POR QUÊ — SEJA HONESTO]
+</contexto>
+
+<tarefa>
+Política em 8 seções:
+
+1. ESPÍRITO da política (1 parágrafo claro do "por quê")
+2. REGRA OBJETIVA (quantos dias, quais dias, com flexibilidade)
+3. EXCEÇÕES previsíveis (tem filho · mora longe · trabalha viajando · cliente em outra cidade)
+4. RESPONSABILIDADES do colaborador (sinalizar com X dias · participar de reuniões críticas)
+5. RESPONSABILIDADES da empresa (não cobrar fora do horário · café e infra no escritório)
+6. INFRAESTRUTURA DE HOME OFFICE (auxílio · setup mínimo · responsabilidade legal)
+7. O QUE ACONTECE se não cumprir (escalação clara, sem zona cinzenta)
+8. REVISÃO da política (em quanto tempo será revisada)
+
+Tom: respeitoso mas firme. Cada regra justificada. Zero "vista a camisa".
+</tarefa>`,
+  },
+  {
+    id: 'plano-loi-aquisicao',
+    title: 'LOI / Term Sheet enxuta para M&A early stage',
+    category: 'juridico',
+    goal: 'Acordo de intenções claro antes de gastar tempo em due diligence',
+    template: `Você é advogado de M&A com 15 anos em early stage no Brasil.
+
+<contexto>
+Negócio em discussão: [aquisição majoritária / parceria estratégica / aquisição de carteira]
+Alvo: [NOME + CNPJ + faturamento]
+Comprador: [QUEM]
+Valor indicativo: R$ [X]
+Forma de pagamento: [À VISTA / EARN-OUT / AÇÕES / MISTO]
+Prazo desejado pra fechar: [QUANDO]
+</contexto>
+
+<tarefa>
+LOI (Letter of Intent) enxuta em 8 cláusulas:
+
+1. PARTES envolvidas (qualificação completa)
+2. OBJETO da operação (1-2 parágrafos do que se compra)
+3. PREÇO indicativo + forma de pagamento + condições
+4. EXCLUSIVIDADE durante a due diligence (quanto tempo, quanto vale, multa em caso de quebra)
+5. CONFIDENCIALIDADE recíproca (escopo e tempo)
+6. CONDIÇÕES PRECEDENTES ao closing (DD financeira, fiscal, trabalhista, contratos)
+7. PRAZO da LOI (vigência + auto-renovação ou não)
+8. LEI APLICÁVEL e foro
+
+Mais:
+- 1 parágrafo de "NON-BINDING" exceto pelas cláusulas X e Y (geralmente exclusividade e confidencialidade)
+- Local, data, espaço pra assinatura
+</tarefa>
+
+<atencao>
+LOI é instrumento delicado. Antes de assinar, advogado humano obrigatório. Modelo é referência.
+</atencao>`,
+  },
+  {
+    id: 'diagnostico-reuniao-improdutiva',
+    title: 'Auditoria da agenda da semana',
+    category: 'pessoal',
+    goal: 'Cortar 30-40% das reuniões sem perder o que importa',
+    template: `Você é executive coach. Analise a agenda da minha semana e proponha cortes.
+
+<contexto>
+Cargo: [SEU CARGO]
+Tamanho do time direto: [N]
+Horas em reunião na semana passada: [X horas]
+Sentimento atual: [SUFOCADO / NORMAL / OK]
+</contexto>
+
+<agenda>
+[LISTAR REUNIÕES DA SEMANA — título, duração, participantes, frequência (recorrente ou pontual)]
+</agenda>
+
+<tarefa>
+Para cada reunião, classifique:
+
+1. ESSENCIAL — mantém como está
+2. REDUZIR — corta tempo pela metade (1h → 30min)
+3. DELEGAR — alguém do time vai sem você
+4. CANCELAR — pode virar email/Slack
+
+Critério de decisão:
+- Você toma decisão na reunião? Se não, é tour de status. CANCELAR.
+- Aparece info que só você pode resolver? Se sim, ESSENCIAL.
+- Você poderia ler ata e ter o mesmo resultado? DELEGAR.
+
+Devolva:
+- Agenda redesenhada (com cortes aplicados)
+- Horas/semana liberadas
+- 1 parágrafo de comunicação pro time sobre as mudanças
+- 1 risco do plano (alguma reunião que parece dispensável mas tem função social)
+</tarefa>`,
+  },
 ];
 
 export const promptCategories = [

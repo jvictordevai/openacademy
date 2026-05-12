@@ -1,0 +1,128 @@
+---
+interface Props {
+  prompt: string;
+  criteria: string;
+  minutes: number;
+  lessonSlug?: string;
+}
+
+const { prompt, criteria, minutes, lessonSlug } = Astro.props;
+const id = `task-${lessonSlug ?? Math.random().toString(36).slice(2, 9)}`;
+---
+
+<section
+  id={id}
+  class="not-prose mt-16 rounded-3xl border border-accent-blue/30 bg-gradient-to-br from-accent-blue/[0.06] to-accent-violet/[0.04] p-7 relative overflow-hidden"
+  data-task-id={id}
+>
+  <div class="absolute -top-16 -right-16 w-48 h-48 rounded-full bg-accent-blue/20 blur-3xl pointer-events-none"></div>
+
+  <div class="relative">
+    <div class="flex items-center justify-between mb-4 flex-wrap gap-3">
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-accent-blue animate-pulse"></span>
+        <span class="font-mono text-[10px] uppercase tracking-[0.3em] text-accent-blue">
+          Entrega da lição
+        </span>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="font-mono text-[10px] uppercase tracking-wider text-ink-400">
+          {minutes} min
+        </span>
+        <button
+          type="button"
+          class="task-complete-btn font-mono text-[10px] uppercase tracking-wider text-ink-300 hover:text-ink-100 transition px-3 py-1.5 rounded-full border border-white/10 bg-white/[0.02] hover:border-accent-mint/60 hover:bg-accent-mint/5"
+          data-task-target={id}
+          aria-label="Marcar tarefa como concluída"
+        >
+          <span class="task-state-pending">Marcar concluída</span>
+          <span class="task-state-done hidden">✓ Concluída</span>
+        </button>
+      </div>
+    </div>
+
+    <h3 class="font-display text-2xl font-semibold text-ink-100 leading-tight mb-2">
+      Tarefa
+    </h3>
+    <p class="text-ink-200 text-[16px] leading-relaxed">{prompt}</p>
+
+    <div class="mt-5 pt-5 border-t border-white/10">
+      <div class="font-mono text-[10px] uppercase tracking-[0.2em] text-accent-mint mb-2">
+        Como saber que entregou
+      </div>
+      <p class="text-ink-300 text-[14px] leading-relaxed">{criteria}</p>
+    </div>
+
+    <div class="mt-5 pt-4 border-t border-white/10 flex items-center justify-between gap-3 flex-wrap">
+      <div class="font-mono text-[10px] uppercase tracking-wider text-ink-400">
+        Auto-validável · você sabe se entregou
+      </div>
+      <a
+        href="https://github.com/jvictordevai/openacademy/discussions"
+        target="_blank"
+        rel="noreferrer"
+        class="font-mono text-[10px] uppercase tracking-wider text-ink-400 hover:text-accent-blue transition"
+      >
+        Compartilhar resultado ↗
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+  const STORAGE_KEY = 'openacademy:tasks-done';
+
+  function loadDone(): Set<string> {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      return raw ? new Set(JSON.parse(raw) as string[]) : new Set();
+    } catch {
+      return new Set();
+    }
+  }
+
+  function saveDone(set: Set<string>): void {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify([...set]));
+    } catch {
+      // localStorage disabled — silent fail acceptable for progress tracking
+    }
+  }
+
+  function applyState(button: HTMLButtonElement, done: boolean): void {
+    const pending = button.querySelector<HTMLSpanElement>('.task-state-pending');
+    const doneEl = button.querySelector<HTMLSpanElement>('.task-state-done');
+    if (!pending || !doneEl) return;
+    if (done) {
+      pending.classList.add('hidden');
+      doneEl.classList.remove('hidden');
+      button.classList.add('border-accent-mint/60', 'bg-accent-mint/10', 'text-accent-mint');
+    } else {
+      pending.classList.remove('hidden');
+      doneEl.classList.add('hidden');
+      button.classList.remove('border-accent-mint/60', 'bg-accent-mint/10', 'text-accent-mint');
+    }
+  }
+
+  function init(): void {
+    const done = loadDone();
+    document.querySelectorAll<HTMLButtonElement>('.task-complete-btn').forEach((btn) => {
+      const id = btn.dataset.taskTarget;
+      if (!id) return;
+      applyState(btn, done.has(id));
+      btn.addEventListener('click', () => {
+        const current = loadDone();
+        if (current.has(id)) current.delete(id);
+        else current.add(id);
+        saveDone(current);
+        applyState(btn, current.has(id));
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+</script>

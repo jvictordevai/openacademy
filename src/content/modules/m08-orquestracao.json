@@ -1,0 +1,9 @@
+{
+  "id": "m08",
+  "order": 8,
+  "title": "Orquestração — Workflow Semanal",
+  "description": "Como encadear Claude + Lovable + Aikido num ritual semanal real. Do dado bruto à decisão executada.",
+  "icon": "workflow",
+  "track": ["casos"],
+  "color": "oklch(74% 0.18 10)"
+}

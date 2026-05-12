@@ -15,6 +15,10 @@ sources:
     url: https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/use-xml-tags
   - label: Prompting Guide — Tree of Thoughts
     url: https://www.promptingguide.ai/techniques/tot
+task:
+  prompt: "Pegue um problema real do seu negócio (decisão pendente, análise complexa). Escreva o prompt usando XML tags + peça Chain of Thought explícito ('mostre raciocínio antes da conclusão'). Cole o prompt + a saída do Claude."
+  criteria: "Prompt usa pelo menos 2 tags XML diferentes. Saída mostra raciocínio passo a passo separado da conclusão final."
+  minutes: 12
 ---
 
 ## TL;DR
@@ -201,7 +205,7 @@ de < 6 meses representam 70% dos cancelamentos. Onboarding está sangrando."
 Pense em etapas antes de responder. Mostre raciocínio.
 ```
 
-Esse prompt extrai do Claude o tipo de análise que custaria R$ 30k em consultoria.
+Esse prompt extrai do Claude o tipo de análise que um analista sênior levaria 2-3 dias pra produzir.
 
 ## Tabela de quando usar o quê
 

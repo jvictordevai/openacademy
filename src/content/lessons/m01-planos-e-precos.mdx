@@ -1,0 +1,77 @@
+---
+title: Qual plano Claude você deve comprar
+module: m01
+order: 2
+description: Free, Pro, Max, Team, Enterprise — critério de decisão por porte e uso real. Sem upgrade desnecessário.
+minutes: 5
+difficulty: iniciante
+tags: [claude, planos, decisão]
+sources:
+  - label: Anthropic — preços (oficial)
+    url: https://www.claude.com/pricing
+  - label: Claude.ai — comparativo de planos
+    url: https://claude.com/pricing
+task:
+  prompt: "Escolha o plano que faz sentido pra você ESTA SEMANA. Justifique em 2 linhas com base no uso real (frequência, volume, tipo de tarefa). Não escolha pelo que 'pode precisar um dia'."
+  criteria: "Plano nomeado (Free/Pro/Max/Team/Enterprise) + justificativa concreta com 2 critérios de uso real."
+  minutes: 4
+---
+
+## TL;DR
+
+Empresário no começo: **Pro a US$ 20/mês** cobre 90% dos casos. Time interno usando junto: **Team a US$ 30/usuário/mês**. Free serve só pra testar. Max e Enterprise são casos específicos.
+
+## A árvore de decisão em 4 perguntas
+
+### 1 · Quantas vezes por dia você abre o Claude?
+
+- **Menos de 5x/dia, casos simples** → Free serve. Limite é por hora, não por dia.
+- **5-30x/dia, análises e documentos** → Pro.
+- **Operação intensa, uso contínuo** → Max (US$ 100-200/mês, dependendo do tier).
+
+### 2 · Você é o único usuário ou tem time?
+
+- **Só você** → Pro ou Max.
+- **2+ pessoas usando regular** → Team (US$ 30/usuário/mês mínimo 5 usuários).
+- **Equipe inteira + SSO + dados sensíveis + auditoria** → Enterprise (sob consulta).
+
+### 3 · Você precisa de Skills, Connectors e Code Execution?
+
+| Plano | Skills | Connectors | Code Execution | Memory |
+|---|---|---|---|---|
+| **Free** | ❌ | Limitado | ❌ | Limitado |
+| **Pro** | ✅ | ✅ | ✅ | ✅ |
+| **Max** | ✅ + maior cota | ✅ | ✅ + maior cota | ✅ |
+| **Team** | ✅ compartilhada | ✅ compartilhada | ✅ | ✅ |
+| **Enterprise** | ✅ central | ✅ central | ✅ | ✅ + audit log |
+
+**90% dos empresários precisa de pelo menos Pro pra aproveitar a imersão.**
+
+### 4 · ZDR (Zero Data Retention) importa pra você?
+
+- Setor regulado (saúde, financeiro, jurídico com dados confidenciais) → **Enterprise com ZDR** ou usar via **API com ZDR ativado**.
+- Empresa normal com dados internos → Pro/Team já é suficiente. Claude **não treina** com seus dados em Pro+.
+
+## Custo total real
+
+Calculado em 12 meses, considerando um empresário ativo:
+
+| Plano | Custo anual | Equivalente em hora-pessoa |
+|---|---|---|
+| Pro | ~R$ 1.200 | ~6h de analista júnior |
+| Max | ~R$ 6.000-12.000 | ~3 dias de consultor sênior |
+| Team (5 usuários) | ~R$ 9.000 | ~9 dias de consultor sênior |
+
+Se você usa pelo menos 1x por semana pra decisão importante: Pro paga em 30 dias.
+
+## Pegadinhas
+
+- **Não comece em Max.** É overkill no começo. Suba pra Max só depois de bater limite consistente em Pro.
+- **Free** trava no meio da análise. Você abre planilha grande, ele responde, e parou — vai esperar 2h pra continuar. Trabalho perdido.
+- **Team** com menos de 5 pessoas: paga 5 vagas mesmo assim. Calcula bem o custo-benefício vs Pro individual.
+- **Cancelamento**: anual paga adiantado. Pro mensal cancela quando quiser.
+- **Enterprise** exige conversa com sales. 4-6 semanas pra ativar com SSO + audit log.
+
+## Próximo passo
+
+Com o plano escolhido, [aprenda como falar com a IA do jeito que ela responde bem](/licoes/m02-fundamentos-prompt).

@@ -1,0 +1,186 @@
+---
+title: O Ritual Semanal — Claude + Lovable + Aikido juntos
+module: m08
+order: 1
+description: Como encadear as três camadas num workflow real de empresário. Segunda-feira ao café, sexta-feira fechando a semana.
+minutes: 9
+difficulty: intermediario
+tags: [orquestração, workflow, ritual, ops]
+sources:
+  - label: Anthropic — Routines (scheduled tasks)
+    url: https://code.claude.com/docs/en/routines
+  - label: Lovable — Webhooks
+    url: https://docs.lovable.dev
+  - label: Aikido — Daily reports
+    url: https://help.aikido.dev
+task:
+  prompt: "Defina o SEU ritual semanal de IA em 5 linhas: o que faz na segunda · terça · quarta · quinta · sexta. Use as 3 ferramentas (Claude, Lovable, Aikido) — pelo menos uma vez por semana cada."
+  criteria: "5 itens, um por dia, com ferramenta + tarefa específica + tempo estimado."
+  minutes: 7
+---
+
+import Pegadinhas from '../../components/Pegadinhas.astro';
+
+## TL;DR
+
+As três camadas funcionam isoladas. Mas viram **operação adulta** quando você cria ritual semanal que encadeia: Claude lê dado → Lovable mostra resultado → Aikido vigia o que foi construído.
+
+## A imagem mental
+
+```
+┌─────────────────────────────────────────────────────────┐
+│  SEGUNDA       TERÇA         QUARTA      QUINTA   SEXTA │
+├─────────────────────────────────────────────────────────┤
+│  Claude        Lovable       Claude      Aikido   Claude│
+│  (relatório)   (ajustar      (decisão    (review  (post-│
+│                 dashboard)    semana)    semanal) mortem│
+└─────────────────────────────────────────────────────────┘
+        ↓             ↓             ↓          ↓        ↓
+   Insight novo  KPI exposto   Decisão     Seguro  Aprendiz.
+                 para o time   fundament.           registrado
+```
+
+## Ritual proposto (40-60 min totais por semana)
+
+### Segunda · 9h00 — Relatório executivo da semana (Claude · 10 min)
+
+Cole no Claude.ai (conectores Drive + Gmail ativos):
+
+```text
+Você é meu chief of staff. Hoje é segunda-feira.
+
+<contexto>
+Empresa: [DESCRIÇÃO 1 LINHA]
+Equipe: [TAMANHO]
+</contexto>
+
+<tarefa>
+1. Pega a planilha "KPIs Semanais" do Drive.
+2. Pega os emails da última semana (Gmail).
+3. Pega os tickets fechados no HubSpot (se conectado).
+
+Me devolve:
+- 3 wins da semana (com dado)
+- 3 lowlights (problema concreto, não sentimento)
+- 2 decisões pendentes que esperam resposta minha
+- 1 padrão da semana (algo que se repete)
+- 5 emails que viraram ação requerida
+</tarefa>
+
+<formato>
+Cabe em 1 tela de celular. Direto. Sem floreio.
+</formato>
+```
+
+Em 60 segundos: foto da empresa pra começar a semana com clareza.
+
+### Terça · 14h00 — Ajuste do dashboard (Lovable · 15 min)
+
+Se o relatório de segunda mostrou padrão novo ou mudou prioridade, abre o Lovable e ajusta o dashboard:
+
+> "Adiciona card 'Tickets atrasados há mais de 3 dias' no topo do dashboard.
+> Cor laranja se passar de 5, vermelho se passar de 10.
+> Fonte: HubSpot, filtro status='waiting' AND created_at > 3 days."
+
+Em 5 minutos o dashboard reflete a nova prioridade da semana. Time inteiro vê o mesmo número.
+
+### Quarta · 11h00 — Decisão da semana (Claude · 15 min)
+
+Toda quarta, você tem **uma decisão importante** pra tomar (preço, hire, corte, novo produto, parceria). Use o framework de [decisão difícil](/prompts) na biblioteca:
+
+> "Você é mentor experiente. Ajude a estruturar decisão difícil.
+> [Decisão] · [contexto] · [opções] · [restrições]
+> Use Chain of Thought + Tree of Thoughts + Reflexion."
+
+Sai recomendação fundamentada que você pode levar pra sócio ou conselho.
+
+### Quinta · 10h00 — Security review (Aikido · 5 min)
+
+Toda quinta o painel Aikido tem **novos issues** que apareceram na semana:
+
+- Dependência nova com vulnerabilidade
+- Novo deploy do Lovable que precisa scan
+- Cloud config que mudou
+
+Abre o painel. **Só pra Critical**, cria tarefa de fix.
+
+Não vira fila gigante. 5 minutos por semana.
+
+### Sexta · 16h00 — Post-mortem da semana (Claude · 15 min)
+
+Antes de fechar laptop:
+
+```text
+Você é mentor.
+
+<contexto_semana>
+Wins: [LISTAR]
+Problemas: [LISTAR]
+Decisão importante tomada: [DESCREVER]
+Resultado dela até agora: [O QUE VOCÊ SABE]
+</contexto_semana>
+
+<tarefa>
+1. O que aprendi essa semana que vou levar pra próxima?
+2. 1 padrão que está se repetindo (positivo ou negativo)
+3. 1 coisa que postergo há mais de 3 semanas — por quê?
+4. Próxima semana: 1 ação concreta para resolver o item 3.
+</tarefa>
+
+<voz>
+Honesto. Sem auto-piedade nem otimismo forçado.
+</voz>
+```
+
+Em 15 minutos: lições documentadas, sem precisar de coach.
+
+## Por que esse ritual funciona
+
+1. **Distribui carga**: 5-15 min/dia em vez de 1h num só dia (insustentável).
+2. **Encadeia as ferramentas**: cada uma puxa contexto da anterior, sem você reexplicar.
+3. **Cria memória organizacional**: relatórios e decisões ficam registrados no Claude (em Projects).
+4. **Cobre os 4 lados** da operação: dado · interface · decisão · segurança.
+
+## Automatizando ainda mais
+
+Quando o ritual virar segunda natureza:
+
+### Routines do Claude Code (scheduled cloud)
+
+Toda segunda às 8h, automaticamente:
+
+```bash
+claude --schedule "every monday 08:00" \
+       --prompt "Gere relatório executivo da semana usando Drive + Gmail + HubSpot. Envie por email pra mim."
+```
+
+Você chega no escritório, relatório já está no inbox.
+
+### Webhooks Lovable
+
+Quando KPI de churn passa de 5% no dashboard, dispara automaticamente:
+
+- Email pro time CS
+- Card no Linear/Jira pra investigar
+- Notificação no Slack
+
+### Aikido daily digest
+
+Email diário às 8h com novos issues, agrupados por severidade. Você vê em 30 segundos.
+
+<Pegadinhas
+  items={[
+    "<strong>Ritual de 40-60 min só funciona se respeitado.</strong> Bloqueie no calendário como reunião com você mesmo. 6 semanas pra virar hábito.",
+    "<strong>Não automatize antes de fazer manual 4 vezes.</strong> Automação prematura cria saída ruim que ninguém revisa. Faça à mão até saber exatamente o que quer.",
+    "<strong>Projects do Claude</strong> são essenciais. Crie 1 projeto por ritual (Segunda, Terça, etc) — assim cada conversa começa com contexto da empresa carregado.",
+    "<strong>Domingo</strong> NÃO entra no ritual. Descanso é parte do sistema.",
+  ]}
+/>
+
+## Próximo passo
+
+Você terminou a trilha completa. Próximos caminhos:
+
+- **Aprofundar**: [biblioteca completa de prompts](/prompts) — 50+ casos prontos
+- **Glossário**: [todos os termos](/glossario) que vai ouvir em conversas sobre IA
+- **Contribuir**: [github.com/jvictordevai/openacademy](https://github.com/jvictordevai/openacademy)

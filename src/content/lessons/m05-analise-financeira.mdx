@@ -1,0 +1,146 @@
+---
+title: Análise Financeira — DRE e Runway com Claude
+module: m05
+order: 2
+description: Do DRE bruto ao diagnóstico de margem + projeção de fluxo 13 semanas. Empresário fala com a IA como falaria com CFO.
+minutes: 12
+difficulty: intermediario
+tags: [análise, financeiro, dre, runway, hands-on]
+sources:
+  - label: Anthropic — Code execution
+    url: https://docs.claude.com/en/docs/agents-and-tools/tool-use/code-execution-tool
+  - label: Anthropic — Skills xlsx oficial
+    url: https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview
+task:
+  prompt: "Pegue seu DRE (ou fluxo) dos últimos 6 meses. Rode o prompt-mestre. Liste o ralo de margem #1 identificado e quanto economiza por mês corrigindo."
+  criteria: "Ralo identificado com nome de linha do DRE + estimativa de impacto em R$/mês (faixa serve)."
+  minutes: 25
+---
+
+import Pegadinhas from '../../components/Pegadinhas.astro';
+import BeforeAfter from '../../components/BeforeAfter.astro';
+
+## TL;DR
+
+Mesma mecânica da análise comercial, agora pro lado financeiro. **Margem, runway, ralo de margem, 3 cortes não-óbvios** — em 12 minutos, com dado real.
+
+## Quando essa análise é crítica
+
+- Você sente que o caixa "some" mas não sabe onde
+- Mudança recente que pode ter quebrado margem (preço, custo de aquisição, novo fornecedor)
+- Decisão de captação ou empréstimo nos próximos 60 dias
+- Concorrente cortou preço e você precisa responder
+- Sócio te pergunta "como tá a saúde da empresa?" e você não tem resposta de 30 segundos
+
+## Pré-requisitos
+
+1. Claude **Pro** com **Code execution ativado**
+2. Arquivo com:
+   - DRE mensal últimos 6-12 meses (uma aba com colunas: linha · mês × meses)
+   - Idealmente também: fluxo de caixa, posição de caixa atual, capital de giro disponível
+3. 5 frases sobre sua empresa (setor, modelo, equipe, faturamento, momento)
+
+## Limpeza prévia (3 min)
+
+Mesma regra de toda análise: planilha precisa estar legível pela IA.
+
+- Cabeçalho na primeira linha
+- Linhas do DRE com nome consistente (não "Receita" num mês e "Faturamento" em outro)
+- Sem células mescladas
+- Valores em número (não texto com R$ formatado)
+
+## O prompt-mestre
+
+Cole no Claude com a planilha anexada:
+
+```text
+Você é CFO sênior com 20 anos em [SETOR] no Brasil.
+
+<contexto>
+Empresa: [NOME] — [DESCRIÇÃO 1 LINHA]
+Modelo: [SaaS / serviço / produto físico / e-commerce]
+Faturamento atual: R$ [X] / mês
+Folha bruta: R$ [Y] / mês
+Caixa atual: R$ [Z]
+Crédito disponível: R$ [W]
+Regime tributário: [Simples / Lucro Presumido / Lucro Real]
+Decisão pendente: [O QUE PRECISO DECIDIR NOS PRÓXIMOS 30 DIAS]
+</contexto>
+
+<dados>
+[ANEXAR DRE + fluxo de caixa]
+</dados>
+
+<tarefa>
+1. Calcule margens (bruta, operacional, EBITDA) por mês.
+2. Identifique tendência: crescendo, estável, ou caindo?
+3. Encontre o ralo de margem #1 — qual linha do DRE explica a maior parte do problema?
+4. Projete runway em 3 cenários:
+   - Pessimista (sem nenhum corte, com crescimento zero)
+   - Base (mantém ritmo atual)
+   - Otimista (com 1 alavanca que vou implementar)
+5. Sugira 3 cortes não-óbvios (não "demitir alguém"):
+   - Para cada: economia R$/mês, risco operacional, prazo de implementação
+6. Identifique 1 alavanca de receita esquecida (revenue leak): preço congelado há muito, cliente sem upgrade, etc.
+</tarefa>
+
+<formato>
+- Resumo executivo: margem · runway · ralo · alavanca (1 linha cada)
+- Tabela de margens mês a mês
+- Top 3 cortes recomendados (impacto · risco · prazo)
+- Cenários de runway com saldo mês a mês
+- Recomendação final: cortar primeiro, captar primeiro, ou crescer primeiro?
+</formato>
+
+Execute código para validar cálculos. Confira pelo menos 2 linhas aleatórias da planilha antes de concluir.
+```
+
+## O que você vai receber
+
+Exemplo de saída (anonimizado):
+
+<BeforeAfter
+  label="Visão antes vs visão depois da análise"
+  from="Caixa caindo, não sei se é o setor ou se é meu problema"
+  to="Folha de produto cresceu 31% YoY enquanto receita cresceu 9%. Margem operacional caiu de 22% para 11% em 8 meses. Runway atual: 7.2 meses sem ajuste."
+  impact="Ralo identificado: R$ 47k/mês"
+/>
+
+E mais:
+
+- **Tabela de margens mês a mês** com cor (verde estável, vermelho caindo)
+- **Top 3 cortes**: ex. "Renegociar plano AWS (Reserved Instances 1 ano) → R$ 8.5k/mês, risco baixo, 14 dias"
+- **Cenários runway**: pessimista 5.1 meses · base 7.2 · otimista 11.4 (com revenue leak resolvido)
+- **Revenue leak**: clientes do plano antigo (12 deles) pagando 35% abaixo da tabela atual
+
+## Refinar conversando
+
+Primeira versão é o esqueleto. Aprofunde:
+
+> "Mostre evidência do ralo #1 — quais linhas do DRE você cruzou?"
+>
+> "Detalhe o corte AWS. Como negociar? Quem do meu time chama?"
+>
+> "Os clientes do plano antigo — gera comunicação de reajuste pra eles. Tom: respeitoso mas firme."
+
+## Exportar pro conselho
+
+Quando estiver satisfeito:
+
+> "Gere PDF executivo com 1 página de capa (resumo) + 3 páginas de detalhamento. Inclua os 3 gráficos críticos. Vou apresentar para o conselho na sexta."
+
+Claude usa Skill `pdf` automaticamente. PDF formatado em ~10 segundos.
+
+<Pegadinhas
+  items={[
+    "<strong>Receita diferida ≠ receita reconhecida.</strong> Em SaaS, isso bagunça análise. Diga explicitamente qual base usar.",
+    "<strong>Mês com bonificação ou 13º</strong> distorce a média. Marque no contexto pra ele não tratar como tendência.",
+    "<strong>Custos indiretos</strong> (overhead) só fazem sentido alocados por % de receita ou por número de funcionários. Defina o método.",
+    "<strong>Code execution OBRIGATÓRIO.</strong> Sem ele, números podem ser inferidos errado. Sempre confirme: 'execute código para validar'.",
+    "<strong>Não confunda cenário com previsão.</strong> Pessimista/base/otimista são premissas, não promessa. Diga isso ao sócio/conselho.",
+  ]}
+/>
+
+## Próximo passo
+
+Pegue um dos insights e **construa o dashboard que monitora isso automaticamente**: [Construindo Dashboard Real no Lovable](/licoes/m06-build-dashboard).

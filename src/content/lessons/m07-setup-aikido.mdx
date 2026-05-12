@@ -13,11 +13,31 @@ sources:
     url: https://help.aikido.dev
   - label: Aikido — integração GitHub
     url: https://help.aikido.dev/doc/connect-with-github/docHWcWh1
+task:
+  prompt: "Crie conta no Aikido (Free). Conecte 1 repositório seu via GitHub/GitLab. Espere o primeiro scan terminar. Tire screenshot da primeira issue encontrada (Critical/High se houver, ou Medium)."
+  criteria: "Screenshot mostra painel Aikido com lista de issues — pelo menos 1 issue visível com severidade indicada (Critical/High/Medium/Low) e nome do arquivo afetado."
+  minutes: 12
 ---
+
+import AnnotatedScreenshot from '../../components/AnnotatedScreenshot.astro';
 
 ## TL;DR
 
 Cadastra → conecta GitHub → autoriza repositórios → Aikido escaneia → painel mostra issues em 5 minutos. Plano grátis cobre até 10 repos. Funciona para projeto Lovable, app interno, qualquer código.
+
+<AnnotatedScreenshot
+  alt="Painel principal do Aikido com issues organizadas por severidade"
+  source="aikido.dev"
+  href="https://www.aikido.dev"
+  caption="Painel após primeiro scan. Issues organizadas por severidade — sempre comece pelos Critical."
+  annotations={[
+    { x: 22, y: 22, label: 'Critical', text: 'fix obrigatório hoje — risco real explorável' },
+    { x: 48, y: 22, label: 'High / Medium', text: 'planejar para esta semana / próximo sprint' },
+    { x: 76, y: 22, label: 'Low / Info', text: 'higiene, sem urgência' },
+    { x: 50, y: 55, label: 'Issue list', text: 'cada item tem arquivo, linha, fix sugerido, CVE' },
+    { x: 92, y: 12, label: 'AutoTriage', text: 'IA filtra falso positivo antes de você ver' },
+  ]}
+/>
 
 ## Por que fazer isso AGORA
 

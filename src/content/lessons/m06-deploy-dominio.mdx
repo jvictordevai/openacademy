@@ -1,0 +1,141 @@
+---
+title: Deploy + Domínio Próprio no Lovable
+module: m06
+order: 3
+description: Do app lovable.app ao seu dashboard.suaempresa.com.br. SSL, custom domain, Supabase em prod.
+minutes: 10
+difficulty: intermediario
+tags: [lovable, deploy, dominio, supabase]
+sources:
+  - label: Lovable — Custom Domains
+    url: https://docs.lovable.dev/features/custom-domains
+  - label: Lovable — Going to Production
+    url: https://docs.lovable.dev/features/deployment
+  - label: Supabase — Production Checklist
+    url: https://supabase.com/docs/guides/deployment/going-into-prod
+task:
+  prompt: "Publique seu app Lovable em domínio próprio (subdomínio serve: dashboard.seudominio.com.br). Cole a URL final + screenshot da home funcionando com SSL ativo (cadeado verde)."
+  criteria: "URL com seu domínio (não lovable.app) abrindo com HTTPS válido. Cadeado verde no browser."
+  minutes: 30
+---
+
+import Pegadinhas from '../../components/Pegadinhas.astro';
+
+## TL;DR
+
+Comprar domínio: 1x (~R$ 40/ano). Apontar pro Lovable: 5 minutos. SSL automático. Daí em diante, seu time acessa em `dashboard.suaempresa.com.br`, não `seu-projeto.lovable.app`.
+
+## Quando vale fazer
+
+- App vai pra equipe inteira (não só você)
+- Quer compartilhar URL com cliente/parceiro
+- URL `lovable.app` "polui" a imagem do produto interno
+- Vai usar email transacional do app (precisa de domínio próprio pra SPF/DKIM)
+
+## Pré-requisitos
+
+1. **Plano Lovable Pro** (Free não suporta custom domain)
+2. **Domínio próprio comprado** (Registro.br, Namecheap, GoDaddy — qualquer)
+3. **Acesso ao painel DNS** do domínio
+4. **Plano Supabase Pro** se o app usa dados sensíveis em produção (Free tem limites de backup e sem PITR)
+
+## Passo a passo (10 min)
+
+### 1 · Decidir: subdomínio ou raiz?
+
+| Cenário | Use |
+|---|---|
+| App interno acessado pela equipe | Subdomínio `dashboard.suaempresa.com.br` |
+| Produto principal da empresa | Raiz `suaempresa.com.br` |
+| Várias apps separados | Subdomínios diferentes (`crm.`, `dashboard.`, `portal.`) |
+
+**Recomendação**: para dashboard interno, sempre subdomínio. Mantém raiz pro site institucional.
+
+### 2 · Configurar no Lovable
+
+1. Abra seu projeto no Lovable
+2. **Settings → Domains**
+3. Clique **Add Custom Domain**
+4. Digite o subdomínio completo: `dashboard.suaempresa.com.br`
+5. Lovable mostra um registro DNS pra você criar — algo como:
+   ```
+   Tipo: CNAME
+   Nome: dashboard
+   Valor: cname.lovable.app
+   TTL: 3600
+   ```
+
+### 3 · Apontar DNS
+
+No seu provedor de domínio (ex: Registro.br, Cloudflare, Namecheap):
+
+1. Acesse o painel DNS do domínio
+2. **Adicionar registro**:
+   - Tipo: `CNAME`
+   - Nome: `dashboard` (apenas o prefixo)
+   - Valor: o que o Lovable forneceu (geralmente `cname.lovable.app`)
+3. Salvar
+
+> **Tempo de propagação**: 2 minutos a 48h. Quase sempre fica pronto em 10-30 minutos. Use [whatsmydns.net](https://www.whatsmydns.net) pra checar.
+
+### 4 · Voltar ao Lovable e verificar
+
+1. Volta em **Settings → Domains**
+2. Clica **Verify**
+3. Quando passar verde: SSL é provisionado automaticamente (Let's Encrypt)
+4. Em 1-3 minutos, `https://dashboard.suaempresa.com.br` abre seu app com cadeado verde
+
+### 5 · Atualizar referências internas
+
+- **Email transacional**: se usava `noreply@lovable.app`, troque pra `noreply@suaempresa.com.br` (configure SPF/DKIM no DNS do domínio também)
+- **Login Google/SSO**: se autorizou OAuth pra URL antiga, adicione a nova como URI permitida
+- **Compartilhamentos antigos**: avise quem tinha o link velho
+
+## Supabase em produção
+
+Se o app guarda dados de cliente real, **não rode em Free Plan**:
+
+| Item | Free | Pro (US$ 25/mês) |
+|---|---|---|
+| Backup automático | 1 dia | 7 dias |
+| Point-in-Time Recovery | ❌ | ✅ |
+| Disk size | 500MB | 8GB+ |
+| Pausa por inatividade | Sim (7 dias) | Não |
+| Suporte | Comunidade | Email |
+
+Plano Pro paga em 30 dias se o app for crítico pra operação.
+
+### Checklist mínimo Supabase Pro:
+
+- ✅ Backup diário ativado
+- ✅ PITR (Point-in-Time Recovery) ativado
+- ✅ Row Level Security (RLS) configurada em todas as tabelas com dado sensível
+- ✅ Service role key NÃO usada em frontend (só em edge functions/backend)
+- ✅ Anon key com escopo mínimo
+
+## Custos totais em produção
+
+Stack típica de dashboard interno (5-20 usuários, dado real):
+
+| Item | Custo mensal |
+|---|---|
+| Lovable Pro | US$ 25 |
+| Supabase Pro | US$ 25 |
+| Domínio próprio (rateio) | ~US$ 1 |
+| **Total** | **~US$ 51/mês** |
+
+R$ ~280/mês pra ter app interno seu, sem dev, sem agência, com backup.
+
+<Pegadinhas
+  items={[
+    "<strong>Subdomínio errado quebra silencioso.</strong> Se você criar registro CNAME pra <code>dashboard.suaempresa.com.br</code> mas digitar só <code>dashboard</code> no Lovable, fica desalinhado. Confira que ambos batem.",
+    "<strong>Wildcard SSL não funciona.</strong> Cada subdomínio precisa ser explicitamente adicionado no Lovable.",
+    "<strong>Cloudflare proxy quebra SSL.</strong> Se usar Cloudflare na frente, marque o registro como <strong>DNS only</strong> (nuvem cinza, não laranja). Caso contrário Let's Encrypt falha.",
+    "<strong>DNS antigo demora.</strong> Se você já tinha CNAME apontado pra outro lugar, pode levar 24-48h pra mudar de verdade. Não é bug do Lovable.",
+    "<strong>Email transacional</strong> precisa de SPF + DKIM no DNS — só apontar CNAME não basta. Caso contrário, emails vão pro spam.",
+  ]}
+/>
+
+## Próximo passo
+
+App em produção, em domínio próprio. Hora de **proteger**: [Setup do Aikido em 10 minutos](/licoes/m07-setup-aikido).

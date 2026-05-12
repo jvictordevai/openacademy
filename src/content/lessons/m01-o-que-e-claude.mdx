@@ -13,11 +13,30 @@ sources:
     url: https://docs.claude.com
   - label: Comparativo de modelos
     url: https://docs.claude.com/en/docs/about-claude/models
+task:
+  prompt: "Crie uma conta no Claude.ai (Free serve). Faça login. Tire screenshot da tela inicial mostrando: avatar no canto, modelo Sonnet selecionado, caixa de chat vazia."
+  criteria: "Screenshot mostra Claude.ai logado com seu avatar e modelo Sonnet 4.6 ou Opus 4.7 ativo na barra superior."
+  minutes: 5
 ---
+
+import AnnotatedScreenshot from '../../components/AnnotatedScreenshot.astro';
 
 ## TL;DR
 
 Claude é uma IA da Anthropic que conversa, lê arquivos, raciocina sobre eles e executa ferramentas. Não é chatbot. É **colega de trabalho que entende contexto longo**.
+
+<AnnotatedScreenshot
+  alt="Tela inicial do Claude.ai logado"
+  source="claude.ai"
+  href="https://claude.ai"
+  caption="Tela inicial após login. Onde tudo começa."
+  annotations={[
+    { x: 6, y: 8, label: 'Menu lateral', text: 'projetos, chats salvos, configurações' },
+    { x: 50, y: 50, label: 'Caixa de chat', text: 'cole texto, anexe arquivo, pergunte' },
+    { x: 50, y: 78, label: 'Modelo + ferramentas', text: 'troque entre Opus/Sonnet/Haiku, ative conectores' },
+    { x: 94, y: 8, label: 'Avatar', text: 'plano, configurações, skills' },
+  ]}
+/>
 
 ## Por que Claude, e não outra IA
 
