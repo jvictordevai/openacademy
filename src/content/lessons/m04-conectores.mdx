@@ -1,0 +1,156 @@
+---
+title: Conectores — Como ligar o Claude aos seus sistemas
+module: m04
+order: 1
+description: Drive, Gmail, HubSpot, Notion, Calendar… Pontes oficiais que dispensam programador. Login uma vez, usa pra sempre.
+minutes: 6
+difficulty: iniciante
+tags: [conectores, mcp, integrações]
+sources:
+  - label: Anthropic — Integrations announcement
+    url: https://claude.com/blog/integrations
+  - label: Model Context Protocol (MCP) — site oficial
+    url: https://modelcontextprotocol.io
+  - label: Catálogo de conectores Claude.ai
+    url: https://claude.com/integrations
+---
+
+## TL;DR
+
+Conector é uma ponte oficial entre Claude e um sistema externo (Drive, Gmail, HubSpot, etc). Você faz login uma vez. Daí em diante, o Claude **lê, escreve e age** nessas ferramentas como se fosse você.
+
+## Por que isso muda o jogo
+
+Antes do conector, você precisava **copiar e colar** dado de cada sistema na conversa com a IA. Agora:
+
+- "Pega o último pipeline do HubSpot e me diz onde temos negociações paradas há mais de 14 dias."
+- "Lê meu email da semana passada e identifica 3 oportunidades que ficaram sem resposta."
+- "Pega a planilha 'Vendas Q1' do Drive e cruza com o CRM."
+
+O Claude faz tudo isso sem você nunca tocar no arquivo.
+
+## Catálogo completo (maio/2026)
+
+### Google Workspace
+
+- **Google Drive** — ler/criar documentos, planilhas, slides
+- **Gmail** — ler, escrever, organizar email
+- **Google Calendar** — agendar, conferir agenda
+- **Google Docs / Sheets / Slides** — editar direto
+
+### Produtividade
+
+- **Notion** — ler e editar wikis e bases
+- **Confluence** / **Jira** (Atlassian) — documentação e tickets
+- **Linear** — issues e projetos
+- **Asana** — tarefas
+- **Miro** — quadros visuais
+
+### CRM e Vendas
+
+- **HubSpot** — contatos, deals, pipeline
+- **Intercom** — atendimento
+- **Salesforce** (via MCP customizado)
+
+### Pagamento e Financeiro
+
+- **Stripe** — assinaturas, cobrança, métricas
+- **Square** — POS e vendas físicas
+- **PayPal** — transações
+- **Plaid** — open banking
+
+### Comunicação
+
+- **Slack** — mensagens, canais
+- **Microsoft 365** (Outlook, Teams, OneDrive)
+
+### Desenvolvimento
+
+- **GitHub** / **GitLab** — repositórios, PRs, issues
+- **Sentry** — erros em produção
+- **Cloudflare** — domínios e segurança
+
+### Automação
+
+- **Zapier** — milhares de apps via Zaps existentes
+- **n8n** (via MCP)
+- **Box** — armazenamento empresarial
+
+> A lista cresce toda semana. [Veja o catálogo oficial atualizado](https://claude.com/integrations).
+
+## A diferença entre Conector e MCP
+
+Tecnicamente, **todo conector é um MCP** por baixo.
+
+- **MCP (Model Context Protocol)** é o padrão aberto criado pela Anthropic para conectar IA com qualquer sistema. Funciona como USB: protocolo padrão.
+- **Conector** é um MCP **pronto e mantido oficialmente**. Você não configura nada. Clica e usa.
+
+Quando você quer integrar com sistema interno da empresa que não tem conector pronto, você **cria seu próprio MCP server** (assunto técnico — assunto para o desenvolvedor da equipe).
+
+## Passo a passo — conectando seu primeiro
+
+### Conectar Google Drive ao Claude
+
+1. Acesse [claude.ai](https://claude.ai) e faça login
+2. No menu lateral, clique **Settings** → **Connectors**
+3. Localize **Google Drive** → clique **Connect**
+4. Você será redirecionado para conta Google → autorize
+5. Volte para o Claude → o ícone do Drive aparece na barra de ferramentas
+6. Em uma conversa, ative o Drive (ícone) e pergunte: "liste meus 10 arquivos mais recentes"
+
+### Conectar HubSpot
+
+1. **Settings → Connectors → HubSpot**
+2. Faça login com a conta admin do HubSpot
+3. Autorize o escopo: contatos, deals, empresas
+4. Volte para o Claude
+5. Teste: "quais foram os 5 deals fechados ganhos no último mês?"
+
+### Conectar Gmail
+
+1. **Settings → Connectors → Gmail**
+2. Autorize escopo de leitura (e escrita, se quiser que ele responda)
+3. Teste: "leia meus emails da semana e separe em: ação requerida / informativo / spam"
+
+## O que os conectores podem fazer (e o que não devem fazer)
+
+### Devem
+
+- Ler dados para análise
+- Resumir conteúdo
+- Cruzar informação entre sistemas
+- Sugerir ações
+- Executar ações simples e reversíveis (enviar email, criar evento)
+
+### Não devem (sem confirmação humana)
+
+- Deletar registros em massa
+- Cobrar cliente (Stripe sem checkout manual)
+- Mover dinheiro
+- Enviar email pra lista inteira
+- Demitir alguém no Asana 😅
+
+## Pegadinhas
+
+- **Escopo OAuth mínimo**: só dê permissão para o que ele precisa. Não autorize "ler todos os emails" se vai usar só uma pasta.
+- **Conta pessoal vs corporativa**: prefira conectar com **conta dedicada de automação** (criar um usuário "claude@suaempresa.com.br").
+- **Auditoria**: tenha controle de quem na empresa autorizou quais conectores. Aikido pode rastrear.
+- **Tempo real**: nem todo conector é instantâneo. Drive pode demorar minutos pra refletir mudança recente.
+- **Plano de assinatura**: alguns conectores premium exigem Claude **Pro, Team ou Enterprise**.
+
+## Quando usar conector vs Skill
+
+| Cenário | Use |
+|---|---|
+| "Leia esse arquivo na hora" | Upload direto no chat |
+| "Pegue arquivo recente do Drive" | **Conector** |
+| "Sempre que eu pedir análise, faça nesse formato" | **Skill** |
+| "Cruze CRM com email pra prever churn" | **Conector + Skill** |
+
+A combinação **Conector + Skill** é onde mora a mágica. Conector traz o dado. Skill diz como processar.
+
+## Próximo passo
+
+Aplique tudo isso na prática: [Análise de Dados com IA](/modulos/m05) — da planilha solta ao diagnóstico executivo.
+
+Ou veja como [construir interface](/modulos/m06) em cima dos dados que o Claude descobriu — com Lovable.

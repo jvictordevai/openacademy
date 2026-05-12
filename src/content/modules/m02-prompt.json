@@ -1,0 +1,9 @@
+{
+  "id": "m02",
+  "order": 2,
+  "title": "Engenharia de Prompt",
+  "description": "Como conversar com a IA e tirar dela o que um analista sênior tiraria.",
+  "icon": "message",
+  "track": ["prompt"],
+  "color": "oklch(70% 0.22 295)"
+}

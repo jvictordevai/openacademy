@@ -1,0 +1,41 @@
+---
+import Base from '../layouts/Base.astro';
+import { FlowScene } from '../scenes/FlowScene';
+---
+
+<Base title="Página não encontrada" description="Esta página não existe — ainda.">
+  <section class="relative min-h-[80vh] overflow-hidden grid place-items-center">
+    <div class="absolute inset-0 z-0 opacity-40">
+      <FlowScene client:only="react" />
+    </div>
+    <div class="absolute inset-0 z-[1] grid-bg pointer-events-none"></div>
+    <div class="absolute inset-0 z-[2] [background:radial-gradient(ellipse_at_center,transparent_20%,oklch(10%_0.02_260)_100%)] pointer-events-none"></div>
+
+    <div class="relative z-10 max-w-3xl mx-auto px-6 text-center">
+      <div class="font-mono text-[11px] uppercase tracking-[0.3em] text-accent-blue mb-3">
+        404 · Caminho não encontrado
+      </div>
+      <h1 class="font-display text-[clamp(4rem,12vw,10rem)] font-bold leading-[0.95] tracking-tight gradient-text">
+        404.
+      </h1>
+      <p class="mt-6 text-xl text-ink-300 leading-relaxed">
+        A página que você procurou não existe. Pode ter sido renomeada, ainda não foi
+        publicada, ou você digitou a URL diferente do que existe.
+      </p>
+      <div class="mt-10 flex flex-wrap items-center justify-center gap-3">
+        <a
+          href="/"
+          class="inline-flex items-center gap-2 rounded-full px-6 py-3 bg-gradient-to-r from-accent-blue to-accent-violet text-ink-100 font-medium hover:brightness-110 transition"
+        >
+          ← Voltar ao início
+        </a>
+        <a
+          href="/modulos"
+          class="inline-flex items-center gap-2 rounded-full px-6 py-3 glass text-ink-200 hover:text-ink-100 transition"
+        >
+          Ver módulos
+        </a>
+      </div>
+    </div>
+  </section>
+</Base>

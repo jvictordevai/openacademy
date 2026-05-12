@@ -1,0 +1,167 @@
+---
+title: Fundamentos de Engenharia de Prompt
+module: m02
+order: 1
+description: Como conversar com a IA pra tirar dela o que um analista sênior tiraria. Sem rodeio.
+minutes: 8
+difficulty: iniciante
+tags: [prompt, fundamentos]
+sources:
+  - label: Anthropic — Guia oficial de prompt engineering
+    url: https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/overview
+  - label: Anthropic — Prompting best practices
+    url: https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/claude-prompting-best-practices
+  - label: Prompting Guide (independente, comunidade)
+    url: https://www.promptingguide.ai/
+---
+
+## TL;DR
+
+Prompt bom tem **5 partes**: contexto + papel + tarefa + formato + exemplo. Quem domina isso tira da IA o que um consultor cobraria R$ 20 mil para entregar.
+
+## A diferença entre prompt amador e prompt sênior
+
+**Prompt amador:**
+> "Analise minha planilha de vendas"
+
+**Resposta amadora (previsível):**
+> "Sua planilha parece conter dados de vendas. Para análise mais aprofundada, recomendo um especialista..."
+
+**Prompt sênior:**
+> "Você é meu Head de Vendas. Anexo está a planilha de vendas Q1 com 8 vendedores e 1.247 negociações. Compare conversão e ticket médio por vendedor. Encontre 3 padrões não-óbvios. Para cada padrão, quantifique o impacto em R$ por mês. Formato: tabela seguida de 3 recomendações executáveis essa semana."
+
+**Resposta sênior:**
+> Análise estruturada, com números, com plano de ação. Você economiza 4 horas de trabalho de analista.
+
+## A estrutura dos 5 elementos
+
+### 1 · Papel (Role)
+
+Diga **quem ele é** antes de pedir o que fazer. Isso ativa um conjunto inteiro de comportamentos.
+
+> "Você é CFO experiente em SaaS B2B com R$ 100M ARR..."
+>
+> "Aja como advogado tributarista do Simples Nacional..."
+>
+> "Você é minha Diretora de Marketing focada em performance..."
+
+### 2 · Contexto
+
+O que ele precisa saber antes de começar. Background da empresa, restrições, decisões já tomadas.
+
+> "Minha empresa vende SaaS de gestão para clínicas odontológicas. Ticket médio mensal R$ 380. CAC de R$ 1.200. Estamos crescendo 8% ao mês, mas churn subiu de 3% para 4.8%."
+
+### 3 · Tarefa
+
+O que você quer. Específico. Verbo de ação.
+
+- ❌ "Me ajude com vendas"
+- ✅ "Identifique os 3 motivos mais prováveis do aumento de churn"
+
+### 4 · Formato de saída
+
+Como você quer receber. Lista, tabela, JSON, texto corrido, deck, email pronto.
+
+> "Responda em: 1) tabela com os 3 motivos · 2) coluna com hipótese · 3) coluna com como validar em 7 dias"
+
+### 5 · Exemplo (quando faz diferença)
+
+Se tiver um exemplo do que quer, **mostre**. IA aprende muito mais por exemplo do que por descrição.
+
+> "Exemplo do que quero:
+>
+> | Motivo | Hipótese | Validação |
+> |---|---|---|
+> | Onboarding ruim | Cliente não usa feature X | Ligar para 10 cancelados |"
+
+## Técnicas que dobram a qualidade
+
+### XML tags — para prompt longo
+
+Quando o prompt é grande, **separe os blocos com tags XML**. O Claude foi treinado para entender isso.
+
+```text
+<contexto>
+Empresa: clínica odontológica
+Ticket: R$ 380/mês
+Churn: 4.8%
+</contexto>
+
+<tarefa>
+Encontre 3 padrões no anexo que expliquem o churn.
+</tarefa>
+
+<formato>
+Tabela markdown com colunas: padrão | evidência | impacto em R$
+</formato>
+```
+
+### Chain-of-Thought — pra problema complicado
+
+Peça para ele **pensar antes de responder**. Frase mágica:
+
+> "Pense passo a passo antes de responder. Mostre seu raciocínio. Só depois dê a conclusão."
+
+Resultado: respostas com 2x menos erro lógico.
+
+### Prefill — pra forçar formato
+
+Comece a resposta no lugar dele. Útil quando quer JSON puro, sem texto antes.
+
+> Em tools/API: prefill = `{"motivos":[`
+>
+> Resultado: ele continua de onde você parou.
+
+### Examples (Few-shot) — pra padronizar voz
+
+Mostre 2-3 exemplos do estilo que quer antes de pedir o novo.
+
+## Prompt-mestre para análise de planilha
+
+Copie, cole, ajuste o contexto:
+
+```text
+Você é analista sênior de negócios com 15 anos de experiência, especializado em [SETOR].
+
+<contexto>
+Empresa: [NOME] — [DESCRIÇÃO EM 1 LINHA]
+Faturamento: R$ [X] / mês
+Equipe: [N] pessoas
+Principal dor agora: [DOR]
+</contexto>
+
+<dados>
+[ANEXAR PLANILHA]
+</dados>
+
+<tarefa>
+1. Leia toda a planilha. Identifique colunas, tipos, integridade.
+2. Calcule os 5 KPIs mais críticos para esse setor.
+3. Encontre 3 padrões não-óbvios.
+4. Identifique 2 riscos silenciosos (coisa que ninguém viu).
+5. Para cada achado, quantifique impacto em R$ por mês.
+</tarefa>
+
+<formato>
+- Resumo executivo em 5 bullets (R$ envolvido em cada)
+- Tabela com KPIs
+- Seção "Padrões ocultos" com 3 itens
+- Seção "Riscos silenciosos" com 2 itens
+- Plano de ação para os próximos 30 dias
+</formato>
+
+Pense passo a passo antes de responder. Mostre raciocínio antes da conclusão.
+```
+
+## Pegadinhas comuns
+
+- **Não pergunte "o que você acha?"** A IA dirá "depende". Pergunte: "qual é a melhor opção considerando X, Y, Z?"
+- **Não use prompt-mãe gigante de cara.** Vai por partes. Refine.
+- **Sempre revise números.** Mesmo com código de execução, conferir uma linha aleatória da planilha bate com a análise.
+- **Mude de Projeto pra mudar de contexto.** Não misture "Comercial" e "Jurídico" na mesma thread.
+
+## Próximo passo
+
+Aprenda técnicas avançadas: [Tree of Thoughts, ReAct, Reflexion](/licoes/m02-prompt-avancado) (em construção).
+
+Ou pule para [Skills do Claude](/modulos/m03) — onde você ensina a IA a executar tarefas repetitivas sem você reexplicar todo dia.

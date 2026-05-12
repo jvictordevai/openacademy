@@ -1,0 +1,220 @@
+---
+title: Engenharia de Prompt Avançada
+module: m02
+order: 2
+description: Técnicas que dobram a qualidade quando o caso é difícil. Chain of Thought, XML Tags, prefill, role estendido.
+minutes: 9
+difficulty: intermediario
+tags: [prompt, avançado]
+sources:
+  - label: Anthropic — Prompting Best Practices (oficial)
+    url: https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/claude-prompting-best-practices
+  - label: Anthropic — Be clear and direct
+    url: https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/be-clear-and-direct
+  - label: Anthropic — Use XML tags
+    url: https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/use-xml-tags
+  - label: Prompting Guide — Tree of Thoughts
+    url: https://www.promptingguide.ai/techniques/tot
+---
+
+## TL;DR
+
+Cinco técnicas que viram qualquer prompt amador em sênior: **XML tags · Few-shot · Chain of Thought · Prefill · Role estendido**. Quando combinadas, dobram a qualidade da resposta.
+
+## 1 · XML Tags — estrutura que o Claude entende
+
+A Anthropic treinou o Claude especificamente para entender markup XML. Não é opcional para prompt complexo — é o que faz a IA não confundir contexto, tarefa e formato.
+
+### Anti-padrão (tudo solto)
+
+```text
+Analisa essa planilha. Estilo: relatório executivo. Encontra 3 padrões.
+Empresa é clínica odontológica com R$ 380 ticket. Foco em churn.
+```
+
+Claude tenta adivinhar o que é dado, o que é tarefa, o que é tom. Erra metade.
+
+### Padrão correto
+
+```text
+<contexto>
+Empresa: clínica odontológica
+Ticket médio: R$ 380/mês
+Foco da análise: churn
+</contexto>
+
+<dados>
+[planilha anexada]
+</dados>
+
+<tarefa>
+Encontre 3 padrões que expliquem o churn das últimas 90 dias.
+</tarefa>
+
+<formato>
+Relatório executivo, 1 página, em PT-BR.
+</formato>
+```
+
+Resultado: respostas mais previsíveis, menos divagação, formato consistente.
+
+### Tags úteis para empresário
+
+- `<contexto>` — quem é a empresa, números chave, restrições
+- `<dados>` — os números, planilhas, documentos
+- `<tarefa>` — o que pedir, verbo de ação claro
+- `<formato>` — como devolver
+- `<exemplo>` — input/output de referência
+- `<restricoes>` — o que NÃO fazer
+- `<persona>` — quem o Claude está sendo
+
+## 2 · Few-shot — ensinar pelo exemplo
+
+Quando descrever um padrão é difícil, **mostre o padrão**. Few-shot é dar 2-3 exemplos antes da tarefa real.
+
+### Exemplo prático: padronizar resposta a cliente
+
+```text
+Você é gerente de Customer Success. Responda emails de cliente seguindo
+exatamente o estilo dos exemplos abaixo.
+
+<exemplo>
+Cliente: "Estou achando o produto caro pelo que entrega."
+Resposta: "Entendo. Pode me contar quais features você esperava ter no plano atual? Quero entender se é precificação ou se ainda não desbloqueamos valor pra você."
+</exemplo>
+
+<exemplo>
+Cliente: "Quero cancelar."
+Resposta: "Antes de cancelar, em 3 minutos posso te mostrar exatamente o que você usou esse mês? Talvez exista feature que resolve o que está faltando — ou talvez seja melhor cancelar mesmo. Você escolhe depois."
+</exemplo>
+
+Agora responda:
+Cliente: "[novo email aqui]"
+```
+
+Resultado: Claude segue tom, estrutura e padrão exatos, sem você precisar descrever em prosa.
+
+## 3 · Chain of Thought — pensar antes de responder
+
+Frase mágica:
+
+> "Pense passo a passo antes de responder. Mostre seu raciocínio. Só depois dê a conclusão."
+
+Reduz erro lógico significativamente em problemas que envolvem:
+- Cálculo financeiro multi-etapa
+- Diagnóstico que depende de cruzar variáveis
+- Decisão com vários trade-offs
+
+### Variação avançada: pensamento em rascunho
+
+```text
+Antes da resposta final, use a tag <rascunho> para listar:
+1. Quais variáveis preciso considerar
+2. Quais hipóteses estou descartando e por quê
+3. Qual a ordem lógica do raciocínio
+
+Depois, dê a resposta final em <resposta>.
+```
+
+Você pode pedir para ele **esconder o rascunho** se quiser só a resposta limpa.
+
+## 4 · Prefill — forçar o formato
+
+Útil quando você precisa que a resposta saia em um formato exato. Você "começa a resposta" no lugar dele.
+
+### Caso 1: forçar JSON puro
+
+Sem prefill:
+> "Aqui está sua resposta em JSON: ```json\n{...}\n```"
+
+Com prefill (na API, parâmetro `messages` termina com role `assistant`):
+```json
+{ "role": "assistant", "content": "{" }
+```
+
+Claude continua a resposta a partir de `{`. JSON limpo sem texto antes.
+
+### Caso 2: forçar começo direto
+
+```text
+Pula introdução. Comece sua resposta diretamente com "RECOMENDAÇÃO:".
+```
+
+Funciona em `claude.ai` também. Atalho para evitar "Claro, posso te ajudar com isso..."
+
+## 5 · Role estendido — não é só "você é um analista"
+
+Role básico:
+> "Você é analista de vendas."
+
+Role estendido:
+
+```text
+Você é Head de Vendas com 15 anos em SaaS B2B brasileiro, ticket médio
+R$ 5k/mês. Já vendeu em empresas de 5 a 50 vendedores. Sua paranóia é
+ticket caindo por conta de desconto excessivo. Você lê funil com lupa.
+```
+
+Diferença: a IA assume linguagem, prioridades, vieses do papel detalhado. Vai mencionar margem onde outro só mencionaria volume.
+
+## Quando combinar (e o efeito multiplicador)
+
+Prompt máximo para análise complexa de empresa real:
+
+```text
+<persona>
+Você é CFO sênior com 12 anos em SaaS brasileiro Série A/B.
+Foi CFO em empresa que cresceu 8x em 3 anos. Sua marca é detectar
+revenue leak antes de outros e cortar custo com cirurgia, não machado.
+</persona>
+
+<contexto>
+Empresa: SaaS de gestão para clínicas odontológicas
+Estágio: Série A, 14M ARR
+Time: 38 pessoas
+Caixa: R$ 12M
+Burn: R$ 1.4M/mês
+Cresce 6% MoM mas churn subiu de 2.1% para 3.8%
+</contexto>
+
+<dados>
+[planilha DRE + planilha churn]
+</dados>
+
+<tarefa>
+1. Em <rascunho>, liste todas as variáveis que considerou e quais cortou da análise.
+2. Em <diagnostico>, dê o quadro real (não o que o CEO quer ouvir).
+3. Em <acao_30_dias>, recomende 3 movimentos com impacto em R$.
+4. Em <risco>, aponte o que pode dar errado em cada movimento.
+</tarefa>
+
+<formato>
+Resposta em XML conforme acima. Use tabela markdown onde fizer sentido.
+</formato>
+
+<exemplo>
+Para inspirar tom (use o estilo, não o conteúdo):
+"O churn não está subindo por preço — está subindo porque mensalistas
+de < 6 meses representam 70% dos cancelamentos. Onboarding está sangrando."
+</exemplo>
+
+Pense em etapas antes de responder. Mostre raciocínio.
+```
+
+Esse prompt extrai do Claude o tipo de análise que custaria R$ 30k em consultoria.
+
+## Tabela de quando usar o quê
+
+| Técnica | Use quando | Cuidado |
+|---|---|---|
+| **XML Tags** | Prompt &gt; 200 palavras | Não é necessário para perguntas simples |
+| **Few-shot** | Padrão visual difícil de descrever | Não use exemplo viesado |
+| **Chain of Thought** | Cálculo, decisão multi-variável | Aumenta tokens (e custo) |
+| **Prefill** | Precisa de formato exato (JSON, código) | Só funciona na API, não no chat |
+| **Role estendido** | Análise de domínio específico | Não invente credenciais que enviesam mal |
+
+## Próximo passo
+
+Aplique tudo na [biblioteca de prompts](/prompts) — você consegue ler como cada um usa essas técnicas.
+
+Ou veja [como construir Skill customizada](/licoes/m03-build-skill) para automatizar o uso desses prompts.

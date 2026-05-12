@@ -1,0 +1,154 @@
+---
+title: O que é Lovable (e por que ele substitui agência)
+module: m06
+order: 1
+description: Construir app real (dashboard, CRM, painel interno) descrevendo em português. Sem programador. Sem código.
+minutes: 7
+difficulty: iniciante
+tags: [lovable, dashboards, no-code]
+sources:
+  - label: Lovable — site oficial
+    url: https://lovable.dev
+  - label: Lovable — documentação
+    url: https://docs.lovable.dev
+  - label: Lovable — integrações
+    url: https://docs.lovable.dev/integrations
+---
+
+## TL;DR
+
+Lovable é uma plataforma onde você **descreve em português o app que precisa** — e ela gera o app inteiro: frontend, backend, banco de dados, autenticação, integrações. Em 15 minutos você tem o que uma agência cobraria R$ 80 mil pra entregar em 3 meses.
+
+## O que dá pra construir
+
+Casos reais que empresas já têm rodando:
+
+- Dashboard executivo que lê planilha do Google Sheets em tempo real
+- CRM interno (substituto de HubSpot pra empresa pequena)
+- Painel de gestão de tickets de suporte
+- Sistema de aprovação de despesas
+- Portal de fornecedores
+- Calculadora de proposta comercial
+- Onboarding de cliente (form + email + acesso liberado)
+- Site institucional + landing pages
+- Marketplace simples
+
+A regra: **qualquer coisa que hoje é Excel + email + reuniões** pode virar app Lovable.
+
+## A mecânica em uma frase
+
+> Você descreve → Lovable gera (frontend React + backend Supabase) → você ajusta conversando → publica em uma URL com SSL.
+
+Não precisa instalar nada. Tudo na nuvem. O código é seu (sincroniza com GitHub se quiser).
+
+## Como começar (5 minutos)
+
+### Passo a passo
+
+1. Acesse [lovable.dev](https://lovable.dev) e crie conta gratuita
+2. Clique em **New Project**
+3. Na caixa, descreva o que quer:
+
+```text
+Quero um dashboard executivo conectado ao Google Sheets.
+Mostra 4 KPIs no topo: receita do mês, novos clientes, churn, ticket médio.
+Embaixo: gráfico de receita por mês (últimos 12 meses).
+Embaixo: tabela de top 20 clientes com filtro por status.
+
+Visual: dark mode, paleta azul + violeta, tipografia limpa.
+Deve ter login com Google.
+```
+
+4. O Lovable gera o app em ~2 minutos.
+5. Você vê a preview. Pode editar conversando: "deixe o card de churn em vermelho quando passar de 5%".
+6. Quando estiver pronto, clique **Publish**. Sai um link `seu-projeto.lovable.app`.
+
+## As integrações nativas (50+)
+
+O Lovable já vem com integrações que dispensariam programador. Você só clica e configura.
+
+### Dados em tempo real
+**Google Sheets · Excel 365 · Supabase · BigQuery · Snowflake · Databricks · Airtable · PostHog · Amplitude**
+
+### Pagamento
+**Stripe · Shopify · Polar**
+
+### CRM e vendas
+**HubSpot · Ashby · Attention**
+
+### Comunicação
+**Resend · Brevo · Mailgun · Slack · Telegram · Twilio (WhatsApp)**
+
+### Conteúdo
+**Notion · Storyblok · Sanity · WordPress**
+
+### IA e mídia
+**Lovable AI · ElevenLabs (voz) · Perplexity · HeyGen (vídeo avatar) · Firecrawl (web scraping)**
+
+### Trabalho
+**Linear · Jira · Confluence · Miro · Fireflies · Granola (notas de reunião)**
+
+### Workflow
+**n8n · Inngest**
+
+### Segurança
+**Aikido · Wiz**
+
+[Lista completa em docs.lovable.dev/integrations](https://docs.lovable.dev/integrations).
+
+## O fluxo de trabalho ideal
+
+A combinação que usamos na imersão:
+
+```
+1. Claude analisa sua planilha real
+   ↓
+2. Claude gera o prompt completo para Lovable
+   (com componentes, paleta, dados a mostrar)
+   ↓
+3. Você cola no Lovable
+   ↓
+4. Lovable constrói o app conectado à sua planilha
+   ↓
+5. Você ajusta visualmente conversando
+   ↓
+6. Aikido protege tudo no final
+```
+
+Resultado: **sistema interno real** rodando em 30 minutos.
+
+## Diferença entre planos
+
+| Plano | Custo | Para que serve |
+|---|---|---|
+| **Free** | R$ 0 | Aprender, testar, projetos pessoais (5 projetos, 30 mensagens/dia) |
+| **Pro** | US$ 25/mês | Projetos sérios (100 projetos, mensagens ilimitadas, custom domain) |
+| **Teams** | US$ 30/usuário/mês | Equipe colaborando |
+| **Enterprise** | Sob demanda | Compliance, SSO, SOC 2, ISO 27001 |
+
+Para começar, **Free é suficiente**. Quando o app virar algo crítico da empresa, suba para Pro.
+
+## Quando NÃO usar Lovable
+
+Honesto:
+
+- **App nativo iOS/Android** — não é o forte. Use FlutterFlow ou contrate dev.
+- **Lógica de negócio extremamente complexa** — daí faz sentido programador real.
+- **Volume gigante de tráfego** — Lovable escala, mas para SaaS com milhões de usuários você vai querer infra dedicada.
+- **Compliance regulado (PCI, HIPAA)** — possível, mas exige plano Enterprise.
+
+Para 95% dos casos de empresa pequena/média operando internamente: Lovable resolve.
+
+## Pegadinhas
+
+- **Custos de IA**: cada mensagem trocada com o agente Lovable conta no plano. Seja conciso.
+- **Dados sensíveis**: o backend é Supabase. Configure RLS (Row Level Security) antes de jogar dado real de cliente.
+- **Versionamento**: ative GitHub sync no início. Isso te permite voltar versão.
+- **Limite de gerações no Free**: planeje. Cada "Publish" gasta crédito.
+- **Backups**: Lovable não substitui backup do banco. Configure backup automático do Supabase.
+
+## Próximo passo
+
+Aprenda o **prompt-mestre para o Lovable** — como pedir um dashboard completo de uma vez (lição em construção).
+
+Ou vá para [Aikido — Segurança](/modulos/m07) para saber como proteger tudo que você construir.

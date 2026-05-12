@@ -1,0 +1,37 @@
+---
+interface Source {
+  label: string;
+  url: string;
+}
+
+interface Props {
+  sources: Source[];
+}
+
+const { sources } = Astro.props;
+---
+
+{
+  sources.length > 0 && (
+    <section class="mt-16 p-6 rounded-2xl glass border border-white/5">
+      <div class="font-mono text-[10px] uppercase tracking-[0.2em] text-accent-mint mb-3">
+        Fontes oficiais
+      </div>
+      <ul class="space-y-2 pl-0">
+        {sources.map((s) => (
+          <li class="flex items-start gap-2">
+            <span class="text-accent-mint font-mono text-sm mt-0.5">→</span>
+            <a
+              href={s.url}
+              target="_blank"
+              rel="noreferrer"
+              class="text-ink-200 hover:text-ink-100 underline decoration-white/20 underline-offset-4 hover:decoration-accent-blue text-sm"
+            >
+              {s.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )
+}

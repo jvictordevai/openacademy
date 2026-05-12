@@ -1,0 +1,47 @@
+---
+interface Props {
+  title?: string;
+  language?: string;
+}
+
+const { title = 'Prompt', language = 'text' } = Astro.props;
+const promptId = `prompt-${Math.random().toString(36).slice(2, 9)}`;
+---
+
+<div class="my-6 rounded-2xl border border-accent-blue/20 bg-accent-blue/[0.03] overflow-hidden">
+  <div class="flex items-center justify-between px-4 py-2.5 border-b border-accent-blue/10 bg-accent-blue/[0.05]">
+    <div class="flex items-center gap-2">
+      <span class="w-1.5 h-1.5 rounded-full bg-accent-blue animate-pulse"></span>
+      <span class="font-mono text-[10px] uppercase tracking-[0.2em] text-accent-blue">{title}</span>
+    </div>
+    <button
+      type="button"
+      data-prompt-target={promptId}
+      class="copy-prompt font-mono text-[10px] uppercase tracking-wider text-ink-300 hover:text-ink-100 transition px-2 py-1 rounded-md hover:bg-white/5"
+    >
+      Copiar
+    </button>
+  </div>
+  <pre class="!my-0 !rounded-none !border-0 !bg-transparent" id={promptId}><code class={`language-${language} !text-[13px]`}><slot /></code></pre>
+</div>
+
+<script>
+  document.addEventListener('click', (e) => {
+    const btn = (e.target as HTMLElement).closest('.copy-prompt') as HTMLButtonElement | null;
+    if (!btn) return;
+    const targetId = btn.dataset.promptTarget;
+    if (!targetId) return;
+    const el = document.getElementById(targetId);
+    if (!el) return;
+    const text = el.innerText;
+    navigator.clipboard.writeText(text).then(() => {
+      const original = btn.textContent;
+      btn.textContent = 'Copiado!';
+      btn.classList.add('text-accent-mint');
+      setTimeout(() => {
+        btn.textContent = original;
+        btn.classList.remove('text-accent-mint');
+      }, 1600);
+    });
+  });
+</script>

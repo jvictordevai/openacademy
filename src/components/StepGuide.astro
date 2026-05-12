@@ -1,0 +1,52 @@
+---
+interface Step {
+  title: string;
+  detail?: string;
+  url?: string;
+  hint?: string;
+}
+
+interface Props {
+  steps: Step[];
+}
+
+const { steps } = Astro.props;
+---
+
+<ol class="my-8 space-y-3 pl-0 list-none">
+  {
+    steps.map((s, i) => (
+      <li class="rounded-2xl border border-white/5 bg-white/[0.02] p-5 hover:border-white/10 transition">
+        <div class="flex items-start gap-4">
+          <div class="shrink-0 w-9 h-9 rounded-xl bg-accent-blue/10 grid place-items-center font-mono text-sm font-bold text-accent-blue tabular-nums">
+            {String(i + 1).padStart(2, '0')}
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="font-display text-[17px] font-semibold text-ink-100 leading-snug">
+              {s.title}
+            </div>
+            {s.detail && (
+              <p class="mt-1.5 text-[14px] text-ink-300 leading-relaxed">{s.detail}</p>
+            )}
+            {s.hint && (
+              <div class="mt-2 inline-flex items-center gap-2 text-[11px] font-mono uppercase tracking-wider text-accent-ember/80 bg-accent-ember/5 border border-accent-ember/20 rounded-full px-2.5 py-1">
+                <span>dica</span>
+                <span class="text-ink-300 normal-case tracking-normal">{s.hint}</span>
+              </div>
+            )}
+            {s.url && (
+              <a
+                href={s.url}
+                target="_blank"
+                rel="noreferrer"
+                class="mt-2.5 inline-flex items-center gap-1.5 text-[13px] text-accent-blue hover:text-ink-100 transition"
+              >
+                Abrir ferramenta <span class="font-mono text-xs">↗</span>
+              </a>
+            )}
+          </div>
+        </div>
+      </li>
+    ))
+  }
+</ol>

@@ -1,0 +1,180 @@
+---
+title: O que são Skills (e por que mudam tudo)
+module: m03
+order: 1
+description: Capacidades especializadas que o Claude carrega sozinho quando o contexto pede. Funcionários virtuais dentro do mesmo cérebro.
+minutes: 7
+difficulty: intermediario
+tags: [skills, claude]
+sources:
+  - label: Anthropic — Skills overview (docs oficial)
+    url: https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview
+  - label: Anthropic — Anúncio Skills
+    url: https://claude.com/blog/skills
+  - label: Repositório open-source de Skills
+    url: https://github.com/anthropics/skills
+---
+
+## TL;DR
+
+Skill é uma pasta com instruções, scripts e exemplos que o Claude **carrega sozinho** quando o pedido se encaixa. É como ter funcionários virtuais especialistas — financeiro, jurídico, comercial — todos vivendo dentro da mesma IA.
+
+## A mecânica em uma frase
+
+> Skill = pasta com `SKILL.md` + (opcional) scripts e arquivos de referência. Claude detecta a relevância pelo nome e pela descrição. Carrega só o necessário, na hora exata.
+
+## Como funciona por dentro (3 níveis de carregamento)
+
+Esse é o segredo. Skill **não ocupa contexto da conversa** o tempo todo.
+
+### Nível 1 — Metadados (sempre carregado)
+
+Só o nome da skill e descrição (~100 tokens). Custo desprezível.
+
+```yaml
+---
+name: analise-financeira
+description: Analisa DRE, fluxo de caixa, runway. Use quando o usuário pedir análise de planilha financeira, projeção, ou diagnóstico de saúde da empresa.
+---
+```
+
+Claude sabe que essa skill existe. Ainda não sabe como usar.
+
+### Nível 2 — Instruções (carrega quando ativada)
+
+Quando você pede "analise meu DRE", o Claude lê o `SKILL.md` inteiro. Sob 5 mil tokens.
+
+```markdown
+# Análise Financeira
+
+## Quick start
+1. Identifique se é DRE, fluxo de caixa, ou balanço.
+2. Para DRE: calcule margem bruta, margem operacional, EBITDA.
+3. Para fluxo: calcule runway e burn rate.
+4. Compare com benchmarks do setor.
+
+## Pegadinhas
+- Atenção a outliers no mês de bonificação.
+- Receita diferida não é receita reconhecida.
+```
+
+### Nível 3 — Recursos (carrega só se precisar)
+
+Scripts Python, templates Excel, planilhas de referência. Ficam na pasta mas só entram em contexto se forem chamados.
+
+```
+analise-financeira/
+├── SKILL.md
+├── benchmarks-setor.json
+├── scripts/
+│   ├── calcular_runway.py
+│   └── projetar_dre.py
+└── templates/
+    └── relatorio-executivo.md
+```
+
+Resultado: você pode ter **dezenas de skills instaladas sem inflar o contexto**.
+
+## Skills que já vêm prontas (built-in)
+
+A Anthropic empacotou 4 skills críticas pra trabalho de empresa:
+
+- **xlsx** — cria planilhas Excel com fórmulas funcionando
+- **docx** — cria documentos Word formatados
+- **pptx** — gera apresentações PowerPoint
+- **pdf** — gera PDFs estruturados
+
+Você não precisa configurar nada. Pede "crie um relatório executivo em Excel com gráficos" — ele usa a skill `xlsx` automaticamente.
+
+## Como criar sua primeira skill (5 minutos)
+
+### No Claude.ai
+
+1. Vá em **Settings → Features → Skills**
+2. Ative **Code execution** (necessário)
+3. Clique **Create Skill** ou faça upload de um `.zip`
+
+### No Claude Code (terminal)
+
+```bash
+mkdir -p ~/.claude/skills/analise-vendas
+cd ~/.claude/skills/analise-vendas
+```
+
+Crie um `SKILL.md`:
+
+```markdown
+---
+name: analise-vendas
+description: Analisa funil comercial, identifica gargalos e calcula CAC/LTV. Use quando o usuário enviar planilha de vendas, CRM export, ou perguntar sobre performance comercial.
+---
+
+# Análise de Vendas
+
+## Quando usar
+- Planilha de leads / oportunidades
+- Export de CRM (HubSpot, Pipedrive, RD)
+- Pergunta sobre conversão, CAC, LTV
+
+## Como analisar
+
+1. **Identifique a estrutura do funil**
+   - Etapas presentes
+   - Volume em cada etapa
+   - Taxa de conversão entre etapas
+
+2. **Calcule KPIs**
+   - Conversão geral (lead → venda)
+   - Ticket médio
+   - CAC (se houver custos)
+   - LTV (se houver período de retenção)
+   - Ciclo médio de venda
+
+3. **Encontre gargalos**
+   - Onde a queda é maior que 60% entre etapas?
+   - Qual vendedor está fora da curva?
+   - Qual fonte de lead converte menos?
+
+4. **Formato do relatório**
+   - Resumo executivo (3 bullets)
+   - Tabela de KPIs
+   - 3 padrões críticos
+   - Plano de ação 30 dias
+```
+
+Pronto. Próxima vez que você jogar planilha de vendas, o Claude usa essa skill automaticamente.
+
+## Onde a mesma skill funciona
+
+Funciona nas três frentes (com leves diferenças):
+
+| Surface | Suporte | Como faz |
+|---|---|---|
+| **claude.ai** | Custom + built-in | Upload zip via Settings |
+| **API** | Custom + built-in | Endpoint `/v1/skills` |
+| **Claude Code** | Custom (filesystem) | Pasta `~/.claude/skills/` ou `.claude/skills/` |
+
+Importante: **skills não sincronizam entre surfaces**. Se você criar no claude.ai, precisa subir separado na API.
+
+## Pegadinhas críticas
+
+- **Nome de skill**: lowercase, hífens, sem caracteres especiais. Máx 64 caracteres.
+- **Descrição** é o que importa: o Claude escolhe a skill **pela descrição**, não pelo nome. Capriche aqui.
+- **Segurança**: skill executa código. **Nunca instale skill de fonte desconhecida** sem auditar. Skills maliciosas podem vazar dado.
+- **Não use no nome**: "anthropic" ou "claude" (palavras reservadas).
+- **Custos**: cada skill ativada gasta tokens da sessão. Não crie skill que carrega arquivo gigante sem necessidade.
+
+## Pra que serve isso na sua empresa
+
+Casos reais de uso:
+
+- **Skill "diagnóstico-comercial"** — todo gerente que joga export do CRM recebe análise no mesmo formato.
+- **Skill "revisão-contratos"** — checa cláusulas de risco em PDF de contrato.
+- **Skill "email-investidor"** — escreve update mensal pra investidores no tom certo.
+- **Skill "auditoria-tributária"** — analisa NF-e e sinaliza inconsistências.
+
+Cada skill criada = horas de trabalho repetitivo eliminadas, **com qualidade consistente**.
+
+## Próximo passo
+
+Veja como [conectar o Claude aos sistemas que sua empresa já usa](/licoes/m04-conectores) — Drive, Gmail, HubSpot, Notion.

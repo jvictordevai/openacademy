@@ -1,0 +1,9 @@
+{
+  "id": "m00",
+  "order": 0,
+  "title": "Mapa da Imersão",
+  "description": "Como navegar este conteúdo, glossário essencial e ordem recomendada de leitura.",
+  "icon": "compass",
+  "track": ["fundacao"],
+  "color": "oklch(72% 0.18 250)"
+}

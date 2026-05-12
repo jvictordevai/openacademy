@@ -1,0 +1,208 @@
+---
+title: Construindo sua Primeira Skill (passo a passo)
+module: m03
+order: 2
+description: Da ideia ao SKILL.md funcionando. Convenções, descrição que ativa sozinha, e como testar.
+minutes: 10
+difficulty: intermediario
+tags: [skills, hands-on]
+sources:
+  - label: Anthropic — Skills authoring best practices
+    url: https://docs.claude.com/en/docs/agents-and-tools/agent-skills/best-practices
+  - label: Anthropic — Skills overview
+    url: https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview
+  - label: Repositório oficial de Skills
+    url: https://github.com/anthropics/skills
+---
+
+## TL;DR
+
+Skill = pasta com `SKILL.md` (instruções) + scripts opcionais. **Descrição** é o que mais importa — é o que faz Claude ativar a skill sozinho. Aqui você vai criar a sua em 10 minutos.
+
+## Antes de começar — o princípio fundamental
+
+> Claude já é muito inteligente. Sua skill deve adicionar **só o que ele não sabe**.
+
+Isso vem direto da doc oficial da Anthropic. Não escreva "PDF é um formato de arquivo que contém texto e imagens..." — ele sabe.
+
+**Escreva apenas:**
+- Convenções específicas da sua empresa
+- Regras de negócio
+- Padrões que você quer ver reforçados
+- Workflows específicos
+- Schemas / nomes / códigos internos
+
+## Etapa 1 · Decidir o que a skill faz
+
+Não comece pela skill. Comece **fazendo a tarefa manualmente** com Claude, sem skill.
+
+Repare:
+- O que você teve que explicar toda vez?
+- Quais convenções da sua empresa o Claude não sabia?
+- O que faltou no resultado?
+
+**Esse é o conteúdo da skill.** Não é "tudo sobre análise de vendas" — é **o que faltou** quando você fez sem skill.
+
+## Etapa 2 · Nomear bem
+
+Regra oficial da Anthropic:
+
+- Lowercase, hifens, sem caracteres especiais
+- Máximo 64 caracteres
+- Sem palavras reservadas (`anthropic`, `claude`)
+- Use **gerúndio** ou nome de processo, não substantivo genérico
+
+| ✓ Bom | ✗ Ruim |
+|---|---|
+| `analisando-funil-comercial` | `funil` |
+| `revisao-de-contratos-br` | `contratos` |
+| `padronizacao-email-cs` | `emails` |
+| `auditoria-tributaria-br` | `tributo` |
+
+## Etapa 3 · Escrever a descrição (o que mais importa)
+
+A `description` é o que faz o Claude **escolher** sua skill entre 100 outras. Erre aqui e a skill nunca ativa.
+
+### Regras oficiais
+- Sempre **terceira pessoa** (não "eu te ajudo com..."; sim "Analisa funil comercial...")
+- Inclua **o que faz** + **quando usar**
+- Termos específicos que disparam ativação
+- Máximo 1024 caracteres (mas curto é melhor)
+
+### Exemplos reais
+
+❌ Ruim:
+```yaml
+description: Ajuda com vendas
+```
+
+✓ Bom:
+```yaml
+description: Analisa planilhas de funil comercial (export de HubSpot, Pipedrive, RD Station). Calcula CAC, LTV, conversão por etapa, ticket médio, ciclo de venda. Identifica gargalos e compara vendedores. Use quando o usuário enviar export de CRM, planilha de leads, ou pedir diagnóstico comercial.
+```
+
+## Etapa 4 · Estruturar o SKILL.md
+
+Estrutura mínima que funciona:
+
+```markdown
+---
+name: analisando-funil-comercial
+description: [descrição completa como acima]
+---
+
+# Análise de Funil Comercial
+
+## Quando usar
+- Planilha com colunas de etapas do funil
+- Export de CRM (HubSpot, Pipedrive, RD)
+- Pergunta sobre conversão, CAC, LTV ou produtividade comercial
+
+## Workflow
+1. Identifique a estrutura do funil (etapas, ordem, volumes)
+2. Calcule conversão entre cada etapa
+3. Identifique gargalos (queda > 60% entre etapas adjacentes)
+4. Compare vendedores (apenas se houver coluna de vendedor responsável)
+5. Calcule KPIs: conversão geral, ticket médio, ciclo de venda
+
+## Convenções desta empresa
+- "MQL" = Marketing Qualified Lead (vem de inbound)
+- "SQL" = Sales Qualified Lead (passou pelo SDR)
+- Vendedores: Carla, Diego, Bia, Luan (são os 4 atuais)
+- Período padrão: últimos 90 dias
+- Excluir leads com status "duplicado" ou "teste"
+
+## Formato de saída
+- Resumo executivo (5 bullets, com R$ envolvido)
+- Tabela do funil
+- Top 3 gargalos com ação dos próximos 7 dias
+- Outlier positivo + outlier negativo entre vendedores
+
+## Anti-padrões
+- NÃO incluir CAC se não houver dado de custo
+- NÃO inferir motivo de perda — pedir ao usuário
+- NÃO comparar com benchmark de mercado sem aviso explícito
+```
+
+Veja o que está acontecendo aqui:
+- **Convenções da empresa** estão dentro da skill — Claude não sabia disso sozinho
+- **Workflow numerado** elimina "esquecer etapa"
+- **Anti-padrões** evitam erros comuns que aconteceram antes
+
+## Etapa 5 · Instalar a skill
+
+### No Claude.ai (mais fácil)
+
+1. Vá em **Settings → Features → Skills**
+2. Ative **Code execution** (necessário para Skills custom)
+3. Salve sua skill como `.zip`:
+   - Crie uma pasta com nome da skill
+   - Coloque `SKILL.md` dentro
+   - Compacte como zip
+4. Clique **Upload Skill** e envie o zip
+5. Pronto — a skill aparece na lista
+
+### No Claude Code (filesystem)
+
+```bash
+mkdir -p ~/.claude/skills/analisando-funil-comercial
+cd ~/.claude/skills/analisando-funil-comercial
+# crie SKILL.md aqui
+```
+
+Pronto — Claude Code descobre automaticamente.
+
+### Para a equipe (compartilhar)
+
+Coloque em `.claude/skills/` na raiz do projeto e commite no Git. Todo dev que clonar o repo recebe a skill.
+
+## Etapa 6 · Testar
+
+Não confie só na intuição. **Teste 3 cenários reais**:
+
+1. **Pedido típico** — "analise essa planilha de vendas" → skill ativa, segue workflow?
+2. **Pedido enviesado** — "calcula só o CAC" → skill ativa parcial, faz só o pedido?
+3. **Pedido fora do escopo** — "escreva um email para cliente" → skill NÃO ativa, certo?
+
+Se a skill ativa quando não devia, **a descrição está vaga demais**.
+Se a skill não ativa quando devia, **adicione termos-chave na descrição**.
+
+## Erros comuns (que vão te custar tempo)
+
+### Description em primeira pessoa
+> "Eu posso analisar planilhas..."
+
+Tem que ser terceira pessoa. Caso contrário, Claude se confunde sobre quem é "eu" no contexto.
+
+### SKILL.md muito longo
+> 800 linhas de explicação
+
+Limite: **500 linhas no corpo**. Acima disso, quebre em arquivos separados (`FUNIL.md`, `KPIS.md`) e referencie a partir do SKILL.md.
+
+### "Voodoo constants"
+> `TIMEOUT = 47`
+
+Se tem número mágico em script, **comente por quê**. Senão o Claude vai querer mudar e quebrar.
+
+### Não testar nos 3 modelos
+A skill funciona no Opus mas falha no Haiku? Atenção — descrição muito sutil. Haiku precisa de pista mais explícita.
+
+## Skill em produção — checklist
+
+Antes de compartilhar com equipe:
+
+- [ ] Description em 3ª pessoa, com termos-chave
+- [ ] Nome em gerúndio ou processo
+- [ ] SKILL.md &lt; 500 linhas
+- [ ] Convenções da empresa documentadas
+- [ ] Workflow numerado
+- [ ] Anti-padrões listados
+- [ ] Testada em pedido típico, parcial e fora-do-escopo
+- [ ] Testada em Haiku, Sonnet e Opus
+- [ ] Sem secrets ou dado sensível dentro
+
+## Próximo passo
+
+Veja [como conectar Claude aos seus sistemas](/licoes/m04-conectores) — Skills + Conectores = automação completa.
+
+Ou explore a [biblioteca de prompts](/prompts) para inspiração de skills que sua empresa pode criar.

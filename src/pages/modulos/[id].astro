@@ -1,0 +1,93 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+import ModuleSidebar from '../../components/ModuleSidebar.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+export async function getStaticPaths() {
+  const modules = await getCollection('modules');
+  return modules.map((m) => ({
+    params: { id: m.data.id },
+    props: { module: m.data },
+  }));
+}
+
+const { module } = Astro.props;
+const allLessons = (await getCollection('lessons')).sort((a, b) => a.data.order - b.data.order);
+const moduleLessons = allLessons.filter((l) => l.data.module === module.id);
+---
+
+<Base title={module.title} description={module.description}>
+  <a href="#content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[70] focus:bg-accent-blue focus:text-ink-100 focus:px-4 focus:py-2 focus:rounded-lg focus:font-medium">
+    Pular para o conteúdo
+  </a>
+
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex gap-10">
+      <ModuleSidebar currentModule={module.id} />
+
+      <article id="content" class="flex-1 min-w-0 max-w-4xl pb-16">
+        <Breadcrumb
+          crumbs={[
+            { label: 'Módulos', href: '/modulos' },
+            { label: module.title },
+          ]}
+        />
+
+        <header class="mb-12">
+          <div class="font-mono text-[11px] uppercase tracking-[0.3em] mb-3" style={`color:${module.color}`}>
+            Módulo {String(module.order).padStart(2, '0')}
+          </div>
+          <h1 class="font-display text-5xl md:text-6xl font-bold text-ink-100 leading-[1] tracking-tight">
+            {module.title}
+          </h1>
+          <p class="mt-5 text-xl text-ink-300 leading-relaxed max-w-2xl">{module.description}</p>
+          <div class="mt-5 text-sm font-mono uppercase tracking-wider text-ink-400">
+            {moduleLessons.length} {moduleLessons.length === 1 ? 'lição publicada' : 'lições publicadas'}
+          </div>
+        </header>
+
+        {
+          moduleLessons.length === 0 ? (
+            <div class="glass rounded-3xl p-10 text-center border border-white/5">
+              <div class="font-mono text-xs uppercase tracking-wider text-ink-400 mb-2">Em construção</div>
+              <p class="text-ink-300">Lições deste módulo serão publicadas em breve.</p>
+            </div>
+          ) : (
+            <ol class="space-y-3 pl-0 list-none">
+              {moduleLessons.map((lesson, i) => (
+                <li>
+                  <a
+                    href={`/licoes/${lesson.slug}`}
+                    class="block rounded-2xl p-5 border border-white/5 hover:border-white/10 hover:bg-white/[0.02] transition group"
+                  >
+                    <div class="flex items-start gap-5">
+                      <div
+                        class="font-mono text-2xl font-bold tabular-nums shrink-0 leading-none mt-1"
+                        style={`color:${module.color}`}
+                      >
+                        {String(i + 1).padStart(2, '0')}
+                      </div>
+                      <div class="flex-1 min-w-0">
+                        <h3 class="font-display text-lg font-semibold text-ink-100 leading-tight group-hover:text-accent-blue transition">
+                          {lesson.data.title}
+                        </h3>
+                        <p class="mt-1 text-ink-300 text-sm leading-relaxed">{lesson.data.description}</p>
+                        <div class="mt-2.5 flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-[10px] uppercase tracking-wider text-ink-400">
+                          <span>{lesson.data.minutes} min</span>
+                          <span class="text-ink-700">·</span>
+                          <span>{lesson.data.difficulty}</span>
+                        </div>
+                      </div>
+                      <div class="text-ink-400 group-hover:text-accent-blue transition font-mono shrink-0 mt-1">→</div>
+                    </div>
+                  </a>
+                </li>
+              ))}
+            </ol>
+          )
+        }
+      </article>
+    </div>
+  </div>
+</Base>

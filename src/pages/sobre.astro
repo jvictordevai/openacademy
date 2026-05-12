@@ -1,0 +1,210 @@
+---
+import Base from '../layouts/Base.astro';
+import { FlowScene } from '../scenes/FlowScene';
+
+const values = [
+  {
+    title: 'Linguagem de empresário, profundidade de engenheiro',
+    desc: 'Escrevemos para quem decide. Sem perder rigor. Cada lição tem fonte oficial linkada — você pode validar tudo.',
+    icon: '◇',
+    color: 'oklch(72% 0.18 250)',
+  },
+  {
+    title: 'Aberto, gratuito, em português',
+    desc: 'Sem login obrigatório. Sem paywall. Sem newsletter forçada. Tudo no GitHub. Forka, melhora, propõe.',
+    icon: '◈',
+    color: 'oklch(70% 0.22 295)',
+  },
+  {
+    title: 'Aplica segunda-feira',
+    desc: 'Cada lição tem prompt pronto, passo a passo, onde clicar. Você sai daqui e usa. Sem "depois você vê".',
+    icon: '◉',
+    color: 'oklch(78% 0.16 35)',
+  },
+  {
+    title: 'Fonte primária sempre',
+    desc: 'Citamos só docs oficiais — Anthropic, Lovable, Aikido, MCP. Nada de blog terceirizado. Nada de hype.',
+    icon: '◆',
+    color: 'oklch(82% 0.14 165)',
+  },
+];
+
+const sources = [
+  { name: 'Anthropic Docs', url: 'https://docs.claude.com', desc: 'Documentação oficial do Claude, Skills, API.' },
+  { name: 'Claude Code', url: 'https://code.claude.com/docs', desc: 'CLI agente, plugins, hooks, MCP.' },
+  { name: 'Lovable', url: 'https://docs.lovable.dev', desc: 'Plataforma full-stack por linguagem natural.' },
+  { name: 'Aikido', url: 'https://help.aikido.dev', desc: 'Segurança all-in-one para desenvolvedores.' },
+  { name: 'MCP', url: 'https://modelcontextprotocol.io', desc: 'Protocolo aberto para conectar IA a sistemas.' },
+  { name: 'Prompting Guide', url: 'https://www.promptingguide.ai', desc: 'Referência independente de prompt engineering.' },
+];
+
+const pipeline = [
+  { n: '01', t: 'Pesquisa em fonte primária', d: 'Lemos a doc oficial. Não recopilamos blog. Cada afirmação tem origem rastreável.', c: 'oklch(72% 0.18 250)' },
+  { n: '02', t: 'Tradução para empresário', d: 'Reescrevemos sem jargão desnecessário. "Latency" vira "tempo de resposta". "Token" continua "token" — quando faz diferença.', c: 'oklch(70% 0.22 295)' },
+  { n: '03', t: 'Teste com caso real', d: 'Cada prompt e passo é testado com planilha real. Se não funciona, não publica.', c: 'oklch(78% 0.16 35)' },
+  { n: '04', t: 'Revisão por squads', d: 'A11y · UX · Conteúdo passam pela lição antes da publicação.', c: 'oklch(82% 0.14 165)' },
+];
+
+const stack = [
+  { label: 'Astro 5', url: 'https://astro.build' },
+  { label: 'React 19', url: 'https://react.dev' },
+  { label: 'Tailwind v3', url: 'https://tailwindcss.com' },
+  { label: 'MDX', url: 'https://mdxjs.com' },
+  { label: 'Three.js + R3F', url: 'https://r3f.docs.pmnd.rs' },
+  { label: 'Framer Motion', url: 'https://www.framer.com/motion' },
+  { label: 'Vercel', url: 'https://vercel.com' },
+];
+---
+
+<Base title="Sobre">
+  <a href="#content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[70] focus:bg-accent-blue focus:text-ink-100 focus:px-4 focus:py-2 focus:rounded-lg focus:font-medium">
+    Pular para o conteúdo
+  </a>
+
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 z-0 opacity-50">
+      <FlowScene client:only="react" />
+    </div>
+    <div class="absolute inset-0 z-[1] grid-bg pointer-events-none"></div>
+    <div class="absolute inset-0 z-[2] [background:radial-gradient(ellipse_at_center,transparent_30%,oklch(10%_0.02_260)_100%)] pointer-events-none"></div>
+
+    <div id="content" class="relative z-10 max-w-4xl mx-auto px-6 pt-20 pb-24">
+      <div class="font-mono text-[11px] uppercase tracking-[0.3em] text-accent-blue mb-3">
+        Manifesto
+      </div>
+      <h1 class="font-display text-5xl md:text-7xl font-bold leading-[0.95] tracking-tight">
+        Conhecimento <span class="gradient-text">aberto</span><br />não devia ser raro.
+      </h1>
+      <p class="mt-8 text-xl text-ink-300 leading-relaxed max-w-2xl">
+        O openacademy nasceu para resolver uma dor concreta: empresário brasileiro perdendo tempo
+        e dinheiro porque a documentação que importa está em inglês, fragmentada e cheia de
+        jargão. Aqui é o oposto.
+      </p>
+    </div>
+  </section>
+
+  <section class="relative max-w-4xl mx-auto px-6 py-12">
+    <div class="font-mono text-[11px] uppercase tracking-[0.3em] text-accent-blue mb-5">
+      No que acreditamos
+    </div>
+    <div class="grid md:grid-cols-2 gap-4">
+      {
+        values.map((v) => (
+          <div class="glass rounded-3xl p-7 border border-white/5">
+            <div
+              class="w-12 h-12 rounded-2xl grid place-items-center text-2xl font-bold mb-4"
+              style={`background:${v.color}15;color:${v.color}`}
+            >
+              {v.icon}
+            </div>
+            <h3 class="font-display text-xl font-semibold text-ink-100 leading-tight">{v.title}</h3>
+            <p class="mt-2 text-ink-300 text-[15px] leading-relaxed">{v.desc}</p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="relative max-w-4xl mx-auto px-6 py-12">
+    <div class="font-mono text-[11px] uppercase tracking-[0.3em] text-accent-blue mb-3">
+      Pipeline de conteúdo
+    </div>
+    <h2 class="font-display text-3xl md:text-5xl font-bold leading-[1.05] tracking-tight mb-8">
+      Cada lição passa por <span class="gradient-text">quatro camadas</span> antes de publicar.
+    </h2>
+    <div class="space-y-3">
+      {
+        pipeline.map((p) => (
+          <div class="glass rounded-2xl p-6 border border-white/5 flex gap-5 items-start">
+            <div class="font-mono text-2xl font-bold tabular-nums shrink-0" style={`color:${p.c}`}>
+              {p.n}
+            </div>
+            <div>
+              <h3 class="font-display text-lg font-semibold text-ink-100">{p.t}</h3>
+              <p class="mt-1 text-ink-300 text-[15px] leading-relaxed">{p.d}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="relative max-w-4xl mx-auto px-6 py-12">
+    <div class="font-mono text-[11px] uppercase tracking-[0.3em] text-accent-blue mb-5">
+      Fontes oficiais que usamos
+    </div>
+    <div class="grid md:grid-cols-2 gap-3">
+      {
+        sources.map((s) => (
+          <a
+            href={s.url}
+            target="_blank"
+            rel="noreferrer"
+            class="glass rounded-2xl p-5 border border-white/5 hover:border-white/10 transition group"
+          >
+            <div class="flex items-center justify-between">
+              <div class="font-display text-lg font-semibold text-ink-100">{s.name}</div>
+              <span class="font-mono text-xs text-ink-400 group-hover:text-accent-blue transition">↗</span>
+            </div>
+            <p class="mt-1 text-ink-300 text-sm leading-relaxed">{s.desc}</p>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="relative max-w-4xl mx-auto px-6 py-12">
+    <div class="font-mono text-[11px] uppercase tracking-[0.3em] text-accent-blue mb-3">
+      Stack desta plataforma
+    </div>
+    <p class="text-ink-300 mb-6 max-w-2xl leading-relaxed">
+      Site estático. HTML puro. CDN. Sem analytics invasivo, sem cookies de terceiros, sem dependência fora do necessário.
+    </p>
+    <div class="flex flex-wrap gap-2">
+      {
+        stack.map((t) => (
+          <a
+            href={t.url}
+            target="_blank"
+            rel="noreferrer"
+            class="rounded-full px-4 py-2 border border-white/10 bg-white/[0.02] hover:border-white/20 hover:bg-white/[0.05] transition text-sm text-ink-200 hover:text-ink-100"
+          >
+            {t.label}
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="relative max-w-4xl mx-auto px-6 py-16">
+    <div class="glass-strong rounded-3xl p-10 border border-white/10 text-center">
+      <div class="font-mono text-[11px] uppercase tracking-[0.3em] text-accent-mint mb-3">
+        Quer contribuir?
+      </div>
+      <h2 class="font-display text-3xl md:text-4xl font-bold leading-tight tracking-tight">
+        O conteúdo está no <span class="gradient-text">GitHub.</span>
+      </h2>
+      <p class="mt-4 text-ink-300 max-w-xl mx-auto leading-relaxed">
+        Encontrou erro? Sugestão de tópico? Quer escrever uma lição? Abre uma issue ou manda PR.
+      </p>
+      <div class="mt-6 flex flex-wrap justify-center gap-3">
+        <a
+          href="https://github.com/jvictordevai/openacademy"
+          target="_blank"
+          rel="noreferrer"
+          class="inline-flex items-center gap-2 rounded-full px-5 py-2.5 bg-gradient-to-r from-accent-blue to-accent-violet text-ink-100 font-medium hover:brightness-110 transition"
+        >
+          Abrir repositório <span class="font-mono">↗</span>
+        </a>
+        <a
+          href="https://github.com/jvictordevai/openacademy/issues/new"
+          target="_blank"
+          rel="noreferrer"
+          class="inline-flex items-center gap-2 rounded-full px-5 py-2.5 glass text-ink-200 hover:text-ink-100 transition"
+        >
+          Sugerir conteúdo
+        </a>
+      </div>
+    </div>
+  </section>
+</Base>

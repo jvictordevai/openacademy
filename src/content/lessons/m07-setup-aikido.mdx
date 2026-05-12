@@ -1,0 +1,178 @@
+---
+title: Setup Aikido em 10 minutos
+module: m07
+order: 2
+description: Conectar GitHub, escanear primeiro repositório e configurar alertas. Da inscrição ao primeiro relatório de risco.
+minutes: 9
+difficulty: iniciante
+tags: [aikido, segurança, devsecops, setup]
+sources:
+  - label: Aikido — começar grátis
+    url: https://app.aikido.dev/login/signup
+  - label: Aikido — docs oficial
+    url: https://help.aikido.dev
+  - label: Aikido — integração GitHub
+    url: https://help.aikido.dev/doc/connect-with-github/docHWcWh1
+---
+
+## TL;DR
+
+Cadastra → conecta GitHub → autoriza repositórios → Aikido escaneia → painel mostra issues em 5 minutos. Plano grátis cobre até 10 repos. Funciona para projeto Lovable, app interno, qualquer código.
+
+## Por que fazer isso AGORA
+
+Cada projeto que você cria com Lovable, cada repositório que sua equipe sobe, **é uma superfície de ataque**. Sem ferramenta dedicada:
+
+- Bibliotecas com falha conhecida ficam invisíveis
+- Chave de API esquecida em commit antigo continua viva
+- Configuração de cloud aberta passa batido
+- Vulnerabilidade nova aparece na sua dependência, ninguém te avisa
+
+Aikido resolve em uma assinatura grátis o que custaria 5 ferramentas pagas separadas.
+
+## Pré-requisitos
+
+1. **Conta GitHub** (ou GitLab/Bitbucket) com pelo menos 1 repositório
+2. **5 minutos** sem interrupção
+3. **Conta de email** corporativo (opcional, para alertas)
+
+## Passo a passo
+
+### 1 · Cadastre-se no Aikido
+
+1. Acesse [aikido.dev](https://www.aikido.dev) → **Start free**
+2. Use login com Google ou Microsoft (mais rápido)
+3. Confirme email se solicitado
+4. No primeiro acesso, preencha: nome da empresa, equipe (tamanho), seu cargo
+
+Aikido te leva para o **painel inicial** com 1 botão chamativo: **Connect your code**.
+
+### 2 · Conecte o GitHub (ou outro Git)
+
+1. Clique **Connect** ao lado de GitHub
+2. Janela abre: GitHub OAuth → autoriza
+3. Escolha:
+   - **All repositories** (recomendado se for sua org pessoal)
+   - **Selected repositories** (recomendado para empresa com muitos repos)
+4. Selecione no mínimo 1 repo (idealmente o do projeto Lovable ou app principal)
+5. Confirme
+
+Aikido começa a escanear automaticamente. Demora 3-5 minutos por repo.
+
+### 3 · Espere o primeiro relatório
+
+Enquanto roda, você pode:
+
+- Adicionar mais membros do time (**Settings → Team → Invite**)
+- Conectar Slack para alertas (**Integrations → Slack**)
+- Adicionar cloud account (**Integrations → AWS / GCP / Azure**)
+
+### 4 · Leia o primeiro painel
+
+Quando termina, o painel mostra cards de issues por severidade:
+
+```text
+CRITICAL: 2    HIGH: 7    MEDIUM: 15    LOW: 31
+```
+
+**Comece pelos Critical e High.** Ignora Medium/Low na primeira passada.
+
+Cada issue tem:
+
+- **Título** — o que é
+- **Arquivo + linha** — onde está
+- **Explicação** — por que é problema
+- **Fix sugerido** — como resolver (geralmente upgrade de versão ou troca de função)
+- **CVE reference** — link para vulnerabilidade pública
+
+### 5 · Resolva 1 issue Critical hoje
+
+Pegue o primeiro Critical. Geralmente é um destes:
+
+- **Dependência vulnerável**: você está usando lib `xyz@1.2.3` que tem RCE conhecido. Fix: `npm install xyz@1.2.8` (versão patchada).
+- **Secret exposto em commit antigo**: chave de API ainda nos logs do Git. Fix: **rotacionar a chave imediatamente** (a chave continua válida mesmo se você apagar o commit).
+- **SQL injection em endpoint**: query usando concatenação. Fix: parametrize.
+
+Aikido sugere o fix exato. Se você usa Claude Code:
+
+> "Aplique o fix sugerido para essa issue do Aikido."
+
+Em 2 minutos o PR está pronto.
+
+### 6 · Configure alertas inteligentes
+
+Vá em **Settings → Notifications**:
+
+1. **Email**: ative para Critical e High
+2. **Slack**: conecte sua workspace → escolha canal `#security` (cria se não tem)
+3. **AutoTriage**: deixe ligado (filtra falso positivo antes de chegar em você)
+
+Daqui em diante, **você só recebe ping quando importa**.
+
+### 7 · Conecte cloud (se tiver)
+
+Se você usa AWS, GCP ou Azure:
+
+1. **Integrations → AWS** (ou outro)
+2. Siga o passo a passo de criar IAM role read-only
+3. Aikido escaneia: buckets S3 públicos, security groups abertos, IAM excessivo, etc.
+
+Para projeto Lovable (que usa Supabase por baixo):
+- Conecte **Supabase** em Integrations
+- Aikido vai checar RLS, exposed tables, weak policies
+
+## O que esperar nos primeiros 30 dias
+
+| Semana | Atividade |
+|---|---|
+| 1 | Escaneamento inicial, descoberta dos primeiros 10-30 issues |
+| 2 | Resolver os Criticals, configurar AutoTriage, ajustar regras |
+| 3 | Conectar cloud + container scanning |
+| 4 | Estado estável: 0-2 Criticals na fila, alertas só quando relevante |
+
+Empresa pequena tipicamente sai do mês 1 com **postura de segurança 10x melhor** que antes.
+
+## Pegadinhas
+
+- **Rotate, don't delete.** Se Aikido encontra chave de API em commit antigo, **apenas apagar o commit não resolve** — a chave continua válida no histórico. Rotacione na ferramenta original (Stripe, OpenAI, etc) primeiro.
+- **Não ignore por hábito.** Vira fila gigante que ninguém abre. Crie regra: todo **Critical vira card no Linear/Jira em 24h**.
+- **DAST em produção causa load.** Ao escanear app live, pode disparar alarme no monitoring. Configure janela de baixa demanda.
+- **Compliance não é só Aikido.** Para LGPD, PCI, HIPAA — auditoria humana ainda é necessária. Aikido reduz ruído, não substitui auditor.
+- **AutoTriage não é perfeito.** Revise periodicamente o que ele suprimiu. Pode acontecer de calibrar errado.
+
+## Plano grátis cobre o quê
+
+Honestamente, bastante para começar:
+
+- 10 repositórios
+- SAST + SCA + secrets em todos
+- 1 conta de cloud
+- Container scanning ilimitado
+- Email + Slack alerts
+- AutoTriage com IA
+
+Quando ultrapassar (10+ repos, equipe maior, compliance): planos pagos começam em US$ 350/mês.
+
+## Para projeto Lovable específico
+
+Cobertura ideal:
+
+```
+Lovable project
+├── Código (sincroniza com GitHub) → Aikido SAST + SCA + Secrets ✓
+├── Backend Supabase → Aikido CSPM + database scan ✓
+├── Vercel deploy → Aikido DAST contra URL pública ✓
+└── Domínio custom → Aikido SSL/headers scan ✓
+```
+
+3 integrations no Aikido = cobertura 360°.
+
+## Próximo passo
+
+Você terminou a trilha de fundação completa. Próximos caminhos:
+
+- [Análise prática de planilha](/licoes/m05-analise-pratica) — aplicação real
+- [Engenharia de prompt avançada](/licoes/m02-prompt-avancado) — técnicas que dobram qualidade
+- [Construir sua primeira Skill](/licoes/m03-build-skill) — automatizar trabalho repetitivo
+
+Ou contribua: [o conteúdo está no GitHub](https://github.com/jvictordevai/openacademy).

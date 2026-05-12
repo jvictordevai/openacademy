@@ -1,0 +1,9 @@
+{
+  "id": "m01",
+  "order": 1,
+  "title": "Claude por dentro",
+  "description": "O modelo de IA que vamos usar como cérebro. Família de modelos, contexto, capacidades.",
+  "icon": "brain",
+  "track": ["claude"],
+  "color": "oklch(72% 0.18 250)"
+}

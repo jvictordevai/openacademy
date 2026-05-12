@@ -1,0 +1,197 @@
+---
+title: Análise de Planilha Real — Caso Completo
+module: m05
+order: 1
+description: Do upload da planilha ao plano de ação de 30 dias. Estudo de caso com prompts, outputs esperados e armadilhas.
+minutes: 12
+difficulty: intermediario
+tags: [análise, hands-on, casos]
+sources:
+  - label: Anthropic — Multishot prompting
+    url: https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/multishot-prompting
+  - label: Code execution tool (Anthropic)
+    url: https://docs.claude.com/en/docs/agents-and-tools/tool-use/code-execution-tool
+---
+
+## TL;DR
+
+Vamos pegar uma planilha real de vendas, alimentar o Claude, e sair com **diagnóstico executivo + plano de 30 dias**. Tempo total: 12 minutos.
+
+## O contexto do caso
+
+Empresa fictícia mas realista:
+
+- **Setor**: SaaS de gestão para escritórios contábeis (B2B)
+- **MRR**: R$ 187k
+- **Clientes ativos**: 412
+- **Equipe comercial**: 4 vendedores
+- **Período da análise**: últimos 3 meses
+
+Você baixou o export do HubSpot e tem uma planilha com 1.247 negociações.
+
+## Etapa 1 · Preparar o ambiente
+
+### Antes de subir a planilha
+
+1. **Anonimize** se tiver dado de cliente real (nome, CNPJ, telefone)
+2. **Salve como Excel ou CSV** (Claude lê ambos)
+3. **Confira**: tem coluna de vendedor responsável? Etapa? Valor? Data? Status?
+
+### No Claude.ai
+
+1. Acesse [claude.ai](https://claude.ai)
+2. Crie um Project novo: **Projects → Create project → "Análise comercial"**
+3. Em **Project knowledge**, anexe a planilha (fica disponível em toda conversa do projeto)
+4. Em **Custom instructions** do projeto, coloque o contexto da empresa
+
+## Etapa 2 · O prompt-mãe
+
+Cole isso na primeira conversa do projeto:
+
+```text
+Você é Head de Vendas com 15 anos em SaaS B2B brasileiro.
+Especialidade: diagnosticar funil e encontrar gargalo silencioso.
+
+<contexto>
+Empresa: SaaS para escritórios contábeis
+MRR atual: R$ 187k
+Clientes ativos: 412
+Equipe comercial: 4 vendedores (Ana, Bruno, Camila, Diego)
+Período da análise: últimos 90 dias
+Ticket médio histórico: R$ 480/mês
+</contexto>
+
+<dados>
+A planilha em anexo (negociações-Q3.xlsx) contém 1.247 negociações.
+Colunas: id, vendedor, data_criacao, data_fechamento, valor, status,
+fonte, segmento, ciclo_dias.
+</dados>
+
+<tarefa>
+1. Leia a planilha inteira. Identifique colunas, qualidade dos dados,
+   inconsistências (datas inválidas, valores zero, duplicatas).
+2. Calcule:
+   - Conversão geral (criadas → fechadas ganhas)
+   - Taxa por vendedor
+   - Ticket médio por vendedor
+   - Ciclo médio (em dias)
+   - Conversão por fonte e por segmento
+3. Identifique os 3 padrões críticos:
+   - Quem está fora da curva (positivo e negativo)?
+   - Qual fonte tem ROI invertido?
+   - Em qual segmento estamos perdendo dinheiro?
+4. Encontre 1 risco silencioso (concentração, gargalo de pessoa, sazonalidade).
+5. Crie plano de ação de 30 dias (3 movimentos, com impacto em R$).
+</tarefa>
+
+<formato>
+- Resumo executivo (5 bullets com R$)
+- Tabela de KPIs por vendedor
+- 3 padrões críticos (cada um: o que vejo + por que importa + ação)
+- Risco silencioso
+- Plano 30 dias
+
+Use Python execution para garantir que os números são corretos,
+não estimados. Mostre cálculos onde fizer diferença.
+</formato>
+
+Pense em etapas antes de responder. Mostre raciocínio em <rascunho>.
+Responda em PT-BR.
+```
+
+## Etapa 3 · O que esperar da resposta
+
+O Claude vai (em ordem):
+
+### 1. Rodar Python para abrir a planilha
+
+Você vai ver:
+
+```python
+import pandas as pd
+df = pd.read_excel('negociacoes-Q3.xlsx')
+df.shape  # (1247, 9)
+df.dtypes  # confirma tipos das colunas
+df.isna().sum()  # quantos faltam por coluna
+```
+
+Se houver problema de dado, ele vai parar e te avisar.
+
+### 2. Mostrar rascunho de raciocínio
+
+```text
+<rascunho>
+Variáveis principais: taxa de conversão, ticket médio, ciclo.
+Hipóteses a testar: vendedor X com ticket baixo, fonte Y barata mas
+ineficaz, ciclo crescendo com tempo.
+
+Vou cortar análise por: vendedor, fonte, segmento, mês.
+Vou ignorar: status "duplicado" ou "spam" (ruído).
+</rascunho>
+```
+
+### 3. Tabela de KPIs
+
+| Vendedor | Negócios fechados | Conversão | Ticket | Ciclo |
+|---|---|---|---|---|
+| Ana | 89 | 14.2% | R$ 612 | 28d |
+| Bruno | 64 | 22.1% | R$ 410 | 19d |
+| Camila | 71 | 11.8% | R$ 580 | 36d |
+| Diego | 52 | 18.3% | R$ 388 | 22d |
+
+### 4. Padrões críticos
+
+> **Bruno está vendendo errado, não pouco.** Conversão 2.1x acima da média mas ticket 24% abaixo. Está fechando rápido com desconto excessivo. Impacto: R$ 14.7k/mês de margem perdida.
+
+> **Fonte "Anúncios Meta" tem ROI invertido.** 32% do volume de leads, mas só 8% das vendas — e dessas 8%, ticket 41% abaixo. Está pagando para queimar lista. Cortar.
+
+> **Segmento "contador autônomo" sangra.** 47% do volume mas só 11% de retenção em 6 meses. Estamos vendendo para quem não permanece.
+
+### 5. Risco silencioso
+
+> **Camila representa 31% da receita do trimestre.** Se sair, perdemos quase 1/3 do MRR de novos. Risco de concentração crítica.
+
+### 6. Plano 30 dias
+
+| # | Ação | Impacto esperado |
+|---|---|---|
+| 1 | Sessão de coaching com Bruno: trabalhar valor antes de preço | +R$ 14k/mês de margem em 60 dias |
+| 2 | Pausar Meta Ads por 30 dias; redirecionar para indicação | -R$ 18k em CAC, mantendo volume |
+| 3 | Limitar 30% de pipeline em "contador autônomo"; focar 50%+ em "escritório >5 pessoas" | LTV médio +40% em 6 meses |
+
+## Etapa 4 · Validar antes de agir
+
+> ⚠ **Confira 1 número aleatório.** Pegue uma linha da planilha, calcule manualmente, e compare com o que o Claude trouxe. Se bater, confie no resto.
+
+Faça também:
+
+- **Mostre para um vendedor de confiança.** Ele vai dizer se o padrão faz sentido na realidade.
+- **Não compartilhe com o time afetado sem revisão.** "Bruno está vendendo errado" precisa ser conversa antes de virar relatório.
+
+## Etapa 5 · Próxima conversa
+
+Você já tem o diagnóstico. Próximas perguntas no mesmo projeto:
+
+- "Detalha mais a hipótese sobre Bruno. Quais 5 negociações dele mais recentes ilustram o padrão?"
+- "Cria um plano de coaching de 4 semanas para o Bruno baseado nisso."
+- "Escreve o email que vou mandar pro Diego pedindo pra ele me explicar por que o ciclo dele caiu de 28 pra 19 dias."
+
+A análise vira **conversa contínua**, não relatório morto.
+
+## Erros que você vai cometer (e como evitar)
+
+### Confiar nos números sem conferir
+Sempre cruze 1 número com a planilha manual. Claude pode ler coluna errada, especialmente se houver header duplicado.
+
+### Pedir tudo em um prompt
+Para empresa pequena com planilha simples, OK. Para análise séria, **divida**: primeiro o diagnóstico geral, depois aprofunde cada padrão em conversas separadas.
+
+### Não considerar contexto humano
+"Bruno vende errado" não pode virar acusação. Provavelmente é treinamento ou incentivo errado. Use a análise como ponto de partida da conversa, não conclusão.
+
+### Misturar análises diferentes no mesmo Project
+Comercial e financeiro em projetos separados. Senão o Claude começa a confundir contexto.
+
+## Próximo passo
+
+Aprendeu análise. Agora aprenda a **mostrar** o resultado para o time: [Lovable — texto vira dashboard](/licoes/m06-build-dashboard).

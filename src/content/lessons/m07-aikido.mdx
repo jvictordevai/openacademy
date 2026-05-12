@@ -1,0 +1,130 @@
+---
+title: Aikido — A camada que ninguém vê (até dar problema)
+module: m07
+order: 1
+description: Por que segurança não é luxo de empresa grande. Como blindar tudo que você construiu sem virar especialista.
+minutes: 6
+difficulty: iniciante
+tags: [segurança, aikido, devsecops]
+sources:
+  - label: Aikido — site oficial
+    url: https://www.aikido.dev
+  - label: Aikido — documentação
+    url: https://help.aikido.dev
+---
+
+## TL;DR
+
+Aikido é uma plataforma de segurança que **escaneia tudo o que você construiu** (código, dependências, banco, cloud) e te avisa antes do invasor encontrar. Substitui meia dúzia de ferramentas caras. Existe plano gratuito decente.
+
+## Por que isso importa pra empresário
+
+Você construiu um dashboard no Lovable. Conectou seu CRM. Subiu pro ar.
+
+Agora pense: **quem está olhando se aquela URL tá vulnerável?**
+
+- Senha de admin em código?
+- Biblioteca antiga com falha conhecida?
+- Banco aberto pra internet?
+- Chave de API do Stripe vazada?
+
+Sem ferramenta dedicada, ninguém olha. Quando descobrem, geralmente é **depois do vazamento**.
+
+## O que o Aikido cobre (em 1 painel)
+
+Antes do Aikido, você precisaria de 6-7 ferramentas diferentes (Snyk, SonarQube, Wiz, etc). Aikido consolida tudo:
+
+### Código
+- **SAST** — analisa código fonte por padrão inseguro
+- **SCA** — checa bibliotecas/dependências com falha conhecida
+- **Secrets detection** — encontra chave/senha vazada em commit
+- **Malware detection** — sinaliza biblioteca maliciosa
+
+### Infraestrutura
+- **IaC scanning** — checa configuração de cloud (AWS, GCP, Azure)
+- **Container scanning** — escaneia imagens Docker
+- **CSPM** — auditoria de postura de cloud
+- **VM scanning** — máquinas virtuais
+
+### Aplicação
+- **DAST** — testa app rodando como invasor faria
+- **AI pentesting** — agentes autônomos tentam invadir o app
+- **Continuous pentesting** — roda 24/7
+
+### Runtime
+- **Zen** — firewall que bloqueia ataques em tempo real (injection, bots)
+- **Extensão de browser** — protege devs contra plugin malicioso
+
+## A diferença prática: AutoTriage
+
+A maior frustração com ferramentas de segurança é **ruído**. Você recebe 500 alertas, 480 são falso positivo, ninguém olha.
+
+Aikido tem **AutoTriage**: IA que entende contexto e elimina o ruído antes de você ver. Resultado: **só alertas que importam de verdade**.
+
+## Como começar (10 minutos)
+
+### Passo a passo
+
+1. Acesse [aikido.dev](https://www.aikido.dev) → **Start free**
+2. Conecte com **GitHub / GitLab / Bitbucket** (escolha onde seu código vive)
+3. Autorize escopo de leitura no repositório
+4. Aikido escaneia automaticamente (3-5 minutos)
+5. Painel aparece com **lista de issues** ordenada por severidade
+
+### Conectando o app Lovable
+
+1. Em **Settings → Cloud Integrations** → adicione **Supabase** (Lovable usa Supabase por baixo)
+2. Em **Settings → CI/CD** → adicione **Vercel** (onde Lovable publica)
+3. Cobertura completa: código + banco + hospedagem
+
+## O plano grátis cobre o quê
+
+Honestamente, bastante coisa:
+
+- Até 10 repositórios
+- Scan de código (SAST, SCA, secrets)
+- Cloud scanning (1 conta)
+- Container scanning ilimitado
+- Alertas por email e Slack
+
+Para empresário começando: **plano grátis é suficiente**.
+
+Quando você cresce (10+ repos, equipe, compliance) → Pro a partir de US$ 350/mês.
+
+## Severidades e o que fazer com cada uma
+
+| Severidade | O que significa | Ação |
+|---|---|---|
+| **Critical** | Pode ser explorado agora. Vaza dado, dá acesso root | Pare tudo e corrija hoje |
+| **High** | Risco real mas com janela de tempo | Corrigir esta semana |
+| **Medium** | Vulnerabilidade conhecida, baixa probabilidade | Sprint do mês |
+| **Low** | Higiene/best practice | Backlog |
+
+A maioria das ferramentas grita "CRITICAL" pra tudo. Aikido calibra de verdade.
+
+## Pegadinhas
+
+- **Rotate as chaves expostas**: se o Aikido encontrar uma chave de API em commit antigo, **trocar a chave** é mais importante que apagar o commit (que continua na história do Git).
+- **Não ignore por hábito**: facilmente vira fila de alertas que ninguém abre. Crie regra: toda **Critical** vira card no Linear/Jira automaticamente.
+- **DAST pode causar load**: ao escanear app em produção, o teste pode acionar alertas falsos no seu monitoring. Configure horário de baixa demanda.
+- **Compliance não é só Aikido**: se sua empresa lida com pagamento (PCI), saúde (HIPAA) ou dados europeus (GDPR), Aikido ajuda mas não substitui auditoria humana.
+
+## Por que isso é a "última camada" da imersão
+
+Você gastou energia construindo:
+
+- Análises no Claude
+- Dashboards no Lovable
+- Conectores com seus sistemas
+
+Sem segurança, **tudo isso vira passivo**. Um vazamento custa mais que tudo o que você economizou.
+
+Aikido é o que torna IA pra empresa **adulto** — algo que você confia em pôr no caminho crítico.
+
+## Próximo passo
+
+Você terminou a trilha de fundação. Próximas leituras recomendadas:
+
+- [Análise de dados com IA](/modulos/m05) — aplicação prática completa
+- [Engenharia de prompt avançada](/modulos/m02) — técnicas que dobram qualidade
+- [Construção de Skills customizadas](/modulos/m03) — automatizar repetitivo na sua empresa

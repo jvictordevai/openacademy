@@ -1,0 +1,236 @@
+---
+title: Construindo Dashboard Real no Lovable (passo a passo)
+module: m06
+order: 2
+description: Do prompt no Claude ao dashboard executivo conectado ao Google Sheets. 25 minutos do zero ao ar.
+minutes: 14
+difficulty: intermediario
+tags: [lovable, dashboard, hands-on]
+sources:
+  - label: Lovable — documentação principal
+    url: https://docs.lovable.dev
+  - label: Lovable — integração com Google Sheets
+    url: https://docs.lovable.dev/integrations
+  - label: Anthropic — Skills Excel (oficial)
+    url: https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview
+---
+
+## TL;DR
+
+Vamos construir do zero um **dashboard executivo conectado ao Google Sheets** que atualiza em tempo real. Sem código. 25 minutos do zero ao ar.
+
+## Pré-requisitos
+
+- Conta no [claude.ai](https://claude.ai) (Pro recomendado)
+- Conta no [lovable.dev](https://lovable.dev) (Free funciona)
+- Conta Google com pelo menos uma planilha (qualquer dado serve)
+- Navegador moderno
+
+## Etapa 1 · Análise prévia no Claude (5 min)
+
+A peça crítica: **o Claude vai escrever o prompt do Lovable pra você**.
+
+### Cole isso no Claude:
+
+```text
+Você é product designer sênior + analista de dados.
+
+<contexto>
+Vou anexar uma planilha (Google Sheets / Excel).
+Preciso de um dashboard executivo conectado a essa planilha
+que atualize em tempo real.
+
+Plataforma de construção: Lovable.dev
+Audiência: CEO + CFO da empresa
+Estilo visual: dark mode, glass morphism, paleta azul + violeta
+</contexto>
+
+<dados>
+[Anexar sua planilha]
+</dados>
+
+<tarefa>
+1. Analise a planilha. Identifique:
+   - Métricas mais importantes (top 4 KPIs)
+   - Dimensões para filtrar (período, segmento, etc)
+   - Granularidade temporal (diária / mensal)
+   - Outliers ou dados sujos que vão prejudicar visualização
+
+2. Desenhe a estrutura ideal do dashboard:
+   - 4 cards de KPI no topo (com tendência semanal)
+   - 1 gráfico principal de evolução temporal
+   - 1 tabela com top N itens
+   - Filtros laterais
+
+3. Escreva o prompt completo para o Lovable construir esse dashboard.
+   Inclua:
+   - Tecnologia desejada (React + Tailwind)
+   - Estrutura visual exata
+   - Comportamento de filtros
+   - Paleta e tipografia
+   - Como conectar ao Google Sheets via integração nativa do Lovable
+</tarefa>
+
+<formato>
+- Análise da planilha (resumo)
+- Estrutura proposta (lista de componentes)
+- PROMPT FINAL para colar no Lovable (em bloco de código)
+</formato>
+```
+
+### O que vai sair
+
+O Claude vai entregar algo como:
+
+````text
+PROMPT PARA O LOVABLE:
+
+Construa um dashboard executivo em React + Tailwind CSS com a seguinte estrutura:
+
+LAYOUT:
+- Topo: 4 cards de KPI (Receita do mês, Novos clientes, Churn %, Ticket médio)
+  Cada card mostra: valor atual + variação % vs mês anterior + sparkline de 7 pontos
+- Centro: gráfico de área da receita por mês (últimos 12 meses)
+- Inferior: tabela com top 20 clientes ordenados por receita, com colunas:
+  Cliente | Plano | Receita acumulada | Última atividade | Status (badge)
+
+INTEGRAÇÃO:
+Conecte ao Google Sheets via integração nativa do Lovable.
+Planilha: "Métricas Comerciais 2026" (compartilhe com leitura).
+A primeira aba "Resumo" alimenta os 4 KPIs.
+A aba "Histórico" alimenta o gráfico.
+A aba "Clientes" alimenta a tabela.
+
+ESTILO:
+- Background: oklch(10% 0.02 260)
+- Cards: glassmorphism (backdrop-blur 20px, border branco 8%)
+- Acento primário: oklch(72% 0.18 250) (azul elétrico)
+- Tipografia: Inter Tight (display), Inter (body)
+- Bordas arredondadas: 24px para cards, 12px para tabela
+
+INTERAÇÃO:
+- Filtro de período no topo (últimos 7d / 30d / 90d / YTD)
+- Click no cliente abre drawer lateral com detalhes
+- Atualização automática a cada 5 minutos
+
+RESPONSIVO:
+Mobile-first. Cards empilham em coluna em telas < 768px.
+
+DEPLOY:
+Habilite SSL e exporte URL pública para compartilhar com C-level.
+````
+
+Esse prompt é **a peça mais valiosa** dessa lição. Salve.
+
+## Etapa 2 · Criar projeto no Lovable (3 min)
+
+1. Acesse [lovable.dev](https://lovable.dev) e faça login
+2. Clique em **+ New Project**
+3. Cole o prompt completo (acima) na caixa
+4. Clique em **Create**
+
+O Lovable vai:
+1. Mostrar plano de execução
+2. Pedir confirmação
+3. Construir em ~2-3 minutos
+
+Você verá a preview do dashboard na lateral direita. **Funciona mas ainda não tem seus dados.**
+
+## Etapa 3 · Conectar Google Sheets (4 min)
+
+### No painel do Lovable
+
+1. Sidebar esquerda: **Integrations**
+2. Procure **Google Sheets** → clique em **Connect**
+3. Você é redirecionado para login Google → autorize
+4. Volte para o Lovable
+
+### No chat do agente Lovable
+
+Cole:
+
+```text
+Conecte o dashboard que você construiu à minha planilha
+"Métricas Comerciais 2026" (já autorizado via Google Sheets).
+
+Use:
+- Aba "Resumo" → cards de KPI (linhas 2-5, colunas A-D)
+- Aba "Histórico" → gráfico (todas as linhas, coluna A = mês, coluna B = receita)
+- Aba "Clientes" → tabela (todas as linhas, colunas A-E)
+
+Configure refresh automático a cada 5 minutos.
+Se algum dado falhar, mostre estado de erro elegante.
+```
+
+O Lovable vai fazer as conexões e em ~1 minuto seu dashboard exibe **seus dados reais**.
+
+## Etapa 4 · Ajustar visual conversando (5 min)
+
+Tudo daqui é conversa. Exemplos:
+
+```text
+- O card de churn está em vermelho quando > 5%? Deixa em amarelo entre 3-5% e vermelho > 5%.
+
+- A tabela está cortando o nome do cliente. Adiciona tooltip no hover mostrando nome completo.
+
+- Adiciona um filtro de segmento (lendo coluna F da aba "Clientes") no topo do dashboard.
+
+- A fonte do título está pequena. Aumenta para text-4xl no desktop e text-2xl no mobile.
+```
+
+Cada mudança leva 30-60 segundos. Você vê resultado em tempo real.
+
+## Etapa 5 · Publicar (3 min)
+
+1. Topo direito: botão **Publish**
+2. Escolha:
+   - **Lovable subdomain** (grátis): `seu-projeto.lovable.app`
+   - **Custom domain** (Pro): conecte `dashboard.suaempresa.com.br`
+3. Clique **Publish**
+4. Em ~1 minuto sua URL pública está no ar
+
+**Compartilhe com CEO e CFO.** Dashboard atualiza sozinho conforme planilha muda.
+
+## Etapa 6 · Habilitar segurança (5 min)
+
+Antes de subir dado real de produção, **habilite Aikido** dentro do Lovable:
+
+1. Sidebar esquerda: **Integrations → Security**
+2. Procure **Aikido** → conecte (use plano free pra começar)
+3. Autorize o Aikido a escanear seu projeto
+4. Em ~3 minutos você vê o painel de segurança com qualquer problema detectado
+
+Não pule essa etapa quando o dashboard for ler dado sensível.
+
+## Custo real
+
+Para esse caso:
+
+- **Claude.ai Pro**: US$ 20/mês (para análise inicial + ajustes)
+- **Lovable Free**: R$ 0 (até 5 projetos, 30 mensagens/dia)
+- **Aikido Free**: R$ 0 (até 10 repositórios)
+
+**Total: ~R$ 100/mês** se você for ativo. Sai mais barato que 1 hora de consultoria.
+
+## Erros comuns
+
+### Planilha desorganizada
+Lovable não consegue ler planilha onde dados começam na linha 47, têm células mescladas, e formatação maluca. **Antes de conectar, limpe a planilha**.
+
+### Não testar com dados reais
+A preview do Lovable usa dados de exemplo. Quando conectar Sheets, valores reais podem quebrar layout (números muito grandes, nomes longos).
+
+### Compartilhar URL pública com dado privado
+Por padrão, projeto Lovable publicado é público. Para dado privado:
+- Ative login (use integração Supabase Auth)
+- Configure Row Level Security
+- Restrinja por email/domínio
+
+### Não versionar
+Ative GitHub sync logo no início. Lovable salva versões automaticamente, mas ter no GitHub te permite reverter, fazer fork, e levar para fora se precisar.
+
+## Próximo passo
+
+Dashboard funcionando. Próximo passo natural: **evoluir esse dashboard para CRM completo** (em construção).
+
+Ou veja como o [Aikido protege](/licoes/m07-aikido) tudo que você acabou de construir.

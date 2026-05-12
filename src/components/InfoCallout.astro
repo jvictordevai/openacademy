@@ -1,0 +1,30 @@
+---
+type Variant = 'info' | 'warning' | 'success' | 'tip';
+
+interface Props {
+  variant?: Variant;
+  title?: string;
+}
+
+const { variant = 'info', title } = Astro.props;
+
+const config: Record<Variant, { border: string; bg: string; iconColor: string; defaultTitle: string; glyph: string }> = {
+  info: { border: 'border-accent-blue/30', bg: 'bg-accent-blue/[0.06]', iconColor: 'text-accent-blue', defaultTitle: 'Nota', glyph: 'ⓘ' },
+  warning: { border: 'border-accent-ember/30', bg: 'bg-accent-ember/[0.06]', iconColor: 'text-accent-ember', defaultTitle: 'Cuidado', glyph: '⚠' },
+  success: { border: 'border-accent-mint/30', bg: 'bg-accent-mint/[0.06]', iconColor: 'text-accent-mint', defaultTitle: 'Quick win', glyph: '✓' },
+  tip: { border: 'border-accent-violet/30', bg: 'bg-accent-violet/[0.06]', iconColor: 'text-accent-violet', defaultTitle: 'Dica de pro', glyph: '◇' },
+};
+
+const cfg = config[variant];
+const headerText = title ?? cfg.defaultTitle;
+---
+
+<div class:list={['my-6 rounded-2xl border p-5 not-prose', cfg.border, cfg.bg]}>
+  <div class:list={['flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider mb-2', cfg.iconColor]}>
+    <span class="text-lg leading-none">{cfg.glyph}</span>
+    <span>{headerText}</span>
+  </div>
+  <div class="text-ink-200 text-[15px] leading-relaxed [&_p]:m-0 [&_strong]:text-ink-100">
+    <slot />
+  </div>
+</div>

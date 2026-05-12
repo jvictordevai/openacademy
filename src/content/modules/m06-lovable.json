@@ -1,0 +1,9 @@
+{
+  "id": "m06",
+  "order": 6,
+  "title": "Lovable — Texto vira Interface",
+  "description": "Construir dashboard, CRM e apps internos descrevendo em português. Sem código.",
+  "icon": "blocks",
+  "track": ["lovable"],
+  "color": "oklch(70% 0.22 295)"
+}

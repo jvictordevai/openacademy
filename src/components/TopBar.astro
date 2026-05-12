@@ -1,0 +1,52 @@
+---
+const currentPath = Astro.url.pathname;
+const links = [
+  { href: '/', label: 'Início' },
+  { href: '/modulos', label: 'Módulos' },
+  { href: '/prompts', label: 'Prompts' },
+  { href: '/sobre', label: 'Sobre' },
+];
+---
+
+<header class="fixed top-0 inset-x-0 z-50 px-6 py-4">
+  <nav class="max-w-7xl mx-auto flex items-center justify-between glass rounded-full px-5 py-2">
+    <a href="/" class="flex items-center gap-3 group">
+      <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-accent-blue to-accent-violet grid place-items-center font-display font-bold text-ink-100 text-sm">
+        O
+      </div>
+      <div class="leading-tight">
+        <div class="font-display font-semibold text-ink-100 text-sm tracking-tight">openacademy</div>
+        <div class="font-mono text-[9px] uppercase tracking-[0.2em] text-ink-400">imersão · ia</div>
+      </div>
+    </a>
+
+    <div class="hidden md:flex items-center gap-1">
+      {
+        links.map((link) => {
+          const active = currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href));
+          return (
+            <a
+              href={link.href}
+              class:list={[
+                'px-4 py-1.5 rounded-full text-sm font-medium transition',
+                active ? 'bg-white/10 text-ink-100' : 'text-ink-300 hover:text-ink-100 hover:bg-white/5',
+              ]}
+            >
+              {link.label}
+            </a>
+          );
+        })
+      }
+    </div>
+
+    <a
+      href="https://github.com/jvictordevai/openacademy"
+      target="_blank"
+      rel="noreferrer"
+      class="flex items-center gap-2 glass rounded-full px-3 py-1 text-[11px] font-mono uppercase tracking-wider text-ink-300 hover:text-ink-100 transition"
+    >
+      <span class="w-1.5 h-1.5 rounded-full bg-accent-mint animate-pulse"></span>
+      Open
+    </a>
+  </nav>
+</header>

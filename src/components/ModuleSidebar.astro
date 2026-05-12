@@ -1,0 +1,92 @@
+---
+import { getCollection } from 'astro:content';
+
+interface Props {
+  currentLessonSlug?: string;
+  currentModule?: string;
+}
+
+const { currentLessonSlug, currentModule } = Astro.props;
+
+const allModules = (await getCollection('modules')).sort((a, b) => a.data.order - b.data.order);
+const allLessons = (await getCollection('lessons')).sort((a, b) => a.data.order - b.data.order);
+
+const lessonsByModule = allModules.map((mod) => ({
+  module: mod.data,
+  lessons: allLessons
+    .filter((l) => l.data.module === mod.data.id)
+    .sort((a, b) => a.data.order - b.data.order),
+}));
+---
+
+<aside class="hidden lg:block sticky top-28 self-start w-60 shrink-0" aria-label="Trilha do curso">
+  <div class="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-400 mb-3 px-1">
+    Trilha
+  </div>
+
+  <nav
+    class="space-y-1 max-h-[calc(100vh-9rem)] overflow-y-auto no-scrollbar pr-1"
+    aria-label="Lista de módulos e lições"
+  >
+    {
+      lessonsByModule.map(({ module, lessons }) => {
+        const isCurrent = currentModule === module.id;
+        return (
+          <details
+            open={isCurrent || !currentModule}
+            class="group rounded-lg [&[open]>summary_.chevron]:rotate-90"
+          >
+            <summary class="flex items-center gap-2 px-2 py-2 rounded-lg cursor-pointer hover:bg-white/[0.03] transition list-none [&::-webkit-details-marker]:hidden">
+              <span
+                class="w-1.5 h-1.5 rounded-full shrink-0"
+                style={`background:${module.color};opacity:${isCurrent ? 1 : 0.4}`}
+              />
+              <span
+                class:list={[
+                  'font-display text-[13px] font-medium leading-tight transition flex-1 min-w-0 truncate',
+                  isCurrent ? 'text-ink-100' : 'text-ink-300',
+                ]}
+              >
+                {module.title}
+              </span>
+              {lessons.length > 0 && (
+                <span class="chevron text-ink-600 transition-transform text-[10px] font-mono shrink-0">
+                  ›
+                </span>
+              )}
+            </summary>
+            {lessons.length > 0 && (
+              <ul class="mt-1 ml-3 border-l border-white/10 pl-3 space-y-px">
+                {lessons.map((lesson) => {
+                  const isActive = currentLessonSlug === lesson.slug;
+                  return (
+                    <li class="relative">
+                      {isActive && (
+                        <span
+                          class="absolute -left-[14px] top-0 bottom-0 w-[2px] bg-accent-blue rounded-r"
+                          aria-hidden="true"
+                        />
+                      )}
+                      <a
+                        href={`/licoes/${lesson.slug}`}
+                        aria-current={isActive ? 'page' : undefined}
+                        class:list={[
+                          'block py-2 px-2 text-sm leading-snug transition rounded-md',
+                          isActive
+                            ? 'text-accent-blue font-medium bg-accent-blue/5'
+                            : 'text-ink-300 hover:text-ink-100 hover:bg-white/[0.03]',
+                        ]}
+                      >
+                        {lesson.data.title}
+                      </a>
+                    </li>
+                  );
+                })}
+              </ul>
+            )}
+          </details>
+        );
+      })
+    }
+  </nav>
+</aside>

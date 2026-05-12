@@ -1,0 +1,9 @@
+{
+  "id": "m07",
+  "order": 7,
+  "title": "Aikido — Segurança",
+  "description": "Como blindar tudo o que você construiu. Sem virar passivo da empresa.",
+  "icon": "shield",
+  "track": ["seguranca"],
+  "color": "oklch(82% 0.14 165)"
+}

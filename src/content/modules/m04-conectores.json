@@ -1,0 +1,9 @@
+{
+  "id": "m04",
+  "order": 4,
+  "title": "Conectores & MCP",
+  "description": "Pontes oficiais entre o Claude e os sistemas que sua empresa já usa.",
+  "icon": "plug",
+  "track": ["claude"],
+  "color": "oklch(78% 0.16 35)"
+}

@@ -1,0 +1,47 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="relative z-10 mt-32 border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-6 py-12 grid md:grid-cols-4 gap-10">
+    <div class="md:col-span-2">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-accent-blue to-accent-violet grid place-items-center font-display font-bold text-ink-100">
+          O
+        </div>
+        <div>
+          <div class="font-display font-semibold text-ink-100 text-lg">openacademy</div>
+          <div class="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-400">conhecimento aberto · imersão ia</div>
+        </div>
+      </div>
+      <p class="mt-4 text-ink-400 text-sm max-w-md leading-relaxed">
+        Manual operacional de IA para empresários. Aberto, gratuito, em português. Construído com fontes oficiais da Anthropic, Lovable e Aikido.
+      </p>
+    </div>
+
+    <div>
+      <div class="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-400 mb-3">Conteúdo</div>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/modulos" class="text-ink-300 hover:text-ink-100">Todos os módulos</a></li>
+        <li><a href="/prompts" class="text-ink-300 hover:text-ink-100">Biblioteca de prompts</a></li>
+        <li><a href="/glossario" class="text-ink-300 hover:text-ink-100">Glossário</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-400 mb-3">Fontes oficiais</div>
+      <ul class="space-y-2 text-sm">
+        <li><a href="https://docs.claude.com" target="_blank" rel="noreferrer" class="text-ink-300 hover:text-ink-100">docs.claude.com</a></li>
+        <li><a href="https://docs.lovable.dev" target="_blank" rel="noreferrer" class="text-ink-300 hover:text-ink-100">docs.lovable.dev</a></li>
+        <li><a href="https://www.aikido.dev" target="_blank" rel="noreferrer" class="text-ink-300 hover:text-ink-100">aikido.dev</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between text-xs text-ink-400 font-mono">
+      <div>© {year} openacademy · open source</div>
+      <div>made for problem-solvers</div>
+    </div>
+  </div>
+</footer>

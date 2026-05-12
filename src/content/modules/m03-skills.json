@@ -1,0 +1,9 @@
+{
+  "id": "m03",
+  "order": 3,
+  "title": "Skills do Claude",
+  "description": "Capacidades especializadas que o Claude carrega sozinho. Como funciona e como criar a sua.",
+  "icon": "package",
+  "track": ["claude"],
+  "color": "oklch(70% 0.22 295)"
+}

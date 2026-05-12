@@ -1,0 +1,88 @@
+---
+title: O que é o Claude (e por que ele é diferente)
+module: m01
+order: 1
+description: O modelo de IA que vamos usar como cérebro da operação. Família, capacidades, limites.
+minutes: 6
+difficulty: iniciante
+tags: [claude, modelos, fundamentos]
+sources:
+  - label: Claude — visão geral oficial
+    url: https://claude.com/product/overview
+  - label: Documentação Anthropic
+    url: https://docs.claude.com
+  - label: Comparativo de modelos
+    url: https://docs.claude.com/en/docs/about-claude/models
+---
+
+## TL;DR
+
+Claude é uma IA da Anthropic que conversa, lê arquivos, raciocina sobre eles e executa ferramentas. Não é chatbot. É **colega de trabalho que entende contexto longo**.
+
+## Por que Claude, e não outra IA
+
+Três coisas tornam o Claude prático para empresa:
+
+1. **Contexto de 1 milhão de tokens.** Significa que ele lê sua planilha de 200 mil linhas, todo seu DRE, e ainda lembra do começo da conversa quando estiver no fim.
+2. **Raciocínio profundo (Adaptive Thinking).** Antes de responder, ele pensa em etapas. Para problema importante, ele justifica.
+3. **Ações reais.** Não fica só conversando. Executa código, lê arquivos do Drive, manda email, monta planilha — quando você manda.
+
+## Os três modelos da família
+
+| Modelo | Quando usar | Custo relativo |
+|---|---|---|
+| **Opus 4.7** | Tarefas complexas, decisões importantes, análise crítica | Mais caro |
+| **Sonnet 4.6** | Trabalho diário, equilíbrio entre qualidade e custo | Médio |
+| **Haiku 4.5** | Tarefas repetitivas, alto volume, respostas rápidas | Mais barato |
+
+> Para empresário começando: **use o Sonnet 4.6**. É o padrão do Claude.ai e cobre 90% das necessidades.
+
+## Onde você usa o Claude (surfaces)
+
+A mesma IA aparece em vários lugares. Cada um serve para um momento:
+
+- **[claude.ai](https://claude.ai)** — Web. É onde você começa. Carrega planilha, conversa, recebe relatório.
+- **Claude Desktop** ([macOS](https://claude.ai/download) e Windows) — App próprio com integração de arquivos locais (Cowork).
+- **Claude no Chrome** — Extensão. Pergunta ao Claude sobre qualquer página aberta.
+- **Claude no Slack / Microsoft 365** — Bot que vive na conversa do time.
+- **Claude Mobile** — iOS e Android. Útil pra revisar email no caminho.
+- **[Claude Code](https://code.claude.com)** — Para programadores. Edita código, automatiza repositórios.
+- **API** ([platform.claude.com](https://platform.claude.com)) — Para integrar Claude no seu próprio sistema.
+
+## O que ele consegue fazer (e o que ainda não consegue)
+
+### Consegue
+
+- Ler planilha (Excel, Google Sheets, CSV) e analisar como analista sênior.
+- Ler PDF, contrato, email, política interna.
+- Gerar texto, copy, email, relatório, deck.
+- Executar código Python na hora pra rodar análise estatística.
+- Conectar com Drive, Gmail, HubSpot, Notion, Calendar (via conectores).
+- Pesquisar na web (com Web Search ativado).
+- Lembrar do que vocês conversaram em sessões anteriores (em Projects).
+
+### Ainda não consegue (bem)
+
+- Operar agentes de voz em ligação real.
+- Tomar decisões sem você confirmar (em ações irreversíveis).
+- Ler imagens manuscritas ruins sem perda de informação.
+- Substituir julgamento humano em ambiguidade alta.
+
+## Passo a passo — criando sua primeira conta
+
+1. Acesse [claude.ai](https://claude.ai)
+2. Clique em **Sign up** (ou Entrar com Google)
+3. Confirme seu email
+4. **Recomendado**: assine o plano **Claude Pro** (US$20/mês) para liberar 1M de contexto, conectores, Skills e uso intensivo. O free plan limita uso por hora.
+5. Em **Settings → Profile**, escreva 2-3 frases sobre você e seu negócio. O Claude usa isso para personalizar respostas.
+
+## Pegadinhas comuns
+
+- **Não despeje toda a vida do seu negócio em um único prompt.** Use **Projects** (Claude.ai > Projects) para separar contextos: "Comercial", "Financeiro", "Estratégia".
+- **Confidencial?** O Claude Pro não treina IA com seus dados. Mas para informações altamente sensíveis, considere **Claude Enterprise** ou ZDR (Zero Data Retention).
+- **Não confie em número que ele inventa.** Quando o Claude tiver código de Análise ativado, peça pra ele **executar** o cálculo. Sem isso, números podem ser estimativa.
+- **Idioma:** ele fala português perfeito. Mas alguns prompts complexos funcionam melhor em inglês porque a base de treino é maior. Teste os dois quando o resultado vier fraco.
+
+## Próximo passo
+
+Agora que você sabe o que é o Claude, [aprenda a falar com ele de jeito que extrai o máximo](/licoes/m02-fundamentos-prompt) — engenharia de prompt para empresário.

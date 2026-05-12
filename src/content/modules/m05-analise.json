@@ -1,0 +1,9 @@
+{
+  "id": "m05",
+  "order": 5,
+  "title": "Análise de Dados com IA",
+  "description": "Da planilha solta ao diagnóstico executivo. KPIs, padrões, riscos.",
+  "icon": "chart",
+  "track": ["casos"],
+  "color": "oklch(82% 0.14 165)"
+}

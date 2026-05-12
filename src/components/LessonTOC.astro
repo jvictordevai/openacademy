@@ -1,0 +1,72 @@
+---
+interface Heading {
+  depth: number;
+  slug: string;
+  text: string;
+}
+
+interface Props {
+  headings: Heading[];
+}
+
+const { headings } = Astro.props;
+const filtered = headings.filter((h) => h.depth >= 2 && h.depth <= 3);
+const enoughForTOC = filtered.length >= 3;
+---
+
+{
+  enoughForTOC && (
+    <aside
+      class="hidden 2xl:block sticky top-28 self-start w-56 shrink-0"
+      aria-label="Sumário da lição"
+    >
+      <div class="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-400 mb-3 pl-3">
+        Nesta lição
+      </div>
+      <nav
+        class="space-y-1 max-h-[calc(100vh-9rem)] overflow-y-auto no-scrollbar pr-1"
+        aria-label="Atalhos para seções da lição"
+      >
+        {filtered.map((h) => (
+          <a
+            href={`#${h.slug}`}
+            class:list={[
+              'block transition leading-snug rounded-md',
+              h.depth === 3
+                ? 'pl-6 py-1 text-[12px] text-ink-400 hover:text-ink-200'
+                : 'pl-3 py-1.5 text-[13px] text-ink-300 hover:text-ink-100 border-l border-white/10 hover:border-accent-blue/60',
+            ]}
+          >
+            {h.text}
+          </a>
+        ))}
+      </nav>
+    </aside>
+  )
+}
+
+<script>
+  // Scroll-spy: highlight current heading in TOC
+  const links = document.querySelectorAll<HTMLAnchorElement>('aside[aria-label="Sumário da lição"] a');
+  if (links.length) {
+    const headings = Array.from(links).map((a) => {
+      const id = a.getAttribute('href')?.replace('#', '') ?? '';
+      return { link: a, el: document.getElementById(id) };
+    });
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const match = headings.find((h) => h.el === entry.target);
+          if (match && entry.isIntersecting) {
+            links.forEach((l) => l.classList.remove('text-accent-blue', 'font-medium'));
+            match.link.classList.add('text-accent-blue', 'font-medium');
+          }
+        });
+      },
+      { rootMargin: '-30% 0px -60% 0px' },
+    );
+
+    headings.forEach((h) => h.el && observer.observe(h.el));
+  }
+</script>
