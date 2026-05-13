@@ -399,8 +399,8 @@ antes de concluir.</code></pre>
         <pre class="!my-0 !rounded-none !border-0 !bg-transparent overflow-x-auto"><code id="prompt-lovable" class="!text-[13px] leading-relaxed text-ink-200 whitespace-pre">Análise aprovada. Agora gere prompt PRONTO para colar no Lovable construir o app.
 
 ARQUITETURA NECESSÁRIA:
-- Stack: Lovable + Lovable Cloud (banco interno do Lovable, sem Supabase
-  ou serviço externo)
+- Stack: Lovable + Lovable Cloud (banco interno do Lovable, auth interno,
+  sem Supabase ou serviço externo)
 - App com sidebar e 2 seções principais: "Vendas" e "Financeiro"
 - Layout consistente entre seções: KPI cards no topo + gráficos no meio +
   tabela analítica embaixo
@@ -408,15 +408,30 @@ ARQUITETURA NECESSÁRIA:
 - Visual: dark mode, paleta OKLCH azul + violeta + mint, tipografia Inter Tight
   (display) + Inter (body)
 - Mobile responsivo: sidebar vira drawer, cards empilham
-- Auth: login Google
+- Auth: login Google (nativo Lovable Cloud)
 - Loading state, empty state, alerta vermelho em KPIs piorando
 
-DADOS:
-- Conecta o Lovable às MINHAS planilhas via Google Sheets integration
-- Uma planilha alimenta a seção Vendas
-- Outra alimenta a seção Financeiro
-- Pergunta ao usuário os spreadsheet IDs e mapeia as colunas conforme a tabela
-  mestra de KPIs que você produziu na análise
+DADOS — IMPORTANTE:
+- O Lovable já tem CONECTORES NATIVOS de Google Drive e Google Sheets.
+  Use-os. NÃO peça Spreadsheet ID manual. NÃO peça Service Account JSON.
+- Após login Google, o app pede UMA autorização OAuth para acessar Drive
+  e Sheets do usuário. Daí em diante, lê as planilhas direto pelo conector.
+- Onboarding: detecta automaticamente as planilhas do Drive pelo nome
+  ("vendas" / "financeiro") OU mostra Google Picker pro usuário clicar
+  no arquivo. Zero campo de ID exposto.
+- Uma planilha alimenta a seção Vendas, outra a seção Financeiro.
+- Mapeia colunas conforme a tabela mestra de KPIs que produzi na análise.
+
+SINCRONIZAÇÃO — REALTIME OBRIGATÓRIO:
+- NÃO use cron de 6h. Use Watch Channel da Google Sheets API
+  (push notifications) para receber notificação imediata de mudança
+  na planilha.
+- Edge Function recebe o webhook, atualiza cache no Lovable Cloud,
+  e o frontend assina realtime (postgres_changes) — re-renderiza
+  automaticamente sem refresh manual.
+- Latência alvo: menor que 30 segundos entre alteração na planilha
+  e atualização no dashboard.
+- Botão "Sincronizar agora" continua existindo como fallback manual.
 
 KPIS POR SEÇÃO:
 Use a tabela mestra que você acabou de gerar. Mapeie cada KPI para card,
@@ -447,16 +462,17 @@ depois. Em português.</code></pre>
       </div>
 
       <p class="text-[17px] text-ink-300 leading-relaxed">
-        Aqui o app sai do mock pra dado real. Lovable Cloud guarda o estado, planilhas
-        do Google Sheets alimentam os números.
+        Aqui o app sai do mock pra dado real. <strong>Não precisa colar Spreadsheet ID</strong> —
+        o Lovable usa o conector nativo de Google Drive/Sheets via OAuth.
       </p>
 
       <div class="mt-6 rounded-2xl border border-white/10 bg-white/[0.02] p-6">
         <ol class="space-y-3 pl-0 list-none">
           <li class="flex gap-3 text-[15px] text-ink-200"><span class="font-mono text-accent-blue font-bold">1.</span> <a href="https://lovable.dev" target="_blank" rel="noreferrer" class="text-accent-blue underline">lovable.dev</a> → <strong>New Project</strong> → cole o prompt da estação 06 → <strong>Send</strong></li>
           <li class="flex gap-3 text-[15px] text-ink-200"><span class="font-mono text-accent-blue font-bold">2.</span> Lovable Cloud é provisionado automaticamente. Esqueleto monta em 2-3 min.</li>
-          <li class="flex gap-3 text-[15px] text-ink-200"><span class="font-mono text-accent-blue font-bold">3.</span> <strong>Settings → Integrations → Google Sheets → Connect</strong></li>
-          <li class="flex gap-3 text-[15px] text-ink-200"><span class="font-mono text-accent-blue font-bold">4.</span> Volta no chat do Lovable e cola o prompt abaixo:</li>
+          <li class="flex gap-3 text-[15px] text-ink-200"><span class="font-mono text-accent-blue font-bold">3.</span> Quando o app abrir o login, faça <strong>login com Google</strong> + autorize acesso a Drive e Sheets na primeira tela (o OAuth do Lovable Cloud pede uma vez só).</li>
+          <li class="flex gap-3 text-[15px] text-ink-200"><span class="font-mono text-accent-blue font-bold">4.</span> No onboarding interno do app, ele <strong>detecta automaticamente</strong> as planilhas do seu Drive — confirme qual é Vendas e qual é Financeiro.</li>
+          <li class="flex gap-3 text-[15px] text-ink-200"><span class="font-mono text-accent-blue font-bold">5.</span> Se algo deu errado e ele pedir ID manual, cole o prompt de ajuste abaixo no chat do Lovable:</li>
         </ol>
       </div>
 
@@ -464,7 +480,7 @@ depois. Em português.</code></pre>
         <div class="px-4 py-2.5 border-b border-accent-blue/10 bg-accent-blue/[0.06] flex items-center justify-between">
           <div class="flex items-center gap-2">
             <span class="w-1.5 h-1.5 rounded-full bg-accent-blue animate-pulse"></span>
-            <span class="font-mono text-[10px] uppercase tracking-[0.2em] text-accent-blue">Prompt · Conectar planilhas</span>
+            <span class="font-mono text-[10px] uppercase tracking-[0.2em] text-accent-blue">Prompt · Corrigir conexão (se necessário)</span>
           </div>
           <button
             type="button"
@@ -472,21 +488,41 @@ depois. Em português.</code></pre>
             data-target="prompt-conectar"
           >Copiar</button>
         </div>
-        <pre class="!my-0 !rounded-none !border-0 !bg-transparent overflow-x-auto"><code id="prompt-conectar" class="!text-[13px] leading-relaxed text-ink-200 whitespace-pre">Conecte o app às duas planilhas:
+        <pre class="!my-0 !rounded-none !border-0 !bg-transparent overflow-x-auto"><code id="prompt-conectar" class="!text-[13px] leading-relaxed text-ink-200 whitespace-pre">Refatore o app eliminando todo o onboarding manual de Spreadsheet IDs e
+Service Account.
 
-PLANILHA DE VENDAS:
-- Spreadsheet ID: [COLE O ID DO GOOGLE SHEETS]
-- Aba principal: [NOME_DA_ABA]
-- Alimenta a seção "Vendas"
+CONEXÃO — modo correto:
+- Use os conectores NATIVOS do Lovable: Google Drive + Google Sheets
+- Após login Google, app pede UMA autorização OAuth para Drive e Sheets
+- Onboarding detecta automaticamente as planilhas do Drive pelo nome
+  ("vendas" / "financeiro") OU mostra Google Picker pra clicar no arquivo
+- ZERO campos de ID manual ou Service Account JSON expostos
 
-PLANILHA FINANCEIRA:
-- Spreadsheet ID: [COLE O ID DO GOOGLE SHEETS]
-- Abas relevantes: [LISTAR NOMES]
-- Alimenta a seção "Financeiro"
+REMOVA:
+- Modal pedindo Spreadsheet ID manual
+- Campo de Service Account JSON
+- Tabela user_settings com spreadsheet_id e service_account_json
 
-Mapeie as colunas conforme a arquitetura de KPIs do prompt inicial.
-Atualização: tempo real (sincroniza a cada 5 minutos).
-Cache local no Lovable Cloud para resposta rápida.</code></pre>
+SUBSTITUA POR:
+- user_settings.vendas_sheet_ref + financeiro_sheet_ref (ref interna
+  do conector, não ID público)
+- Edge Function detect_sheets via conector Drive já autenticado
+- Edge Function pick_sheet recebendo objeto do Google Picker
+
+SINCRONIZAÇÃO — REALTIME OBRIGATÓRIO:
+- NÃO use cron de 6h. Use Watch Channel da Sheets API (push notifications)
+- Edge Function setup_watch registra o canal
+- Edge Function sheets_webhook recebe push, atualiza cache, frontend
+  re-renderiza via realtime do Lovable Cloud (postgres_changes)
+- Latência alvo: &lt; 30 segundos entre alteração na planilha e dashboard
+- Botão "Sincronizar agora" continua existindo como fallback
+
+CONFIGURAÇÕES:
+- Mostra "Drive: Conectado · Sheets: Conectado" + botão "Reautorizar"
+- Botão "Trocar planilha" reabre Google Picker (nunca ID manual)
+
+Mantenha KPIs, gráficos, filtros, design system e alertas exatamente
+como estão. Refatore só conexão e sincronização.</code></pre>
       </div>
 
       <div class="mt-5 rounded-2xl border border-accent-blue/30 bg-accent-blue/[0.05] p-5">
