@@ -2,15 +2,15 @@
 title: ERP MVP — Do Dashboard ao Sistema da Empresa
 order: 2
 module: m08
-description: Como evoluir o dashboard de demo para um ERP simples real. 5 módulos no Lovable + Supabase. Roteiro de 4 sprints.
+description: Como evoluir o dashboard de demo para um ERP simples real. 5 módulos no Lovable Cloud. Roteiro de 4 sprints.
 minutes: 14
 difficulty: avancado
-tags: [erp, lovable, supabase, arquitetura, mvp]
+tags: [erp, lovable, lovable-cloud, arquitetura, mvp]
 sources:
-  - label: Supabase — Production checklist
-    url: https://supabase.com/docs/guides/deployment/going-into-prod
   - label: Lovable — Building full-stack apps
     url: https://docs.lovable.dev
+  - label: Lovable Cloud — banco interno
+    url: https://docs.lovable.dev/features/cloud
   - label: NF-e via NFE.io (provedor BR)
     url: https://nfe.io/
 task:
@@ -48,7 +48,7 @@ Empresário típico tenta comprar ERP grande (TOTVS, Senior, Bling) e:
 | Camada | Ferramenta | Por quê |
 |---|---|---|
 | **Frontend + agente** | Lovable | Você descreve, ele constrói |
-| **Banco de dados** | Supabase (Postgres) | RLS, auth, realtime, backup PITR |
+| **Banco de dados + Auth** | Lovable Cloud | Banco interno, auth, realtime — sem configurar nada externo |
 | **Automação** | n8n | NF-e, boleto, email, integrações |
 | **Segurança** | Aikido | Scan contínuo do código + cloud |
 | **Pagamentos** | Stripe (B2B) ou Asaas/Cobre Fácil (boleto BR) | API direta |
@@ -68,7 +68,7 @@ Reaproveita o dashboard que já existe + adiciona **escrita**:
 - Comissão calculada automática por vendedor
 - Aprovações de desconto acima de X% precisa OK do gestor
 
-**Tabelas Supabase**:
+**Tabelas no Lovable Cloud**:
 ```sql
 clientes (id, razao_social, cnpj, segmento, vendedor_id, limite_credito, status)
 pedidos (id, cliente_id, vendedor_id, data, status, valor_total, custo_total)
@@ -123,7 +123,7 @@ contas_bancarias (id, banco, agencia, conta, saldo_atual)
 ### Sprint 4 (1 semana) — NF-e + Cobrança + Permissões
 
 - Emissão NF-e via NFE.io ou Plug Notas (CFOP/CST baseado no perfil do cliente)
-- XML armazenado no Supabase Storage
+- XML armazenado no Lovable Cloud Storage
 - Cobrança automática via boleto + PIX (Asaas, Cobre Fácil, Mercado Pago)
 - Permissões granulares por usuário (Admin, Gerente, Vendedor, Compras, Financeiro)
 - Audit log de quem alterou o quê
@@ -156,7 +156,7 @@ Cole isso para gerar o esqueleto inicial:
 ```text
 Construa ERP enxuto para Distribuidora Aurora (B2B materiais elétricos).
 
-Stack: Lovable (UI) + Supabase (Postgres com RLS) + n8n (automações).
+Stack: Lovable + Lovable Cloud (banco interno) + n8n (automações).
 Usuários: Admin, Gerente, Vendedor, Compras, Financeiro — RLS por role + vendedor só vê próprios clientes.
 
 Módulos para o Sprint 1:
@@ -187,7 +187,7 @@ Devolva o app rodando + URL pública + checklist do que falta para Sprint 2.
   items={[
     "<strong>Migração é a dor real.</strong> Importar Excel histórico é 40% do trabalho. Reserve 1 semana inteira só pra isso.",
     "<strong>Aprovação humana antes de automatizar 100%.</strong> Cobrança automática que negativa cliente errado vira passivo. Crie checkpoint humano nos primeiros 90 dias.",
-    "<strong>Backup ANTES do go-live.</strong> Supabase Pro + PITR. Configure backup manual diário em S3 também.",
+    "<strong>Backup ANTES do go-live.</strong> Lovable Cloud com backup ativo. Configure backup manual diário em S3 também.",
     "<strong>NF-e é regulatório.</strong> Use provedor (NFE.io, Plug Notas) — não construa do zero. Multa por NF errada é alta.",
     "<strong>Performance importa cedo.</strong> 50k pedidos em tabela não-indexada trava. Crie índices em cliente_id, vendedor_id, data desde o início.",
     "<strong>Não migre tudo de uma vez.</strong> Sprint 1 (vendas) inteiro · depois Sprint 2. Não tente abrir todos os módulos juntos.",
@@ -196,8 +196,8 @@ Devolva o app rodando + URL pública + checklist do que falta para Sprint 2.
 
 ## Checklist de produção (antes de soltar pro time)
 
-- [ ] Supabase Pro com PITR ativado
-- [ ] Backup diário externo em S3/Backblaze (não dependa só do Supabase)
+- [ ] Lovable Cloud com backup ativado
+- [ ] Backup diário externo em S3/Backblaze (não dependa só do Lovable Cloud)
 - [ ] Aikido escaneando código + cloud + container
 - [ ] Custom domain configurado com SSL
 - [ ] Aprovação humana em ações irreversíveis (cancelar pedido, negativar cliente)
@@ -213,7 +213,7 @@ Estimativa para PME com 10-30 usuários ativos:
 | Item | Mensal |
 |---|---|
 | Lovable Pro | US$ 25 |
-| Supabase Pro | US$ 25 |
+| Lovable Cloud (incluso no Pro) | US$ 0 |
 | n8n Cloud Starter | US$ 20 |
 | Aikido (free até 10 repos) | US$ 0 |
 | NFE.io ou Plug Notas (~500 NFs/mês) | ~R$ 100 |

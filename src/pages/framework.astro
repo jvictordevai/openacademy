@@ -1,0 +1,765 @@
+---
+import Base from '../layouts/Base.astro';
+import { FlowScene } from '../scenes/FlowScene';
+
+const estacoes = [
+  { n: '01', titulo: 'Organizando os Dados', tempo: 4, cumul: 4 },
+  { n: '02', titulo: 'Conectando o Drive', tempo: 8, cumul: 12 },
+  { n: '03', titulo: 'Criando Skill via Skill Creator', tempo: 8, cumul: 20 },
+  { n: '04', titulo: 'Prompt Estratégico de KPIs', tempo: 5, cumul: 25 },
+  { n: '05', titulo: 'Analisando o Resultado', tempo: 15, cumul: 40 },
+  { n: '06', titulo: 'Prompt da Arquitetura Lovable', tempo: 5, cumul: 45 },
+  { n: '07', titulo: 'Conectando Lovable às Planilhas', tempo: 10, cumul: 55 },
+  { n: '08', titulo: 'Construindo o MVP', tempo: 15, cumul: 70 },
+  { n: '09', titulo: 'Validando o MVP', tempo: 5, cumul: 75 },
+  { n: '10', titulo: 'Evoluindo para Mini ERP', tempo: 15, cumul: 90 },
+  { n: '11', titulo: 'Finalização', tempo: 5, cumul: 95 },
+];
+---
+
+<Base
+  title="Framework — Da Planilha ao ERP em 2h"
+  description="Roteiro linear de 11 estações para sair de planilha solta a ERP funcional usando Claude + Lovable Cloud. Acompanhe junto com a aula."
+>
+  <a href="#content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[70] focus:bg-accent-blue focus:text-ink-100 focus:px-4 focus:py-2 focus:rounded-lg focus:font-medium">
+    Pular para o conteúdo
+  </a>
+
+  <!-- HERO -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 z-0 opacity-40">
+      <FlowScene client:only="react" />
+    </div>
+    <div class="absolute inset-0 z-[1] grid-bg pointer-events-none"></div>
+    <div class="absolute inset-0 z-[2] [background:radial-gradient(ellipse_at_center,transparent_30%,oklch(10%_0.02_260)_100%)] pointer-events-none"></div>
+
+    <div id="content" class="relative z-10 max-w-5xl mx-auto px-6 pt-20 pb-14">
+      <div class="font-mono text-[11px] uppercase tracking-[0.3em] text-accent-blue mb-3">
+        Framework · 11 estações · 2h linear
+      </div>
+      <h1 class="font-display text-5xl md:text-7xl font-bold leading-[0.95] tracking-tight">
+        Da planilha ao <span class="gradient-text">ERP.</span>
+      </h1>
+      <p class="mt-6 text-xl text-ink-300 max-w-2xl leading-relaxed">
+        Acompanhe a aula estação por estação. Cada bloco tem o prompt pronto, o passo a
+        passo e o que você sai entregando. Faça com sua planilha real.
+      </p>
+
+      <div class="mt-8 flex flex-wrap gap-3 text-[11px] font-mono uppercase tracking-wider">
+        <span class="glass rounded-full px-3 py-1.5 text-ink-200">Claude (Pro)</span>
+        <span class="glass rounded-full px-3 py-1.5 text-ink-200">Lovable Cloud</span>
+        <span class="glass rounded-full px-3 py-1.5 text-ink-200">Skills</span>
+        <span class="glass rounded-full px-3 py-1.5 text-ink-200">Conectores</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE INDEX -->
+  <section class="relative max-w-5xl mx-auto px-6 pb-12">
+    <div class="glass rounded-3xl p-6 border border-white/5">
+      <div class="font-mono text-[10px] uppercase tracking-[0.3em] text-accent-blue mb-4">
+        Mapa das 11 estações
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
+        {
+          estacoes.map((e) => (
+            <a
+              href={`#estacao-${e.n}`}
+              class="flex items-center gap-3 px-3 py-2 rounded-xl border border-white/5 bg-white/[0.02] hover:border-white/15 hover:bg-white/[0.05] transition"
+            >
+              <span class="font-mono text-sm font-bold text-accent-blue tabular-nums w-7">
+                {e.n}
+              </span>
+              <span class="text-[13px] text-ink-200 leading-tight flex-1 min-w-0 truncate">
+                {e.titulo}
+              </span>
+              <span class="font-mono text-[10px] text-ink-400 tabular-nums">
+                {e.tempo}min
+              </span>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ESTACOES -->
+  <section class="relative max-w-4xl mx-auto px-6 pb-32">
+
+    <!-- ============= ESTACAO 01 ============= -->
+    <article id="estacao-01" class="mt-14 scroll-mt-32">
+      <div class="flex items-baseline gap-4 mb-5">
+        <span class="font-display text-6xl font-bold text-accent-blue/30 tabular-nums">01</span>
+        <div>
+          <div class="font-mono text-[10px] uppercase tracking-[0.3em] text-accent-blue mb-1">
+            Estação 01 · 4 min
+          </div>
+          <h2 class="font-display text-3xl md:text-4xl font-semibold text-ink-100 leading-tight">
+            Organizando os Dados
+          </h2>
+        </div>
+      </div>
+
+      <p class="text-[17px] text-ink-300 leading-relaxed">
+        IA boa não salva planilha ruim. Limpeza prévia evita 80% dos erros de análise.
+      </p>
+
+      <div class="mt-6 rounded-2xl border border-white/10 bg-white/[0.02] p-6">
+        <div class="font-mono text-[10px] uppercase tracking-[0.2em] text-accent-mint mb-3">
+          Checklist visual rápido
+        </div>
+        <ul class="space-y-2 pl-0 list-none text-[15px] text-ink-200">
+          <li class="flex gap-2"><span class="text-accent-mint font-mono">✓</span> Cabeçalho na linha 1, sem títulos antes</li>
+          <li class="flex gap-2"><span class="text-accent-mint font-mono">✓</span> Sem células mescladas</li>
+          <li class="flex gap-2"><span class="text-accent-mint font-mono">✓</span> Sem fórmulas que dependem de arquivos externos</li>
+          <li class="flex gap-2"><span class="text-accent-mint font-mono">✓</span> Datas como data, números como número (não texto)</li>
+          <li class="flex gap-2"><span class="text-accent-mint font-mono">✓</span> Dados sensíveis removidos quando desnecessários</li>
+        </ul>
+      </div>
+
+      <div class="mt-5 rounded-2xl border border-accent-blue/30 bg-accent-blue/[0.05] p-5">
+        <div class="font-mono text-[10px] uppercase tracking-[0.2em] text-accent-blue mb-2">
+          Entrega da estação
+        </div>
+        <p class="text-ink-100 text-[15px]">Você tem 2 planilhas limpas: uma de <strong>vendas</strong> e uma <strong>financeira</strong>. Salve-as no Google Drive numa pasta dedicada (ex: <code class="text-accent-ember">imersao-ia/</code>).</p>
+      </div>
+    </article>
+
+    <!-- ============= ESTACAO 02 ============= -->
+    <article id="estacao-02" class="mt-20 scroll-mt-32">
+      <div class="flex items-baseline gap-4 mb-5">
+        <span class="font-display text-6xl font-bold text-accent-blue/30 tabular-nums">02</span>
+        <div>
+          <div class="font-mono text-[10px] uppercase tracking-[0.3em] text-accent-blue mb-1">
+            Estação 02 · 8 min
+          </div>
+          <h2 class="font-display text-3xl md:text-4xl font-semibold text-ink-100 leading-tight">
+            Conectando o Drive ao Claude
+          </h2>
+        </div>
+      </div>
+
+      <p class="text-[17px] text-ink-300 leading-relaxed">
+        Conector resolve o "copia-cola eterno". Liga uma vez, usa pra sempre.
+      </p>
+
+      <div class="mt-6 rounded-2xl border border-white/10 bg-white/[0.02] p-6">
+        <ol class="space-y-3 pl-0 list-none">
+          <li class="flex gap-3 text-[15px] text-ink-200"><span class="font-mono text-accent-blue font-bold">1.</span> Em <code class="text-accent-ember">claude.ai</code> → <strong>Settings → Connectors → Google Drive → Connect</strong></li>
+          <li class="flex gap-3 text-[15px] text-ink-200"><span class="font-mono text-accent-blue font-bold">2.</span> OAuth no Google → autoriza leitura</li>
+          <li class="flex gap-3 text-[15px] text-ink-200"><span class="font-mono text-accent-blue font-bold">3.</span> Volta no Claude → confirma status verde</li>
+          <li class="flex gap-3 text-[15px] text-ink-200"><span class="font-mono text-accent-blue font-bold">4.</span> Em conversa nova, valida: <em>"liste meus 3 arquivos mais recentes do Drive"</em></li>
+        </ol>
+      </div>
+
+      <div class="mt-5 rounded-2xl border border-accent-blue/30 bg-accent-blue/[0.05] p-5">
+        <div class="font-mono text-[10px] uppercase tracking-[0.2em] text-accent-blue mb-2">Entrega</div>
+        <p class="text-ink-100 text-[15px]">Drive conectado. Claude lê seus arquivos sem upload manual.</p>
+      </div>
+    </article>
+
+    <!-- ============= ESTACAO 03 ============= -->
+    <article id="estacao-03" class="mt-20 scroll-mt-32">
+      <div class="flex items-baseline gap-4 mb-5">
+        <span class="font-display text-6xl font-bold text-accent-blue/30 tabular-nums">03</span>
+        <div>
+          <div class="font-mono text-[10px] uppercase tracking-[0.3em] text-accent-blue mb-1">
+            Estação 03 · 8 min
+          </div>
+          <h2 class="font-display text-3xl md:text-4xl font-semibold text-ink-100 leading-tight">
+            Criando Skill via Skill Creator
+          </h2>
+        </div>
+      </div>
+
+      <p class="text-[17px] text-ink-300 leading-relaxed">
+        Skill manual trava no SKILL.md. Pedir pra Claude criar é mais rápido e sai formatado certo.
+        Toda a aula vai usar essa skill, então invista 8 minutos aqui.
+      </p>
+
+      <div class="mt-6 rounded-2xl border border-accent-blue/20 bg-accent-blue/[0.04] overflow-hidden">
+        <div class="px-4 py-2.5 border-b border-accent-blue/10 bg-accent-blue/[0.06] flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-accent-blue animate-pulse"></span>
+            <span class="font-mono text-[10px] uppercase tracking-[0.2em] text-accent-blue">Prompt · Cole no Claude.ai</span>
+          </div>
+          <button
+            type="button"
+            class="copy-btn font-mono text-[10px] uppercase tracking-wider text-ink-300 hover:text-ink-100 transition px-2.5 py-1 rounded-md hover:bg-white/5"
+            data-target="prompt-skill"
+          >Copiar</button>
+        </div>
+        <pre class="!my-0 !rounded-none !border-0 !bg-transparent overflow-x-auto"><code id="prompt-skill" class="!text-[13px] leading-relaxed text-ink-200 whitespace-pre">Quero que você crie uma skill nova para mim chamada "analise-estrategica-empresa".
+
+Propósito: quando eu anexar uma ou mais planilhas empresariais (vendas, financeiro,
+ops), a skill deve:
+
+1. Foco primário: traçar painel ESTRATÉGICO de KPIs que essa empresa deveria
+   monitorar — não só listar números, mas dizer quais importam pra decisão.
+2. Foco secundário: pontuar gaps críticos que aparecem no cruzamento das planilhas.
+3. Saída: tabela mestra de KPIs + recomendação de arquitetura de dashboard
+   com 2 seções (Vendas e Financeiro).
+
+Estilo: executivo, linguagem de empresário brasileiro, sem jargão técnico
+desnecessário. Sempre executa código para validar cálculos. Sempre confere
+2 linhas aleatórias antes de concluir.
+
+Construa a skill completa: SKILL.md com frontmatter (name + description) +
+instruções estruturadas + formato de saída + regras.
+Depois me devolva o arquivo pronto para eu subir em Settings → Features → Skills.</code></pre>
+      </div>
+
+      <div class="mt-5 rounded-2xl border border-white/10 bg-white/[0.02] p-6">
+        <div class="font-mono text-[10px] uppercase tracking-[0.2em] text-accent-mint mb-3">Subir a skill</div>
+        <ol class="space-y-2 pl-0 list-none text-[15px] text-ink-200">
+          <li class="flex gap-3"><span class="font-mono text-accent-blue font-bold">1.</span> Salve o conteúdo do SKILL.md retornado em arquivo <code class="text-accent-ember">SKILL.md</code></li>
+          <li class="flex gap-3"><span class="font-mono text-accent-blue font-bold">2.</span> Coloque o arquivo numa pasta com nome da skill, zipe a pasta</li>
+          <li class="flex gap-3"><span class="font-mono text-accent-blue font-bold">3.</span> <strong>Settings → Features → Skills → Upload</strong></li>
+          <li class="flex gap-3"><span class="font-mono text-accent-blue font-bold">4.</span> Toggle ativo</li>
+        </ol>
+      </div>
+
+      <div class="mt-5 rounded-2xl border border-accent-blue/30 bg-accent-blue/[0.05] p-5">
+        <div class="font-mono text-[10px] uppercase tracking-[0.2em] text-accent-blue mb-2">Entrega</div>
+        <p class="text-ink-100 text-[15px]">Skill viva. Ela ativará sozinha na próxima estação quando você jogar a planilha.</p>
+      </div>
+    </article>
+
+    <!-- ============= ESTACAO 04 ============= -->
+    <article id="estacao-04" class="mt-20 scroll-mt-32">
+      <div class="flex items-baseline gap-4 mb-5">
+        <span class="font-display text-6xl font-bold text-accent-blue/30 tabular-nums">04</span>
+        <div>
+          <div class="font-mono text-[10px] uppercase tracking-[0.3em] text-accent-blue mb-1">
+            Estação 04 · 5 min
+          </div>
+          <h2 class="font-display text-3xl md:text-4xl font-semibold text-ink-100 leading-tight">
+            Prompt Estratégico de KPIs
+          </h2>
+        </div>
+      </div>
+
+      <p class="text-[17px] text-ink-300 leading-relaxed">
+        Cole o prompt abaixo na <strong>mesma conversa</strong> em que você criou a skill (mantém contexto pra usar mais à frente).
+        Substitua os campos entre colchetes pelos dados da SUA empresa.
+      </p>
+
+      <div class="mt-6 rounded-2xl border border-accent-blue/20 bg-accent-blue/[0.04] overflow-hidden">
+        <div class="px-4 py-2.5 border-b border-accent-blue/10 bg-accent-blue/[0.06] flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-accent-blue animate-pulse"></span>
+            <span class="font-mono text-[10px] uppercase tracking-[0.2em] text-accent-blue">Prompt · Análise estratégica</span>
+          </div>
+          <button
+            type="button"
+            class="copy-btn font-mono text-[10px] uppercase tracking-wider text-ink-300 hover:text-ink-100 transition px-2.5 py-1 rounded-md hover:bg-white/5"
+            data-target="prompt-analise"
+          >Copiar</button>
+        </div>
+        <pre class="!my-0 !rounded-none !border-0 !bg-transparent overflow-x-auto"><code id="prompt-analise" class="!text-[13px] leading-relaxed text-ink-200 whitespace-pre">Você é VP de operações com 20 anos no setor [SETOR DA SUA EMPRESA].
+Sua missão: traçar painel ESTRATÉGICO das duas planilhas anexadas.
+
+&lt;contexto&gt;
+Empresa: [NOME DA EMPRESA] — [DESCRIÇÃO EM 1 LINHA]
+Faturamento mensal médio: R$ [VALOR]
+Equipe: [N] pessoas · [N] vendedores ativos
+Decisão importante nas próximas 30 dias: [DECISÃO ESPECÍFICA]
+&lt;/contexto&gt;
+
+&lt;arquivos&gt;
+Anexei (ou estão no meu Drive conectado):
+- Planilha de vendas
+- Planilha financeira
+
+Identifique os arquivos pelo nome e pelo conteúdo. Use os conectores
+para acessá-los se estiverem no Drive.
+&lt;/arquivos&gt;
+
+&lt;tarefa&gt;
+FOCO PRIMÁRIO — Painel estratégico de KPIs:
+Defina os 8-12 KPIs que essa empresa deveria monitorar SEMANALMENTE,
+baseado no modelo de negócio + dados disponíveis + benchmark do setor.
+
+Para cada KPI:
+- Nome
+- Fórmula (com colunas exatas das planilhas)
+- Valor atual calculado
+- Benchmark do setor (use seu conhecimento)
+- Frequência ideal de revisão
+- Quem é dono (cargo/área)
+- Em qual seção do dashboard vai (Vendas ou Financeiro)
+
+FOCO SECUNDÁRIO — Gaps cruzados (3 itens):
+Cruze as duas planilhas e aponte 3 gaps que só aparecem nessa intersecção
+(ex: cliente top da planilha de vendas vs aging dele na financeira).
+
+ENTREGA FINAL:
+Recomendação de arquitetura de dashboard executivo com 2 seções:
+"Vendas" e "Financeiro". Diga quais KPIs vão em cada seção, quais filtros
+globais, e qual visualização para cada KPI (card, gráfico de linha,
+tabela, funnel, etc).
+&lt;/tarefa&gt;
+
+&lt;formato&gt;
+1. Visão executiva (1 parágrafo de 5 linhas)
+2. Tabela mestra de KPIs (8-12 linhas)
+3. 3 gaps cruzados (vendas × financeira)
+4. Arquitetura de dashboard: seção Vendas + seção Financeiro
+&lt;/formato&gt;
+
+Execute código para validar cálculos. Confira 2 linhas aleatórias de cada planilha
+antes de concluir.</code></pre>
+      </div>
+
+      <div class="mt-5 rounded-2xl border border-accent-blue/30 bg-accent-blue/[0.05] p-5">
+        <div class="font-mono text-[10px] uppercase tracking-[0.2em] text-accent-blue mb-2">Entrega</div>
+        <p class="text-ink-100 text-[15px]">Prompt enviado. A skill da estação 03 será ativada automaticamente. Análise sai em 30-90 segundos.</p>
+      </div>
+    </article>
+
+    <!-- ============= ESTACAO 05 ============= -->
+    <article id="estacao-05" class="mt-20 scroll-mt-32">
+      <div class="flex items-baseline gap-4 mb-5">
+        <span class="font-display text-6xl font-bold text-accent-blue/30 tabular-nums">05</span>
+        <div>
+          <div class="font-mono text-[10px] uppercase tracking-[0.3em] text-accent-blue mb-1">
+            Estação 05 · 15 min
+          </div>
+          <h2 class="font-display text-3xl md:text-4xl font-semibold text-ink-100 leading-tight">
+            Analisando o Resultado
+          </h2>
+        </div>
+      </div>
+
+      <p class="text-[17px] text-ink-300 leading-relaxed">
+        Momento de leitura crítica. A primeira saída quase nunca é a final — refine
+        conversando até bater com a realidade da empresa.
+      </p>
+
+      <div class="mt-6 rounded-2xl border border-white/10 bg-white/[0.02] p-6">
+        <div class="font-mono text-[10px] uppercase tracking-[0.2em] text-accent-mint mb-3">
+          Como ler o output
+        </div>
+        <ul class="space-y-2 pl-0 list-none text-[15px] text-ink-200">
+          <li class="flex gap-2"><span class="text-accent-mint font-mono">→</span> Cada KPI tem fórmula clara? Você consegue achar a coluna na planilha?</li>
+          <li class="flex gap-2"><span class="text-accent-mint font-mono">→</span> Os benchmarks fazem sentido pro seu setor? Não, ajusta.</li>
+          <li class="flex gap-2"><span class="text-accent-mint font-mono">→</span> Os 3 gaps cruzados surpreenderam? Esses são os ouros.</li>
+          <li class="flex gap-2"><span class="text-accent-mint font-mono">→</span> A arquitetura proposta (Vendas + Financeiro) cobre o que você decide toda semana?</li>
+        </ul>
+      </div>
+
+      <div class="mt-5 rounded-2xl border border-white/10 bg-white/[0.02] p-6">
+        <div class="font-mono text-[10px] uppercase tracking-[0.2em] text-accent-ember mb-3">
+          Refine conversando (exemplos)
+        </div>
+        <ul class="space-y-2 pl-0 list-none text-[14px] text-ink-300 italic">
+          <li>"Aprofunde o KPI [X] — me mostra o cálculo linha a linha"</li>
+          <li>"O benchmark de [Y] não bate com meu setor. É na verdade [Z]. Recalcule."</li>
+          <li>"Adicione um KPI de [específico do meu negócio] que você esqueceu."</li>
+          <li>"Qual filtro deve ser global vs específico de cada seção?"</li>
+        </ul>
+      </div>
+
+      <div class="mt-5 rounded-2xl border border-accent-blue/30 bg-accent-blue/[0.05] p-5">
+        <div class="font-mono text-[10px] uppercase tracking-[0.2em] text-accent-blue mb-2">Entrega</div>
+        <p class="text-ink-100 text-[15px]">Tabela mestra de KPIs aprovada por você + arquitetura de 2 seções definida. <strong>Não feche o chat — ele será o cérebro da aula inteira.</strong></p>
+      </div>
+    </article>
+
+    <!-- ============= ESTACAO 06 ============= -->
+    <article id="estacao-06" class="mt-20 scroll-mt-32">
+      <div class="flex items-baseline gap-4 mb-5">
+        <span class="font-display text-6xl font-bold text-accent-blue/30 tabular-nums">06</span>
+        <div>
+          <div class="font-mono text-[10px] uppercase tracking-[0.3em] text-accent-blue mb-1">
+            Estação 06 · 5 min
+          </div>
+          <h2 class="font-display text-3xl md:text-4xl font-semibold text-ink-100 leading-tight">
+            Prompt da Arquitetura no Lovable
+          </h2>
+        </div>
+      </div>
+
+      <p class="text-[17px] text-ink-300 leading-relaxed">
+        Análise virou requisito. Agora pede pro Claude (na <strong>mesma conversa</strong>) gerar prompt único pronto pra colar no Lovable.
+      </p>
+
+      <div class="mt-6 rounded-2xl border border-accent-blue/20 bg-accent-blue/[0.04] overflow-hidden">
+        <div class="px-4 py-2.5 border-b border-accent-blue/10 bg-accent-blue/[0.06] flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-accent-blue animate-pulse"></span>
+            <span class="font-mono text-[10px] uppercase tracking-[0.2em] text-accent-blue">Prompt · Geração de prompt Lovable</span>
+          </div>
+          <button
+            type="button"
+            class="copy-btn font-mono text-[10px] uppercase tracking-wider text-ink-300 hover:text-ink-100 transition px-2.5 py-1 rounded-md hover:bg-white/5"
+            data-target="prompt-lovable"
+          >Copiar</button>
+        </div>
+        <pre class="!my-0 !rounded-none !border-0 !bg-transparent overflow-x-auto"><code id="prompt-lovable" class="!text-[13px] leading-relaxed text-ink-200 whitespace-pre">Análise aprovada. Agora gere prompt PRONTO para colar no Lovable construir o app.
+
+ARQUITETURA NECESSÁRIA:
+- Stack: Lovable + Lovable Cloud (banco interno do Lovable, sem Supabase
+  ou serviço externo)
+- App com sidebar e 2 seções principais: "Vendas" e "Financeiro"
+- Layout consistente entre seções: KPI cards no topo + gráficos no meio +
+  tabela analítica embaixo
+- Filtros globais no topo (período + os que você recomendou)
+- Visual: dark mode, paleta OKLCH azul + violeta + mint, tipografia Inter Tight
+  (display) + Inter (body)
+- Mobile responsivo: sidebar vira drawer, cards empilham
+- Auth: login Google
+- Loading state, empty state, alerta vermelho em KPIs piorando
+
+DADOS:
+- Conecta o Lovable às MINHAS planilhas via Google Sheets integration
+- Uma planilha alimenta a seção Vendas
+- Outra alimenta a seção Financeiro
+- Pergunta ao usuário os spreadsheet IDs e mapeia as colunas conforme a tabela
+  mestra de KPIs que você produziu na análise
+
+KPIS POR SEÇÃO:
+Use a tabela mestra que você acabou de gerar. Mapeie cada KPI para card,
+gráfico ou tabela conforme recomendado.
+
+Devolva APENAS o texto pronto para colar no Lovable. Sem comentário antes ou
+depois. Em português.</code></pre>
+      </div>
+
+      <div class="mt-5 rounded-2xl border border-accent-blue/30 bg-accent-blue/[0.05] p-5">
+        <div class="font-mono text-[10px] uppercase tracking-[0.2em] text-accent-blue mb-2">Entrega</div>
+        <p class="text-ink-100 text-[15px]">Bloco de texto pronto para colar no Lovable. Copia ele todo — vai pro próximo passo.</p>
+      </div>
+    </article>
+
+    <!-- ============= ESTACAO 07 ============= -->
+    <article id="estacao-07" class="mt-20 scroll-mt-32">
+      <div class="flex items-baseline gap-4 mb-5">
+        <span class="font-display text-6xl font-bold text-accent-blue/30 tabular-nums">07</span>
+        <div>
+          <div class="font-mono text-[10px] uppercase tracking-[0.3em] text-accent-blue mb-1">
+            Estação 07 · 10 min
+          </div>
+          <h2 class="font-display text-3xl md:text-4xl font-semibold text-ink-100 leading-tight">
+            Conectando Lovable às Planilhas
+          </h2>
+        </div>
+      </div>
+
+      <p class="text-[17px] text-ink-300 leading-relaxed">
+        Aqui o app sai do mock pra dado real. Lovable Cloud guarda o estado, planilhas
+        do Google Sheets alimentam os números.
+      </p>
+
+      <div class="mt-6 rounded-2xl border border-white/10 bg-white/[0.02] p-6">
+        <ol class="space-y-3 pl-0 list-none">
+          <li class="flex gap-3 text-[15px] text-ink-200"><span class="font-mono text-accent-blue font-bold">1.</span> <a href="https://lovable.dev" target="_blank" rel="noreferrer" class="text-accent-blue underline">lovable.dev</a> → <strong>New Project</strong> → cole o prompt da estação 06 → <strong>Send</strong></li>
+          <li class="flex gap-3 text-[15px] text-ink-200"><span class="font-mono text-accent-blue font-bold">2.</span> Lovable Cloud é provisionado automaticamente. Esqueleto monta em 2-3 min.</li>
+          <li class="flex gap-3 text-[15px] text-ink-200"><span class="font-mono text-accent-blue font-bold">3.</span> <strong>Settings → Integrations → Google Sheets → Connect</strong></li>
+          <li class="flex gap-3 text-[15px] text-ink-200"><span class="font-mono text-accent-blue font-bold">4.</span> Volta no chat do Lovable e cola o prompt abaixo:</li>
+        </ol>
+      </div>
+
+      <div class="mt-5 rounded-2xl border border-accent-blue/20 bg-accent-blue/[0.04] overflow-hidden">
+        <div class="px-4 py-2.5 border-b border-accent-blue/10 bg-accent-blue/[0.06] flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-accent-blue animate-pulse"></span>
+            <span class="font-mono text-[10px] uppercase tracking-[0.2em] text-accent-blue">Prompt · Conectar planilhas</span>
+          </div>
+          <button
+            type="button"
+            class="copy-btn font-mono text-[10px] uppercase tracking-wider text-ink-300 hover:text-ink-100 transition px-2.5 py-1 rounded-md hover:bg-white/5"
+            data-target="prompt-conectar"
+          >Copiar</button>
+        </div>
+        <pre class="!my-0 !rounded-none !border-0 !bg-transparent overflow-x-auto"><code id="prompt-conectar" class="!text-[13px] leading-relaxed text-ink-200 whitespace-pre">Conecte o app às duas planilhas:
+
+PLANILHA DE VENDAS:
+- Spreadsheet ID: [COLE O ID DO GOOGLE SHEETS]
+- Aba principal: [NOME_DA_ABA]
+- Alimenta a seção "Vendas"
+
+PLANILHA FINANCEIRA:
+- Spreadsheet ID: [COLE O ID DO GOOGLE SHEETS]
+- Abas relevantes: [LISTAR NOMES]
+- Alimenta a seção "Financeiro"
+
+Mapeie as colunas conforme a arquitetura de KPIs do prompt inicial.
+Atualização: tempo real (sincroniza a cada 5 minutos).
+Cache local no Lovable Cloud para resposta rápida.</code></pre>
+      </div>
+
+      <div class="mt-5 rounded-2xl border border-accent-blue/30 bg-accent-blue/[0.05] p-5">
+        <div class="font-mono text-[10px] uppercase tracking-[0.2em] text-accent-blue mb-2">Entrega</div>
+        <p class="text-ink-100 text-[15px]">App com dado real em ambas as seções. KPIs do topo mostram números verdadeiros.</p>
+      </div>
+    </article>
+
+    <!-- ============= ESTACAO 08 ============= -->
+    <article id="estacao-08" class="mt-20 scroll-mt-32">
+      <div class="flex items-baseline gap-4 mb-5">
+        <span class="font-display text-6xl font-bold text-accent-blue/30 tabular-nums">08</span>
+        <div>
+          <div class="font-mono text-[10px] uppercase tracking-[0.3em] text-accent-blue mb-1">
+            Estação 08 · 15 min
+          </div>
+          <h2 class="font-display text-3xl md:text-4xl font-semibold text-ink-100 leading-tight">
+            Construindo o MVP do Dashboard
+          </h2>
+        </div>
+      </div>
+
+      <p class="text-[17px] text-ink-300 leading-relaxed">
+        Esqueleto não é entrega. Aqui você refina conversando até o app parecer um
+        produto real, não um protótipo.
+      </p>
+
+      <div class="mt-6 rounded-2xl border border-white/10 bg-white/[0.02] p-6">
+        <div class="font-mono text-[10px] uppercase tracking-[0.2em] text-accent-mint mb-3">
+          Iterações típicas (cole no chat do Lovable, uma por vez)
+        </div>
+        <ol class="space-y-2.5 pl-0 list-none text-[14px] text-ink-200 leading-relaxed">
+          <li class="flex gap-3"><span class="font-mono text-accent-blue font-bold">1.</span> "Aumenta os KPI cards. Número grande no topo, label embaixo, variação MoM ao lado em verde/vermelho."</li>
+          <li class="flex gap-3"><span class="font-mono text-accent-blue font-bold">2.</span> "Seção Financeiro: card 'Margem Bruta' fica vermelho quando passa abaixo de [SEU LIMITE]%."</li>
+          <li class="flex gap-3"><span class="font-mono text-accent-blue font-bold">3.</span> "Seção Vendas: adiciona barra horizontal de progresso ao lado dos 5 clientes top, mostrando % da receita."</li>
+          <li class="flex gap-3"><span class="font-mono text-accent-blue font-bold">4.</span> "Filtros multi-select. Estado persistente na URL (compartilhável)."</li>
+          <li class="flex gap-3"><span class="font-mono text-accent-blue font-bold">5.</span> "Empty state nice — 'Sem dados nesse filtro. Tente expandir período.'"</li>
+          <li class="flex gap-3"><span class="font-mono text-accent-blue font-bold">6.</span> "Skeleton loader em todas as tabelas durante refresh."</li>
+          <li class="flex gap-3"><span class="font-mono text-accent-blue font-bold">7.</span> "Toggle no header alternando 'Visão executiva' (só KPIs) e 'Visão detalhada' (tudo)."</li>
+        </ol>
+      </div>
+
+      <div class="mt-5 rounded-2xl border border-accent-blue/30 bg-accent-blue/[0.05] p-5">
+        <div class="font-mono text-[10px] uppercase tracking-[0.2em] text-accent-blue mb-2">Entrega</div>
+        <p class="text-ink-100 text-[15px]">Dashboard utilizável, profissional, mostrando os números que importam pra você decidir.</p>
+      </div>
+    </article>
+
+    <!-- ============= ESTACAO 09 ============= -->
+    <article id="estacao-09" class="mt-20 scroll-mt-32">
+      <div class="flex items-baseline gap-4 mb-5">
+        <span class="font-display text-6xl font-bold text-accent-blue/30 tabular-nums">09</span>
+        <div>
+          <div class="font-mono text-[10px] uppercase tracking-[0.3em] text-accent-blue mb-1">
+            Estação 09 · 5 min
+          </div>
+          <h2 class="font-display text-3xl md:text-4xl font-semibold text-ink-100 leading-tight">
+            Validando o MVP
+          </h2>
+        </div>
+      </div>
+
+      <p class="text-[17px] text-ink-300 leading-relaxed">
+        Sem validação, MVP vira protótipo abandonado.
+      </p>
+
+      <div class="mt-6 rounded-2xl border border-white/10 bg-white/[0.02] p-6">
+        <div class="font-mono text-[10px] uppercase tracking-[0.2em] text-accent-mint mb-3">
+          Checklist
+        </div>
+        <ul class="space-y-2 pl-0 list-none text-[15px] text-ink-200">
+          <li class="flex gap-2"><span class="text-accent-mint">☐</span> KPIs estratégicos visíveis sem rolar em cada seção</li>
+          <li class="flex gap-2"><span class="text-accent-mint">☐</span> Filtros globais funcionam — ambas as seções atualizam</li>
+          <li class="flex gap-2"><span class="text-accent-mint">☐</span> Click num cliente top abre detalhe</li>
+          <li class="flex gap-2"><span class="text-accent-mint">☐</span> Mobile responsivo (sidebar vira drawer)</li>
+          <li class="flex gap-2"><span class="text-accent-mint">☐</span> Loading state aparece em refresh</li>
+          <li class="flex gap-2"><span class="text-accent-mint">☐</span> Empresário fora da sala entenderia em 30 segundos</li>
+        </ul>
+      </div>
+
+      <div class="mt-5 rounded-2xl border border-white/10 bg-white/[0.02] p-6">
+        <div class="font-mono text-[10px] uppercase tracking-[0.2em] text-accent-blue mb-3">
+          Publicar
+        </div>
+        <p class="text-[15px] text-ink-200">Lovable → <strong>Publish</strong> → escolha subdomínio temporário (algo como <code class="text-accent-ember">empresa-mvp.lovable.app</code>). Compartilha com o time direto pelo link.</p>
+      </div>
+
+      <div class="mt-5 rounded-2xl border border-accent-blue/30 bg-accent-blue/[0.05] p-5">
+        <div class="font-mono text-[10px] uppercase tracking-[0.2em] text-accent-blue mb-2">Entrega</div>
+        <p class="text-ink-100 text-[15px]">URL pública, validada, time inteiro pode acessar.</p>
+      </div>
+    </article>
+
+    <!-- ============= ESTACAO 10 ============= -->
+    <article id="estacao-10" class="mt-20 scroll-mt-32">
+      <div class="flex items-baseline gap-4 mb-5">
+        <span class="font-display text-6xl font-bold text-accent-blue/30 tabular-nums">10</span>
+        <div>
+          <div class="font-mono text-[10px] uppercase tracking-[0.3em] text-accent-blue mb-1">
+            Estação 10 · 15 min
+          </div>
+          <h2 class="font-display text-3xl md:text-4xl font-semibold text-ink-100 leading-tight">
+            Evoluindo para Mini ERP
+          </h2>
+        </div>
+      </div>
+
+      <p class="text-[17px] text-ink-300 leading-relaxed">
+        Volta na <strong>mesma conversa do Lovable</strong> (com o contexto inteiro do MVP já carregado).
+        O app deixa de ser só visualização e vira camada operacional.
+      </p>
+
+      <div class="mt-6 rounded-2xl border border-accent-blue/20 bg-accent-blue/[0.04] overflow-hidden">
+        <div class="px-4 py-2.5 border-b border-accent-blue/10 bg-accent-blue/[0.06] flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-accent-blue animate-pulse"></span>
+            <span class="font-mono text-[10px] uppercase tracking-[0.2em] text-accent-blue">Prompt · Evolução para ERP (cole no Lovable)</span>
+          </div>
+          <button
+            type="button"
+            class="copy-btn font-mono text-[10px] uppercase tracking-wider text-ink-300 hover:text-ink-100 transition px-2.5 py-1 rounded-md hover:bg-white/5"
+            data-target="prompt-erp"
+          >Copiar</button>
+        </div>
+        <pre class="!my-0 !rounded-none !border-0 !bg-transparent overflow-x-auto"><code id="prompt-erp" class="!text-[13px] leading-relaxed text-ink-200 whitespace-pre">MVP do dashboard aprovado. Agora vamos evoluir essa MESMA aplicação para um ERP
+enxuto. Reaproveite TODA a arquitetura, conexões e tabelas do Lovable Cloud já
+criadas — não recrie nada.
+
+Adicione 3 módulos novos ao sidebar (abaixo de Vendas e Financeiro):
+
+1. OPERAÇÃO COMERCIAL
+   - Tela "Novo Pedido": form com cliente (autocomplete da tabela Clientes já
+     existente) + linhas de produto + cálculo automático subtotal/desconto/total/margem
+   - Lista de pedidos com filtro por status (Rascunho / Faturado / Cancelado)
+   - Botão "Faturar" muda status e grava no Lovable Cloud
+   - Vendedor só vê próprios pedidos
+
+2. ESTOQUE
+   - Tabela SKU · descrição · saldo atual · ponto de pedido · status (verde/laranja/vermelho)
+   - SKUs abaixo do ponto de pedido em vermelho com botão "Sugerir compra"
+   - Sugestão agrupa por fornecedor e cria rascunho de OC
+
+3. FINANCEIRO OPERACIONAL
+   - Tela Contas a Receber: lista com aging colorido (em dia / 30 / 60 / 90 / +90)
+   - Botão "Lembrete" abre modal com texto pronto pra enviar
+   - Conciliação semi-automática (upload OFX/CSV → tenta bater com títulos)
+
+REUSO:
+- Tabelas do Lovable Cloud já criadas para os dashboards
+- Mesma autenticação Google
+- Mesma paleta + tipografia
+- Adicione tabelas novas APENAS para o que ainda não existe
+
+Devolva o app rodando com os 3 módulos novos visíveis no sidebar.
+Não toque nas seções Vendas e Financeiro originais — elas continuam como
+dashboards de leitura. Os módulos novos são a camada operacional.</code></pre>
+      </div>
+
+      <div class="mt-6 rounded-2xl border border-white/10 bg-white/[0.02] p-6">
+        <div class="font-mono text-[10px] uppercase tracking-[0.2em] text-accent-mint mb-3">
+          O sidebar final
+        </div>
+        <pre class="!my-0 !rounded-none !border-0 !bg-transparent text-[13px] leading-relaxed text-ink-200">┌─────────────────────────┐
+│  DASHBOARD              │
+│   · Vendas (leitura)    │
+│   · Financeiro (leitura)│
+├─────────────────────────┤
+│  OPERAÇÃO               │
+│   · Pedidos             │
+│   · Estoque             │
+│   · Cobrança            │
+└─────────────────────────┘</pre>
+      </div>
+
+      <div class="mt-5 rounded-2xl border border-accent-blue/30 bg-accent-blue/[0.05] p-5">
+        <div class="font-mono text-[10px] uppercase tracking-[0.2em] text-accent-blue mb-2">Entrega</div>
+        <p class="text-ink-100 text-[15px]">Dashboard virou ERP enxuto. Você acabou de mostrar que dá pra construir o sistema operacional da empresa em 90 minutos de conversa.</p>
+      </div>
+    </article>
+
+    <!-- ============= ESTACAO 11 ============= -->
+    <article id="estacao-11" class="mt-20 scroll-mt-32">
+      <div class="flex items-baseline gap-4 mb-5">
+        <span class="font-display text-6xl font-bold text-accent-blue/30 tabular-nums">11</span>
+        <div>
+          <div class="font-mono text-[10px] uppercase tracking-[0.3em] text-accent-blue mb-1">
+            Estação 11 · 5 min
+          </div>
+          <h2 class="font-display text-3xl md:text-4xl font-semibold text-ink-100 leading-tight">
+            Finalização
+          </h2>
+        </div>
+      </div>
+
+      <p class="text-[17px] text-ink-300 leading-relaxed">
+        Sem chamada à ação clara, empresário sai animado e não faz nada na segunda-feira.
+      </p>
+
+      <div class="mt-6 rounded-2xl border border-white/10 bg-white/[0.02] p-6">
+        <div class="font-mono text-[10px] uppercase tracking-[0.2em] text-accent-mint mb-3">
+          3 entregas pra levar pra casa
+        </div>
+        <ol class="space-y-3 pl-0 list-none">
+          <li class="flex gap-3 text-[15px] text-ink-200"><span class="font-mono text-accent-blue font-bold">1.</span> <strong>QR do openacademy</strong> — material aberto pra você revisar essa aula com calma</li>
+          <li class="flex gap-3 text-[15px] text-ink-200"><span class="font-mono text-accent-blue font-bold">2.</span> <strong>Lista pessoal</strong> preenchida agora: <em>qual planilha real minha vou subir essa semana? · qual decisão pendente vou pedir pra IA me ajudar a decidir? · qual dashboard faria diferença pro meu time semana que vem?</em></li>
+          <li class="flex gap-3 text-[15px] text-ink-200"><span class="font-mono text-accent-blue font-bold">3.</span> <strong>Próximo passo</strong>: 7 dias → rodar esse framework com sua planilha · 14 dias → compartilhar print do MVP</li>
+        </ol>
+      </div>
+
+      <div class="mt-5 rounded-2xl border border-accent-ember/30 bg-accent-ember/[0.05] p-5">
+        <div class="font-mono text-[10px] uppercase tracking-[0.2em] text-accent-ember mb-2">Pergunta de fechamento</div>
+        <p class="text-ink-100 text-[16px] font-medium">Qual dessas 3 entregas vai sair daqui amanhã?</p>
+        <p class="text-ink-300 text-[13px] mt-2 italic">Se ninguém responde, a aula falhou.</p>
+      </div>
+    </article>
+
+    <!-- TIME TOTAL -->
+    <section class="mt-20 glass-strong rounded-3xl p-8 border border-white/10">
+      <div class="font-mono text-[10px] uppercase tracking-[0.3em] text-accent-blue mb-4">
+        Distribuição de tempo
+      </div>
+      <table class="w-full text-[14px] text-ink-200">
+        <thead>
+          <tr class="border-b border-white/10">
+            <th class="text-left py-2 px-3 font-mono text-[10px] uppercase tracking-wider text-ink-400">Bloco</th>
+            <th class="text-right py-2 px-3 font-mono text-[10px] uppercase tracking-wider text-ink-400">Tempo</th>
+            <th class="text-right py-2 px-3 font-mono text-[10px] uppercase tracking-wider text-ink-400">Cumul.</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            estacoes.map((e) => (
+              <tr class="border-b border-white/5">
+                <td class="py-2 px-3"><span class="font-mono text-accent-blue mr-2">{e.n}</span> {e.titulo}</td>
+                <td class="text-right py-2 px-3 font-mono tabular-nums">{e.tempo}min</td>
+                <td class="text-right py-2 px-3 font-mono tabular-nums text-ink-400">{e.cumul}min</td>
+              </tr>
+            ))
+          }
+          <tr class="border-b border-white/5">
+            <td class="py-2 px-3 text-ink-400">Buffer + perguntas</td>
+            <td class="text-right py-2 px-3 font-mono tabular-nums text-ink-400">25min</td>
+            <td class="text-right py-2 px-3 font-mono tabular-nums text-ink-400">120min</td>
+          </tr>
+          <tr class="border-t-2 border-accent-blue/30">
+            <td class="py-3 px-3 font-bold text-ink-100">Total</td>
+            <td class="text-right py-3 px-3 font-mono tabular-nums font-bold text-ink-100">2h</td>
+            <td class="text-right py-3 px-3 font-mono tabular-nums font-bold text-accent-blue">120min</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </section>
+
+  <script>
+    document.addEventListener('click', (e) => {
+      const btn = (e.target as HTMLElement).closest('.copy-btn') as HTMLButtonElement | null;
+      if (!btn) return;
+      const targetId = btn.dataset.target;
+      if (!targetId) return;
+      const el = document.getElementById(targetId);
+      if (!el) return;
+      const text = el.innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        const original = btn.textContent;
+        btn.textContent = 'Copiado!';
+        btn.classList.add('text-accent-mint');
+        setTimeout(() => {
+          btn.textContent = original;
+          btn.classList.remove('text-accent-mint');
+        }, 1600);
+      });
+    });
+  </script>
+</Base>
