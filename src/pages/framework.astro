@@ -396,59 +396,67 @@ antes de concluir.</code></pre>
             data-target="prompt-lovable"
           >Copiar</button>
         </div>
-        <pre class="!my-0 !rounded-none !border-0 !bg-transparent overflow-x-auto"><code id="prompt-lovable" class="!text-[13px] leading-relaxed text-ink-200 whitespace-pre">Análise aprovada. Agora gere prompt PRONTO para colar no Lovable construir o app.
+        <pre class="!my-0 !rounded-none !border-0 !bg-transparent overflow-x-auto"><code id="prompt-lovable" class="!text-[13px] leading-relaxed text-ink-200 whitespace-pre">Análise aprovada. Agora gere O PROMPT B — texto pronto para colar no Lovable
+DEPOIS que ele já confirmou ter conectado os dois arquivos via Prompt A.
 
-IMPORTANTE — IDENTIFICAÇÃO EXPLÍCITA DAS PLANILHAS:
-No prompt que você vai gerar, INCLUA os NOMES EXATOS dos arquivos
-das duas planilhas que você acabou de analisar nesta conversa.
-Diga literalmente no prompt: "A planilha de vendas se chama [NOME EXATO
-DO ARQUIVO QUE ANALISEI] e a planilha financeira se chama [NOME EXATO]".
-Isso evita risco de o Lovable conectar no arquivo errado durante o
-onboarding (Drive do empresário pode ter outras planilhas com nomes
-parecidos).
+CONTEXTO QUE O LOVABLE JÁ TEM (não repita, mas mencione no Prompt B):
+- Os conectores nativos Google Drive + Google Sheets do Lovable já estão ATIVOS
+- Os DOIS arquivos ESPECÍFICOS já foram identificados e conectados:
+  · Planilha de vendas: [NOME EXATO DO ARQUIVO QUE ANALISEI NESTA CONVERSA]
+  · Planilha financeira: [NOME EXATO DO ARQUIVO QUE ANALISEI NESTA CONVERSA]
+- O conteúdo dessas planilhas JÁ FOI ANALISADO por mim (Claude) nesta conversa.
+  A tabela mestra de KPIs e a arquitetura de 2 seções já foram definidas.
+  O Lovable NÃO precisa reanalisar dados, redefinir KPIs, nem inferir schema.
 
-ARQUITETURA NECESSÁRIA:
-- Stack: Lovable + Lovable Cloud (banco interno do Lovable, auth interno,
-  sem Supabase ou serviço externo)
-- App com sidebar e 2 seções principais: "Vendas" e "Financeiro"
-- Layout consistente entre seções: KPI cards no topo + gráficos no meio +
-  tabela analítica embaixo
-- Filtros globais no topo (período + os que você recomendou)
-- Visual: dark mode, paleta OKLCH azul + violeta + mint, tipografia Inter Tight
-  (display) + Inter (body)
-- Mobile responsivo: sidebar vira drawer, cards empilham
-- Auth: login Google (nativo Lovable Cloud)
-- Loading state, empty state, alerta vermelho em KPIs piorando
+ANTI-PADRÕES — INCLUA EXPLICITAMENTE NO PROMPT B:
+- NÃO é multi-tenant. Single-user (eu). Sem OAuth próprio com escopos
+  estendidos, sem Service Account, sem Google Cloud Console.
+- NÃO use Supabase externo, Firebase, ou qualquer serviço fora do Lovable.
+  Use SOMENTE Lovable Cloud (banco interno + auth interno).
+- NÃO construa fluxo de onboarding pedindo Spreadsheet ID, Picker, ou
+  detecção automática — os arquivos já estão conectados.
+- NÃO inferir KPIs nem ler novamente as planilhas para "descobrir"
+  estrutura — use o schema e KPIs já definidos abaixo.
 
-DADOS — IMPORTANTE:
-- O Lovable já tem CONECTORES NATIVOS de Google Drive e Google Sheets.
-  Use-os. NÃO peça Spreadsheet ID manual. NÃO peça Service Account JSON.
-- Após login Google, o app pede UMA autorização OAuth para acessar Drive
-  e Sheets do usuário. Daí em diante, lê as planilhas direto pelo conector.
-- Onboarding: o app BUSCA no Drive pelos nomes EXATOS especificados acima.
-  Se encontrar, conecta automaticamente. Se não encontrar (ex: arquivo foi
-  renomeado), mostra Google Picker para o usuário clicar no arquivo correto.
-- Uma planilha alimenta a seção Vendas, outra a seção Financeiro.
-- Mapeia colunas conforme a tabela mestra de KPIs que produzi na análise.
+ESTRUTURA DO PROMPT B (gere exatamente nessa ordem):
 
-SINCRONIZAÇÃO — REALTIME OBRIGATÓRIO:
-- NÃO use cron de 6h. Use Watch Channel da Google Sheets API
-  (push notifications) para receber notificação imediata de mudança
-  na planilha.
-- Edge Function recebe o webhook, atualiza cache no Lovable Cloud,
-  e o frontend assina realtime (postgres_changes) — re-renderiza
-  automaticamente sem refresh manual.
-- Latência alvo: menor que 30 segundos entre alteração na planilha
-  e atualização no dashboard.
-- Botão "Sincronizar agora" continua existindo como fallback manual.
+1. STACK
+   - React + TypeScript + Tailwind + shadcn/ui + Recharts + Lovable Cloud
+   - Sem nenhum serviço externo
+   - Auth: login Google nativo Lovable Cloud (sem escopos extras)
 
-KPIS POR SEÇÃO:
-Use a tabela mestra que você acabou de gerar. Mapeie cada KPI para card,
-gráfico ou tabela conforme recomendado.
+2. ARQUIVOS JÁ CONECTADOS
+   - Listar os 2 nomes exatos e dizer qual alimenta qual seção
+   - Listar as abas relevantes de cada um
+   - Mencionar que conexão foi feita via conector nativo, já existe
 
-Devolva APENAS o texto pronto para colar no Lovable, COM os nomes exatos
-dos arquivos das planilhas embutidos no prompt. Sem comentário antes ou
-depois. Em português.</code></pre>
+3. ARQUITETURA DA APP
+   - Sidebar com 2 seções: "Vendas" e "Financeiro"
+   - Cada seção: KPI cards no topo + gráficos no meio + tabela embaixo
+   - Filtros globais no header (período + dimensões recomendadas)
+   - Mobile: sidebar vira drawer, grids viram coluna única
+   - Visual: dark mode, paleta OKLCH azul + violeta + mint
+   - Tipografia: Inter Tight (display) + Inter (body)
+
+4. KPIS POR SEÇÃO
+   - Listar OS KPIS EXATOS já definidos na tabela mestra que produzi
+   - Para cada KPI: nome, fórmula com coluna da planilha, formato de exibição,
+     em qual componente vai (card, gráfico, tabela), variação MoM/YoY
+   - Marcar alertas semânticos (verde/amarelo/vermelho por threshold já definido)
+
+5. SINCRONIZAÇÃO REALTIME
+   - Watch Channel da Sheets API (push notifications)
+   - Webhook recebe → atualiza cache → frontend re-renderiza via realtime
+   - Latência alvo &lt; 30 segundos
+   - Botão "Sincronizar agora" como fallback manual
+
+6. ESTADOS VISUAIS
+   - Loading (Skeleton), Empty, Erro, KPI piorando/melhorando (bordas semânticas)
+
+DEVOLVA: apenas o texto do Prompt B, em português, com os nomes exatos
+dos arquivos embutidos. Sem comentário antes ou depois. Sem perguntas.
+Sem checklist de aprovação. Sem "Confirme o OAuth strategy". Pronto pra
+colar diretamente no Lovable.</code></pre>
       </div>
 
       <div class="mt-5 rounded-2xl border border-accent-blue/30 bg-accent-blue/[0.05] p-5">
