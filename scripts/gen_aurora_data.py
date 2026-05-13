@@ -23,7 +23,7 @@ from openpyxl.worksheet.table import Table, TableStyleInfo
 
 random.seed(42)
 
-OUT_DIR = Path(__file__).resolve().parent.parent / "public" / "materiais"
+OUT_DIR = Path(__file__).resolve().parent.parent / "private-materiais" / "data"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 # ============== EMPRESA ==============
