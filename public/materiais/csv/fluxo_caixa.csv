@@ -1,0 +1,1370 @@
+data,tipo,categoria,descricao,valor,saldo_acumulado,conta
+2025-07-04,Entrada,Recebimento Cliente,Liquidação boleto,26357.44,506357.44,Itaú-PJ
+2025-07-04,Entrada,Recebimento Cliente,Liquidação boleto,54348.19,560705.63,Itaú-PJ
+2025-07-04,Entrada,Recebimento Cliente,PIX cliente,55398.21,616103.84,BB-PJ
+2025-07-04,Entrada,Outras Receitas,PIX cliente,20893.61,636997.45,BB-PJ
+2025-07-04,Entrada,Recebimento Cliente,Liquidação boleto,47041.66,684039.11,Itaú-PJ
+2025-07-04,Entrada,Recebimento Cliente,Liquidação boleto,32915.9,716955.01,Itaú-PJ
+2025-07-04,Entrada,Recebimento Cliente,Liquidação boleto,28324.52,745279.53,BB-PJ
+2025-07-04,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-11011.1,734268.43,Itaú-PJ
+2025-07-04,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-5368.12,728900.31,Itaú-PJ
+2025-07-04,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-32840.9,696059.41,Itaú-PJ
+2025-07-04,Saída,Aluguel,Aluguel,-19662.07,676397.34,Itaú-PJ
+2025-07-04,Saída,Impostos,Impostos,-25399.75,650997.59,Itaú-PJ
+2025-07-04,Saída,Outras,Outras,-16258.0,634739.59,Itaú-PJ
+2025-07-05,Saída,Marketing,Marketing,-22670.96,612068.63,Itaú-PJ
+2025-07-05,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-19656.78,592411.85,BB-PJ
+2025-07-05,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-10581.11,581830.74,BB-PJ
+2025-07-05,Saída,Folha,Folha,-188825.95,393004.79,BB-PJ
+2025-07-06,Saída,Aluguel,Aluguel,-8926.84,384077.95,Itaú-PJ
+2025-07-06,Saída,Impostos,Impostos,-13077.69,371000.26,Itaú-PJ
+2025-07-06,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-8360.16,362640.1,Itaú-PJ
+2025-07-06,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-24755.34,337884.76,Itaú-PJ
+2025-07-07,Entrada,Outras Receitas,PIX cliente,53303.04,391187.8,BB-PJ
+2025-07-07,Entrada,Recebimento Cliente,PIX cliente,28240.87,419428.67,BB-PJ
+2025-07-07,Entrada,Outras Receitas,Liquidação boleto,35493.1,454921.77,Itaú-PJ
+2025-07-07,Entrada,Recebimento Cliente,PIX cliente,22846.93,477768.7,Caixa
+2025-07-07,Entrada,Outras Receitas,Liquidação boleto,40889.49,518658.19,Itaú-PJ
+2025-07-07,Entrada,Recebimento Cliente,Liquidação boleto,15894.29,534552.48,Caixa
+2025-07-07,Entrada,Recebimento Cliente,Liquidação boleto,37491.93,572044.41,Itaú-PJ
+2025-07-07,Saída,Impostos,Impostos,-9481.14,562563.27,BB-PJ
+2025-07-07,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-19777.22,542786.05,Itaú-PJ
+2025-07-07,Saída,Folha,Folha,-13567.64,529218.41,BB-PJ
+2025-07-07,Saída,Impostos,Impostos,-10037.76,519180.65,BB-PJ
+2025-07-08,Entrada,Outras Receitas,PIX cliente,14160.25,533340.9,Itaú-PJ
+2025-07-08,Entrada,Recebimento Cliente,Liquidação boleto,26722.82,560063.72,Itaú-PJ
+2025-07-08,Entrada,Recebimento Cliente,Liquidação boleto,21279.74,581343.46,Itaú-PJ
+2025-07-08,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-10280.33,571063.13,BB-PJ
+2025-07-08,Saída,Folha,Folha,-17625.23,553437.9,Itaú-PJ
+2025-07-08,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-6346.34,547091.56,Itaú-PJ
+2025-07-08,Saída,Folha,Folha,-20362.95,526728.61,Itaú-PJ
+2025-07-08,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-10928.61,515800.0,Itaú-PJ
+2025-07-08,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-10295.53,505504.47,Itaú-PJ
+2025-07-09,Entrada,Outras Receitas,PIX cliente,43513.93,549018.4,BB-PJ
+2025-07-09,Entrada,Recebimento Cliente,Liquidação boleto,10640.28,559658.68,BB-PJ
+2025-07-09,Entrada,Recebimento Cliente,Liquidação boleto,30907.81,590566.49,Itaú-PJ
+2025-07-09,Entrada,Outras Receitas,Liquidação boleto,20455.99,611022.48,Itaú-PJ
+2025-07-09,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-13578.06,597444.42,Itaú-PJ
+2025-07-09,Saída,Aluguel,Aluguel,-21284.25,576160.17,Itaú-PJ
+2025-07-09,Saída,Impostos,Impostos,-21095.56,555064.61,BB-PJ
+2025-07-10,Entrada,Recebimento Cliente,Liquidação boleto,10365.7,565430.31,Caixa
+2025-07-10,Entrada,Recebimento Cliente,Liquidação boleto,24838.18,590268.49,Caixa
+2025-07-10,Entrada,Recebimento Cliente,PIX cliente,13158.61,603427.1,Caixa
+2025-07-10,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-17643.66,585783.44,Itaú-PJ
+2025-07-10,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-26965.09,558818.35,BB-PJ
+2025-07-11,Entrada,Recebimento Cliente,PIX cliente,26421.16,585239.51,Itaú-PJ
+2025-07-11,Entrada,Recebimento Cliente,Liquidação boleto,54382.35,639621.86,Caixa
+2025-07-11,Entrada,Recebimento Cliente,Liquidação boleto,15519.13,655140.99,BB-PJ
+2025-07-11,Entrada,Recebimento Cliente,Liquidação boleto,25598.84,680739.83,Itaú-PJ
+2025-07-11,Entrada,Recebimento Cliente,PIX cliente,10803.84,691543.67,Itaú-PJ
+2025-07-11,Entrada,Recebimento Cliente,Liquidação boleto,26622.0,718165.67,Itaú-PJ
+2025-07-11,Saída,Energia/Util,Energia/Util,-7070.21,711095.46,Itaú-PJ
+2025-07-11,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-15419.44,695676.02,BB-PJ
+2025-07-11,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-21639.37,674036.65,Itaú-PJ
+2025-07-12,Saída,Energia/Util,Energia/Util,-7373.0,666663.65,Itaú-PJ
+2025-07-12,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-15225.86,651437.79,Itaú-PJ
+2025-07-12,Saída,Folha,Folha,-14648.69,636789.1,BB-PJ
+2025-07-12,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-17067.01,619722.09,BB-PJ
+2025-07-12,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-21226.11,598495.98,Itaú-PJ
+2025-07-12,Saída,Frete,Frete,-20871.17,577624.81,Itaú-PJ
+2025-07-13,Saída,Frete,Frete,-17903.79,559721.02,Itaú-PJ
+2025-07-13,Saída,Frete,Frete,-16154.21,543566.81,Itaú-PJ
+2025-07-13,Saída,Impostos,Impostos,-12320.83,531245.98,Itaú-PJ
+2025-07-13,Saída,Impostos,Impostos,-19464.48,511781.5,BB-PJ
+2025-07-13,Saída,Folha,Folha,-16306.69,495474.81,BB-PJ
+2025-07-13,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-2866.52,492608.29,Itaú-PJ
+2025-07-14,Entrada,Outras Receitas,PIX cliente,54288.95,546897.24,Itaú-PJ
+2025-07-14,Entrada,Recebimento Cliente,Liquidação boleto,32148.77,579046.01,Itaú-PJ
+2025-07-14,Entrada,Recebimento Cliente,Liquidação boleto,27948.84,606994.85,BB-PJ
+2025-07-14,Entrada,Recebimento Cliente,Liquidação boleto,15573.68,622568.53,Caixa
+2025-07-14,Entrada,Recebimento Cliente,Liquidação boleto,20869.28,643437.81,Itaú-PJ
+2025-07-14,Entrada,Recebimento Cliente,PIX cliente,35607.42,679045.23,BB-PJ
+2025-07-14,Saída,Folha,Folha,-3082.43,675962.8,Itaú-PJ
+2025-07-14,Saída,Marketing,Marketing,-17585.76,658377.04,BB-PJ
+2025-07-14,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-10919.74,647457.3,Itaú-PJ
+2025-07-15,Entrada,Outras Receitas,PIX cliente,30042.12,677499.42,BB-PJ
+2025-07-15,Entrada,Recebimento Cliente,PIX cliente,46979.81,724479.23,Itaú-PJ
+2025-07-15,Entrada,Recebimento Cliente,PIX cliente,25866.04,750345.27,Caixa
+2025-07-15,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-19445.17,730900.1,Itaú-PJ
+2025-07-15,Saída,Outras,Outras,-25189.93,705710.17,BB-PJ
+2025-07-16,Entrada,Outras Receitas,Liquidação boleto,32456.37,738166.54,Itaú-PJ
+2025-07-16,Entrada,Recebimento Cliente,PIX cliente,19324.95,757491.49,Itaú-PJ
+2025-07-16,Entrada,Outras Receitas,PIX cliente,2042.99,759534.48,Itaú-PJ
+2025-07-16,Entrada,Recebimento Cliente,Liquidação boleto,20218.97,779753.45,Itaú-PJ
+2025-07-16,Entrada,Recebimento Cliente,Liquidação boleto,17010.15,796763.6,Itaú-PJ
+2025-07-16,Entrada,Outras Receitas,PIX cliente,48931.51,845695.11,Caixa
+2025-07-16,Entrada,Outras Receitas,PIX cliente,24795.71,870490.82,Caixa
+2025-07-16,Saída,Folha,Folha,-22811.95,847678.87,BB-PJ
+2025-07-16,Saída,Energia/Util,Energia/Util,-13120.93,834557.94,BB-PJ
+2025-07-16,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-7608.12,826949.82,BB-PJ
+2025-07-17,Entrada,Recebimento Cliente,PIX cliente,43873.39,870823.21,BB-PJ
+2025-07-17,Entrada,Recebimento Cliente,Liquidação boleto,29691.59,900514.8,Itaú-PJ
+2025-07-17,Entrada,Recebimento Cliente,Liquidação boleto,25489.33,926004.13,Itaú-PJ
+2025-07-17,Entrada,Outras Receitas,PIX cliente,41795.09,967799.22,Caixa
+2025-07-17,Entrada,Recebimento Cliente,Liquidação boleto,18855.82,986655.04,Caixa
+2025-07-17,Saída,Folha,Folha,-17950.88,968704.16,BB-PJ
+2025-07-17,Saída,Impostos,Impostos,-12279.36,956424.8,Itaú-PJ
+2025-07-18,Entrada,Outras Receitas,Liquidação boleto,38706.77,995131.57,Caixa
+2025-07-18,Entrada,Recebimento Cliente,Liquidação boleto,44322.58,1039454.15,Itaú-PJ
+2025-07-18,Entrada,Recebimento Cliente,Liquidação boleto,19835.93,1059290.08,BB-PJ
+2025-07-18,Entrada,Recebimento Cliente,PIX cliente,34092.53,1093382.61,Caixa
+2025-07-18,Entrada,Recebimento Cliente,Liquidação boleto,26820.14,1120202.75,BB-PJ
+2025-07-18,Entrada,Recebimento Cliente,Liquidação boleto,42266.44,1162469.19,Itaú-PJ
+2025-07-18,Saída,Impostos,Impostos,-11054.2,1151414.99,Itaú-PJ
+2025-07-18,Saída,Folha,Folha,-18477.11,1132937.88,Itaú-PJ
+2025-07-18,Saída,Folha,Folha,-821.15,1132116.73,BB-PJ
+2025-07-18,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-7869.55,1124247.18,Itaú-PJ
+2025-07-18,Saída,Aluguel,Aluguel,-5809.92,1118437.26,Itaú-PJ
+2025-07-18,Saída,Impostos,Impostos,-14402.01,1104035.25,BB-PJ
+2025-07-19,Saída,Frete,Frete,-15849.82,1088185.43,Itaú-PJ
+2025-07-19,Saída,Impostos,Impostos,-11053.93,1077131.5,Itaú-PJ
+2025-07-20,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-4672.38,1072459.12,BB-PJ
+2025-07-20,Saída,Aluguel,Aluguel,-154.02,1072305.1,Itaú-PJ
+2025-07-20,Saída,Frete,Frete,-5779.55,1066525.55,BB-PJ
+2025-07-20,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-4791.58,1061733.97,Itaú-PJ
+2025-07-21,Entrada,Outras Receitas,PIX cliente,29876.12,1091610.09,Caixa
+2025-07-21,Entrada,Outras Receitas,Liquidação boleto,39547.18,1131157.27,Caixa
+2025-07-21,Entrada,Recebimento Cliente,PIX cliente,500,1131657.27,BB-PJ
+2025-07-21,Entrada,Recebimento Cliente,PIX cliente,14776.53,1146433.8,Itaú-PJ
+2025-07-21,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-23559.71,1122874.09,BB-PJ
+2025-07-21,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-19142.47,1103731.62,BB-PJ
+2025-07-21,Saída,Impostos,Impostos,-26925.87,1076805.75,BB-PJ
+2025-07-21,Saída,Impostos,Impostos,-9003.57,1067802.18,Itaú-PJ
+2025-07-21,Saída,Energia/Util,Energia/Util,-10674.01,1057128.17,BB-PJ
+2025-07-21,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-3399.95,1053728.22,BB-PJ
+2025-07-22,Entrada,Outras Receitas,Liquidação boleto,26611.62,1080339.84,Caixa
+2025-07-22,Entrada,Recebimento Cliente,Liquidação boleto,7900.81,1088240.65,Caixa
+2025-07-22,Entrada,Outras Receitas,Liquidação boleto,38435.77,1126676.42,BB-PJ
+2025-07-22,Entrada,Outras Receitas,PIX cliente,26418.12,1153094.54,Caixa
+2025-07-22,Entrada,Recebimento Cliente,Liquidação boleto,40247.06,1193341.6,BB-PJ
+2025-07-22,Saída,Aluguel,Aluguel,-3377.58,1189964.02,Itaú-PJ
+2025-07-22,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-11971.38,1177992.64,BB-PJ
+2025-07-22,Saída,Energia/Util,Energia/Util,-15507.51,1162485.13,BB-PJ
+2025-07-22,Saída,Frete,Frete,-4174.68,1158310.45,BB-PJ
+2025-07-22,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-14135.1,1144175.35,BB-PJ
+2025-07-22,Saída,Impostos,Impostos,-24235.31,1119940.04,Itaú-PJ
+2025-07-23,Entrada,Recebimento Cliente,PIX cliente,61475.93,1181415.97,Itaú-PJ
+2025-07-23,Entrada,Recebimento Cliente,Liquidação boleto,20456.05,1201872.02,Caixa
+2025-07-23,Entrada,Recebimento Cliente,Liquidação boleto,44172.68,1246044.7,Itaú-PJ
+2025-07-23,Saída,Aluguel,Aluguel,-25380.56,1220664.14,Itaú-PJ
+2025-07-23,Saída,Folha,Folha,-9629.96,1211034.18,Itaú-PJ
+2025-07-23,Saída,Frete,Frete,-8298.29,1202735.89,Itaú-PJ
+2025-07-23,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-13643.01,1189092.88,Itaú-PJ
+2025-07-23,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-25513.65,1163579.23,Itaú-PJ
+2025-07-23,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-35547.73,1128031.5,Itaú-PJ
+2025-07-24,Entrada,Recebimento Cliente,PIX cliente,45686.46,1173717.96,BB-PJ
+2025-07-24,Entrada,Outras Receitas,Liquidação boleto,23975.92,1197693.88,BB-PJ
+2025-07-24,Entrada,Recebimento Cliente,Liquidação boleto,46492.04,1244185.92,BB-PJ
+2025-07-24,Entrada,Recebimento Cliente,Liquidação boleto,29181.86,1273367.78,Caixa
+2025-07-24,Entrada,Outras Receitas,Liquidação boleto,25232.49,1298600.27,Itaú-PJ
+2025-07-24,Entrada,Recebimento Cliente,Liquidação boleto,500,1299100.27,Caixa
+2025-07-24,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-12206.49,1286893.78,BB-PJ
+2025-07-24,Saída,Folha,Folha,-17749.6,1269144.18,BB-PJ
+2025-07-24,Saída,Impostos,Impostos,-3879.87,1265264.31,BB-PJ
+2025-07-25,Entrada,Recebimento Cliente,PIX cliente,24166.51,1289430.82,BB-PJ
+2025-07-25,Entrada,Outras Receitas,PIX cliente,28697.35,1318128.17,BB-PJ
+2025-07-25,Entrada,Recebimento Cliente,PIX cliente,19698.33,1337826.5,Itaú-PJ
+2025-07-25,Entrada,Recebimento Cliente,PIX cliente,34483.43,1372309.93,Itaú-PJ
+2025-07-25,Saída,Folha,Folha,-2395.32,1369914.61,BB-PJ
+2025-07-25,Saída,Outras,Outras,-12416.04,1357498.57,BB-PJ
+2025-07-25,Saída,Frete,Frete,-19338.39,1338160.18,BB-PJ
+2025-07-25,Saída,Folha,Folha,-28726.12,1309434.06,BB-PJ
+2025-07-26,Saída,Impostos,Impostos,-12232.43,1297201.63,Itaú-PJ
+2025-07-26,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-14335.89,1282865.74,Itaú-PJ
+2025-07-26,Saída,Impostos,Impostos,-10672.96,1272192.78,Itaú-PJ
+2025-07-26,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-31308.71,1240884.07,BB-PJ
+2025-07-26,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-13394.41,1227489.66,BB-PJ
+2025-07-27,Saída,Frete,Frete,-16221.22,1211268.44,Itaú-PJ
+2025-07-27,Saída,Frete,Frete,-11630.5,1199637.94,BB-PJ
+2025-07-27,Saída,Folha,Folha,-9962.23,1189675.71,BB-PJ
+2025-07-27,Saída,Frete,Frete,-9949.09,1179726.62,BB-PJ
+2025-07-28,Entrada,Recebimento Cliente,PIX cliente,39106.68,1218833.3,BB-PJ
+2025-07-28,Entrada,Recebimento Cliente,Liquidação boleto,18430.2,1237263.5,Itaú-PJ
+2025-07-28,Entrada,Recebimento Cliente,Liquidação boleto,55382.41,1292645.91,Itaú-PJ
+2025-07-28,Entrada,Recebimento Cliente,Liquidação boleto,42797.84,1335443.75,Itaú-PJ
+2025-07-28,Entrada,Recebimento Cliente,Liquidação boleto,36321.19,1371764.94,Itaú-PJ
+2025-07-28,Saída,Impostos,Impostos,-18022.13,1353742.81,Itaú-PJ
+2025-07-28,Saída,Outras,Outras,-23291.61,1330451.2,BB-PJ
+2025-07-28,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-3270.51,1327180.69,Itaú-PJ
+2025-07-28,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-22486.32,1304694.37,BB-PJ
+2025-07-28,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-1357.98,1303336.39,BB-PJ
+2025-07-29,Entrada,Recebimento Cliente,PIX cliente,9153.4,1312489.79,Itaú-PJ
+2025-07-29,Entrada,Recebimento Cliente,Liquidação boleto,8674.02,1321163.81,Itaú-PJ
+2025-07-29,Entrada,Recebimento Cliente,Liquidação boleto,28274.79,1349438.6,BB-PJ
+2025-07-29,Entrada,Outras Receitas,Liquidação boleto,32875.42,1382314.02,Itaú-PJ
+2025-07-29,Entrada,Recebimento Cliente,Liquidação boleto,25643.86,1407957.88,Itaú-PJ
+2025-07-29,Entrada,Outras Receitas,Liquidação boleto,33401.87,1441359.75,BB-PJ
+2025-07-29,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-11495.96,1429863.79,Itaú-PJ
+2025-07-29,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-12142.35,1417721.44,Itaú-PJ
+2025-07-29,Saída,Energia/Util,Energia/Util,-23790.81,1393930.63,BB-PJ
+2025-07-29,Saída,Energia/Util,Energia/Util,-21009.14,1372921.49,Itaú-PJ
+2025-07-29,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-14210.93,1358710.56,Itaú-PJ
+2025-07-29,Saída,Aluguel,Aluguel,-11747.74,1346962.82,Itaú-PJ
+2025-07-30,Entrada,Outras Receitas,Liquidação boleto,37571.77,1384534.59,BB-PJ
+2025-07-30,Entrada,Outras Receitas,Liquidação boleto,12844.15,1397378.74,BB-PJ
+2025-07-30,Entrada,Recebimento Cliente,PIX cliente,28568.69,1425947.43,Itaú-PJ
+2025-07-30,Entrada,Recebimento Cliente,PIX cliente,23959.53,1449906.96,Caixa
+2025-07-30,Saída,Aluguel,Aluguel,-13683.66,1436223.3,Itaú-PJ
+2025-07-30,Saída,Folha,Folha,-11553.32,1424669.98,Itaú-PJ
+2025-07-31,Entrada,Outras Receitas,PIX cliente,27099.8,1451769.78,BB-PJ
+2025-07-31,Entrada,Outras Receitas,PIX cliente,53876.89,1505646.67,BB-PJ
+2025-07-31,Entrada,Recebimento Cliente,PIX cliente,3601.85,1509248.52,Caixa
+2025-07-31,Entrada,Recebimento Cliente,PIX cliente,35373.86,1544622.38,Itaú-PJ
+2025-07-31,Saída,Aluguel,Aluguel,-7290.43,1537331.95,BB-PJ
+2025-07-31,Saída,Impostos,Impostos,-11256.72,1526075.23,Itaú-PJ
+2025-07-31,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-13888.79,1512186.44,Itaú-PJ
+2025-07-31,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-16849.11,1495337.33,Itaú-PJ
+2025-07-31,Saída,Impostos,Impostos,-20846.06,1474491.27,BB-PJ
+2025-07-31,Saída,Folha,Folha,-15055.44,1459435.83,Itaú-PJ
+2025-08-01,Entrada,Outras Receitas,PIX cliente,35068.49,1494504.32,Itaú-PJ
+2025-08-01,Entrada,Recebimento Cliente,Liquidação boleto,27873.99,1522378.31,Caixa
+2025-08-01,Entrada,Recebimento Cliente,Liquidação boleto,22764.49,1545142.8,BB-PJ
+2025-08-01,Entrada,Recebimento Cliente,Liquidação boleto,31930.45,1577073.25,Itaú-PJ
+2025-08-01,Entrada,Outras Receitas,Liquidação boleto,22136.26,1599209.51,Itaú-PJ
+2025-08-01,Saída,Folha,Folha,-23136.31,1576073.2,Itaú-PJ
+2025-08-01,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-11077.62,1564995.58,BB-PJ
+2025-08-02,Saída,Folha,Folha,-20419.63,1544575.95,BB-PJ
+2025-08-02,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-19082.94,1525493.01,Itaú-PJ
+2025-08-02,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-8235.72,1517257.29,Itaú-PJ
+2025-08-02,Saída,Folha,Folha,-136.9,1517120.39,Itaú-PJ
+2025-08-03,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-17630.12,1499490.27,Itaú-PJ
+2025-08-03,Saída,Impostos,Impostos,-15343.73,1484146.54,Itaú-PJ
+2025-08-04,Entrada,Outras Receitas,PIX cliente,46065.51,1530212.05,BB-PJ
+2025-08-04,Entrada,Recebimento Cliente,PIX cliente,34290.6,1564502.65,BB-PJ
+2025-08-04,Entrada,Outras Receitas,PIX cliente,16291.33,1580793.98,BB-PJ
+2025-08-04,Entrada,Outras Receitas,PIX cliente,29973.25,1610767.23,BB-PJ
+2025-08-04,Entrada,Recebimento Cliente,Liquidação boleto,28161.05,1638928.28,Caixa
+2025-08-04,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-21875.71,1617052.57,Itaú-PJ
+2025-08-04,Saída,Impostos,Impostos,-12555.53,1604497.04,Itaú-PJ
+2025-08-04,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-4332.38,1600164.66,Itaú-PJ
+2025-08-04,Saída,Aluguel,Aluguel,-11681.84,1588482.82,Itaú-PJ
+2025-08-04,Saída,Folha,Folha,-22384.48,1566098.34,Itaú-PJ
+2025-08-04,Saída,Folha,Folha,-15931.43,1550166.91,Itaú-PJ
+2025-08-05,Entrada,Recebimento Cliente,Liquidação boleto,29599.45,1579766.36,Itaú-PJ
+2025-08-05,Entrada,Recebimento Cliente,Liquidação boleto,51860.33,1631626.69,Itaú-PJ
+2025-08-05,Entrada,Recebimento Cliente,PIX cliente,15260.11,1646886.8,Itaú-PJ
+2025-08-05,Entrada,Recebimento Cliente,PIX cliente,8717.91,1655604.71,Itaú-PJ
+2025-08-05,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-11128.21,1644476.5,Itaú-PJ
+2025-08-05,Saída,Impostos,Impostos,-6329.97,1638146.53,Itaú-PJ
+2025-08-05,Saída,Marketing,Marketing,-15240.97,1622905.56,Itaú-PJ
+2025-08-05,Saída,Frete,Frete,-17561.37,1605344.19,BB-PJ
+2025-08-05,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-13471.94,1591872.25,Itaú-PJ
+2025-08-06,Entrada,Recebimento Cliente,Liquidação boleto,13411.92,1605284.17,Itaú-PJ
+2025-08-06,Entrada,Recebimento Cliente,PIX cliente,23878.11,1629162.28,Itaú-PJ
+2025-08-06,Entrada,Recebimento Cliente,Liquidação boleto,8235.58,1637397.86,BB-PJ
+2025-08-06,Entrada,Recebimento Cliente,PIX cliente,27154.67,1664552.53,BB-PJ
+2025-08-06,Entrada,Outras Receitas,Liquidação boleto,500,1665052.53,Itaú-PJ
+2025-08-06,Entrada,Recebimento Cliente,Liquidação boleto,34594.32,1699646.85,Caixa
+2025-08-06,Saída,Impostos,Impostos,-17500.06,1682146.79,BB-PJ
+2025-08-06,Saída,Folha,Folha,-174034.66,1508112.13,Itaú-PJ
+2025-08-06,Saída,Folha,Folha,-156859.04,1351253.09,Itaú-PJ
+2025-08-06,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-16012.99,1335240.1,Itaú-PJ
+2025-08-06,Saída,Marketing,Marketing,-2198.39,1333041.71,BB-PJ
+2025-08-06,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-14005.33,1319036.38,Itaú-PJ
+2025-08-07,Entrada,Outras Receitas,Liquidação boleto,32131.36,1351167.74,Itaú-PJ
+2025-08-07,Entrada,Recebimento Cliente,Liquidação boleto,13215.85,1364383.59,Itaú-PJ
+2025-08-07,Entrada,Recebimento Cliente,Liquidação boleto,45557.29,1409940.88,Caixa
+2025-08-07,Entrada,Recebimento Cliente,Liquidação boleto,21787.98,1431728.86,BB-PJ
+2025-08-07,Saída,Outras,Outras,-23889.14,1407839.72,Itaú-PJ
+2025-08-07,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-24518.4,1383321.32,Itaú-PJ
+2025-08-07,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-3424.36,1379896.96,BB-PJ
+2025-08-08,Entrada,Outras Receitas,PIX cliente,11779.38,1391676.34,Itaú-PJ
+2025-08-08,Entrada,Recebimento Cliente,Liquidação boleto,28726.36,1420402.7,Itaú-PJ
+2025-08-08,Entrada,Recebimento Cliente,PIX cliente,40753.48,1461156.18,Itaú-PJ
+2025-08-08,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-23065.6,1438090.58,Itaú-PJ
+2025-08-08,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-16229.53,1421861.05,Itaú-PJ
+2025-08-08,Saída,Folha,Folha,-20667.89,1401193.16,Itaú-PJ
+2025-08-08,Saída,Folha,Folha,-2026.83,1399166.33,Itaú-PJ
+2025-08-08,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-11843.49,1387322.84,Itaú-PJ
+2025-08-08,Saída,Frete,Frete,-20181.24,1367141.6,Itaú-PJ
+2025-08-09,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-13293.12,1353848.48,Itaú-PJ
+2025-08-09,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-6038.16,1347810.32,Itaú-PJ
+2025-08-09,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-23020.88,1324789.44,BB-PJ
+2025-08-09,Saída,Folha,Folha,-12195.64,1312593.8,Itaú-PJ
+2025-08-09,Saída,Folha,Folha,-21605.87,1290987.93,Itaú-PJ
+2025-08-10,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-14589.54,1276398.39,BB-PJ
+2025-08-10,Saída,Frete,Frete,-25498.33,1250900.06,Itaú-PJ
+2025-08-10,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-9027.47,1241872.59,Itaú-PJ
+2025-08-10,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-4057.94,1237814.65,Itaú-PJ
+2025-08-10,Saída,Impostos,Impostos,-19215.54,1218599.11,Itaú-PJ
+2025-08-10,Saída,Outras,Outras,-9612.87,1208986.24,Itaú-PJ
+2025-08-11,Entrada,Recebimento Cliente,PIX cliente,40939.51,1249925.75,Caixa
+2025-08-11,Entrada,Recebimento Cliente,PIX cliente,22446.96,1272372.71,Itaú-PJ
+2025-08-11,Entrada,Outras Receitas,Liquidação boleto,34321.55,1306694.26,Itaú-PJ
+2025-08-11,Entrada,Outras Receitas,PIX cliente,21181.32,1327875.58,Itaú-PJ
+2025-08-11,Entrada,Recebimento Cliente,Liquidação boleto,37500.99,1365376.57,Itaú-PJ
+2025-08-11,Entrada,Recebimento Cliente,Liquidação boleto,25690.31,1391066.88,Caixa
+2025-08-11,Saída,Folha,Folha,-13054.96,1378011.92,Itaú-PJ
+2025-08-11,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-14190.82,1363821.1,Itaú-PJ
+2025-08-11,Saída,Marketing,Marketing,-15510.34,1348310.76,Itaú-PJ
+2025-08-11,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-21064.53,1327246.23,BB-PJ
+2025-08-11,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-27986.67,1299259.56,Itaú-PJ
+2025-08-11,Saída,Marketing,Marketing,-11505.27,1287754.29,BB-PJ
+2025-08-12,Entrada,Recebimento Cliente,Liquidação boleto,29461.27,1317215.56,Itaú-PJ
+2025-08-12,Entrada,Recebimento Cliente,PIX cliente,5836.46,1323052.02,Caixa
+2025-08-12,Entrada,Recebimento Cliente,PIX cliente,34595.48,1357647.5,Itaú-PJ
+2025-08-12,Entrada,Recebimento Cliente,Liquidação boleto,31713.59,1389361.09,Itaú-PJ
+2025-08-12,Entrada,Recebimento Cliente,Liquidação boleto,19119.67,1408480.76,Itaú-PJ
+2025-08-12,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-18063.06,1390417.7,BB-PJ
+2025-08-12,Saída,Folha,Folha,-10543.99,1379873.71,BB-PJ
+2025-08-12,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-15217.86,1364655.85,BB-PJ
+2025-08-12,Saída,Folha,Folha,-12687.0,1351968.85,Itaú-PJ
+2025-08-12,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-13953.23,1338015.62,Itaú-PJ
+2025-08-13,Entrada,Recebimento Cliente,PIX cliente,42229.61,1380245.23,Itaú-PJ
+2025-08-13,Entrada,Recebimento Cliente,Liquidação boleto,34475.71,1414720.94,Itaú-PJ
+2025-08-13,Entrada,Recebimento Cliente,Liquidação boleto,28091.45,1442812.39,BB-PJ
+2025-08-13,Entrada,Recebimento Cliente,PIX cliente,35788.76,1478601.15,BB-PJ
+2025-08-13,Entrada,Recebimento Cliente,Liquidação boleto,5426.07,1484027.22,Itaú-PJ
+2025-08-13,Entrada,Recebimento Cliente,Liquidação boleto,16661.78,1500689.0,BB-PJ
+2025-08-13,Saída,Marketing,Marketing,-18378.96,1482310.04,BB-PJ
+2025-08-13,Saída,Outras,Outras,-13664.6,1468645.44,BB-PJ
+2025-08-13,Saída,Outras,Outras,-6395.57,1462249.87,Itaú-PJ
+2025-08-13,Saída,Aluguel,Aluguel,-19762.49,1442487.38,Itaú-PJ
+2025-08-13,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-11488.96,1430998.42,Itaú-PJ
+2025-08-14,Entrada,Recebimento Cliente,Liquidação boleto,13447.28,1444445.7,Caixa
+2025-08-14,Entrada,Recebimento Cliente,PIX cliente,37469.28,1481914.98,Itaú-PJ
+2025-08-14,Entrada,Outras Receitas,Liquidação boleto,33692.37,1515607.35,BB-PJ
+2025-08-14,Entrada,Outras Receitas,Liquidação boleto,57926.39,1573533.74,Caixa
+2025-08-14,Entrada,Recebimento Cliente,PIX cliente,24353.0,1597886.74,BB-PJ
+2025-08-14,Entrada,Outras Receitas,Liquidação boleto,26376.77,1624263.51,BB-PJ
+2025-08-14,Saída,Frete,Frete,-4204.69,1620058.82,Itaú-PJ
+2025-08-14,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-10385.91,1609672.91,BB-PJ
+2025-08-14,Saída,Impostos,Impostos,-17560.49,1592112.42,BB-PJ
+2025-08-14,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-2829.77,1589282.65,Itaú-PJ
+2025-08-14,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-18724.37,1570558.28,Itaú-PJ
+2025-08-14,Saída,Folha,Folha,-7581.87,1562976.41,Itaú-PJ
+2025-08-15,Entrada,Recebimento Cliente,Liquidação boleto,19730.86,1582707.27,Itaú-PJ
+2025-08-15,Entrada,Recebimento Cliente,Liquidação boleto,33629.73,1616337.0,Caixa
+2025-08-15,Entrada,Recebimento Cliente,Liquidação boleto,26893.96,1643230.96,Itaú-PJ
+2025-08-15,Entrada,Recebimento Cliente,Liquidação boleto,13249.23,1656480.19,BB-PJ
+2025-08-15,Entrada,Recebimento Cliente,Liquidação boleto,41741.86,1698222.05,Itaú-PJ
+2025-08-15,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-7517.87,1690704.18,BB-PJ
+2025-08-15,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-7481.48,1683222.7,Itaú-PJ
+2025-08-15,Saída,Impostos,Impostos,-11898.17,1671324.53,BB-PJ
+2025-08-16,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-30746.78,1640577.75,BB-PJ
+2025-08-16,Saída,Aluguel,Aluguel,-9876.08,1630701.67,Itaú-PJ
+2025-08-17,Saída,Impostos,Impostos,-9342.8,1621358.87,BB-PJ
+2025-08-17,Saída,Impostos,Impostos,-11759.06,1609599.81,Itaú-PJ
+2025-08-17,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-20318.26,1589281.55,BB-PJ
+2025-08-17,Saída,Aluguel,Aluguel,-4501.87,1584779.68,Itaú-PJ
+2025-08-17,Saída,Frete,Frete,-16962.91,1567816.77,BB-PJ
+2025-08-17,Saída,Frete,Frete,-12564.03,1555252.74,Itaú-PJ
+2025-08-18,Entrada,Recebimento Cliente,PIX cliente,43437.38,1598690.12,Caixa
+2025-08-18,Entrada,Recebimento Cliente,Liquidação boleto,41180.39,1639870.51,Itaú-PJ
+2025-08-18,Entrada,Recebimento Cliente,PIX cliente,34909.29,1674779.8,BB-PJ
+2025-08-18,Entrada,Recebimento Cliente,Liquidação boleto,48961.75,1723741.55,Itaú-PJ
+2025-08-18,Entrada,Recebimento Cliente,PIX cliente,29603.85,1753345.4,BB-PJ
+2025-08-18,Entrada,Outras Receitas,Liquidação boleto,10227.2,1763572.6,Itaú-PJ
+2025-08-18,Entrada,Outras Receitas,PIX cliente,18946.57,1782519.17,Itaú-PJ
+2025-08-18,Saída,Folha,Folha,-10320.28,1772198.89,Itaú-PJ
+2025-08-18,Saída,Folha,Folha,-7191.03,1765007.86,BB-PJ
+2025-08-18,Saída,Frete,Frete,-17520.5,1747487.36,Itaú-PJ
+2025-08-18,Saída,Folha,Folha,-21786.08,1725701.28,Itaú-PJ
+2025-08-18,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-19161.36,1706539.92,Itaú-PJ
+2025-08-19,Entrada,Outras Receitas,PIX cliente,60568.08,1767108.0,BB-PJ
+2025-08-19,Entrada,Recebimento Cliente,Liquidação boleto,33470.09,1800578.09,Caixa
+2025-08-19,Entrada,Recebimento Cliente,PIX cliente,19493.12,1820071.21,Itaú-PJ
+2025-08-19,Entrada,Recebimento Cliente,PIX cliente,31670.95,1851742.16,BB-PJ
+2025-08-19,Entrada,Outras Receitas,Liquidação boleto,48410.12,1900152.28,Itaú-PJ
+2025-08-19,Entrada,Recebimento Cliente,Liquidação boleto,47238.98,1947391.26,BB-PJ
+2025-08-19,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-18228.94,1929162.32,BB-PJ
+2025-08-19,Saída,Impostos,Impostos,-25799.26,1903363.06,Itaú-PJ
+2025-08-20,Entrada,Recebimento Cliente,Liquidação boleto,37079.53,1940442.59,BB-PJ
+2025-08-20,Entrada,Outras Receitas,Liquidação boleto,26880.31,1967322.9,Caixa
+2025-08-20,Entrada,Recebimento Cliente,PIX cliente,22773.95,1990096.85,Caixa
+2025-08-20,Entrada,Outras Receitas,PIX cliente,29021.2,2019118.05,Caixa
+2025-08-20,Entrada,Recebimento Cliente,PIX cliente,24890.62,2044008.67,Itaú-PJ
+2025-08-20,Entrada,Recebimento Cliente,Liquidação boleto,28140.12,2072148.79,Caixa
+2025-08-20,Entrada,Recebimento Cliente,Liquidação boleto,48647.15,2120795.94,BB-PJ
+2025-08-20,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-15208.35,2105587.59,Itaú-PJ
+2025-08-20,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-7595.65,2097991.94,Itaú-PJ
+2025-08-20,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-11284.74,2086707.2,Itaú-PJ
+2025-08-21,Entrada,Recebimento Cliente,PIX cliente,18875.56,2105582.76,Caixa
+2025-08-21,Entrada,Recebimento Cliente,Liquidação boleto,45773.73,2151356.49,Itaú-PJ
+2025-08-21,Entrada,Recebimento Cliente,PIX cliente,21265.1,2172621.59,Caixa
+2025-08-21,Entrada,Recebimento Cliente,Liquidação boleto,21939.72,2194561.31,Itaú-PJ
+2025-08-21,Entrada,Outras Receitas,Liquidação boleto,48754.76,2243316.07,Caixa
+2025-08-21,Entrada,Recebimento Cliente,PIX cliente,21928.72,2265244.79,Itaú-PJ
+2025-08-21,Entrada,Recebimento Cliente,PIX cliente,17505.8,2282750.59,Caixa
+2025-08-21,Saída,Energia/Util,Energia/Util,-14312.18,2268438.41,BB-PJ
+2025-08-21,Saída,Impostos,Impostos,-13867.28,2254571.13,Itaú-PJ
+2025-08-21,Saída,Folha,Folha,-9147.29,2245423.84,Itaú-PJ
+2025-08-21,Saída,Folha,Folha,-19234.26,2226189.58,BB-PJ
+2025-08-22,Entrada,Recebimento Cliente,Liquidação boleto,26688.07,2252877.65,Caixa
+2025-08-22,Entrada,Recebimento Cliente,Liquidação boleto,21217.44,2274095.09,Itaú-PJ
+2025-08-22,Entrada,Recebimento Cliente,PIX cliente,21008.43,2295103.52,Caixa
+2025-08-22,Entrada,Outras Receitas,Liquidação boleto,19690.56,2314794.08,Itaú-PJ
+2025-08-22,Entrada,Recebimento Cliente,PIX cliente,36570.84,2351364.92,Caixa
+2025-08-22,Saída,Folha,Folha,-8820.22,2342544.7,Itaú-PJ
+2025-08-22,Saída,Impostos,Impostos,-10734.25,2331810.45,Itaú-PJ
+2025-08-22,Saída,Frete,Frete,-2440.98,2329369.47,BB-PJ
+2025-08-22,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-25797.32,2303572.15,BB-PJ
+2025-08-22,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-1566.63,2302005.52,Itaú-PJ
+2025-08-23,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-3661.44,2298344.08,Itaú-PJ
+2025-08-23,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-13242.78,2285101.3,Itaú-PJ
+2025-08-23,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-7265.11,2277836.19,BB-PJ
+2025-08-23,Saída,Aluguel,Aluguel,-21243.38,2256592.81,Itaú-PJ
+2025-08-23,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-10234.77,2246358.04,BB-PJ
+2025-08-24,Saída,Folha,Folha,-25522.0,2220836.04,Itaú-PJ
+2025-08-24,Saída,Outras,Outras,-6173.98,2214662.06,Itaú-PJ
+2025-08-25,Entrada,Recebimento Cliente,Liquidação boleto,25196.93,2239858.99,Caixa
+2025-08-25,Entrada,Outras Receitas,Liquidação boleto,45106.06,2284965.05,Caixa
+2025-08-25,Entrada,Recebimento Cliente,Liquidação boleto,14331.35,2299296.4,Itaú-PJ
+2025-08-25,Entrada,Recebimento Cliente,PIX cliente,23802.7,2323099.1,Caixa
+2025-08-25,Entrada,Recebimento Cliente,PIX cliente,10401.5,2333500.6,Itaú-PJ
+2025-08-25,Entrada,Recebimento Cliente,Liquidação boleto,48822.59,2382323.19,BB-PJ
+2025-08-25,Entrada,Recebimento Cliente,PIX cliente,30618.93,2412942.12,Caixa
+2025-08-25,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-21408.36,2391533.76,BB-PJ
+2025-08-25,Saída,Impostos,Impostos,-18106.36,2373427.4,Itaú-PJ
+2025-08-26,Entrada,Recebimento Cliente,PIX cliente,40825.21,2414252.61,Caixa
+2025-08-26,Entrada,Recebimento Cliente,Liquidação boleto,34795.25,2449047.86,Itaú-PJ
+2025-08-26,Entrada,Recebimento Cliente,Liquidação boleto,21976.26,2471024.12,Caixa
+2025-08-26,Entrada,Recebimento Cliente,PIX cliente,35753.6,2506777.72,BB-PJ
+2025-08-26,Saída,Folha,Folha,-16311.97,2490465.75,Itaú-PJ
+2025-08-26,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-3994.98,2486470.77,Itaú-PJ
+2025-08-26,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-3007.34,2483463.43,BB-PJ
+2025-08-27,Entrada,Outras Receitas,Liquidação boleto,29607.51,2513070.94,BB-PJ
+2025-08-27,Entrada,Recebimento Cliente,Liquidação boleto,23959.73,2537030.67,Caixa
+2025-08-27,Entrada,Recebimento Cliente,Liquidação boleto,39787.97,2576818.64,BB-PJ
+2025-08-27,Entrada,Recebimento Cliente,Liquidação boleto,41187.0,2618005.64,Caixa
+2025-08-27,Entrada,Recebimento Cliente,Liquidação boleto,17159.7,2635165.34,Itaú-PJ
+2025-08-27,Saída,Frete,Frete,-16552.23,2618613.11,Itaú-PJ
+2025-08-27,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-17993.99,2600619.12,Itaú-PJ
+2025-08-27,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-20270.63,2580348.49,BB-PJ
+2025-08-27,Saída,Impostos,Impostos,-36327.86,2544020.63,BB-PJ
+2025-08-27,Saída,Aluguel,Aluguel,-2228.46,2541792.17,BB-PJ
+2025-08-28,Entrada,Recebimento Cliente,Liquidação boleto,26454.56,2568246.73,Caixa
+2025-08-28,Entrada,Recebimento Cliente,PIX cliente,56586.43,2624833.16,Itaú-PJ
+2025-08-28,Entrada,Recebimento Cliente,PIX cliente,36419.1,2661252.26,Caixa
+2025-08-28,Entrada,Outras Receitas,Liquidação boleto,26325.88,2687578.14,Itaú-PJ
+2025-08-28,Saída,Frete,Frete,-9768.17,2677809.97,Itaú-PJ
+2025-08-28,Saída,Folha,Folha,-7070.49,2670739.48,BB-PJ
+2025-08-28,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-15375.49,2655363.99,Itaú-PJ
+2025-08-28,Saída,Folha,Folha,-14951.7,2640412.29,BB-PJ
+2025-08-28,Saída,Outras,Outras,-23923.71,2616488.58,Itaú-PJ
+2025-08-29,Entrada,Recebimento Cliente,Liquidação boleto,12656.45,2629145.03,Caixa
+2025-08-29,Entrada,Recebimento Cliente,PIX cliente,21703.44,2650848.47,Itaú-PJ
+2025-08-29,Entrada,Recebimento Cliente,Liquidação boleto,43209.82,2694058.29,BB-PJ
+2025-08-29,Entrada,Outras Receitas,PIX cliente,53859.24,2747917.53,Itaú-PJ
+2025-08-29,Saída,Frete,Frete,-11711.23,2736206.3,BB-PJ
+2025-08-29,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-27210.46,2708995.84,Itaú-PJ
+2025-08-29,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-16365.54,2692630.3,Itaú-PJ
+2025-08-29,Saída,Energia/Util,Energia/Util,-3644.53,2688985.77,BB-PJ
+2025-08-29,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-25107.92,2663877.85,Itaú-PJ
+2025-08-29,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-13588.36,2650289.49,Itaú-PJ
+2025-08-30,Saída,Impostos,Impostos,-18517.99,2631771.5,Itaú-PJ
+2025-08-30,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-7283.72,2624487.78,Itaú-PJ
+2025-08-30,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-17882.08,2606605.7,BB-PJ
+2025-08-31,Saída,Impostos,Impostos,-8886.88,2597718.82,Itaú-PJ
+2025-08-31,Saída,Impostos,Impostos,-29557.52,2568161.3,Itaú-PJ
+2025-08-31,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-7985.4,2560175.9,Itaú-PJ
+2025-08-31,Saída,Frete,Frete,-5949.42,2554226.48,BB-PJ
+2025-09-01,Entrada,Recebimento Cliente,Liquidação boleto,21200.95,2575427.43,BB-PJ
+2025-09-01,Entrada,Recebimento Cliente,PIX cliente,39987.35,2615414.78,Caixa
+2025-09-01,Entrada,Recebimento Cliente,PIX cliente,8717.12,2624131.9,Itaú-PJ
+2025-09-01,Entrada,Recebimento Cliente,Liquidação boleto,35017.81,2659149.71,BB-PJ
+2025-09-01,Entrada,Recebimento Cliente,Liquidação boleto,38868.92,2698018.63,Itaú-PJ
+2025-09-01,Entrada,Outras Receitas,Liquidação boleto,17327.68,2715346.31,Itaú-PJ
+2025-09-01,Saída,Marketing,Marketing,-5388.87,2709957.44,BB-PJ
+2025-09-01,Saída,Folha,Folha,-13727.36,2696230.08,Itaú-PJ
+2025-09-01,Saída,Folha,Folha,-10504.15,2685725.93,BB-PJ
+2025-09-02,Entrada,Recebimento Cliente,Liquidação boleto,16870.14,2702596.07,BB-PJ
+2025-09-02,Entrada,Recebimento Cliente,Liquidação boleto,13902.2,2716498.27,Itaú-PJ
+2025-09-02,Entrada,Recebimento Cliente,PIX cliente,33980.66,2750478.93,BB-PJ
+2025-09-02,Entrada,Recebimento Cliente,PIX cliente,25677.84,2776156.77,Itaú-PJ
+2025-09-02,Entrada,Recebimento Cliente,Liquidação boleto,29905.22,2806061.99,Itaú-PJ
+2025-09-02,Entrada,Recebimento Cliente,PIX cliente,26428.33,2832490.32,BB-PJ
+2025-09-02,Entrada,Recebimento Cliente,Liquidação boleto,3645.44,2836135.76,Itaú-PJ
+2025-09-02,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-21003.65,2815132.11,Itaú-PJ
+2025-09-02,Saída,Folha,Folha,-20578.73,2794553.38,Itaú-PJ
+2025-09-02,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-25453.96,2769099.42,Itaú-PJ
+2025-09-02,Saída,Outras,Outras,-5020.71,2764078.71,BB-PJ
+2025-09-02,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-14356.98,2749721.73,Itaú-PJ
+2025-09-03,Entrada,Outras Receitas,Liquidação boleto,19617.37,2769339.1,Itaú-PJ
+2025-09-03,Entrada,Recebimento Cliente,PIX cliente,22878.51,2792217.61,Caixa
+2025-09-03,Entrada,Outras Receitas,Liquidação boleto,22908.62,2815126.23,Caixa
+2025-09-03,Entrada,Recebimento Cliente,Liquidação boleto,45271.46,2860397.69,Itaú-PJ
+2025-09-03,Entrada,Outras Receitas,PIX cliente,31754.18,2892151.87,Caixa
+2025-09-03,Entrada,Recebimento Cliente,Liquidação boleto,29821.12,2921972.99,BB-PJ
+2025-09-03,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-16402.82,2905570.17,Itaú-PJ
+2025-09-03,Saída,Folha,Folha,-19134.18,2886435.99,BB-PJ
+2025-09-03,Saída,Energia/Util,Energia/Util,-9166.41,2877269.58,Itaú-PJ
+2025-09-04,Entrada,Outras Receitas,Liquidação boleto,8707.68,2885977.26,BB-PJ
+2025-09-04,Entrada,Outras Receitas,PIX cliente,9676.05,2895653.31,Itaú-PJ
+2025-09-04,Entrada,Recebimento Cliente,Liquidação boleto,15860.51,2911513.82,BB-PJ
+2025-09-04,Entrada,Recebimento Cliente,Liquidação boleto,24590.53,2936104.35,BB-PJ
+2025-09-04,Entrada,Recebimento Cliente,Liquidação boleto,25664.4,2961768.75,Itaú-PJ
+2025-09-04,Entrada,Outras Receitas,PIX cliente,34315.28,2996084.03,BB-PJ
+2025-09-04,Entrada,Recebimento Cliente,Liquidação boleto,32672.62,3028756.65,Itaú-PJ
+2025-09-04,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-31013.27,2997743.38,BB-PJ
+2025-09-04,Saída,Impostos,Impostos,-21745.62,2975997.76,Itaú-PJ
+2025-09-04,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-259.02,2975738.74,Itaú-PJ
+2025-09-04,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-24734.55,2951004.19,Itaú-PJ
+2025-09-04,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-17827.13,2933177.06,BB-PJ
+2025-09-05,Entrada,Recebimento Cliente,Liquidação boleto,22072.15,2955249.21,Caixa
+2025-09-05,Entrada,Recebimento Cliente,PIX cliente,10915.31,2966164.52,Itaú-PJ
+2025-09-05,Entrada,Recebimento Cliente,PIX cliente,12593.17,2978757.69,Itaú-PJ
+2025-09-05,Entrada,Recebimento Cliente,PIX cliente,23425.48,3002183.17,BB-PJ
+2025-09-05,Entrada,Recebimento Cliente,PIX cliente,36598.4,3038781.57,Itaú-PJ
+2025-09-05,Entrada,Recebimento Cliente,PIX cliente,22695.83,3061477.4,Itaú-PJ
+2025-09-05,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-18436.81,3043040.59,Itaú-PJ
+2025-09-05,Saída,Folha,Folha,-170097.65,2872942.94,Itaú-PJ
+2025-09-05,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-5745.82,2867197.12,Itaú-PJ
+2025-09-05,Saída,Impostos,Impostos,-18628.84,2848568.28,Itaú-PJ
+2025-09-05,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-16109.63,2832458.65,BB-PJ
+2025-09-05,Saída,Marketing,Marketing,-17996.01,2814462.64,Itaú-PJ
+2025-09-06,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-14307.22,2800155.42,Itaú-PJ
+2025-09-06,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-25162.87,2774992.55,Itaú-PJ
+2025-09-07,Saída,Impostos,Impostos,-14622.65,2760369.9,BB-PJ
+2025-09-07,Saída,Energia/Util,Energia/Util,-17880.6,2742489.3,Itaú-PJ
+2025-09-07,Saída,Folha,Folha,-3088.14,2739401.16,BB-PJ
+2025-09-07,Saída,Impostos,Impostos,-15143.85,2724257.31,Itaú-PJ
+2025-09-07,Saída,Folha,Folha,-18862.26,2705395.05,BB-PJ
+2025-09-08,Entrada,Recebimento Cliente,Liquidação boleto,500,2705895.05,Itaú-PJ
+2025-09-08,Entrada,Recebimento Cliente,PIX cliente,20224.25,2726119.3,Caixa
+2025-09-08,Entrada,Recebimento Cliente,PIX cliente,29000.68,2755119.98,Itaú-PJ
+2025-09-08,Entrada,Recebimento Cliente,PIX cliente,31642.05,2786762.03,Caixa
+2025-09-08,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-1444.48,2785317.55,Itaú-PJ
+2025-09-08,Saída,Impostos,Impostos,-7192.59,2778124.96,Itaú-PJ
+2025-09-08,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-17513.13,2760611.83,Itaú-PJ
+2025-09-08,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-29893.63,2730718.2,Itaú-PJ
+2025-09-08,Saída,Folha,Folha,-8655.97,2722062.23,Itaú-PJ
+2025-09-08,Saída,Impostos,Impostos,-11500.73,2710561.5,Itaú-PJ
+2025-09-09,Entrada,Recebimento Cliente,PIX cliente,40119.54,2750681.04,Itaú-PJ
+2025-09-09,Entrada,Recebimento Cliente,PIX cliente,33016.48,2783697.52,Itaú-PJ
+2025-09-09,Entrada,Recebimento Cliente,Liquidação boleto,34126.59,2817824.11,BB-PJ
+2025-09-09,Entrada,Outras Receitas,Liquidação boleto,12983.14,2830807.25,Caixa
+2025-09-09,Entrada,Recebimento Cliente,Liquidação boleto,27927.58,2858734.83,Caixa
+2025-09-09,Entrada,Outras Receitas,Liquidação boleto,34607.71,2893342.54,Itaú-PJ
+2025-09-09,Entrada,Outras Receitas,PIX cliente,14639.12,2907981.66,Itaú-PJ
+2025-09-09,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-22001.74,2885979.92,Itaú-PJ
+2025-09-09,Saída,Impostos,Impostos,-22169.86,2863810.06,Itaú-PJ
+2025-09-09,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-12277.33,2851532.73,BB-PJ
+2025-09-09,Saída,Impostos,Impostos,-25414.93,2826117.8,Itaú-PJ
+2025-09-09,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-13315.48,2812802.32,Itaú-PJ
+2025-09-10,Entrada,Recebimento Cliente,Liquidação boleto,31954.39,2844756.71,Itaú-PJ
+2025-09-10,Entrada,Recebimento Cliente,PIX cliente,42702.71,2887459.42,Itaú-PJ
+2025-09-10,Entrada,Recebimento Cliente,PIX cliente,16117.12,2903576.54,Caixa
+2025-09-10,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-11687.45,2891889.09,Itaú-PJ
+2025-09-10,Saída,Aluguel,Aluguel,-78000,2813889.09,Itaú-PJ
+2025-09-10,Saída,Energia/Util,Energia/Util,-14117.37,2799771.72,Itaú-PJ
+2025-09-10,Saída,Impostos,Impostos,-15718.99,2784052.73,Itaú-PJ
+2025-09-11,Entrada,Outras Receitas,Liquidação boleto,3237.5,2787290.23,Itaú-PJ
+2025-09-11,Entrada,Recebimento Cliente,Liquidação boleto,18690.05,2805980.28,Caixa
+2025-09-11,Entrada,Recebimento Cliente,PIX cliente,30301.44,2836281.72,Itaú-PJ
+2025-09-11,Entrada,Recebimento Cliente,Liquidação boleto,26788.92,2863070.64,Caixa
+2025-09-11,Entrada,Recebimento Cliente,PIX cliente,60739.95,2923810.59,BB-PJ
+2025-09-11,Entrada,Recebimento Cliente,Liquidação boleto,500,2924310.59,Caixa
+2025-09-11,Entrada,Recebimento Cliente,Liquidação boleto,8477.82,2932788.41,Itaú-PJ
+2025-09-11,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-11134.25,2921654.16,Itaú-PJ
+2025-09-11,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-26721.37,2894932.79,Itaú-PJ
+2025-09-11,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-5249.71,2889683.08,BB-PJ
+2025-09-11,Saída,Impostos,Impostos,-22514.32,2867168.76,BB-PJ
+2025-09-11,Saída,Impostos,Impostos,-11898.46,2855270.3,BB-PJ
+2025-09-12,Entrada,Recebimento Cliente,PIX cliente,27077.65,2882347.95,Caixa
+2025-09-12,Entrada,Recebimento Cliente,PIX cliente,35764.38,2918112.33,BB-PJ
+2025-09-12,Entrada,Recebimento Cliente,PIX cliente,26449.52,2944561.85,Itaú-PJ
+2025-09-12,Entrada,Outras Receitas,PIX cliente,500,2945061.85,Caixa
+2025-09-12,Saída,Folha,Folha,-11873.77,2933188.08,Itaú-PJ
+2025-09-12,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-8600.19,2924587.89,BB-PJ
+2025-09-12,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-6333.37,2918254.52,Itaú-PJ
+2025-09-12,Saída,Impostos,Impostos,-6283.76,2911970.76,Itaú-PJ
+2025-09-12,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-16848.14,2895122.62,Itaú-PJ
+2025-09-12,Saída,Aluguel,Aluguel,-5166.04,2889956.58,Itaú-PJ
+2025-09-13,Saída,Aluguel,Aluguel,-25313.31,2864643.27,Itaú-PJ
+2025-09-13,Saída,Folha,Folha,-3097.26,2861546.01,BB-PJ
+2025-09-13,Saída,Folha,Folha,-9211.64,2852334.37,Itaú-PJ
+2025-09-14,Saída,Energia/Util,Energia/Util,-1576.29,2850758.08,BB-PJ
+2025-09-14,Saída,Folha,Folha,-5872.45,2844885.63,Itaú-PJ
+2025-09-15,Entrada,Outras Receitas,PIX cliente,35813.86,2880699.49,Itaú-PJ
+2025-09-15,Entrada,Recebimento Cliente,PIX cliente,33605.25,2914304.74,BB-PJ
+2025-09-15,Entrada,Recebimento Cliente,PIX cliente,25411.69,2939716.43,Itaú-PJ
+2025-09-15,Entrada,Recebimento Cliente,PIX cliente,14645.79,2954362.22,Itaú-PJ
+2025-09-15,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-5718.24,2948643.98,Itaú-PJ
+2025-09-15,Saída,Frete,Frete,-13322.44,2935321.54,Itaú-PJ
+2025-09-15,Saída,Marketing,Marketing,-3951.46,2931370.08,BB-PJ
+2025-09-15,Saída,Folha,Folha,-13274.89,2918095.19,BB-PJ
+2025-09-15,Saída,Aluguel,Aluguel,-12601.19,2905494.0,Itaú-PJ
+2025-09-15,Saída,Folha,Folha,-16378.12,2889115.88,Itaú-PJ
+2025-09-16,Entrada,Recebimento Cliente,Liquidação boleto,30840.76,2919956.64,Caixa
+2025-09-16,Entrada,Recebimento Cliente,Liquidação boleto,27737.78,2947694.42,Itaú-PJ
+2025-09-16,Entrada,Recebimento Cliente,PIX cliente,27256.65,2974951.07,Caixa
+2025-09-16,Saída,Folha,Folha,-21274.08,2953676.99,Itaú-PJ
+2025-09-16,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-25382.39,2928294.6,Itaú-PJ
+2025-09-16,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-636.13,2927658.47,BB-PJ
+2025-09-16,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-3529.55,2924128.92,Itaú-PJ
+2025-09-17,Entrada,Recebimento Cliente,PIX cliente,49943.49,2974072.41,BB-PJ
+2025-09-17,Entrada,Recebimento Cliente,Liquidação boleto,26642.55,3000714.96,Caixa
+2025-09-17,Entrada,Outras Receitas,PIX cliente,14199.3,3014914.26,Caixa
+2025-09-17,Entrada,Recebimento Cliente,Liquidação boleto,43769.13,3058683.39,BB-PJ
+2025-09-17,Saída,Aluguel,Aluguel,-12260.73,3046422.66,Itaú-PJ
+2025-09-17,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-10101.88,3036320.78,Itaú-PJ
+2025-09-17,Saída,Impostos,Impostos,-5331.26,3030989.52,Itaú-PJ
+2025-09-18,Entrada,Recebimento Cliente,Liquidação boleto,39081.35,3070070.87,BB-PJ
+2025-09-18,Entrada,Recebimento Cliente,PIX cliente,14256.01,3084326.88,Caixa
+2025-09-18,Entrada,Recebimento Cliente,Liquidação boleto,20802.91,3105129.79,Itaú-PJ
+2025-09-18,Entrada,Recebimento Cliente,PIX cliente,27625.72,3132755.51,Caixa
+2025-09-18,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-13274.91,3119480.6,BB-PJ
+2025-09-18,Saída,Frete,Frete,-10247.57,3109233.03,BB-PJ
+2025-09-18,Saída,Energia/Util,Energia/Util,-10056.09,3099176.94,BB-PJ
+2025-09-19,Entrada,Recebimento Cliente,Liquidação boleto,22338.76,3121515.7,Caixa
+2025-09-19,Entrada,Recebimento Cliente,PIX cliente,20131.66,3141647.36,Itaú-PJ
+2025-09-19,Entrada,Recebimento Cliente,Liquidação boleto,12208.91,3153856.27,Itaú-PJ
+2025-09-19,Entrada,Outras Receitas,PIX cliente,22961.79,3176818.06,BB-PJ
+2025-09-19,Saída,Marketing,Marketing,-12537.55,3164280.51,BB-PJ
+2025-09-19,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-24467.02,3139813.49,Itaú-PJ
+2025-09-19,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-4896.85,3134916.64,BB-PJ
+2025-09-19,Saída,Folha,Folha,-3000.65,3131915.99,Itaú-PJ
+2025-09-19,Saída,Outras,Outras,-12116.64,3119799.35,Itaú-PJ
+2025-09-20,Saída,Impostos,Impostos,-8665.3,3111134.05,Itaú-PJ
+2025-09-20,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-17428.39,3093705.66,Itaú-PJ
+2025-09-20,Saída,Folha,Folha,-6718.24,3086987.42,Itaú-PJ
+2025-09-20,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-1474.45,3085512.97,Itaú-PJ
+2025-09-20,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-20796.03,3064716.94,Itaú-PJ
+2025-09-20,Saída,Frete,Frete,-8283.73,3056433.21,Itaú-PJ
+2025-09-21,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-26269.24,3030163.97,BB-PJ
+2025-09-21,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-10261.66,3019902.31,Itaú-PJ
+2025-09-22,Entrada,Recebimento Cliente,Liquidação boleto,23571.49,3043473.8,Itaú-PJ
+2025-09-22,Entrada,Recebimento Cliente,PIX cliente,32461.14,3075934.94,Itaú-PJ
+2025-09-22,Entrada,Recebimento Cliente,PIX cliente,52303.33,3128238.27,Itaú-PJ
+2025-09-22,Saída,Frete,Frete,-193.73,3128044.54,BB-PJ
+2025-09-22,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-35311.33,3092733.21,Itaú-PJ
+2025-09-22,Saída,Impostos,Impostos,-18733.91,3073999.3,Itaú-PJ
+2025-09-22,Saída,Folha,Folha,-9710.56,3064288.74,Itaú-PJ
+2025-09-22,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-33667.75,3030620.99,Itaú-PJ
+2025-09-23,Entrada,Outras Receitas,PIX cliente,21034.3,3051655.29,Itaú-PJ
+2025-09-23,Entrada,Recebimento Cliente,PIX cliente,42227.64,3093882.93,Itaú-PJ
+2025-09-23,Entrada,Outras Receitas,Liquidação boleto,37731.35,3131614.28,BB-PJ
+2025-09-23,Entrada,Recebimento Cliente,Liquidação boleto,34743.51,3166357.79,Itaú-PJ
+2025-09-23,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-23785.4,3142572.39,BB-PJ
+2025-09-23,Saída,Folha,Folha,-19015.33,3123557.06,Itaú-PJ
+2025-09-23,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-19125.52,3104431.54,BB-PJ
+2025-09-23,Saída,Energia/Util,Energia/Util,-13124.2,3091307.34,BB-PJ
+2025-09-24,Entrada,Recebimento Cliente,Liquidação boleto,20894.41,3112201.75,Itaú-PJ
+2025-09-24,Entrada,Outras Receitas,Liquidação boleto,29269.32,3141471.07,Itaú-PJ
+2025-09-24,Entrada,Outras Receitas,PIX cliente,32842.97,3174314.04,BB-PJ
+2025-09-24,Entrada,Outras Receitas,Liquidação boleto,48593.62,3222907.66,Itaú-PJ
+2025-09-24,Saída,Frete,Frete,-9599.33,3213308.33,BB-PJ
+2025-09-24,Saída,Impostos,Impostos,-30471.44,3182836.89,BB-PJ
+2025-09-24,Saída,Impostos,Impostos,-32801.9,3150034.99,BB-PJ
+2025-09-24,Saída,Folha,Folha,-9933.46,3140101.53,Itaú-PJ
+2025-09-24,Saída,Aluguel,Aluguel,-16465.99,3123635.54,Itaú-PJ
+2025-09-24,Saída,Aluguel,Aluguel,-37693.39,3085942.15,Itaú-PJ
+2025-09-25,Entrada,Recebimento Cliente,PIX cliente,36848.4,3122790.55,Itaú-PJ
+2025-09-25,Entrada,Outras Receitas,PIX cliente,19998.81,3142789.36,Itaú-PJ
+2025-09-25,Entrada,Outras Receitas,Liquidação boleto,34048.92,3176838.28,BB-PJ
+2025-09-25,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-20899.64,3155938.64,BB-PJ
+2025-09-25,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-876.18,3155062.46,Itaú-PJ
+2025-09-25,Saída,Energia/Util,Energia/Util,-19521.49,3135540.97,Itaú-PJ
+2025-09-25,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-17284.76,3118256.21,BB-PJ
+2025-09-26,Entrada,Recebimento Cliente,Liquidação boleto,28253.81,3146510.02,Itaú-PJ
+2025-09-26,Entrada,Recebimento Cliente,Liquidação boleto,25416.75,3171926.77,BB-PJ
+2025-09-26,Entrada,Recebimento Cliente,Liquidação boleto,19509.92,3191436.69,Itaú-PJ
+2025-09-26,Entrada,Outras Receitas,Liquidação boleto,21862.77,3213299.46,Itaú-PJ
+2025-09-26,Entrada,Recebimento Cliente,Liquidação boleto,22846.84,3236146.3,Caixa
+2025-09-26,Entrada,Recebimento Cliente,Liquidação boleto,20305.32,3256451.62,BB-PJ
+2025-09-26,Entrada,Recebimento Cliente,PIX cliente,32419.24,3288870.86,Itaú-PJ
+2025-09-26,Saída,Outras,Outras,-27977.64,3260893.22,Itaú-PJ
+2025-09-26,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-31365.01,3229528.21,Itaú-PJ
+2025-09-27,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-16569.99,3212958.22,BB-PJ
+2025-09-27,Saída,Outras,Outras,-23407.25,3189550.97,BB-PJ
+2025-09-27,Saída,Frete,Frete,-12117.35,3177433.62,Itaú-PJ
+2025-09-27,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-6548.32,3170885.3,BB-PJ
+2025-09-28,Saída,Marketing,Marketing,-14490.86,3156394.44,BB-PJ
+2025-09-28,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-9008.4,3147386.04,BB-PJ
+2025-09-29,Entrada,Recebimento Cliente,PIX cliente,14407.84,3161793.88,Caixa
+2025-09-29,Entrada,Recebimento Cliente,PIX cliente,34589.02,3196382.9,Caixa
+2025-09-29,Entrada,Recebimento Cliente,PIX cliente,34730.7,3231113.6,BB-PJ
+2025-09-29,Entrada,Outras Receitas,PIX cliente,30731.79,3261845.39,BB-PJ
+2025-09-29,Entrada,Outras Receitas,Liquidação boleto,19901.86,3281747.25,Itaú-PJ
+2025-09-29,Entrada,Recebimento Cliente,Liquidação boleto,33608.2,3315355.45,Itaú-PJ
+2025-09-29,Entrada,Outras Receitas,PIX cliente,14564.81,3329920.26,Caixa
+2025-09-29,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-23895.25,3306025.01,BB-PJ
+2025-09-29,Saída,Energia/Util,Energia/Util,-8234.35,3297790.66,Itaú-PJ
+2025-09-29,Saída,Marketing,Marketing,-11406.69,3286383.97,Itaú-PJ
+2025-09-30,Entrada,Recebimento Cliente,Liquidação boleto,44707.3,3331091.27,Itaú-PJ
+2025-09-30,Entrada,Recebimento Cliente,Liquidação boleto,15215.81,3346307.08,Itaú-PJ
+2025-09-30,Entrada,Recebimento Cliente,Liquidação boleto,15562.13,3361869.21,Caixa
+2025-09-30,Entrada,Recebimento Cliente,Liquidação boleto,19752.19,3381621.4,Caixa
+2025-09-30,Entrada,Recebimento Cliente,Liquidação boleto,40300.01,3421921.41,Itaú-PJ
+2025-09-30,Entrada,Outras Receitas,Liquidação boleto,24866.02,3446787.43,Caixa
+2025-09-30,Saída,Folha,Folha,-6135.54,3440651.89,Itaú-PJ
+2025-09-30,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-14846.5,3425805.39,Itaú-PJ
+2025-09-30,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-4442.75,3421362.64,BB-PJ
+2025-10-01,Entrada,Outras Receitas,PIX cliente,28133.42,3449496.06,Itaú-PJ
+2025-10-01,Entrada,Outras Receitas,Liquidação boleto,19087.92,3468583.98,BB-PJ
+2025-10-01,Entrada,Outras Receitas,PIX cliente,41391.72,3509975.7,BB-PJ
+2025-10-01,Entrada,Recebimento Cliente,PIX cliente,47311.17,3557286.87,Itaú-PJ
+2025-10-01,Saída,Aluguel,Aluguel,-17143.9,3540142.97,Itaú-PJ
+2025-10-01,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-14170.04,3525972.93,Itaú-PJ
+2025-10-01,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-20527.08,3505445.85,Itaú-PJ
+2025-10-02,Entrada,Recebimento Cliente,PIX cliente,33793.63,3539239.48,BB-PJ
+2025-10-02,Entrada,Recebimento Cliente,Liquidação boleto,14314.93,3553554.41,BB-PJ
+2025-10-02,Entrada,Recebimento Cliente,PIX cliente,17305.17,3570859.58,Itaú-PJ
+2025-10-02,Entrada,Outras Receitas,PIX cliente,39622.7,3610482.28,Itaú-PJ
+2025-10-02,Entrada,Recebimento Cliente,PIX cliente,26256.84,3636739.12,Itaú-PJ
+2025-10-02,Entrada,Recebimento Cliente,PIX cliente,25391.21,3662130.33,Itaú-PJ
+2025-10-02,Entrada,Recebimento Cliente,PIX cliente,12087.55,3674217.88,Itaú-PJ
+2025-10-02,Saída,Folha,Folha,-1813.84,3672404.04,BB-PJ
+2025-10-02,Saída,Outras,Outras,-21830.66,3650573.38,Itaú-PJ
+2025-10-03,Entrada,Recebimento Cliente,PIX cliente,40488.93,3691062.31,BB-PJ
+2025-10-03,Entrada,Recebimento Cliente,Liquidação boleto,38867.56,3729929.87,Caixa
+2025-10-03,Entrada,Recebimento Cliente,Liquidação boleto,17747.51,3747677.38,Itaú-PJ
+2025-10-03,Entrada,Recebimento Cliente,Liquidação boleto,15136.41,3762813.79,BB-PJ
+2025-10-03,Entrada,Recebimento Cliente,PIX cliente,43652.58,3806466.37,Itaú-PJ
+2025-10-03,Entrada,Outras Receitas,Liquidação boleto,15526.98,3821993.35,Caixa
+2025-10-03,Saída,Energia/Util,Energia/Util,-4702.12,3817291.23,Itaú-PJ
+2025-10-03,Saída,Folha,Folha,-13063.49,3804227.74,Itaú-PJ
+2025-10-03,Saída,Energia/Util,Energia/Util,-11976.7,3792251.04,Itaú-PJ
+2025-10-03,Saída,Folha,Folha,-4463.05,3787787.99,Itaú-PJ
+2025-10-03,Saída,Outras,Outras,-9312.69,3778475.3,Itaú-PJ
+2025-10-03,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-8139.97,3770335.33,BB-PJ
+2025-10-04,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-20221.72,3750113.61,BB-PJ
+2025-10-04,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-5661.86,3744451.75,Itaú-PJ
+2025-10-04,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-32364.33,3712087.42,BB-PJ
+2025-10-04,Saída,Energia/Util,Energia/Util,-28386.38,3683701.04,BB-PJ
+2025-10-05,Saída,Aluguel,Aluguel,-19549.98,3664151.06,BB-PJ
+2025-10-05,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-16651.68,3647499.38,Itaú-PJ
+2025-10-06,Entrada,Recebimento Cliente,Liquidação boleto,37813.83,3685313.21,Itaú-PJ
+2025-10-06,Entrada,Outras Receitas,Liquidação boleto,25240.71,3710553.92,Itaú-PJ
+2025-10-06,Entrada,Outras Receitas,Liquidação boleto,30028.61,3740582.53,Itaú-PJ
+2025-10-06,Entrada,Recebimento Cliente,Liquidação boleto,23016.49,3763599.02,Caixa
+2025-10-06,Entrada,Outras Receitas,Liquidação boleto,35330.67,3798929.69,BB-PJ
+2025-10-06,Entrada,Recebimento Cliente,PIX cliente,16030.59,3814960.28,Caixa
+2025-10-06,Saída,Folha,Folha,-224065.86,3590894.42,Itaú-PJ
+2025-10-06,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-22649.08,3568245.34,Itaú-PJ
+2025-10-06,Saída,Energia/Util,Energia/Util,-5805.83,3562439.51,Itaú-PJ
+2025-10-07,Entrada,Recebimento Cliente,Liquidação boleto,28358.55,3590798.06,BB-PJ
+2025-10-07,Entrada,Recebimento Cliente,Liquidação boleto,45171.4,3635969.46,Itaú-PJ
+2025-10-07,Entrada,Outras Receitas,Liquidação boleto,24618.05,3660587.51,Caixa
+2025-10-07,Entrada,Outras Receitas,PIX cliente,23173.22,3683760.73,Itaú-PJ
+2025-10-07,Entrada,Outras Receitas,PIX cliente,35598.55,3719359.28,BB-PJ
+2025-10-07,Entrada,Recebimento Cliente,Liquidação boleto,44623.52,3763982.8,Itaú-PJ
+2025-10-07,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-2027.96,3761954.84,BB-PJ
+2025-10-07,Saída,Aluguel,Aluguel,-4388.02,3757566.82,Itaú-PJ
+2025-10-07,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-11109.56,3746457.26,Itaú-PJ
+2025-10-07,Saída,Aluguel,Aluguel,-17275.65,3729181.61,BB-PJ
+2025-10-07,Saída,Aluguel,Aluguel,-20030.38,3709151.23,Itaú-PJ
+2025-10-07,Saída,Folha,Folha,-8492.24,3700658.99,Itaú-PJ
+2025-10-08,Entrada,Recebimento Cliente,Liquidação boleto,7592.87,3708251.86,Itaú-PJ
+2025-10-08,Entrada,Recebimento Cliente,PIX cliente,20487.52,3728739.38,BB-PJ
+2025-10-08,Entrada,Recebimento Cliente,PIX cliente,32322.53,3761061.91,Itaú-PJ
+2025-10-08,Saída,Frete,Frete,-21757.36,3739304.55,BB-PJ
+2025-10-08,Saída,Folha,Folha,-838.85,3738465.7,Itaú-PJ
+2025-10-08,Saída,Folha,Folha,-14147.12,3724318.58,Itaú-PJ
+2025-10-08,Saída,Impostos,Impostos,-19226.01,3705092.57,Itaú-PJ
+2025-10-08,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-21085.2,3684007.37,Itaú-PJ
+2025-10-09,Entrada,Recebimento Cliente,Liquidação boleto,24584.55,3708591.92,Caixa
+2025-10-09,Entrada,Outras Receitas,PIX cliente,19133.86,3727725.78,BB-PJ
+2025-10-09,Entrada,Outras Receitas,Liquidação boleto,45128.55,3772854.33,Itaú-PJ
+2025-10-09,Entrada,Recebimento Cliente,PIX cliente,22753.03,3795607.36,Caixa
+2025-10-09,Entrada,Recebimento Cliente,Liquidação boleto,28809.74,3824417.1,Itaú-PJ
+2025-10-09,Saída,Impostos,Impostos,-25657.09,3798760.01,Itaú-PJ
+2025-10-09,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-33965.19,3764794.82,BB-PJ
+2025-10-09,Saída,Marketing,Marketing,-10979.22,3753815.6,BB-PJ
+2025-10-09,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-11571.28,3742244.32,BB-PJ
+2025-10-10,Entrada,Recebimento Cliente,Liquidação boleto,36886.79,3779131.11,Itaú-PJ
+2025-10-10,Entrada,Recebimento Cliente,Liquidação boleto,19626.38,3798757.49,BB-PJ
+2025-10-10,Entrada,Recebimento Cliente,Liquidação boleto,13871.22,3812628.71,Itaú-PJ
+2025-10-10,Entrada,Recebimento Cliente,PIX cliente,33332.28,3845960.99,Itaú-PJ
+2025-10-10,Entrada,Outras Receitas,Liquidação boleto,15155.54,3861116.53,Itaú-PJ
+2025-10-10,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-14830.8,3846285.73,BB-PJ
+2025-10-10,Saída,Outras,Outras,-7156.82,3839128.91,Itaú-PJ
+2025-10-10,Saída,Impostos,Impostos,-14105.14,3825023.77,BB-PJ
+2025-10-10,Saída,Frete,Frete,-8516.84,3816506.93,Itaú-PJ
+2025-10-10,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-4140.82,3812366.11,Itaú-PJ
+2025-10-10,Saída,Folha,Folha,-188.06,3812178.05,Itaú-PJ
+2025-10-11,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-8031.72,3804146.33,BB-PJ
+2025-10-11,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-14413.87,3789732.46,Itaú-PJ
+2025-10-12,Saída,Folha,Folha,-8462.6,3781269.86,Itaú-PJ
+2025-10-12,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-21027.71,3760242.15,Itaú-PJ
+2025-10-12,Saída,Frete,Frete,-13745.63,3746496.52,Itaú-PJ
+2025-10-13,Entrada,Recebimento Cliente,Liquidação boleto,53528.24,3800024.76,BB-PJ
+2025-10-13,Entrada,Recebimento Cliente,PIX cliente,28294.96,3828319.72,Itaú-PJ
+2025-10-13,Entrada,Recebimento Cliente,Liquidação boleto,34455.86,3862775.58,Caixa
+2025-10-13,Saída,Frete,Frete,-14658.46,3848117.12,BB-PJ
+2025-10-13,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-11140.58,3836976.54,Itaú-PJ
+2025-10-13,Saída,Energia/Util,Energia/Util,-11303.76,3825672.78,Itaú-PJ
+2025-10-14,Entrada,Recebimento Cliente,Liquidação boleto,17392.36,3843065.14,Caixa
+2025-10-14,Entrada,Outras Receitas,Liquidação boleto,49968.78,3893033.92,Itaú-PJ
+2025-10-14,Entrada,Recebimento Cliente,Liquidação boleto,33110.57,3926144.49,Itaú-PJ
+2025-10-14,Entrada,Outras Receitas,Liquidação boleto,33671.95,3959816.44,Caixa
+2025-10-14,Entrada,Outras Receitas,Liquidação boleto,21373.8,3981190.24,Itaú-PJ
+2025-10-14,Saída,Folha,Folha,-27878.63,3953311.61,BB-PJ
+2025-10-14,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-68.81,3953242.8,Itaú-PJ
+2025-10-14,Saída,Marketing,Marketing,-11586.2,3941656.6,Itaú-PJ
+2025-10-15,Entrada,Recebimento Cliente,Liquidação boleto,29359.28,3971015.88,Caixa
+2025-10-15,Entrada,Recebimento Cliente,PIX cliente,47609.74,4018625.62,BB-PJ
+2025-10-15,Entrada,Recebimento Cliente,PIX cliente,22709.84,4041335.46,Caixa
+2025-10-15,Saída,Marketing,Marketing,-12629.15,4028706.31,Itaú-PJ
+2025-10-15,Saída,Aluguel,Aluguel,-21491.08,4007215.23,Itaú-PJ
+2025-10-15,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-13613.33,3993601.9,BB-PJ
+2025-10-16,Entrada,Outras Receitas,PIX cliente,23460.52,4017062.42,BB-PJ
+2025-10-16,Entrada,Recebimento Cliente,Liquidação boleto,13804.9,4030867.32,Caixa
+2025-10-16,Entrada,Outras Receitas,PIX cliente,38810.25,4069677.57,BB-PJ
+2025-10-16,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-7725.98,4061951.59,BB-PJ
+2025-10-16,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-25539.42,4036412.17,Itaú-PJ
+2025-10-16,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-18949.03,4017463.14,BB-PJ
+2025-10-16,Saída,Frete,Frete,-20324.95,3997138.19,BB-PJ
+2025-10-17,Entrada,Outras Receitas,PIX cliente,27928.01,4025066.2,Caixa
+2025-10-17,Entrada,Recebimento Cliente,Liquidação boleto,24334.46,4049400.66,Caixa
+2025-10-17,Entrada,Recebimento Cliente,PIX cliente,35948.86,4085349.52,Caixa
+2025-10-17,Entrada,Recebimento Cliente,Liquidação boleto,28406.95,4113756.47,Itaú-PJ
+2025-10-17,Entrada,Outras Receitas,Liquidação boleto,22660.94,4136417.41,Itaú-PJ
+2025-10-17,Entrada,Recebimento Cliente,PIX cliente,11325.19,4147742.6,Itaú-PJ
+2025-10-17,Saída,Folha,Folha,-12457.66,4135284.94,Itaú-PJ
+2025-10-17,Saída,Impostos,Impostos,-26244.58,4109040.36,Itaú-PJ
+2025-10-17,Saída,Frete,Frete,-7024.27,4102016.09,BB-PJ
+2025-10-18,Saída,Marketing,Marketing,-13717.94,4088298.15,BB-PJ
+2025-10-18,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-22540.25,4065757.9,BB-PJ
+2025-10-18,Saída,Frete,Frete,-11753.14,4054004.76,Itaú-PJ
+2025-10-19,Saída,Frete,Frete,-4232.86,4049771.9,Itaú-PJ
+2025-10-19,Saída,Folha,Folha,-14222.13,4035549.77,BB-PJ
+2025-10-19,Saída,Impostos,Impostos,-15029.49,4020520.28,Itaú-PJ
+2025-10-20,Entrada,Recebimento Cliente,PIX cliente,34639.91,4055160.19,Itaú-PJ
+2025-10-20,Entrada,Recebimento Cliente,PIX cliente,28189.82,4083350.01,Itaú-PJ
+2025-10-20,Entrada,Recebimento Cliente,PIX cliente,29143.57,4112493.58,Itaú-PJ
+2025-10-20,Saída,Outras,Outras,-23209.29,4089284.29,Itaú-PJ
+2025-10-20,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-10832.99,4078451.3,Itaú-PJ
+2025-10-21,Entrada,Recebimento Cliente,Liquidação boleto,11294.99,4089746.29,Itaú-PJ
+2025-10-21,Entrada,Recebimento Cliente,Liquidação boleto,38890.96,4128637.25,BB-PJ
+2025-10-21,Entrada,Outras Receitas,Liquidação boleto,30858.9,4159496.15,BB-PJ
+2025-10-21,Saída,Frete,Frete,-27749.98,4131746.17,BB-PJ
+2025-10-21,Saída,Folha,Folha,-18186.38,4113559.79,Itaú-PJ
+2025-10-21,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-37322.32,4076237.47,Itaú-PJ
+2025-10-21,Saída,Outras,Outras,-24650.07,4051587.4,BB-PJ
+2025-10-21,Saída,Folha,Folha,-7642.27,4043945.13,BB-PJ
+2025-10-22,Entrada,Outras Receitas,Liquidação boleto,23295.63,4067240.76,Itaú-PJ
+2025-10-22,Entrada,Recebimento Cliente,Liquidação boleto,20499.1,4087739.86,BB-PJ
+2025-10-22,Entrada,Outras Receitas,Liquidação boleto,23441.06,4111180.92,Itaú-PJ
+2025-10-22,Entrada,Recebimento Cliente,PIX cliente,27003.31,4138184.23,Itaú-PJ
+2025-10-22,Saída,Folha,Folha,-9397.86,4128786.37,BB-PJ
+2025-10-22,Saída,Marketing,Marketing,-13625.32,4115161.05,Itaú-PJ
+2025-10-22,Saída,Outras,Outras,-19161.7,4095999.35,BB-PJ
+2025-10-22,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-10185.67,4085813.68,BB-PJ
+2025-10-22,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-180.77,4085632.91,BB-PJ
+2025-10-23,Entrada,Outras Receitas,PIX cliente,36382.04,4122014.95,Caixa
+2025-10-23,Entrada,Recebimento Cliente,Liquidação boleto,11112.55,4133127.5,Caixa
+2025-10-23,Entrada,Recebimento Cliente,Liquidação boleto,34538.05,4167665.55,Itaú-PJ
+2025-10-23,Entrada,Recebimento Cliente,Liquidação boleto,14302.89,4181968.44,Caixa
+2025-10-23,Entrada,Recebimento Cliente,PIX cliente,35704.31,4217672.75,Itaú-PJ
+2025-10-23,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-7214.13,4210458.62,Itaú-PJ
+2025-10-23,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-17783.08,4192675.54,Itaú-PJ
+2025-10-24,Entrada,Outras Receitas,Liquidação boleto,18565.75,4211241.29,Caixa
+2025-10-24,Entrada,Outras Receitas,PIX cliente,42886.44,4254127.73,Itaú-PJ
+2025-10-24,Entrada,Recebimento Cliente,Liquidação boleto,15027.36,4269155.09,Itaú-PJ
+2025-10-24,Entrada,Recebimento Cliente,Liquidação boleto,52564.57,4321719.66,BB-PJ
+2025-10-24,Entrada,Recebimento Cliente,Liquidação boleto,45055.99,4366775.65,Itaú-PJ
+2025-10-24,Saída,Folha,Folha,-25549.0,4341226.65,Itaú-PJ
+2025-10-24,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-14835.62,4326391.03,BB-PJ
+2025-10-24,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-17837.44,4308553.59,BB-PJ
+2025-10-24,Saída,Energia/Util,Energia/Util,-5179.18,4303374.41,Itaú-PJ
+2025-10-24,Saída,Folha,Folha,-27793.46,4275580.95,Itaú-PJ
+2025-10-24,Saída,Folha,Folha,-19798.88,4255782.07,Itaú-PJ
+2025-10-25,Saída,Frete,Frete,-12707.43,4243074.64,BB-PJ
+2025-10-25,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-19069.4,4224005.24,Itaú-PJ
+2025-10-25,Saída,Frete,Frete,-15911.4,4208093.84,BB-PJ
+2025-10-26,Saída,Impostos,Impostos,-21231.27,4186862.57,Itaú-PJ
+2025-10-26,Saída,Folha,Folha,-11922.34,4174940.23,Itaú-PJ
+2025-10-26,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-2664.56,4172275.67,BB-PJ
+2025-10-27,Entrada,Recebimento Cliente,PIX cliente,33605.87,4205881.54,BB-PJ
+2025-10-27,Entrada,Recebimento Cliente,PIX cliente,27119.32,4233000.86,Itaú-PJ
+2025-10-27,Entrada,Recebimento Cliente,Liquidação boleto,42620.72,4275621.58,Caixa
+2025-10-27,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-21593.25,4254028.33,Itaú-PJ
+2025-10-27,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-13153.8,4240874.53,Itaú-PJ
+2025-10-28,Entrada,Outras Receitas,Liquidação boleto,25179.87,4266054.4,Itaú-PJ
+2025-10-28,Entrada,Recebimento Cliente,PIX cliente,45470.88,4311525.28,BB-PJ
+2025-10-28,Entrada,Recebimento Cliente,Liquidação boleto,39396.12,4350921.4,Caixa
+2025-10-28,Entrada,Recebimento Cliente,PIX cliente,20616.68,4371538.08,Itaú-PJ
+2025-10-28,Saída,Folha,Folha,-10541.01,4360997.07,Itaú-PJ
+2025-10-28,Saída,Folha,Folha,-13816.69,4347180.38,BB-PJ
+2025-10-28,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-11049.22,4336131.16,Itaú-PJ
+2025-10-28,Saída,Aluguel,Aluguel,-18610.54,4317520.62,Itaú-PJ
+2025-10-29,Entrada,Recebimento Cliente,PIX cliente,21592.37,4339112.99,Itaú-PJ
+2025-10-29,Entrada,Recebimento Cliente,PIX cliente,11899.74,4351012.73,Itaú-PJ
+2025-10-29,Entrada,Outras Receitas,Liquidação boleto,27327.41,4378340.14,Caixa
+2025-10-29,Entrada,Recebimento Cliente,PIX cliente,11990.14,4390330.28,BB-PJ
+2025-10-29,Entrada,Recebimento Cliente,PIX cliente,14415.65,4404745.93,Caixa
+2025-10-29,Entrada,Outras Receitas,PIX cliente,44124.19,4448870.12,BB-PJ
+2025-10-29,Saída,Folha,Folha,-23814.71,4425055.41,BB-PJ
+2025-10-29,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-17436.02,4407619.39,Itaú-PJ
+2025-10-29,Saída,Impostos,Impostos,-6920.07,4400699.32,Itaú-PJ
+2025-10-29,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-13573.01,4387126.31,Itaú-PJ
+2025-10-29,Saída,Outras,Outras,-11646.27,4375480.04,Itaú-PJ
+2025-10-30,Entrada,Outras Receitas,Liquidação boleto,19368.66,4394848.7,Itaú-PJ
+2025-10-30,Entrada,Outras Receitas,PIX cliente,10736.51,4405585.21,BB-PJ
+2025-10-30,Entrada,Recebimento Cliente,Liquidação boleto,47280.88,4452866.09,Itaú-PJ
+2025-10-30,Entrada,Outras Receitas,Liquidação boleto,23054.21,4475920.3,Caixa
+2025-10-30,Entrada,Recebimento Cliente,Liquidação boleto,37809.96,4513730.26,Itaú-PJ
+2025-10-30,Saída,Folha,Folha,-20561.42,4493168.84,Itaú-PJ
+2025-10-30,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-4689.64,4488479.2,Itaú-PJ
+2025-10-31,Entrada,Recebimento Cliente,Liquidação boleto,32325.34,4520804.54,Caixa
+2025-10-31,Entrada,Recebimento Cliente,Liquidação boleto,4490.3,4525294.84,Itaú-PJ
+2025-10-31,Entrada,Outras Receitas,PIX cliente,17988.43,4543283.27,Itaú-PJ
+2025-10-31,Entrada,Recebimento Cliente,PIX cliente,10070.61,4553353.88,BB-PJ
+2025-10-31,Entrada,Recebimento Cliente,PIX cliente,42672.68,4596026.56,Itaú-PJ
+2025-10-31,Saída,Folha,Folha,-16692.97,4579333.59,Itaú-PJ
+2025-10-31,Saída,Folha,Folha,-6831.56,4572502.03,Itaú-PJ
+2025-10-31,Saída,Folha,Folha,-16475.79,4556026.24,Itaú-PJ
+2025-11-01,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-3703.64,4552322.6,Itaú-PJ
+2025-11-01,Saída,Impostos,Impostos,-794.25,4551528.35,Itaú-PJ
+2025-11-01,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-14775.28,4536753.07,BB-PJ
+2025-11-01,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-23806.87,4512946.2,Itaú-PJ
+2025-11-02,Saída,Energia/Util,Energia/Util,-20380.08,4492566.12,Itaú-PJ
+2025-11-02,Saída,Marketing,Marketing,-7615.06,4484951.06,Itaú-PJ
+2025-11-02,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-28696.14,4456254.92,Itaú-PJ
+2025-11-02,Saída,Energia/Util,Energia/Util,-25478.31,4430776.61,Itaú-PJ
+2025-11-03,Entrada,Recebimento Cliente,Liquidação boleto,15254.52,4446031.13,Itaú-PJ
+2025-11-03,Entrada,Recebimento Cliente,Liquidação boleto,14586.97,4460618.1,Caixa
+2025-11-03,Entrada,Outras Receitas,Liquidação boleto,31081.81,4491699.91,Itaú-PJ
+2025-11-03,Entrada,Recebimento Cliente,Liquidação boleto,31155.78,4522855.69,Caixa
+2025-11-03,Entrada,Recebimento Cliente,Liquidação boleto,38601.77,4561457.46,Caixa
+2025-11-03,Saída,Frete,Frete,-24471.99,4536985.47,Itaú-PJ
+2025-11-03,Saída,Folha,Folha,-9334.47,4527651.0,Itaú-PJ
+2025-11-03,Saída,Outras,Outras,-15073.54,4512577.46,BB-PJ
+2025-11-03,Saída,Energia/Util,Energia/Util,-26907.86,4485669.6,BB-PJ
+2025-11-03,Saída,Impostos,Impostos,-6941.51,4478728.09,BB-PJ
+2025-11-04,Entrada,Recebimento Cliente,Liquidação boleto,40492.77,4519220.86,BB-PJ
+2025-11-04,Entrada,Recebimento Cliente,Liquidação boleto,21623.14,4540844.0,BB-PJ
+2025-11-04,Entrada,Recebimento Cliente,PIX cliente,31671.13,4572515.13,Itaú-PJ
+2025-11-04,Entrada,Recebimento Cliente,Liquidação boleto,23063.85,4595578.98,Caixa
+2025-11-04,Saída,Marketing,Marketing,-24966.25,4570612.73,Itaú-PJ
+2025-11-04,Saída,Aluguel,Aluguel,-18853.0,4551759.73,Itaú-PJ
+2025-11-04,Saída,Marketing,Marketing,-6269.26,4545490.47,BB-PJ
+2025-11-05,Entrada,Recebimento Cliente,Liquidação boleto,26274.95,4571765.42,Caixa
+2025-11-05,Entrada,Recebimento Cliente,Liquidação boleto,26291.46,4598056.88,BB-PJ
+2025-11-05,Entrada,Recebimento Cliente,Liquidação boleto,44371.84,4642428.72,Caixa
+2025-11-05,Entrada,Recebimento Cliente,PIX cliente,26285.55,4668714.27,Caixa
+2025-11-05,Entrada,Outras Receitas,PIX cliente,21536.66,4690250.93,BB-PJ
+2025-11-05,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-21728.92,4668522.01,Itaú-PJ
+2025-11-05,Saída,Impostos,Impostos,-23084.13,4645437.88,Itaú-PJ
+2025-11-05,Saída,Energia/Util,Energia/Util,-5528.34,4639909.54,Itaú-PJ
+2025-11-05,Saída,Outras,Outras,-13100.6,4626808.94,Itaú-PJ
+2025-11-06,Entrada,Recebimento Cliente,Liquidação boleto,17687.97,4644496.91,Itaú-PJ
+2025-11-06,Entrada,Recebimento Cliente,PIX cliente,27624.59,4672121.5,Itaú-PJ
+2025-11-06,Entrada,Recebimento Cliente,Liquidação boleto,32056.14,4704177.64,Caixa
+2025-11-06,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-8355.87,4695821.77,Itaú-PJ
+2025-11-06,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-24502.37,4671319.4,Itaú-PJ
+2025-11-06,Saída,Marketing,Marketing,-8461.02,4662858.38,Itaú-PJ
+2025-11-06,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-14054.74,4648803.64,BB-PJ
+2025-11-06,Saída,Impostos,Impostos,-7310.77,4641492.87,Itaú-PJ
+2025-11-07,Entrada,Recebimento Cliente,Liquidação boleto,14271.41,4655764.28,Caixa
+2025-11-07,Entrada,Recebimento Cliente,Liquidação boleto,500,4656264.28,BB-PJ
+2025-11-07,Entrada,Recebimento Cliente,PIX cliente,42574.15,4698838.43,Itaú-PJ
+2025-11-07,Entrada,Outras Receitas,Liquidação boleto,37498.63,4736337.06,Itaú-PJ
+2025-11-07,Saída,Folha,Folha,-14141.42,4722195.64,Itaú-PJ
+2025-11-07,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-20188.03,4702007.61,BB-PJ
+2025-11-07,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-12491.73,4689515.88,Itaú-PJ
+2025-11-07,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-15390.13,4674125.75,Itaú-PJ
+2025-11-07,Saída,Frete,Frete,-9697.22,4664428.53,Itaú-PJ
+2025-11-07,Saída,Energia/Util,Energia/Util,-38994.68,4625433.85,Itaú-PJ
+2025-11-08,Saída,Impostos,Impostos,-24458.76,4600975.09,Itaú-PJ
+2025-11-08,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-9852.96,4591122.13,Itaú-PJ
+2025-11-08,Saída,Energia/Util,Energia/Util,-13611.91,4577510.22,Itaú-PJ
+2025-11-08,Saída,Impostos,Impostos,-18765.24,4558744.98,Itaú-PJ
+2025-11-08,Saída,Outras,Outras,-15480.8,4543264.18,Itaú-PJ
+2025-11-08,Saída,Impostos,Impostos,-6444.76,4536819.42,Itaú-PJ
+2025-11-09,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-10918.12,4525901.3,Itaú-PJ
+2025-11-09,Saída,Folha,Folha,-2703.73,4523197.57,Itaú-PJ
+2025-11-09,Saída,Marketing,Marketing,-18199.77,4504997.8,BB-PJ
+2025-11-09,Saída,Folha,Folha,-10726.9,4494270.9,BB-PJ
+2025-11-09,Saída,Marketing,Marketing,-7501.12,4486769.78,Itaú-PJ
+2025-11-09,Saída,Folha,Folha,-5777.4,4480992.38,Itaú-PJ
+2025-11-10,Entrada,Recebimento Cliente,PIX cliente,20012.45,4501004.83,Itaú-PJ
+2025-11-10,Entrada,Recebimento Cliente,PIX cliente,51024.63,4552029.46,Caixa
+2025-11-10,Entrada,Recebimento Cliente,Liquidação boleto,37446.3,4589475.76,BB-PJ
+2025-11-10,Entrada,Outras Receitas,Liquidação boleto,16695.86,4606171.62,BB-PJ
+2025-11-10,Entrada,Recebimento Cliente,Liquidação boleto,20071.8,4626243.42,Itaú-PJ
+2025-11-10,Entrada,Recebimento Cliente,PIX cliente,45611.42,4671854.84,BB-PJ
+2025-11-10,Entrada,Recebimento Cliente,Liquidação boleto,45826.15,4717680.99,Itaú-PJ
+2025-11-10,Saída,Folha,Folha,-8803.62,4708877.37,Itaú-PJ
+2025-11-10,Saída,Impostos,Impostos,-18047.66,4690829.71,BB-PJ
+2025-11-10,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-4596.23,4686233.48,Itaú-PJ
+2025-11-10,Saída,Aluguel,Aluguel,-78000,4608233.48,Itaú-PJ
+2025-11-10,Saída,Folha,Folha,-10776.33,4597457.15,Itaú-PJ
+2025-11-11,Entrada,Recebimento Cliente,PIX cliente,19900.03,4617357.18,BB-PJ
+2025-11-11,Entrada,Recebimento Cliente,PIX cliente,37025.56,4654382.74,Caixa
+2025-11-11,Entrada,Outras Receitas,PIX cliente,30751.84,4685134.58,BB-PJ
+2025-11-11,Entrada,Recebimento Cliente,Liquidação boleto,19109.8,4704244.38,Caixa
+2025-11-11,Entrada,Recebimento Cliente,Liquidação boleto,19607.1,4723851.48,Itaú-PJ
+2025-11-11,Entrada,Recebimento Cliente,PIX cliente,54909.53,4778761.01,Itaú-PJ
+2025-11-11,Entrada,Recebimento Cliente,Liquidação boleto,3780.45,4782541.46,Itaú-PJ
+2025-11-11,Saída,Folha,Folha,-2202.68,4780338.78,BB-PJ
+2025-11-11,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-15707.96,4764630.82,Itaú-PJ
+2025-11-12,Entrada,Recebimento Cliente,PIX cliente,38355.33,4802986.15,Caixa
+2025-11-12,Entrada,Recebimento Cliente,Liquidação boleto,26288.27,4829274.42,Itaú-PJ
+2025-11-12,Entrada,Outras Receitas,PIX cliente,35641.36,4864915.78,BB-PJ
+2025-11-12,Entrada,Recebimento Cliente,Liquidação boleto,28756.11,4893671.89,Itaú-PJ
+2025-11-12,Entrada,Recebimento Cliente,Liquidação boleto,22893.13,4916565.02,Caixa
+2025-11-12,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-18619.67,4897945.35,Itaú-PJ
+2025-11-12,Saída,Frete,Frete,-4938.77,4893006.58,BB-PJ
+2025-11-12,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-14148.54,4878858.04,BB-PJ
+2025-11-12,Saída,Impostos,Impostos,-4888.06,4873969.98,BB-PJ
+2025-11-13,Entrada,Recebimento Cliente,Liquidação boleto,32303.71,4906273.69,Itaú-PJ
+2025-11-13,Entrada,Recebimento Cliente,Liquidação boleto,26280.27,4932553.96,BB-PJ
+2025-11-13,Entrada,Recebimento Cliente,PIX cliente,39167.79,4971721.75,BB-PJ
+2025-11-13,Entrada,Recebimento Cliente,Liquidação boleto,19804.8,4991526.55,Itaú-PJ
+2025-11-13,Saída,Folha,Folha,-11523.36,4980003.19,BB-PJ
+2025-11-13,Saída,Frete,Frete,-11707.78,4968295.41,Itaú-PJ
+2025-11-13,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-16644.23,4951651.18,BB-PJ
+2025-11-13,Saída,Outras,Outras,-10715.38,4940935.8,BB-PJ
+2025-11-14,Entrada,Recebimento Cliente,Liquidação boleto,27855.35,4968791.15,Caixa
+2025-11-14,Entrada,Outras Receitas,PIX cliente,20166.84,4988957.99,BB-PJ
+2025-11-14,Entrada,Recebimento Cliente,PIX cliente,42784.74,5031742.73,Itaú-PJ
+2025-11-14,Entrada,Outras Receitas,PIX cliente,58133.33,5089876.06,BB-PJ
+2025-11-14,Entrada,Recebimento Cliente,PIX cliente,24179.2,5114055.26,BB-PJ
+2025-11-14,Entrada,Recebimento Cliente,PIX cliente,32457.07,5146512.33,BB-PJ
+2025-11-14,Entrada,Outras Receitas,Liquidação boleto,30565.49,5177077.82,Itaú-PJ
+2025-11-14,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-8119.22,5168958.6,Itaú-PJ
+2025-11-14,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-8826.59,5160132.01,Itaú-PJ
+2025-11-14,Saída,Folha,Folha,-5689.25,5154442.76,Itaú-PJ
+2025-11-14,Saída,Impostos,Impostos,-3679.48,5150763.28,BB-PJ
+2025-11-15,Saída,Folha,Folha,-20749.96,5130013.32,BB-PJ
+2025-11-15,Saída,Outras,Outras,-3425.43,5126587.89,Itaú-PJ
+2025-11-15,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-19978.18,5106609.71,BB-PJ
+2025-11-15,Saída,Folha,Folha,-23161.11,5083448.6,Itaú-PJ
+2025-11-16,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-16784.98,5066663.62,Itaú-PJ
+2025-11-16,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-23328.39,5043335.23,Itaú-PJ
+2025-11-16,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-8667.09,5034668.14,BB-PJ
+2025-11-17,Entrada,Outras Receitas,Liquidação boleto,39128.08,5073796.22,Itaú-PJ
+2025-11-17,Entrada,Outras Receitas,PIX cliente,9949.75,5083745.97,Itaú-PJ
+2025-11-17,Entrada,Outras Receitas,Liquidação boleto,6054.53,5089800.5,Itaú-PJ
+2025-11-17,Entrada,Recebimento Cliente,PIX cliente,25049.73,5114850.23,Itaú-PJ
+2025-11-17,Saída,Energia/Util,Energia/Util,-16576.63,5098273.6,BB-PJ
+2025-11-17,Saída,Outras,Outras,-9537.46,5088736.14,Itaú-PJ
+2025-11-18,Entrada,Outras Receitas,Liquidação boleto,31185.44,5119921.58,Itaú-PJ
+2025-11-18,Entrada,Recebimento Cliente,PIX cliente,22972.33,5142893.91,Caixa
+2025-11-18,Entrada,Recebimento Cliente,Liquidação boleto,25001.8,5167895.71,BB-PJ
+2025-11-18,Entrada,Recebimento Cliente,PIX cliente,29823.05,5197718.76,Itaú-PJ
+2025-11-18,Entrada,Recebimento Cliente,PIX cliente,36843.18,5234561.94,BB-PJ
+2025-11-18,Entrada,Recebimento Cliente,Liquidação boleto,32486.38,5267048.32,BB-PJ
+2025-11-18,Saída,Aluguel,Aluguel,-16415.7,5250632.62,BB-PJ
+2025-11-18,Saída,Folha,Folha,-3789.86,5246842.76,Itaú-PJ
+2025-11-18,Saída,Aluguel,Aluguel,-16478.77,5230363.99,Itaú-PJ
+2025-11-19,Entrada,Recebimento Cliente,PIX cliente,49366.99,5279730.98,Itaú-PJ
+2025-11-19,Entrada,Recebimento Cliente,Liquidação boleto,39271.68,5319002.66,Itaú-PJ
+2025-11-19,Entrada,Recebimento Cliente,Liquidação boleto,26219.19,5345221.85,Itaú-PJ
+2025-11-19,Entrada,Recebimento Cliente,PIX cliente,31523.32,5376745.17,Caixa
+2025-11-19,Saída,Folha,Folha,-22137.29,5354607.88,Itaú-PJ
+2025-11-19,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-14560.07,5340047.81,Itaú-PJ
+2025-11-19,Saída,Frete,Frete,-10110.42,5329937.39,Itaú-PJ
+2025-11-19,Saída,Folha,Folha,-610.13,5329327.26,Itaú-PJ
+2025-11-19,Saída,Frete,Frete,-13944.36,5315382.9,Itaú-PJ
+2025-11-20,Entrada,Recebimento Cliente,Liquidação boleto,16594.32,5331977.22,Itaú-PJ
+2025-11-20,Entrada,Recebimento Cliente,Liquidação boleto,29373.49,5361350.71,Itaú-PJ
+2025-11-20,Entrada,Recebimento Cliente,Liquidação boleto,23913.18,5385263.89,Itaú-PJ
+2025-11-20,Entrada,Recebimento Cliente,Liquidação boleto,8583.89,5393847.78,Caixa
+2025-11-20,Entrada,Recebimento Cliente,PIX cliente,41253.57,5435101.35,Itaú-PJ
+2025-11-20,Entrada,Recebimento Cliente,Liquidação boleto,39777.77,5474879.12,Itaú-PJ
+2025-11-20,Saída,Folha,Folha,-12640.55,5462238.57,BB-PJ
+2025-11-20,Saída,Folha,Folha,-11222.97,5451015.6,Itaú-PJ
+2025-11-20,Saída,Folha,Folha,-11220.51,5439795.09,Itaú-PJ
+2025-11-20,Saída,Folha,Folha,-19984.81,5419810.28,BB-PJ
+2025-11-20,Saída,Folha,Folha,-7935.88,5411874.4,BB-PJ
+2025-11-20,Saída,Outras,Outras,-20566.37,5391308.03,BB-PJ
+2025-11-21,Entrada,Recebimento Cliente,Liquidação boleto,22450.96,5413758.99,Itaú-PJ
+2025-11-21,Entrada,Recebimento Cliente,Liquidação boleto,48323.98,5462082.97,BB-PJ
+2025-11-21,Entrada,Outras Receitas,PIX cliente,19857.32,5481940.29,Itaú-PJ
+2025-11-21,Entrada,Recebimento Cliente,Liquidação boleto,13967.09,5495907.38,Itaú-PJ
+2025-11-21,Entrada,Recebimento Cliente,Liquidação boleto,19705.07,5515612.45,Itaú-PJ
+2025-11-21,Saída,Aluguel,Aluguel,-23697.89,5491914.56,Itaú-PJ
+2025-11-21,Saída,Aluguel,Aluguel,-23183.8,5468730.76,BB-PJ
+2025-11-21,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-4391.66,5464339.1,Itaú-PJ
+2025-11-21,Saída,Frete,Frete,-18916.41,5445422.69,BB-PJ
+2025-11-22,Saída,Folha,Folha,-23152.0,5422270.69,Itaú-PJ
+2025-11-22,Saída,Aluguel,Aluguel,-30294.84,5391975.85,BB-PJ
+2025-11-22,Saída,Outras,Outras,-12999.82,5378976.03,BB-PJ
+2025-11-22,Saída,Impostos,Impostos,-16540.21,5362435.82,BB-PJ
+2025-11-22,Saída,Folha,Folha,-3185.87,5359249.95,BB-PJ
+2025-11-23,Saída,Marketing,Marketing,-12037.3,5347212.65,Itaú-PJ
+2025-11-23,Saída,Folha,Folha,-22189.35,5325023.3,Itaú-PJ
+2025-11-23,Saída,Frete,Frete,-22656.98,5302366.32,Itaú-PJ
+2025-11-23,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-24877.22,5277489.1,BB-PJ
+2025-11-23,Saída,Frete,Frete,-20351.92,5257137.18,BB-PJ
+2025-11-23,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-28614.99,5228522.19,BB-PJ
+2025-11-24,Entrada,Recebimento Cliente,Liquidação boleto,26983.63,5255505.82,BB-PJ
+2025-11-24,Entrada,Recebimento Cliente,PIX cliente,31724.2,5287230.02,Itaú-PJ
+2025-11-24,Entrada,Recebimento Cliente,PIX cliente,18004.68,5305234.7,BB-PJ
+2025-11-24,Entrada,Recebimento Cliente,PIX cliente,23045.16,5328279.86,Itaú-PJ
+2025-11-24,Entrada,Outras Receitas,Liquidação boleto,44482.74,5372762.6,BB-PJ
+2025-11-24,Entrada,Recebimento Cliente,PIX cliente,16153.96,5388916.56,Itaú-PJ
+2025-11-24,Entrada,Recebimento Cliente,Liquidação boleto,48414.81,5437331.37,Itaú-PJ
+2025-11-24,Saída,Marketing,Marketing,-10564.23,5426767.14,Itaú-PJ
+2025-11-24,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-9369.15,5417397.99,Itaú-PJ
+2025-11-25,Entrada,Recebimento Cliente,Liquidação boleto,15804.95,5433202.94,Itaú-PJ
+2025-11-25,Entrada,Recebimento Cliente,Liquidação boleto,29491.56,5462694.5,Itaú-PJ
+2025-11-25,Entrada,Recebimento Cliente,Liquidação boleto,44035.45,5506729.95,Itaú-PJ
+2025-11-25,Entrada,Outras Receitas,PIX cliente,28386.14,5535116.09,Itaú-PJ
+2025-11-25,Entrada,Recebimento Cliente,Liquidação boleto,26081.35,5561197.44,Itaú-PJ
+2025-11-25,Entrada,Outras Receitas,Liquidação boleto,42884.03,5604081.47,Itaú-PJ
+2025-11-25,Entrada,Recebimento Cliente,Liquidação boleto,47307.69,5651389.16,Itaú-PJ
+2025-11-25,Saída,Marketing,Marketing,-5600.51,5645788.65,BB-PJ
+2025-11-25,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-22209.83,5623578.82,Itaú-PJ
+2025-11-25,Saída,Aluguel,Aluguel,-9317.49,5614261.33,Itaú-PJ
+2025-11-25,Saída,Outras,Outras,-15439.16,5598822.17,BB-PJ
+2025-11-25,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-4006.8,5594815.37,Itaú-PJ
+2025-11-25,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-17904.0,5576911.37,Itaú-PJ
+2025-11-26,Entrada,Recebimento Cliente,Liquidação boleto,28724.29,5605635.66,Itaú-PJ
+2025-11-26,Entrada,Recebimento Cliente,PIX cliente,43854.26,5649489.92,Caixa
+2025-11-26,Entrada,Recebimento Cliente,Liquidação boleto,24001.19,5673491.11,Itaú-PJ
+2025-11-26,Saída,Folha,Folha,-22822.56,5650668.55,Itaú-PJ
+2025-11-26,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-10635.96,5640032.59,Itaú-PJ
+2025-11-27,Entrada,Outras Receitas,Liquidação boleto,8146.68,5648179.27,BB-PJ
+2025-11-27,Entrada,Recebimento Cliente,Liquidação boleto,12977.82,5661157.09,Caixa
+2025-11-27,Entrada,Outras Receitas,Liquidação boleto,29110.53,5690267.62,BB-PJ
+2025-11-27,Saída,Aluguel,Aluguel,-8494.21,5681773.41,Itaú-PJ
+2025-11-27,Saída,Marketing,Marketing,-28190.42,5653582.99,Itaú-PJ
+2025-11-27,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-4600.91,5648982.08,Itaú-PJ
+2025-11-27,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-24491.85,5624490.23,Itaú-PJ
+2025-11-27,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-20422.77,5604067.46,BB-PJ
+2025-11-28,Entrada,Recebimento Cliente,Liquidação boleto,34529.66,5638597.12,Itaú-PJ
+2025-11-28,Entrada,Outras Receitas,PIX cliente,7593.0,5646190.12,Itaú-PJ
+2025-11-28,Entrada,Recebimento Cliente,Liquidação boleto,9948.73,5656138.85,BB-PJ
+2025-11-28,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-15216.81,5640922.04,Itaú-PJ
+2025-11-28,Saída,Energia/Util,Energia/Util,-21287.89,5619634.15,Itaú-PJ
+2025-11-28,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-10123.08,5609511.07,BB-PJ
+2025-11-28,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-8083.27,5601427.8,Itaú-PJ
+2025-11-29,Saída,Folha,Folha,-20506.18,5580921.62,Itaú-PJ
+2025-11-29,Saída,Frete,Frete,-28395.39,5552526.23,Itaú-PJ
+2025-11-30,Saída,Outras,Outras,-2657.0,5549869.23,Itaú-PJ
+2025-11-30,Saída,Folha,Folha,-18053.08,5531816.15,Itaú-PJ
+2025-11-30,Saída,Frete,Frete,-12519.96,5519296.19,Itaú-PJ
+2025-11-30,Saída,Energia/Util,Energia/Util,-10641.28,5508654.91,Itaú-PJ
+2025-12-01,Entrada,Recebimento Cliente,Liquidação boleto,39394.14,5548049.05,Itaú-PJ
+2025-12-01,Entrada,Recebimento Cliente,PIX cliente,33823.76,5581872.81,Itaú-PJ
+2025-12-01,Entrada,Recebimento Cliente,Liquidação boleto,37498.96,5619371.77,BB-PJ
+2025-12-01,Saída,Frete,Frete,-5021.59,5614350.18,Itaú-PJ
+2025-12-01,Saída,Marketing,Marketing,-12084.63,5602265.55,BB-PJ
+2025-12-02,Entrada,Recebimento Cliente,PIX cliente,26214.51,5628480.06,Itaú-PJ
+2025-12-02,Entrada,Outras Receitas,Liquidação boleto,29669.04,5658149.1,BB-PJ
+2025-12-02,Entrada,Recebimento Cliente,Liquidação boleto,46224.66,5704373.76,BB-PJ
+2025-12-02,Entrada,Recebimento Cliente,Liquidação boleto,16006.37,5720380.13,Itaú-PJ
+2025-12-02,Entrada,Recebimento Cliente,Liquidação boleto,26338.18,5746718.31,Caixa
+2025-12-02,Saída,Impostos,Impostos,-10558.88,5736159.43,BB-PJ
+2025-12-02,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-7389.7,5728769.73,Itaú-PJ
+2025-12-02,Saída,Outras,Outras,-19603.21,5709166.52,BB-PJ
+2025-12-02,Saída,Aluguel,Aluguel,-21377.11,5687789.41,Itaú-PJ
+2025-12-02,Saída,Folha,Folha,-11443.55,5676345.86,Itaú-PJ
+2025-12-02,Saída,Impostos,Impostos,-2222.34,5674123.52,Itaú-PJ
+2025-12-03,Entrada,Recebimento Cliente,PIX cliente,42566.9,5716690.42,Itaú-PJ
+2025-12-03,Entrada,Outras Receitas,PIX cliente,32692.67,5749383.09,BB-PJ
+2025-12-03,Entrada,Recebimento Cliente,Liquidação boleto,36996.29,5786379.38,Itaú-PJ
+2025-12-03,Entrada,Outras Receitas,PIX cliente,25411.78,5811791.16,Itaú-PJ
+2025-12-03,Saída,Outras,Outras,-19396.11,5792395.05,BB-PJ
+2025-12-03,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-13902.9,5778492.15,Itaú-PJ
+2025-12-03,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-8540.64,5769951.51,BB-PJ
+2025-12-04,Entrada,Outras Receitas,Liquidação boleto,34407.68,5804359.19,BB-PJ
+2025-12-04,Entrada,Recebimento Cliente,PIX cliente,23777.24,5828136.43,BB-PJ
+2025-12-04,Entrada,Recebimento Cliente,Liquidação boleto,7342.72,5835479.15,Caixa
+2025-12-04,Entrada,Recebimento Cliente,Liquidação boleto,30220.23,5865699.38,Caixa
+2025-12-04,Entrada,Recebimento Cliente,Liquidação boleto,28647.45,5894346.83,Itaú-PJ
+2025-12-04,Saída,Folha,Folha,-36278.42,5858068.41,BB-PJ
+2025-12-04,Saída,Frete,Frete,-12564.53,5845503.88,Itaú-PJ
+2025-12-04,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-2870.62,5842633.26,BB-PJ
+2025-12-04,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-19781.18,5822852.08,BB-PJ
+2025-12-04,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-3373.69,5819478.39,BB-PJ
+2025-12-05,Entrada,Recebimento Cliente,Liquidação boleto,27709.22,5847187.61,Itaú-PJ
+2025-12-05,Entrada,Recebimento Cliente,Liquidação boleto,29417.5,5876605.11,Caixa
+2025-12-05,Entrada,Recebimento Cliente,PIX cliente,29947.62,5906552.73,Itaú-PJ
+2025-12-05,Entrada,Outras Receitas,Liquidação boleto,30193.9,5936746.63,BB-PJ
+2025-12-05,Entrada,Recebimento Cliente,PIX cliente,23818.61,5960565.24,Itaú-PJ
+2025-12-05,Entrada,Recebimento Cliente,PIX cliente,17920.56,5978485.8,BB-PJ
+2025-12-05,Entrada,Recebimento Cliente,Liquidação boleto,23121.12,6001606.92,Itaú-PJ
+2025-12-05,Saída,Aluguel,Aluguel,-24834.55,5976772.37,Itaú-PJ
+2025-12-05,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-23833.75,5952938.62,Itaú-PJ
+2025-12-06,Saída,Outras,Outras,-13285.23,5939653.39,BB-PJ
+2025-12-06,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-12903.77,5926749.62,Itaú-PJ
+2025-12-06,Saída,Marketing,Marketing,-2968.95,5923780.67,Itaú-PJ
+2025-12-07,Saída,Folha,Folha,-10084.45,5913696.22,Itaú-PJ
+2025-12-07,Saída,Marketing,Marketing,-13388.29,5900307.93,Itaú-PJ
+2025-12-07,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-5659.75,5894648.18,Itaú-PJ
+2025-12-07,Saída,Outras,Outras,-17583.81,5877064.37,Itaú-PJ
+2025-12-08,Entrada,Recebimento Cliente,Liquidação boleto,54384.73,5931449.1,Itaú-PJ
+2025-12-08,Entrada,Recebimento Cliente,Liquidação boleto,27007.0,5958456.1,BB-PJ
+2025-12-08,Entrada,Recebimento Cliente,Liquidação boleto,8859.55,5967315.65,Itaú-PJ
+2025-12-08,Entrada,Recebimento Cliente,Liquidação boleto,24240.55,5991556.2,Caixa
+2025-12-08,Entrada,Outras Receitas,PIX cliente,33930.31,6025486.51,BB-PJ
+2025-12-08,Entrada,Recebimento Cliente,PIX cliente,29704.09,6055190.6,Itaú-PJ
+2025-12-08,Saída,Outras,Outras,-14233.43,6040957.17,BB-PJ
+2025-12-08,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-11489.12,6029468.05,Itaú-PJ
+2025-12-08,Saída,Marketing,Marketing,-7393.12,6022074.93,BB-PJ
+2025-12-08,Saída,Impostos,Impostos,-13773.65,6008301.28,Itaú-PJ
+2025-12-08,Saída,Impostos,Impostos,-8706.11,5999595.17,BB-PJ
+2025-12-09,Entrada,Outras Receitas,PIX cliente,41210.87,6040806.04,Itaú-PJ
+2025-12-09,Entrada,Outras Receitas,Liquidação boleto,12661.31,6053467.35,Caixa
+2025-12-09,Entrada,Outras Receitas,PIX cliente,21347.41,6074814.76,Itaú-PJ
+2025-12-09,Entrada,Recebimento Cliente,PIX cliente,43728.41,6118543.17,Caixa
+2025-12-09,Entrada,Recebimento Cliente,Liquidação boleto,20232.43,6138775.6,Itaú-PJ
+2025-12-09,Entrada,Outras Receitas,PIX cliente,10431.77,6149207.37,BB-PJ
+2025-12-09,Entrada,Recebimento Cliente,PIX cliente,31480.8,6180688.17,Itaú-PJ
+2025-12-09,Saída,Energia/Util,Energia/Util,-18876.6,6161811.57,Itaú-PJ
+2025-12-09,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-15682.72,6146128.85,BB-PJ
+2025-12-09,Saída,Energia/Util,Energia/Util,-11169.48,6134959.37,BB-PJ
+2025-12-09,Saída,Impostos,Impostos,-25948.95,6109010.42,Itaú-PJ
+2025-12-10,Entrada,Recebimento Cliente,Liquidação boleto,28871.45,6137881.87,Itaú-PJ
+2025-12-10,Entrada,Recebimento Cliente,Liquidação boleto,22119.35,6160001.22,Itaú-PJ
+2025-12-10,Entrada,Outras Receitas,PIX cliente,31281.34,6191282.56,Caixa
+2025-12-10,Entrada,Outras Receitas,Liquidação boleto,16731.73,6208014.29,BB-PJ
+2025-12-10,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-18514.49,6189499.8,BB-PJ
+2025-12-10,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-24817.17,6164682.63,BB-PJ
+2025-12-10,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-16710.24,6147972.39,BB-PJ
+2025-12-11,Entrada,Outras Receitas,Liquidação boleto,42906.97,6190879.36,Itaú-PJ
+2025-12-11,Entrada,Recebimento Cliente,PIX cliente,26864.48,6217743.84,Itaú-PJ
+2025-12-11,Entrada,Recebimento Cliente,Liquidação boleto,38373.28,6256117.12,Itaú-PJ
+2025-12-11,Entrada,Recebimento Cliente,PIX cliente,17549.41,6273666.53,BB-PJ
+2025-12-11,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-16242.68,6257423.85,Itaú-PJ
+2025-12-11,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-13786.01,6243637.84,Itaú-PJ
+2025-12-11,Saída,Impostos,Impostos,-30070.44,6213567.4,BB-PJ
+2025-12-11,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-12129.66,6201437.74,Itaú-PJ
+2025-12-12,Entrada,Recebimento Cliente,PIX cliente,14572.35,6216010.09,Caixa
+2025-12-12,Entrada,Recebimento Cliente,Liquidação boleto,36002.29,6252012.38,Caixa
+2025-12-12,Entrada,Recebimento Cliente,PIX cliente,15541.03,6267553.41,Caixa
+2025-12-12,Entrada,Recebimento Cliente,Liquidação boleto,22231.52,6289784.93,BB-PJ
+2025-12-12,Entrada,Recebimento Cliente,PIX cliente,26689.57,6316474.5,Itaú-PJ
+2025-12-12,Saída,Outras,Outras,-20016.75,6296457.75,Itaú-PJ
+2025-12-12,Saída,Folha,Folha,-23395.14,6273062.61,BB-PJ
+2025-12-12,Saída,Marketing,Marketing,-165.78,6272896.83,Itaú-PJ
+2025-12-13,Saída,Folha,Folha,-30233.66,6242663.17,Itaú-PJ
+2025-12-13,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-12461.05,6230202.12,Itaú-PJ
+2025-12-13,Saída,Folha,Folha,-17720.9,6212481.22,Itaú-PJ
+2025-12-13,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-15956.68,6196524.54,BB-PJ
+2025-12-13,Saída,Aluguel,Aluguel,-2930.29,6193594.25,Itaú-PJ
+2025-12-13,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-4974.48,6188619.77,BB-PJ
+2025-12-14,Saída,Outras,Outras,-20250.35,6168369.42,Itaú-PJ
+2025-12-14,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-13197.34,6155172.08,Itaú-PJ
+2025-12-14,Saída,Folha,Folha,-13260.85,6141911.23,BB-PJ
+2025-12-14,Saída,Aluguel,Aluguel,-7309.86,6134601.37,Itaú-PJ
+2025-12-15,Entrada,Recebimento Cliente,Liquidação boleto,36597.49,6171198.86,BB-PJ
+2025-12-15,Entrada,Recebimento Cliente,Liquidação boleto,48153.76,6219352.62,BB-PJ
+2025-12-15,Entrada,Recebimento Cliente,PIX cliente,20031.69,6239384.31,BB-PJ
+2025-12-15,Entrada,Recebimento Cliente,PIX cliente,13459.83,6252844.14,Itaú-PJ
+2025-12-15,Entrada,Recebimento Cliente,Liquidação boleto,29853.06,6282697.2,Itaú-PJ
+2025-12-15,Entrada,Recebimento Cliente,Liquidação boleto,30759.42,6313456.62,Itaú-PJ
+2025-12-15,Saída,Energia/Util,Energia/Util,-22410.07,6291046.55,Itaú-PJ
+2025-12-15,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-15371.55,6275675.0,Itaú-PJ
+2025-12-15,Saída,Frete,Frete,-24408.06,6251266.94,Itaú-PJ
+2025-12-15,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-4772.73,6246494.21,Itaú-PJ
+2025-12-15,Saída,Impostos,Impostos,-16965.57,6229528.64,BB-PJ
+2025-12-16,Entrada,Recebimento Cliente,Liquidação boleto,50682.2,6280210.84,BB-PJ
+2025-12-16,Entrada,Recebimento Cliente,PIX cliente,26005.63,6306216.47,Itaú-PJ
+2025-12-16,Entrada,Recebimento Cliente,Liquidação boleto,31748.67,6337965.14,Itaú-PJ
+2025-12-16,Entrada,Recebimento Cliente,Liquidação boleto,19538.98,6357504.12,BB-PJ
+2025-12-16,Saída,Outras,Outras,-16635.66,6340868.46,Itaú-PJ
+2025-12-16,Saída,Folha,Folha,-16123.44,6324745.02,BB-PJ
+2025-12-16,Saída,Folha,Folha,-17333.89,6307411.13,Itaú-PJ
+2025-12-16,Saída,Impostos,Impostos,-13138.3,6294272.83,BB-PJ
+2025-12-16,Saída,Folha,Folha,-14788.89,6279483.94,Itaú-PJ
+2025-12-17,Entrada,Recebimento Cliente,Liquidação boleto,32689.81,6312173.75,Itaú-PJ
+2025-12-17,Entrada,Recebimento Cliente,Liquidação boleto,36752.04,6348925.79,Itaú-PJ
+2025-12-17,Entrada,Recebimento Cliente,Liquidação boleto,11977.41,6360903.2,Itaú-PJ
+2025-12-17,Saída,Aluguel,Aluguel,-25694.03,6335209.17,BB-PJ
+2025-12-17,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-12986.13,6322223.04,Itaú-PJ
+2025-12-17,Saída,Outras,Outras,-10362.62,6311860.42,Itaú-PJ
+2025-12-17,Saída,Impostos,Impostos,-12539.1,6299321.32,Itaú-PJ
+2025-12-17,Saída,Folha,Folha,-13587.23,6285734.09,Itaú-PJ
+2025-12-17,Saída,Folha,Folha,-23032.95,6262701.14,Itaú-PJ
+2025-12-18,Entrada,Recebimento Cliente,Liquidação boleto,20349.39,6283050.53,Caixa
+2025-12-18,Entrada,Recebimento Cliente,Liquidação boleto,18309.38,6301359.91,Caixa
+2025-12-18,Entrada,Recebimento Cliente,Liquidação boleto,10858.93,6312218.84,Caixa
+2025-12-18,Entrada,Recebimento Cliente,PIX cliente,20880.6,6333099.44,BB-PJ
+2025-12-18,Entrada,Recebimento Cliente,Liquidação boleto,21296.47,6354395.91,Caixa
+2025-12-18,Entrada,Recebimento Cliente,PIX cliente,21178.26,6375574.17,Caixa
+2025-12-18,Entrada,Outras Receitas,Liquidação boleto,30651.03,6406225.2,Caixa
+2025-12-18,Saída,Impostos,Impostos,-1395.02,6404830.18,Itaú-PJ
+2025-12-18,Saída,Aluguel,Aluguel,-7065.79,6397764.39,Itaú-PJ
+2025-12-19,Entrada,Recebimento Cliente,Liquidação boleto,11635.43,6409399.82,Itaú-PJ
+2025-12-19,Entrada,Outras Receitas,Liquidação boleto,37062.42,6446462.24,Caixa
+2025-12-19,Entrada,Outras Receitas,Liquidação boleto,45005.91,6491468.15,Caixa
+2025-12-19,Entrada,Recebimento Cliente,Liquidação boleto,22487.64,6513955.79,Caixa
+2025-12-19,Entrada,Recebimento Cliente,Liquidação boleto,34460.5,6548416.29,BB-PJ
+2025-12-19,Entrada,Outras Receitas,Liquidação boleto,38337.02,6586753.31,Caixa
+2025-12-19,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-12621.93,6574131.38,BB-PJ
+2025-12-19,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-15783.7,6558347.68,Itaú-PJ
+2025-12-19,Saída,Marketing,Marketing,-4710.32,6553637.36,BB-PJ
+2025-12-19,Saída,Impostos,Impostos,-17858.94,6535778.42,Itaú-PJ
+2025-12-19,Saída,Aluguel,Aluguel,-12808.22,6522970.2,BB-PJ
+2025-12-19,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-28610.5,6494359.7,BB-PJ
+2025-12-20,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-18614.58,6475745.12,BB-PJ
+2025-12-20,Saída,Energia/Util,Energia/Util,-28343.93,6447401.19,Itaú-PJ
+2025-12-21,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-10651.22,6436749.97,BB-PJ
+2025-12-21,Saída,Impostos,Impostos,-8562.29,6428187.68,BB-PJ
+2025-12-21,Saída,Outras,Outras,-24512.27,6403675.41,Itaú-PJ
+2025-12-21,Saída,Marketing,Marketing,-7871.14,6395804.27,BB-PJ
+2025-12-21,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-15844.61,6379959.66,BB-PJ
+2025-12-22,Entrada,Outras Receitas,Liquidação boleto,17493.91,6397453.57,Itaú-PJ
+2025-12-22,Entrada,Recebimento Cliente,PIX cliente,39936.25,6437389.82,Itaú-PJ
+2025-12-22,Entrada,Recebimento Cliente,PIX cliente,21167.27,6458557.09,Caixa
+2025-12-22,Entrada,Recebimento Cliente,PIX cliente,20117.47,6478674.56,BB-PJ
+2025-12-22,Entrada,Recebimento Cliente,Liquidação boleto,44592.01,6523266.57,Itaú-PJ
+2025-12-22,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-14817.0,6508449.57,BB-PJ
+2025-12-22,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-12435.55,6496014.02,Itaú-PJ
+2025-12-22,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-18325.81,6477688.21,Itaú-PJ
+2025-12-22,Saída,Folha,Folha,-16920.13,6460768.08,Itaú-PJ
+2025-12-22,Saída,Folha,Folha,-11659.42,6449108.66,Itaú-PJ
+2025-12-23,Entrada,Recebimento Cliente,Liquidação boleto,32776.09,6481884.75,Itaú-PJ
+2025-12-23,Entrada,Recebimento Cliente,Liquidação boleto,36045.69,6517930.44,BB-PJ
+2025-12-23,Entrada,Recebimento Cliente,PIX cliente,28911.72,6546842.16,Itaú-PJ
+2025-12-23,Entrada,Outras Receitas,Liquidação boleto,32546.97,6579389.13,Itaú-PJ
+2025-12-23,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-5050.25,6574338.88,BB-PJ
+2025-12-23,Saída,Aluguel,Aluguel,-20079.88,6554259.0,Itaú-PJ
+2025-12-23,Saída,Frete,Frete,-11839.89,6542419.11,BB-PJ
+2025-12-23,Saída,Folha,Folha,-1758.59,6540660.52,BB-PJ
+2025-12-23,Saída,Energia/Util,Energia/Util,-8336.94,6532323.58,Itaú-PJ
+2025-12-24,Entrada,Recebimento Cliente,Liquidação boleto,8189.23,6540512.81,Itaú-PJ
+2025-12-24,Entrada,Recebimento Cliente,Liquidação boleto,21791.05,6562303.86,Caixa
+2025-12-24,Entrada,Recebimento Cliente,PIX cliente,36027.83,6598331.69,Itaú-PJ
+2025-12-24,Entrada,Recebimento Cliente,Liquidação boleto,4102.03,6602433.72,Itaú-PJ
+2025-12-24,Entrada,Outras Receitas,Liquidação boleto,37965.45,6640399.17,BB-PJ
+2025-12-24,Entrada,Recebimento Cliente,Liquidação boleto,43936.26,6684335.43,Itaú-PJ
+2025-12-24,Saída,Aluguel,Aluguel,-31968.72,6652366.71,Itaú-PJ
+2025-12-24,Saída,Energia/Util,Energia/Util,-18064.55,6634302.16,Itaú-PJ
+2025-12-25,Entrada,Recebimento Cliente,PIX cliente,15827.95,6650130.11,Caixa
+2025-12-25,Entrada,Recebimento Cliente,Liquidação boleto,32574.64,6682704.75,Caixa
+2025-12-25,Entrada,Recebimento Cliente,Liquidação boleto,20040.36,6702745.11,BB-PJ
+2025-12-25,Entrada,Recebimento Cliente,PIX cliente,24129.03,6726874.14,Itaú-PJ
+2025-12-25,Entrada,Recebimento Cliente,Liquidação boleto,20328.09,6747202.23,Itaú-PJ
+2025-12-25,Saída,Impostos,Impostos,-19947.35,6727254.88,Itaú-PJ
+2025-12-25,Saída,Folha,Folha,-17741.04,6709513.84,Itaú-PJ
+2025-12-25,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-35121.12,6674392.72,Itaú-PJ
+2025-12-25,Saída,Folha,Folha,-27162.25,6647230.47,Itaú-PJ
+2025-12-26,Entrada,Recebimento Cliente,Liquidação boleto,17377.92,6664608.39,BB-PJ
+2025-12-26,Entrada,Outras Receitas,PIX cliente,29931.47,6694539.86,BB-PJ
+2025-12-26,Entrada,Outras Receitas,PIX cliente,15662.1,6710201.96,Itaú-PJ
+2025-12-26,Entrada,Recebimento Cliente,Liquidação boleto,32607.49,6742809.45,BB-PJ
+2025-12-26,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-20242.76,6722566.69,Itaú-PJ
+2025-12-26,Saída,Frete,Frete,-5074.1,6717492.59,Itaú-PJ
+2025-12-26,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-69.3,6717423.29,BB-PJ
+2025-12-26,Saída,Impostos,Impostos,-27567.37,6689855.92,Itaú-PJ
+2025-12-27,Saída,Impostos,Impostos,-15791.46,6674064.46,Itaú-PJ
+2025-12-27,Saída,Folha,Folha,-10567.46,6663497.0,BB-PJ
+2025-12-27,Saída,Energia/Util,Energia/Util,-17015.21,6646481.79,Itaú-PJ
+2025-12-27,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-14530.44,6631951.35,Itaú-PJ
+2025-12-27,Saída,Folha,Folha,-6292.73,6625658.62,Itaú-PJ
+2025-12-27,Saída,Marketing,Marketing,-4783.37,6620875.25,BB-PJ
+2025-12-28,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-20621.95,6600253.3,Itaú-PJ
+2025-12-28,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-17561.5,6582691.8,BB-PJ
+2025-12-29,Entrada,Recebimento Cliente,Liquidação boleto,27376.94,6610068.74,BB-PJ
+2025-12-29,Entrada,Outras Receitas,Liquidação boleto,8940.34,6619009.08,Caixa
+2025-12-29,Entrada,Recebimento Cliente,Liquidação boleto,27058.19,6646067.27,Itaú-PJ
+2025-12-29,Saída,Folha,Folha,-6325.04,6639742.23,Itaú-PJ
+2025-12-29,Saída,Energia/Util,Energia/Util,-23729.96,6616012.27,Itaú-PJ
+2025-12-29,Saída,Energia/Util,Energia/Util,-15738.89,6600273.38,Itaú-PJ
+2025-12-29,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-22207.66,6578065.72,BB-PJ
+2025-12-29,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-18740.83,6559324.89,BB-PJ
+2025-12-30,Entrada,Recebimento Cliente,Liquidação boleto,32571.31,6591896.2,Itaú-PJ
+2025-12-30,Entrada,Recebimento Cliente,Liquidação boleto,36752.32,6628648.52,BB-PJ
+2025-12-30,Entrada,Recebimento Cliente,Liquidação boleto,34647.17,6663295.69,BB-PJ
+2025-12-30,Entrada,Recebimento Cliente,Liquidação boleto,52931.42,6716227.11,Itaú-PJ
+2025-12-30,Entrada,Recebimento Cliente,PIX cliente,25833.92,6742061.03,BB-PJ
+2025-12-30,Entrada,Recebimento Cliente,Liquidação boleto,38134.68,6780195.71,Caixa
+2025-12-30,Saída,Aluguel,Aluguel,-14870.4,6765325.31,Itaú-PJ
+2025-12-30,Saída,Frete,Frete,-26231.01,6739094.3,BB-PJ
+2025-12-30,Saída,Marketing,Marketing,-18863.41,6720230.89,BB-PJ
+2025-12-31,Entrada,Recebimento Cliente,PIX cliente,37139.62,6757370.51,BB-PJ
+2025-12-31,Entrada,Outras Receitas,Liquidação boleto,26405.72,6783776.23,Itaú-PJ
+2025-12-31,Entrada,Outras Receitas,PIX cliente,32361.04,6816137.27,Itaú-PJ
+2025-12-31,Entrada,Recebimento Cliente,PIX cliente,9949.13,6826086.4,BB-PJ
+2025-12-31,Entrada,Recebimento Cliente,Liquidação boleto,30329.87,6856416.27,Caixa
+2025-12-31,Saída,Folha,Folha,-17309.38,6839106.89,BB-PJ
+2025-12-31,Saída,Folha,Folha,-6602.57,6832504.32,BB-PJ
+2025-12-31,Saída,Pagamento Fornecedor,Pagamento Fornecedor,-16063.53,6816440.79,BB-PJ

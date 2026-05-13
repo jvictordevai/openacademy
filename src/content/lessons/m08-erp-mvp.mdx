@@ -1,0 +1,241 @@
+---
+title: ERP MVP — Do Dashboard ao Sistema da Empresa
+order: 2
+module: m08
+description: Como evoluir o dashboard de demo para um ERP simples real. 5 módulos no Lovable + Supabase. Roteiro de 4 sprints.
+minutes: 14
+difficulty: avancado
+tags: [erp, lovable, supabase, arquitetura, mvp]
+sources:
+  - label: Supabase — Production checklist
+    url: https://supabase.com/docs/guides/deployment/going-into-prod
+  - label: Lovable — Building full-stack apps
+    url: https://docs.lovable.dev
+  - label: NF-e via NFE.io (provedor BR)
+    url: https://nfe.io/
+task:
+  prompt: "Liste as 3 dores operacionais da sua empresa hoje que um ERP enxuto resolveria. Para cada, descreva: qual módulo do ERP entrega + métrica que vai melhorar + responsável atual pelo trabalho manual."
+  criteria: "3 dores nomeadas com módulo correspondente + métrica antes/depois esperada + responsável atual identificado."
+  minutes: 8
+---
+
+import Pegadinhas from '../../components/Pegadinhas.astro';
+import BeforeAfter from '../../components/BeforeAfter.astro';
+
+## TL;DR
+
+Dashboard mostra dado. **ERP cria operação**. Diferença: dashboard lê, ERP escreve. Em 4 sprints você sai do "olho no número" pra "sistema da empresa funcionando".
+
+## Por que evoluir, e não construir do zero
+
+Empresário típico tenta comprar ERP grande (TOTVS, Senior, Bling) e:
+- Implementação leva 6-12 meses
+- Customização vira hostage do fornecedor
+- 60% das features que pagou nunca usa
+- Time resiste porque é caro mudar
+
+**Outra estratégia**: começar pelo dashboard (que você já construiu na lição [m06-build-dashboard](/licoes/m06-build-dashboard)) e **evoluir módulo a módulo**.
+
+<BeforeAfter
+  label="Dashboard vs ERP — diferença prática"
+  from="Olho no número. Quando algo está errado, alguém abre o Excel."
+  to="Sistema da empresa. Vendas entram, estoque baixa, NF emite, boleto vai, cobrança lembra, contas batem."
+  impact="Operação não para se você sumir"
+/>
+
+## Stack do ERP MVP
+
+| Camada | Ferramenta | Por quê |
+|---|---|---|
+| **Frontend + agente** | Lovable | Você descreve, ele constrói |
+| **Banco de dados** | Supabase (Postgres) | RLS, auth, realtime, backup PITR |
+| **Automação** | n8n | NF-e, boleto, email, integrações |
+| **Segurança** | Aikido | Scan contínuo do código + cloud |
+| **Pagamentos** | Stripe (B2B) ou Asaas/Cobre Fácil (boleto BR) | API direta |
+| **NF-e** | NFE.io ou Plug Notas | API + SEFAZ |
+
+Custo total mensal (operação real PME): **~US$ 80-150/mês**. Compare com TOTVS R$ 8-15k/mês.
+
+## 5 módulos · 4 sprints
+
+### Sprint 1 (2 semanas) — Vendas
+
+Reaproveita o dashboard que já existe + adiciona **escrita**:
+
+- Tela de cadastro de cliente (com validação CNPJ)
+- Tela de criação de pedido (com cálculo de margem em tempo real)
+- Tela de gestão de pipeline (Kanban arrastável: lead → qualif → proposta → fechado)
+- Comissão calculada automática por vendedor
+- Aprovações de desconto acima de X% precisa OK do gestor
+
+**Tabelas Supabase**:
+```sql
+clientes (id, razao_social, cnpj, segmento, vendedor_id, limite_credito, status)
+pedidos (id, cliente_id, vendedor_id, data, status, valor_total, custo_total)
+pedido_itens (id, pedido_id, sku, qtd, preco_unit, desconto_pct)
+oportunidades (id, cliente_id, vendedor_id, etapa, valor_estimado, prob, data_prev)
+```
+
+**RLS crítico**: vendedor só vê seus clientes/pedidos. Gerente vê tudo da região.
+
+### Sprint 2 (2 semanas) — Estoque + Compras
+
+- Tela de cadastro de produto (SKU, custo médio, fornecedor, lead time)
+- Movimentação de estoque (entrada por NF de compra · saída por venda)
+- Curva ABC automática (top 20% SKUs = X% da receita)
+- Ponto de pedido (saldo + lead time + giro)
+- Sugestão de compra agrupada por fornecedor
+
+**Tabelas**:
+```sql
+produtos (id, sku, descricao, categoria, custo_medio, fornecedor_id, ponto_pedido)
+estoque (id, sku, saldo, ultimo_custo, ultima_movimentacao)
+estoque_movimentos (id, sku, tipo, qtd, custo_unit, origem, data, usuario_id)
+ordens_compra (id, fornecedor_id, status, valor_total, prev_entrega)
+oc_itens (id, oc_id, sku, qtd, preco_neg)
+```
+
+**Automação n8n**: quando saldo bate ponto de pedido, criar OC rascunho automaticamente e notificar compras no Slack.
+
+### Sprint 3 (2 semanas) — Financeiro
+
+Reaproveita a planilha financeira como ponto de partida. Adiciona:
+
+- Contas a receber com aging automático
+- Régua de cobrança (D-3 lembrete · D+1 vencido · D+7 negativação)
+- Conciliação bancária semi-automática (importa OFX/CSV)
+- Fluxo de caixa projetado 13 semanas (rolling)
+- Centro de custo por categoria de despesa
+
+**Tabelas**:
+```sql
+contas_receber (id, pedido_id, cliente_id, valor, vencimento, pago_em, status)
+contas_pagar (id, fornecedor_id, categoria, valor, vencimento, pago_em, status)
+movimentos_bancarios (id, conta_id, data, valor, tipo, conciliado_com)
+contas_bancarias (id, banco, agencia, conta, saldo_atual)
+```
+
+**Automação n8n**:
+- Boleto gerado via Asaas/Cobre Fácil quando pedido fatura
+- PIX dinâmico opcional
+- Email D-3, D+1, D+7 personalizado
+
+### Sprint 4 (1 semana) — NF-e + Cobrança + Permissões
+
+- Emissão NF-e via NFE.io ou Plug Notas (CFOP/CST baseado no perfil do cliente)
+- XML armazenado no Supabase Storage
+- Cobrança automática via boleto + PIX (Asaas, Cobre Fácil, Mercado Pago)
+- Permissões granulares por usuário (Admin, Gerente, Vendedor, Compras, Financeiro)
+- Audit log de quem alterou o quê
+
+**Tabelas**:
+```sql
+notas_fiscais (id, pedido_id, chave_acesso, status_sefaz, xml_url, valor_total)
+usuarios (id, email, role, regiao, ativo)
+permissoes (role, recurso, acoes)
+audit_log (id, usuario_id, acao, entidade, data, payload_old, payload_new)
+```
+
+## Os 5 módulos prontos
+
+```
+┌──────────────────────────────────────────────────────────┐
+│   VENDAS    │   ESTOQUE   │  FINANCEIRO │  NF-e  │ AUTH  │
+├──────────────────────────────────────────────────────────┤
+│  Clientes   │  Produtos   │  CR / CP    │  Emit. │ Roles │
+│  Pedidos    │  Movimento  │  Aging      │  XML   │ RLS   │
+│  Pipeline   │  Compras    │  Cobrança   │  Cancl │ Audit │
+│  Comissões  │  Curva ABC  │  Fluxo 13s  │        │       │
+└──────────────────────────────────────────────────────────┘
+```
+
+## O prompt-mestre para o Lovable
+
+Cole isso para gerar o esqueleto inicial:
+
+```text
+Construa ERP enxuto para Distribuidora Aurora (B2B materiais elétricos).
+
+Stack: Lovable (UI) + Supabase (Postgres com RLS) + n8n (automações).
+Usuários: Admin, Gerente, Vendedor, Compras, Financeiro — RLS por role + vendedor só vê próprios clientes.
+
+Módulos para o Sprint 1:
+1. Clientes (CRUD com validação CNPJ + limite de crédito + segmento)
+2. Pedidos (cabeçalho + itens · cálculo de margem em tempo real · aprovação de desconto > 8%)
+3. Pipeline (Kanban: Lead → Qualif → Proposta → Negociação → Ganho/Perdido)
+4. Comissões (cálculo automático por vendedor, fechamento mensal)
+
+Visual: dark mode, paleta OKLCH azul + violeta + mint, tipografia Inter Tight + Inter.
+Login Google + email/senha.
+Mobile-first com tabelas que viram cards no celular.
+
+Importe os dados iniciais da planilha aurora-vendas-2024-2025.xlsx (URL: openacademyai.jvictordev.expert/materiais/vendas-aurora-2024-2025.xlsx).
+
+Devolva o app rodando + URL pública + checklist do que falta para Sprint 2.
+```
+
+## Métricas pra acompanhar evolução
+
+| Sprint | Métrica de sucesso |
+|---|---|
+| Sprint 1 | 100% dos pedidos novos entram pelo sistema (não Excel) |
+| Sprint 2 | Saldo do sistema bate com contagem física com erro &lt; 2% |
+| Sprint 3 | Aging de contas vencidas cai 30% em 60 dias |
+| Sprint 4 | NF emitida em &lt; 3 min após faturamento (vs 15 min manual) |
+
+<Pegadinhas
+  items={[
+    "<strong>Migração é a dor real.</strong> Importar Excel histórico é 40% do trabalho. Reserve 1 semana inteira só pra isso.",
+    "<strong>Aprovação humana antes de automatizar 100%.</strong> Cobrança automática que negativa cliente errado vira passivo. Crie checkpoint humano nos primeiros 90 dias.",
+    "<strong>Backup ANTES do go-live.</strong> Supabase Pro + PITR. Configure backup manual diário em S3 também.",
+    "<strong>NF-e é regulatório.</strong> Use provedor (NFE.io, Plug Notas) — não construa do zero. Multa por NF errada é alta.",
+    "<strong>Performance importa cedo.</strong> 50k pedidos em tabela não-indexada trava. Crie índices em cliente_id, vendedor_id, data desde o início.",
+    "<strong>Não migre tudo de uma vez.</strong> Sprint 1 (vendas) inteiro · depois Sprint 2. Não tente abrir todos os módulos juntos.",
+  ]}
+/>
+
+## Checklist de produção (antes de soltar pro time)
+
+- [ ] Supabase Pro com PITR ativado
+- [ ] Backup diário externo em S3/Backblaze (não dependa só do Supabase)
+- [ ] Aikido escaneando código + cloud + container
+- [ ] Custom domain configurado com SSL
+- [ ] Aprovação humana em ações irreversíveis (cancelar pedido, negativar cliente)
+- [ ] Audit log de quem alterou o quê
+- [ ] Treinamento do time (mínimo 2 sessões de 1h)
+- [ ] Plano de rollback se der ruim
+- [ ] Suporte de contingência (você ou alguém de confiança disponível por 2 semanas pós-go-live)
+
+## Custo total real
+
+Estimativa para PME com 10-30 usuários ativos:
+
+| Item | Mensal |
+|---|---|
+| Lovable Pro | US$ 25 |
+| Supabase Pro | US$ 25 |
+| n8n Cloud Starter | US$ 20 |
+| Aikido (free até 10 repos) | US$ 0 |
+| NFE.io ou Plug Notas (~500 NFs/mês) | ~R$ 100 |
+| Asaas (cobrança, ~R$ 1,5/boleto) | variável |
+| Domínio próprio | ~US$ 1 |
+| **Total** | **~US$ 75-110/mês + variáveis** |
+
+R$ ~600/mês pra rodar ERP da PME, vs R$ 8-15k de ERP tradicional. Diferença de **20-25x** com mais flexibilidade.
+
+## Quando NÃO seguir esse caminho
+
+- Indústria altamente regulada (farmácia, alimentício com rastreabilidade)
+- Operação fiscal complexa (transferência interestadual com substituição tributária, ICMS-ST)
+- Volume gigante (1M+ pedidos/mês)
+- Compliance audit obrigatório (SOC 2, ISO 27001 do dia 1)
+
+Para 80% das PMEs brasileiras, o stack aqui resolve.
+
+## Próximo passo
+
+Você terminou a trilha técnica completa. Caminhos:
+
+- **Aplicar**: baixe as [planilhas Aurora](/materiais), siga o Sprint 1 hoje
+- **Aprofundar**: [biblioteca completa de prompts](/prompts) com 51 templates
+- **Contribuir**: [github.com/jvictordevai/openacademy](https://github.com/jvictordevai/openacademy)

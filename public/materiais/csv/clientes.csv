@@ -1,0 +1,381 @@
+cliente_id,razao_social,cnpj,segmento,cidade,uf,vendedor_responsavel,data_primeira_compra,limite_credito,status
+AUR-0001,Vipar Engenharia Ltda,12.345.678/0001-90,Construtora,São Paulo,SP,Carla Mendes,2021-03-14,850000,Ativo
+AUR-0002,Vipar Engenharia EIRELI,10.000.142/0001-43,Indústria,Sorocaba,SP,Carla Mendes,2024-10-11,178369,Ativo
+AUR-0003,Construbase S/A,10.000.213/0001-56,Construtora,Campinas,SP,Roberto Almeida,2025-06-16,281244,Ativo
+AUR-0004,Fernando Costa Instaladora Ltda,10.000.284/0001-69,Setor Público,Porto Alegre,RS,Patricia Yoshida,2025-09-06,640726,Ativo
+AUR-0005,Cetel Engenharia Ltda,10.000.355/0001-82,Instaladora,Guarulhos,SP,Marcos Tavares,2021-12-24,150785,Inativo
+AUR-0006,Elétrica Marília ME,10.000.426/0001-95,Instaladora,Bauru,SP,João Bittencourt,2025-04-08,65353,Ativo
+AUR-0007,Fernando Santos Comércio Elétrico Ltda,10.000.497/0001-18,Revenda,Ribeirão Preto,SP,Eduarda Carvalho,2021-09-12,92722,Ativo
+AUR-0008,Mafer Engenharia S/A,10.000.568/0001-31,Setor Público,Campinas,SP,Eduarda Carvalho,2024-11-10,336466,Ativo
+AUR-0009,Plaza Empreendimentos & Cia,10.000.639/0001-44,Construtora,Bauru,SP,Diego Salgueiro,2022-10-05,648591,Ativo
+AUR-0010,Instaladora Foco Ltda,10.000.710/0001-57,Indústria,Osasco,SP,Roberto Almeida,2023-01-04,459757,Ativo
+AUR-0011,Ricardo Costa Materiais Elétricos Ltda,10.000.781/0001-70,Instaladora,São Paulo,SP,Marcos Tavares,2025-05-24,110765,Ativo
+AUR-0012,Brilho Materiais Elétricos EIRELI,10.000.852/0001-83,Revenda,Porto Alegre,RS,Diego Salgueiro,2022-03-24,130186,Ativo
+AUR-0013,Juliana Oliveira Materiais Elétricos Ltda,10.000.923/0001-96,Revenda,Guarulhos,SP,Marcos Tavares,2022-10-22,163712,Ativo
+AUR-0014,Construsul & Cia,10.000.994/0001-19,Revenda,Campinas,SP,Luana Prado,2024-03-15,212969,Ativo
+AUR-0015,Roberto Oliveira Instaladora Ltda,10.001.065/0001-32,Construtora,São Paulo,SP,Patricia Yoshida,2020-07-03,299405,Ativo
+AUR-0016,Ana Pereira Materiais Elétricos Ltda,10.001.136/0001-45,Revenda,Cotia,SP,Patricia Yoshida,2023-12-25,63009,Ativo
+AUR-0017,Ricardo Oliveira Comércio Elétrico Ltda,10.001.207/0001-58,Setor Público,Cotia,SP,Diego Salgueiro,2022-05-29,759199,Ativo
+AUR-0018,GEL Engenharia S/A,10.001.278/0001-71,Revenda,Bauru,SP,Eduarda Carvalho,2025-09-30,219637,Ativo
+AUR-0019,Energ Tech & Cia,10.001.349/0001-84,Revenda,Bauru,SP,Diego Salgueiro,2022-04-22,65105,Ativo
+AUR-0020,Materiais Bonsucesso Ltda,10.001.420/0001-97,Instaladora,Juiz de Fora,MG,Eduarda Carvalho,2024-05-05,60645,Ativo
+AUR-0021,Casa do Eletricista ME,10.001.491/0001-20,Revenda,Curitiba,PR,Diego Salgueiro,2021-01-03,204127,Ativo
+AUR-0022,Patrícia Pereira Instaladora Ltda,10.001.562/0001-33,Revenda,Bauru,SP,Roberto Almeida,2019-12-14,257988,Ativo
+AUR-0023,Eletroshow S/A,10.001.633/0001-46,Instaladora,São Paulo,SP,João Bittencourt,2023-03-05,98903,Ativo
+AUR-0024,Marcos Costa Construções Ltda,10.001.704/0001-59,Construtora,São Paulo,SP,Diego Salgueiro,2024-12-16,324441,Ativo
+AUR-0025,VoltMax Ltda,10.001.775/0001-72,Instaladora,Guarulhos,SP,João Bittencourt,2020-06-14,167248,Ativo
+AUR-0026,Eletrocentral ME,10.001.846/0001-85,Revenda,Cotia,SP,Carla Mendes,2020-12-02,271680,Ativo
+AUR-0027,Marcos Santos Construções Ltda,10.001.917/0001-98,Revenda,Jundiaí,SP,João Bittencourt,2024-07-12,182427,Ativo
+AUR-0028,Saber Engenharia S/A,10.001.988/0001-21,Instaladora,Osasco,SP,Patricia Yoshida,2022-12-14,157601,Ativo
+AUR-0029,Ricardo Santos Construções Ltda,10.002.059/0001-34,Construtora,Florianópolis,SC,Eduarda Carvalho,2024-09-15,714656,Ativo
+AUR-0030,GoodTech Automação Ltda,10.002.130/0001-47,Instaladora,Juiz de Fora,MG,Marcos Tavares,2021-04-04,83597,Ativo
+AUR-0031,InfraOne ME,10.002.201/0001-60,Instaladora,Jundiaí,SP,Patricia Yoshida,2020-08-26,139345,Ativo
+AUR-0032,Juliana Oliveira Engenharia Ltda,10.002.272/0001-73,Indústria,Ribeirão Preto,SP,Diego Salgueiro,2025-01-26,411382,Ativo
+AUR-0033,Lumen Comercial S/A,10.002.343/0001-86,Construtora,Curitiba,PR,Diego Salgueiro,2023-12-28,302578,Inativo
+AUR-0034,Ana Santos Engenharia Ltda,10.002.414/0001-99,Revenda,Jundiaí,SP,Carla Mendes,2022-12-29,81000,Ativo
+AUR-0035,Iluminar SP Ltda,10.002.485/0001-22,Construtora,Porto Alegre,RS,Roberto Almeida,2022-03-17,899468,Ativo
+AUR-0036,GreenLight Soluções ME,10.002.556/0001-35,Instaladora,Jundiaí,SP,Carla Mendes,2022-05-23,122361,Ativo
+AUR-0037,Andrade & Cia EIRELI,10.002.627/0001-48,Outros,Porto Alegre,RS,Luana Prado,2024-12-06,24754,Ativo
+AUR-0038,VKR Engenharia S/A,10.002.698/0001-61,Revenda,Bauru,SP,Diego Salgueiro,2023-01-06,129520,Ativo
+AUR-0039,Eduardo Silva Comércio Elétrico Ltda,10.002.769/0001-74,Instaladora,Ribeirão Preto,SP,Diego Salgueiro,2024-08-04,154867,Ativo
+AUR-0040,Loja do Eletricista (Campinas) Ltda,10.002.840/0001-87,Construtora,Cotia,SP,Eduarda Carvalho,2024-01-05,527312,Ativo
+AUR-0041,Patrícia Pereira Comércio Elétrico Ltda,10.002.911/0001-10,Revenda,Juiz de Fora,MG,Marcos Tavares,2025-03-08,115215,Inativo
+AUR-0042,Casa Forte Materiais EIRELI,10.002.982/0001-23,Revenda,São Paulo,SP,Patricia Yoshida,2024-04-15,277408,Ativo
+AUR-0043,Ricardo Rodrigues Comércio Elétrico Ltda,10.003.053/0001-36,Instaladora,São Paulo,SP,Carla Mendes,2024-01-31,82357,Ativo
+AUR-0044,TopWatt Distribuidora & Cia,10.003.124/0001-49,Instaladora,São Paulo,SP,Patricia Yoshida,2025-04-22,78821,Ativo
+AUR-0045,Camila Rodrigues Comércio Elétrico Ltda,10.003.195/0001-62,Instaladora,Guarulhos,SP,Diego Salgueiro,2023-02-06,105412,Ativo
+AUR-0046,Camila Rodrigues Engenharia Ltda,10.003.266/0001-75,Instaladora,Sorocaba,SP,Marcos Tavares,2024-07-17,148080,Ativo
+AUR-0047,Juliana Almeida Materiais Elétricos Ltda,10.003.337/0001-88,Construtora,Campinas,SP,João Bittencourt,2022-01-27,743554,Ativo
+AUR-0048,Ricardo Rodrigues Comércio Elétrico Ltda,10.003.408/0001-11,Construtora,São José dos Campos,SP,Diego Salgueiro,2024-06-17,542683,Ativo
+AUR-0049,Eduardo Silva Construções Ltda,10.003.479/0001-24,Instaladora,Belo Horizonte,MG,Patricia Yoshida,2022-03-28,86810,Ativo
+AUR-0050,Vanessa Costa Materiais Elétricos Ltda,10.003.550/0001-37,Revenda,São Paulo,SP,João Bittencourt,2025-09-26,90315,Ativo
+AUR-0051,Patrícia Almeida Instaladora Ltda,10.003.621/0001-50,Revenda,São Paulo,SP,Luana Prado,2022-01-19,240055,Ativo
+AUR-0052,Eduardo Pereira Instaladora Ltda,10.003.692/0001-63,Indústria,São José dos Campos,SP,Patricia Yoshida,2022-06-09,185339,Ativo
+AUR-0053,Fernando Oliveira Comércio Elétrico Ltda,10.003.763/0001-76,Instaladora,Porto Alegre,RS,Patricia Yoshida,2025-10-01,150217,Ativo
+AUR-0054,Vanessa Almeida Instaladora Ltda,10.003.834/0001-89,Instaladora,Uberlândia,MG,Roberto Almeida,2023-05-11,152692,Ativo
+AUR-0055,Eduardo Almeida Construções Ltda,10.003.905/0001-12,Setor Público,Campinas,SP,João Bittencourt,2023-03-27,388967,Ativo
+AUR-0056,Juliana Santos Instaladora Ltda,10.003.976/0001-25,Instaladora,Belo Horizonte,MG,Diego Salgueiro,2023-07-29,46402,Ativo
+AUR-0057,Roberto Silva Construções Ltda,10.004.047/0001-38,Instaladora,Belo Horizonte,MG,Marcos Tavares,2019-12-12,169598,Ativo
+AUR-0058,Ana Fernandes Engenharia Ltda,10.004.118/0001-51,Revenda,Uberlândia,MG,João Bittencourt,2022-03-13,125325,Ativo
+AUR-0059,Ricardo Rodrigues Comércio Elétrico Ltda,10.004.189/0001-64,Revenda,Uberlândia,MG,Diego Salgueiro,2020-06-06,220603,Ativo
+AUR-0060,Eduardo Fernandes Engenharia Ltda,10.004.260/0001-77,Outros,Sorocaba,SP,Roberto Almeida,2022-07-20,36203,Ativo
+AUR-0061,Ana Oliveira Engenharia Ltda,10.004.331/0001-90,Instaladora,Campinas,SP,Patricia Yoshida,2024-01-16,123809,Ativo
+AUR-0062,Ricardo Fernandes Instaladora Ltda,10.004.402/0001-13,Construtora,São Paulo,SP,Luana Prado,2025-07-14,685020,Ativo
+AUR-0063,Marcos Almeida Materiais Elétricos Ltda,10.004.473/0001-26,Outros,Jundiaí,SP,Diego Salgueiro,2021-01-20,57728,Ativo
+AUR-0064,Patrícia Fernandes Engenharia Ltda,10.004.544/0001-39,Setor Público,Sorocaba,SP,Roberto Almeida,2025-06-06,586330,Ativo
+AUR-0065,Roberto Fernandes Engenharia Ltda,10.004.615/0001-52,Indústria,Florianópolis,SC,Carla Mendes,2021-05-03,476065,Ativo
+AUR-0066,Fernando Oliveira Instaladora Ltda,10.004.686/0001-65,Indústria,Osasco,SP,Carla Mendes,2021-07-03,134209,Ativo
+AUR-0067,Fernando Pereira Instaladora Ltda,10.004.757/0001-78,Revenda,Sorocaba,SP,Eduarda Carvalho,2020-06-24,145680,Inativo
+AUR-0068,Camila Costa Construções Ltda,10.004.828/0001-91,Revenda,São Paulo,SP,Eduarda Carvalho,2022-12-25,73653,Ativo
+AUR-0069,Juliana Santos Comércio Elétrico Ltda,10.004.899/0001-14,Construtora,Santo André,SP,Roberto Almeida,2022-11-18,409784,Ativo
+AUR-0070,Roberto Pereira Construções Ltda,10.004.970/0001-27,Instaladora,Porto Alegre,RS,Carla Mendes,2022-04-04,70024,Ativo
+AUR-0071,Patrícia Santos Comércio Elétrico Ltda,10.005.041/0001-40,Instaladora,Campinas,SP,Carla Mendes,2022-05-16,143980,Ativo
+AUR-0072,Vanessa Silva Materiais Elétricos Ltda,10.005.112/0001-53,Revenda,Florianópolis,SC,Roberto Almeida,2021-08-07,271164,Inativo
+AUR-0073,Fernando Fernandes Construções Ltda,10.005.183/0001-66,Indústria,Belo Horizonte,MG,Luana Prado,2020-08-06,298903,Ativo
+AUR-0074,Eduardo Fernandes Instaladora Ltda,10.005.254/0001-79,Revenda,Belo Horizonte,MG,Eduarda Carvalho,2022-09-29,106173,Ativo
+AUR-0075,Juliana Costa Instaladora Ltda,10.005.325/0001-92,Instaladora,Porto Alegre,RS,João Bittencourt,2021-07-03,62718,Ativo
+AUR-0076,Patrícia Almeida Materiais Elétricos Ltda,10.005.396/0001-15,Revenda,São José dos Campos,SP,Patricia Yoshida,2022-08-28,145200,Ativo
+AUR-0077,Fernando Fernandes Comércio Elétrico Ltda,10.005.467/0001-28,Revenda,Campinas,SP,João Bittencourt,2020-04-01,110084,Ativo
+AUR-0078,Fernando Costa Materiais Elétricos Ltda,10.005.538/0001-41,Construtora,Porto Alegre,RS,Patricia Yoshida,2021-11-24,347573,Ativo
+AUR-0079,Juliana Pereira Materiais Elétricos Ltda,10.005.609/0001-54,Outros,Sorocaba,SP,Marcos Tavares,2023-08-06,56070,Ativo
+AUR-0080,Roberto Costa Engenharia Ltda,10.005.680/0001-67,Outros,Juiz de Fora,MG,Patricia Yoshida,2022-07-31,55118,Ativo
+AUR-0081,Roberto Pereira Construções Ltda,10.005.751/0001-80,Instaladora,Florianópolis,SC,Carla Mendes,2025-03-30,117659,Ativo
+AUR-0082,Roberto Fernandes Construções Ltda,10.005.822/0001-93,Revenda,São Paulo,SP,Roberto Almeida,2020-06-28,136581,Ativo
+AUR-0083,Eduardo Fernandes Construções Ltda,10.005.893/0001-16,Instaladora,São Paulo,SP,Patricia Yoshida,2024-12-03,88329,Ativo
+AUR-0084,Vanessa Pereira Construções Ltda,10.005.964/0001-29,Indústria,Campinas,SP,Carla Mendes,2021-02-01,148106,Ativo
+AUR-0085,Fernando Fernandes Instaladora Ltda,10.006.035/0001-42,Indústria,Ribeirão Preto,SP,Diego Salgueiro,2020-12-11,238325,Ativo
+AUR-0086,Ana Costa Engenharia Ltda,10.006.106/0001-55,Indústria,Sorocaba,SP,João Bittencourt,2023-12-29,151578,Ativo
+AUR-0087,Fernando Fernandes Comércio Elétrico Ltda,10.006.177/0001-68,Revenda,Juiz de Fora,MG,Patricia Yoshida,2023-02-27,79677,Ativo
+AUR-0088,Patrícia Pereira Comércio Elétrico Ltda,10.006.248/0001-81,Instaladora,Santo André,SP,Roberto Almeida,2023-03-27,159021,Ativo
+AUR-0089,Roberto Pereira Comércio Elétrico Ltda,10.006.319/0001-94,Instaladora,Porto Alegre,RS,Diego Salgueiro,2020-10-30,77286,Ativo
+AUR-0090,Eduardo Fernandes Instaladora Ltda,10.006.390/0001-17,Indústria,São Paulo,SP,João Bittencourt,2020-11-28,279431,Ativo
+AUR-0091,Patrícia Silva Materiais Elétricos Ltda,10.006.461/0001-30,Revenda,Porto Alegre,RS,Carla Mendes,2023-10-16,125632,Ativo
+AUR-0092,Roberto Rodrigues Instaladora Ltda,10.006.532/0001-43,Indústria,São Paulo,SP,Roberto Almeida,2021-03-05,351855,Ativo
+AUR-0093,Camila Rodrigues Instaladora Ltda,10.006.603/0001-56,Indústria,Ribeirão Preto,SP,João Bittencourt,2021-04-06,174840,Ativo
+AUR-0094,Camila Pereira Materiais Elétricos Ltda,10.006.674/0001-69,Revenda,Cotia,SP,Luana Prado,2021-03-22,69619,Ativo
+AUR-0095,Marcos Costa Comércio Elétrico Ltda,10.006.745/0001-82,Construtora,Bauru,SP,João Bittencourt,2020-03-01,818950,Ativo
+AUR-0096,Ricardo Oliveira Materiais Elétricos Ltda,10.006.816/0001-95,Outros,Uberlândia,MG,Diego Salgueiro,2020-04-26,23382,Ativo
+AUR-0097,Roberto Pereira Comércio Elétrico Ltda,10.006.887/0001-18,Indústria,São Paulo,SP,Roberto Almeida,2024-09-16,439224,Ativo
+AUR-0098,Roberto Fernandes Materiais Elétricos Ltda,10.006.958/0001-31,Construtora,Curitiba,PR,João Bittencourt,2021-02-04,733863,Ativo
+AUR-0099,Roberto Rodrigues Engenharia Ltda,10.007.029/0001-44,Revenda,Curitiba,PR,Eduarda Carvalho,2024-03-22,123892,Ativo
+AUR-0100,Ricardo Pereira Construções Ltda,10.007.100/0001-57,Instaladora,Ribeirão Preto,SP,João Bittencourt,2020-04-06,148774,Ativo
+AUR-0101,Camila Rodrigues Instaladora Ltda,10.007.171/0001-70,Revenda,São José dos Campos,SP,Diego Salgueiro,2023-01-28,201185,Ativo
+AUR-0102,Juliana Rodrigues Instaladora Ltda,10.007.242/0001-83,Instaladora,Guarulhos,SP,Roberto Almeida,2025-05-04,147682,Ativo
+AUR-0103,Juliana Santos Comércio Elétrico Ltda,10.007.313/0001-96,Revenda,Uberlândia,MG,Carla Mendes,2024-02-20,147030,Ativo
+AUR-0104,Eduardo Almeida Comércio Elétrico Ltda,10.007.384/0001-19,Indústria,Jundiaí,SP,João Bittencourt,2022-01-26,200929,Ativo
+AUR-0105,Juliana Silva Comércio Elétrico Ltda,10.007.455/0001-32,Revenda,São Paulo,SP,Marcos Tavares,2022-07-13,159617,Ativo
+AUR-0106,Ana Santos Instaladora Ltda,10.007.526/0001-45,Outros,Osasco,SP,João Bittencourt,2025-06-06,25923,Inativo
+AUR-0107,Fernando Oliveira Engenharia Ltda,10.007.597/0001-58,Construtora,Curitiba,PR,Patricia Yoshida,2023-09-26,557618,Ativo
+AUR-0108,Vanessa Costa Instaladora Ltda,10.007.668/0001-71,Construtora,Porto Alegre,RS,Carla Mendes,2020-08-01,889098,Ativo
+AUR-0109,Juliana Pereira Comércio Elétrico Ltda,10.007.739/0001-84,Revenda,Osasco,SP,Carla Mendes,2021-11-17,126932,Ativo
+AUR-0110,Juliana Pereira Engenharia Ltda,10.007.810/0001-97,Instaladora,Jundiaí,SP,Diego Salgueiro,2024-07-23,151230,Ativo
+AUR-0111,Eduardo Silva Instaladora Ltda,10.007.881/0001-20,Revenda,Sorocaba,SP,Carla Mendes,2025-03-16,154098,Ativo
+AUR-0112,Eduardo Costa Comércio Elétrico Ltda,10.007.952/0001-33,Outros,Bauru,SP,Marcos Tavares,2023-08-16,52553,Ativo
+AUR-0113,Roberto Santos Construções Ltda,10.008.023/0001-46,Indústria,Ribeirão Preto,SP,Eduarda Carvalho,2025-05-19,497974,Ativo
+AUR-0114,Eduardo Almeida Instaladora Ltda,10.008.094/0001-59,Setor Público,Osasco,SP,Marcos Tavares,2021-08-26,368897,Ativo
+AUR-0115,Juliana Pereira Materiais Elétricos Ltda,10.008.165/0001-72,Instaladora,Cotia,SP,Roberto Almeida,2024-11-28,83134,Ativo
+AUR-0116,Ricardo Almeida Construções Ltda,10.008.236/0001-85,Instaladora,Jundiaí,SP,Carla Mendes,2024-05-14,144179,Ativo
+AUR-0117,Fernando Almeida Construções Ltda,10.008.307/0001-98,Indústria,Campinas,SP,Roberto Almeida,2022-01-28,472500,Ativo
+AUR-0118,Juliana Pereira Instaladora Ltda,10.008.378/0001-21,Instaladora,Cotia,SP,Carla Mendes,2025-05-03,56571,Ativo
+AUR-0119,Ricardo Oliveira Instaladora Ltda,10.008.449/0001-34,Revenda,Uberlândia,MG,Patricia Yoshida,2021-01-20,90440,Ativo
+AUR-0120,Ana Fernandes Comércio Elétrico Ltda,10.008.520/0001-47,Setor Público,Belo Horizonte,MG,Diego Salgueiro,2022-08-14,381014,Inativo
+AUR-0121,Patrícia Almeida Construções Ltda,10.008.591/0001-60,Instaladora,Bauru,SP,Roberto Almeida,2021-09-24,96955,Inativo
+AUR-0122,Juliana Santos Engenharia Ltda,10.008.662/0001-73,Instaladora,São Paulo,SP,Carla Mendes,2022-01-05,89757,Ativo
+AUR-0123,Ricardo Costa Comércio Elétrico Ltda,10.008.733/0001-86,Construtora,Santo André,SP,Eduarda Carvalho,2023-02-21,842002,Ativo
+AUR-0124,Roberto Oliveira Comércio Elétrico Ltda,10.008.804/0001-99,Instaladora,Sorocaba,SP,Eduarda Carvalho,2024-07-09,40743,Ativo
+AUR-0125,Patrícia Almeida Construções Ltda,10.008.875/0001-22,Construtora,Osasco,SP,Patricia Yoshida,2024-05-01,388205,Ativo
+AUR-0126,Juliana Fernandes Materiais Elétricos Ltda,10.008.946/0001-35,Revenda,Curitiba,PR,João Bittencourt,2020-09-07,89792,Ativo
+AUR-0127,Ricardo Pereira Instaladora Ltda,10.009.017/0001-48,Indústria,São Paulo,SP,Carla Mendes,2020-05-20,142735,Ativo
+AUR-0128,Juliana Santos Construções Ltda,10.009.088/0001-61,Revenda,São José dos Campos,SP,João Bittencourt,2025-01-06,239856,Ativo
+AUR-0129,Camila Rodrigues Comércio Elétrico Ltda,10.009.159/0001-74,Indústria,Curitiba,PR,Patricia Yoshida,2020-02-01,451914,Ativo
+AUR-0130,Ricardo Costa Instaladora Ltda,10.009.230/0001-87,Construtora,Uberlândia,MG,Diego Salgueiro,2021-02-11,369971,Ativo
+AUR-0131,Ana Almeida Instaladora Ltda,10.009.301/0001-10,Revenda,São José dos Campos,SP,João Bittencourt,2021-07-22,164524,Ativo
+AUR-0132,Ana Santos Instaladora Ltda,10.009.372/0001-23,Indústria,Cotia,SP,Eduarda Carvalho,2021-07-29,368652,Ativo
+AUR-0133,Ricardo Almeida Construções Ltda,10.009.443/0001-36,Revenda,Belo Horizonte,MG,Patricia Yoshida,2021-01-04,75723,Ativo
+AUR-0134,Vanessa Pereira Materiais Elétricos Ltda,10.009.514/0001-49,Setor Público,Cotia,SP,Roberto Almeida,2023-05-15,326972,Ativo
+AUR-0135,Camila Almeida Construções Ltda,10.009.585/0001-62,Revenda,Sorocaba,SP,Roberto Almeida,2020-12-10,118784,Ativo
+AUR-0136,Ricardo Silva Comércio Elétrico Ltda,10.009.656/0001-75,Outros,Sorocaba,SP,Carla Mendes,2022-09-09,73636,Ativo
+AUR-0137,Roberto Oliveira Comércio Elétrico Ltda,10.009.727/0001-88,Instaladora,Jundiaí,SP,Carla Mendes,2025-05-30,129082,Inativo
+AUR-0138,Juliana Almeida Engenharia Ltda,10.009.798/0001-11,Revenda,Bauru,SP,Patricia Yoshida,2022-02-12,116395,Ativo
+AUR-0139,Marcos Oliveira Engenharia Ltda,10.009.869/0001-24,Revenda,São Paulo,SP,João Bittencourt,2022-09-14,216296,Ativo
+AUR-0140,Fernando Pereira Engenharia Ltda,10.009.940/0001-37,Revenda,Curitiba,PR,Carla Mendes,2020-12-07,187313,Inativo
+AUR-0141,Ricardo Pereira Construções Ltda,10.010.011/0001-50,Indústria,Campinas,SP,Patricia Yoshida,2025-02-20,475722,Inativo
+AUR-0142,Eduardo Pereira Materiais Elétricos Ltda,10.010.082/0001-63,Instaladora,Cotia,SP,Carla Mendes,2020-12-04,95373,Ativo
+AUR-0143,Ricardo Almeida Construções Ltda,10.010.153/0001-76,Instaladora,Jundiaí,SP,Diego Salgueiro,2025-04-12,179613,Ativo
+AUR-0144,Vanessa Rodrigues Comércio Elétrico Ltda,10.010.224/0001-89,Revenda,Jundiaí,SP,João Bittencourt,2021-01-26,80411,Ativo
+AUR-0145,Roberto Fernandes Materiais Elétricos Ltda,10.010.295/0001-12,Revenda,São Paulo,SP,Roberto Almeida,2024-07-26,65467,Ativo
+AUR-0146,Fernando Pereira Materiais Elétricos Ltda,10.010.366/0001-25,Revenda,Campinas,SP,Patricia Yoshida,2023-11-14,164975,Inativo
+AUR-0147,Patrícia Almeida Materiais Elétricos Ltda,10.010.437/0001-38,Indústria,Guarulhos,SP,Patricia Yoshida,2023-10-23,179782,Ativo
+AUR-0148,Roberto Fernandes Instaladora Ltda,10.010.508/0001-51,Outros,Porto Alegre,RS,Eduarda Carvalho,2020-09-20,69751,Ativo
+AUR-0149,Vanessa Almeida Materiais Elétricos Ltda,10.010.579/0001-64,Revenda,Guarulhos,SP,Roberto Almeida,2020-06-30,228556,Ativo
+AUR-0150,Camila Santos Materiais Elétricos Ltda,10.010.650/0001-77,Instaladora,Uberlândia,MG,Roberto Almeida,2025-02-11,112004,Ativo
+AUR-0151,Ana Rodrigues Instaladora Ltda,10.010.721/0001-90,Instaladora,Porto Alegre,RS,Roberto Almeida,2025-04-17,60114,Ativo
+AUR-0152,Vanessa Fernandes Comércio Elétrico Ltda,10.010.792/0001-13,Revenda,Guarulhos,SP,Luana Prado,2020-09-13,230875,Inativo
+AUR-0153,Roberto Silva Engenharia Ltda,10.010.863/0001-26,Instaladora,Uberlândia,MG,Luana Prado,2023-12-22,62106,Ativo
+AUR-0154,Camila Silva Materiais Elétricos Ltda,10.010.934/0001-39,Instaladora,São Paulo,SP,Patricia Yoshida,2021-06-02,141558,Ativo
+AUR-0155,Vanessa Oliveira Materiais Elétricos Ltda,10.011.005/0001-52,Setor Público,São Paulo,SP,João Bittencourt,2024-03-02,746465,Ativo
+AUR-0156,Ana Pereira Comércio Elétrico Ltda,10.011.076/0001-65,Instaladora,Jundiaí,SP,João Bittencourt,2022-01-26,142749,Ativo
+AUR-0157,Ricardo Santos Instaladora Ltda,10.011.147/0001-78,Indústria,Curitiba,PR,Patricia Yoshida,2021-09-08,488485,Ativo
+AUR-0158,Juliana Costa Engenharia Ltda,10.011.218/0001-91,Instaladora,Guarulhos,SP,Carla Mendes,2022-06-09,129583,Ativo
+AUR-0159,Ricardo Silva Materiais Elétricos Ltda,10.011.289/0001-14,Construtora,Guarulhos,SP,João Bittencourt,2024-01-10,782351,Ativo
+AUR-0160,Roberto Fernandes Construções Ltda,10.011.360/0001-27,Indústria,Belo Horizonte,MG,Patricia Yoshida,2023-02-03,447543,Ativo
+AUR-0161,Juliana Costa Comércio Elétrico Ltda,10.011.431/0001-40,Indústria,Campinas,SP,Patricia Yoshida,2020-06-29,269384,Ativo
+AUR-0162,Vanessa Fernandes Instaladora Ltda,10.011.502/0001-53,Instaladora,Ribeirão Preto,SP,Eduarda Carvalho,2020-02-12,136427,Ativo
+AUR-0163,Roberto Pereira Construções Ltda,10.011.573/0001-66,Instaladora,Juiz de Fora,MG,Diego Salgueiro,2024-08-08,92349,Ativo
+AUR-0164,Roberto Pereira Instaladora Ltda,10.011.644/0001-79,Revenda,Curitiba,PR,Carla Mendes,2020-11-06,92683,Inativo
+AUR-0165,Marcos Rodrigues Construções Ltda,10.011.715/0001-92,Instaladora,Jundiaí,SP,Roberto Almeida,2023-02-10,158260,Ativo
+AUR-0166,Camila Santos Materiais Elétricos Ltda,10.011.786/0001-15,Construtora,Guarulhos,SP,Carla Mendes,2022-07-15,643124,Ativo
+AUR-0167,Juliana Fernandes Comércio Elétrico Ltda,10.011.857/0001-28,Revenda,São Paulo,SP,Diego Salgueiro,2025-07-17,242471,Ativo
+AUR-0168,Eduardo Costa Materiais Elétricos Ltda,10.011.928/0001-41,Instaladora,Cotia,SP,Carla Mendes,2021-01-17,178352,Ativo
+AUR-0169,Juliana Silva Comércio Elétrico Ltda,10.011.999/0001-54,Indústria,Porto Alegre,RS,João Bittencourt,2025-09-26,359659,Ativo
+AUR-0170,Ana Almeida Construções Ltda,10.012.070/0001-67,Instaladora,Curitiba,PR,Roberto Almeida,2020-01-23,149200,Ativo
+AUR-0171,Fernando Almeida Materiais Elétricos Ltda,10.012.141/0001-80,Instaladora,São Paulo,SP,Patricia Yoshida,2024-12-30,163243,Ativo
+AUR-0172,Vanessa Almeida Engenharia Ltda,10.012.212/0001-93,Setor Público,São Paulo,SP,Patricia Yoshida,2021-12-16,644511,Ativo
+AUR-0173,Juliana Oliveira Engenharia Ltda,10.012.283/0001-16,Instaladora,São Paulo,SP,João Bittencourt,2020-08-15,161798,Inativo
+AUR-0174,Marcos Almeida Materiais Elétricos Ltda,10.012.354/0001-29,Instaladora,Curitiba,PR,Patricia Yoshida,2020-06-11,51483,Ativo
+AUR-0175,Camila Silva Materiais Elétricos Ltda,10.012.425/0001-42,Outros,Sorocaba,SP,Carla Mendes,2021-08-17,62395,Ativo
+AUR-0176,Fernando Almeida Engenharia Ltda,10.012.496/0001-55,Revenda,Juiz de Fora,MG,João Bittencourt,2021-08-20,254853,Ativo
+AUR-0177,Fernando Santos Instaladora Ltda,10.012.567/0001-68,Revenda,Osasco,SP,Roberto Almeida,2022-02-25,129919,Inativo
+AUR-0178,Vanessa Rodrigues Engenharia Ltda,10.012.638/0001-81,Instaladora,Uberlândia,MG,Patricia Yoshida,2025-04-12,117500,Ativo
+AUR-0179,Marcos Santos Instaladora Ltda,10.012.709/0001-94,Instaladora,Bauru,SP,Roberto Almeida,2023-12-17,154017,Ativo
+AUR-0180,Ana Costa Materiais Elétricos Ltda,10.012.780/0001-17,Instaladora,Bauru,SP,Patricia Yoshida,2025-05-23,154864,Ativo
+AUR-0181,Camila Fernandes Construções Ltda,10.012.851/0001-30,Indústria,Porto Alegre,RS,Carla Mendes,2021-08-21,355889,Ativo
+AUR-0182,Ana Silva Engenharia Ltda,10.012.922/0001-43,Indústria,Juiz de Fora,MG,Roberto Almeida,2024-06-07,266113,Ativo
+AUR-0183,Vanessa Pereira Instaladora Ltda,10.012.993/0001-56,Instaladora,Santo André,SP,Carla Mendes,2024-12-03,156987,Ativo
+AUR-0184,Camila Almeida Construções Ltda,10.013.064/0001-69,Setor Público,Florianópolis,SC,Roberto Almeida,2022-05-23,533366,Ativo
+AUR-0185,Roberto Almeida Comércio Elétrico Ltda,10.013.135/0001-82,Setor Público,Campinas,SP,Carla Mendes,2023-07-02,672015,Ativo
+AUR-0186,Ricardo Almeida Instaladora Ltda,10.013.206/0001-95,Instaladora,Florianópolis,SC,Carla Mendes,2024-10-14,169504,Inativo
+AUR-0187,Ricardo Rodrigues Instaladora Ltda,10.013.277/0001-18,Revenda,Porto Alegre,RS,Carla Mendes,2022-03-14,247939,Ativo
+AUR-0188,Camila Oliveira Comércio Elétrico Ltda,10.013.348/0001-31,Revenda,Porto Alegre,RS,Marcos Tavares,2024-04-22,182115,Ativo
+AUR-0189,Eduardo Oliveira Engenharia Ltda,10.013.419/0001-44,Construtora,São José dos Campos,SP,Diego Salgueiro,2023-03-24,380192,Ativo
+AUR-0190,Eduardo Costa Comércio Elétrico Ltda,10.013.490/0001-57,Revenda,Sorocaba,SP,Carla Mendes,2022-05-11,134461,Ativo
+AUR-0191,Vanessa Oliveira Engenharia Ltda,10.013.561/0001-70,Construtora,São José dos Campos,SP,Diego Salgueiro,2025-04-17,776986,Ativo
+AUR-0192,Vanessa Pereira Engenharia Ltda,10.013.632/0001-83,Construtora,Porto Alegre,RS,Patricia Yoshida,2025-05-31,335168,Ativo
+AUR-0193,Eduardo Fernandes Engenharia Ltda,10.013.703/0001-96,Indústria,Jundiaí,SP,Patricia Yoshida,2024-12-08,406039,Ativo
+AUR-0194,Juliana Costa Materiais Elétricos Ltda,10.013.774/0001-19,Instaladora,Guarulhos,SP,Patricia Yoshida,2022-03-05,155239,Ativo
+AUR-0195,Camila Santos Materiais Elétricos Ltda,10.013.845/0001-32,Instaladora,Campinas,SP,Roberto Almeida,2022-10-03,144521,Ativo
+AUR-0196,Fernando Rodrigues Engenharia Ltda,10.013.916/0001-45,Instaladora,Osasco,SP,Eduarda Carvalho,2022-04-01,65378,Ativo
+AUR-0197,Juliana Fernandes Materiais Elétricos Ltda,10.013.987/0001-58,Instaladora,Juiz de Fora,MG,Carla Mendes,2021-05-06,170617,Ativo
+AUR-0198,Marcos Silva Materiais Elétricos Ltda,10.014.058/0001-71,Instaladora,Juiz de Fora,MG,João Bittencourt,2020-06-23,96398,Ativo
+AUR-0199,Eduardo Almeida Instaladora Ltda,10.014.129/0001-84,Construtora,Bauru,SP,Carla Mendes,2025-03-07,362718,Ativo
+AUR-0200,Ana Rodrigues Comércio Elétrico Ltda,10.014.200/0001-97,Instaladora,Uberlândia,MG,Eduarda Carvalho,2022-08-14,135033,Ativo
+AUR-0201,Roberto Santos Instaladora Ltda,10.014.271/0001-20,Indústria,Bauru,SP,Eduarda Carvalho,2021-12-14,476724,Ativo
+AUR-0202,Ricardo Rodrigues Comércio Elétrico Ltda,10.014.342/0001-33,Instaladora,São Paulo,SP,Carla Mendes,2024-03-20,77818,Ativo
+AUR-0203,Vanessa Oliveira Materiais Elétricos Ltda,10.014.413/0001-46,Revenda,São José dos Campos,SP,Marcos Tavares,2022-05-26,196139,Ativo
+AUR-0204,Juliana Pereira Instaladora Ltda,10.014.484/0001-59,Revenda,São Paulo,SP,Patricia Yoshida,2024-07-11,277131,Ativo
+AUR-0205,Marcos Fernandes Materiais Elétricos Ltda,10.014.555/0001-72,Revenda,Porto Alegre,RS,Roberto Almeida,2025-03-06,140655,Ativo
+AUR-0206,Vanessa Rodrigues Engenharia Ltda,10.014.626/0001-85,Instaladora,Campinas,SP,Carla Mendes,2024-07-09,177424,Ativo
+AUR-0207,Fernando Costa Instaladora Ltda,10.014.697/0001-98,Revenda,Curitiba,PR,Eduarda Carvalho,2020-06-19,142232,Ativo
+AUR-0208,Roberto Costa Comércio Elétrico Ltda,10.014.768/0001-21,Setor Público,São José dos Campos,SP,Luana Prado,2020-05-22,681368,Ativo
+AUR-0209,Ricardo Almeida Comércio Elétrico Ltda,10.014.839/0001-34,Instaladora,Bauru,SP,João Bittencourt,2022-10-16,85398,Ativo
+AUR-0210,Eduardo Costa Materiais Elétricos Ltda,10.014.910/0001-47,Instaladora,Ribeirão Preto,SP,João Bittencourt,2020-04-09,104623,Ativo
+AUR-0211,Vanessa Rodrigues Instaladora Ltda,10.014.981/0001-60,Instaladora,Bauru,SP,Luana Prado,2024-02-11,111685,Ativo
+AUR-0212,Juliana Pereira Instaladora Ltda,10.015.052/0001-73,Instaladora,Santo André,SP,Marcos Tavares,2022-09-18,60717,Ativo
+AUR-0213,Vanessa Costa Engenharia Ltda,10.015.123/0001-86,Indústria,São Paulo,SP,João Bittencourt,2023-03-23,262407,Ativo
+AUR-0214,Juliana Santos Engenharia Ltda,10.015.194/0001-99,Construtora,São Paulo,SP,Luana Prado,2023-12-26,355065,Ativo
+AUR-0215,Eduardo Almeida Materiais Elétricos Ltda,10.015.265/0001-22,Revenda,São Paulo,SP,Diego Salgueiro,2024-10-01,185160,Ativo
+AUR-0216,Roberto Rodrigues Engenharia Ltda,10.015.336/0001-35,Instaladora,São Paulo,SP,Luana Prado,2021-04-20,49777,Ativo
+AUR-0217,Marcos Pereira Comércio Elétrico Ltda,10.015.407/0001-48,Instaladora,Cotia,SP,Diego Salgueiro,2021-12-30,115882,Ativo
+AUR-0218,Roberto Fernandes Materiais Elétricos Ltda,10.015.478/0001-61,Indústria,Santo André,SP,Eduarda Carvalho,2022-01-17,404845,Ativo
+AUR-0219,Roberto Silva Materiais Elétricos Ltda,10.015.549/0001-74,Revenda,Ribeirão Preto,SP,Roberto Almeida,2023-08-03,229944,Ativo
+AUR-0220,Ricardo Almeida Construções Ltda,10.015.620/0001-87,Indústria,Jundiaí,SP,João Bittencourt,2023-09-07,332593,Ativo
+AUR-0221,Marcos Pereira Instaladora Ltda,10.015.691/0001-10,Revenda,Campinas,SP,Roberto Almeida,2022-10-05,144830,Ativo
+AUR-0222,Camila Costa Construções Ltda,10.015.762/0001-23,Instaladora,Cotia,SP,Roberto Almeida,2023-12-18,42997,Ativo
+AUR-0223,Ana Pereira Materiais Elétricos Ltda,10.015.833/0001-36,Revenda,Campinas,SP,Marcos Tavares,2024-04-03,244433,Ativo
+AUR-0224,Camila Rodrigues Comércio Elétrico Ltda,10.015.904/0001-49,Revenda,Juiz de Fora,MG,Eduarda Carvalho,2023-04-22,256014,Ativo
+AUR-0225,Ana Fernandes Comércio Elétrico Ltda,10.015.975/0001-62,Indústria,Bauru,SP,Carla Mendes,2024-06-30,432378,Inativo
+AUR-0226,Ricardo Oliveira Engenharia Ltda,10.016.046/0001-75,Revenda,São José dos Campos,SP,Diego Salgueiro,2020-10-19,192510,Inativo
+AUR-0227,Ricardo Fernandes Construções Ltda,10.016.117/0001-88,Instaladora,Uberlândia,MG,Carla Mendes,2021-02-04,168143,Ativo
+AUR-0228,Eduardo Silva Instaladora Ltda,10.016.188/0001-11,Construtora,Sorocaba,SP,Eduarda Carvalho,2023-04-24,835941,Ativo
+AUR-0229,Ana Silva Construções Ltda,10.016.259/0001-24,Construtora,Juiz de Fora,MG,Carla Mendes,2021-03-03,694278,Ativo
+AUR-0230,Fernando Fernandes Instaladora Ltda,10.016.330/0001-37,Construtora,Jundiaí,SP,Carla Mendes,2024-04-06,690781,Ativo
+AUR-0231,Ricardo Rodrigues Comércio Elétrico Ltda,10.016.401/0001-50,Instaladora,Guarulhos,SP,João Bittencourt,2023-04-04,71098,Ativo
+AUR-0232,Juliana Rodrigues Comércio Elétrico Ltda,10.016.472/0001-63,Outros,Jundiaí,SP,Eduarda Carvalho,2022-12-24,21489,Ativo
+AUR-0233,Ana Silva Instaladora Ltda,10.016.543/0001-76,Instaladora,São Paulo,SP,Marcos Tavares,2024-12-31,112259,Inativo
+AUR-0234,Marcos Costa Construções Ltda,10.016.614/0001-89,Construtora,Jundiaí,SP,Roberto Almeida,2023-04-27,718127,Ativo
+AUR-0235,Eduardo Costa Comércio Elétrico Ltda,10.016.685/0001-12,Outros,São José dos Campos,SP,Roberto Almeida,2022-02-27,23699,Ativo
+AUR-0236,Eduardo Pereira Construções Ltda,10.016.756/0001-25,Instaladora,Florianópolis,SC,Luana Prado,2023-10-16,176642,Ativo
+AUR-0237,Camila Rodrigues Comércio Elétrico Ltda,10.016.827/0001-38,Revenda,São José dos Campos,SP,João Bittencourt,2021-03-05,205712,Ativo
+AUR-0238,Juliana Costa Engenharia Ltda,10.016.898/0001-51,Instaladora,Ribeirão Preto,SP,Diego Salgueiro,2024-02-19,88202,Ativo
+AUR-0239,Fernando Oliveira Instaladora Ltda,10.016.969/0001-64,Construtora,Campinas,SP,Carla Mendes,2020-09-16,839704,Ativo
+AUR-0240,Patrícia Silva Materiais Elétricos Ltda,10.017.040/0001-77,Construtora,Jundiaí,SP,João Bittencourt,2025-04-24,811654,Ativo
+AUR-0241,Camila Pereira Construções Ltda,10.017.111/0001-90,Instaladora,Santo André,SP,Diego Salgueiro,2024-06-09,96889,Ativo
+AUR-0242,Vanessa Costa Instaladora Ltda,10.017.182/0001-13,Outros,Campinas,SP,Roberto Almeida,2022-07-31,51386,Ativo
+AUR-0243,Eduardo Almeida Comércio Elétrico Ltda,10.017.253/0001-26,Revenda,Juiz de Fora,MG,Roberto Almeida,2020-06-27,230058,Ativo
+AUR-0244,Fernando Silva Comércio Elétrico Ltda,10.017.324/0001-39,Instaladora,Campinas,SP,Eduarda Carvalho,2025-07-28,93248,Ativo
+AUR-0245,Eduardo Oliveira Engenharia Ltda,10.017.395/0001-52,Revenda,São José dos Campos,SP,Marcos Tavares,2022-12-31,211818,Ativo
+AUR-0246,Juliana Fernandes Instaladora Ltda,10.017.466/0001-65,Indústria,Osasco,SP,João Bittencourt,2021-10-21,479056,Ativo
+AUR-0247,Ricardo Silva Comércio Elétrico Ltda,10.017.537/0001-78,Setor Público,São Paulo,SP,Eduarda Carvalho,2024-12-02,586547,Ativo
+AUR-0248,Fernando Oliveira Engenharia Ltda,10.017.608/0001-91,Indústria,São Paulo,SP,João Bittencourt,2025-08-26,145435,Ativo
+AUR-0249,Vanessa Fernandes Instaladora Ltda,10.017.679/0001-14,Revenda,São Paulo,SP,Carla Mendes,2021-02-21,157832,Inativo
+AUR-0250,Eduardo Silva Comércio Elétrico Ltda,10.017.750/0001-27,Revenda,Belo Horizonte,MG,Eduarda Carvalho,2023-09-29,249318,Inativo
+AUR-0251,Patrícia Pereira Materiais Elétricos Ltda,10.017.821/0001-40,Construtora,Sorocaba,SP,Eduarda Carvalho,2024-11-13,799857,Ativo
+AUR-0252,Patrícia Pereira Construções Ltda,10.017.892/0001-53,Revenda,São Paulo,SP,Carla Mendes,2021-07-02,180323,Ativo
+AUR-0253,Roberto Santos Instaladora Ltda,10.017.963/0001-66,Revenda,Belo Horizonte,MG,João Bittencourt,2022-01-15,74710,Ativo
+AUR-0254,Patrícia Costa Comércio Elétrico Ltda,10.018.034/0001-79,Construtora,Juiz de Fora,MG,Patricia Yoshida,2024-12-02,803815,Ativo
+AUR-0255,Camila Silva Engenharia Ltda,10.018.105/0001-92,Instaladora,Porto Alegre,RS,Carla Mendes,2021-04-15,48625,Ativo
+AUR-0256,Vanessa Rodrigues Comércio Elétrico Ltda,10.018.176/0001-15,Instaladora,São José dos Campos,SP,Patricia Yoshida,2024-03-08,82585,Ativo
+AUR-0257,Camila Silva Construções Ltda,10.018.247/0001-28,Indústria,Belo Horizonte,MG,Eduarda Carvalho,2021-04-22,499670,Ativo
+AUR-0258,Juliana Fernandes Engenharia Ltda,10.018.318/0001-41,Instaladora,Bauru,SP,Roberto Almeida,2021-07-18,47766,Ativo
+AUR-0259,Ana Pereira Engenharia Ltda,10.018.389/0001-54,Indústria,São Paulo,SP,Carla Mendes,2024-01-10,427167,Ativo
+AUR-0260,Camila Almeida Construções Ltda,10.018.460/0001-67,Indústria,São Paulo,SP,Carla Mendes,2022-04-19,200885,Ativo
+AUR-0261,Ana Oliveira Instaladora Ltda,10.018.531/0001-80,Outros,Uberlândia,MG,Roberto Almeida,2020-01-04,37679,Ativo
+AUR-0262,Ana Almeida Instaladora Ltda,10.018.602/0001-93,Construtora,São Paulo,SP,Patricia Yoshida,2021-05-28,343972,Ativo
+AUR-0263,Patrícia Oliveira Instaladora Ltda,10.018.673/0001-16,Setor Público,Osasco,SP,Carla Mendes,2022-05-18,772454,Ativo
+AUR-0264,Eduardo Rodrigues Materiais Elétricos Ltda,10.018.744/0001-29,Instaladora,Juiz de Fora,MG,Eduarda Carvalho,2021-09-14,56585,Ativo
+AUR-0265,Patrícia Fernandes Construções Ltda,10.018.815/0001-42,Instaladora,Guarulhos,SP,Patricia Yoshida,2021-04-26,169971,Ativo
+AUR-0266,Camila Fernandes Materiais Elétricos Ltda,10.018.886/0001-55,Indústria,Belo Horizonte,MG,Eduarda Carvalho,2024-03-24,319171,Ativo
+AUR-0267,Camila Oliveira Instaladora Ltda,10.018.957/0001-68,Revenda,São José dos Campos,SP,Patricia Yoshida,2020-03-31,242266,Ativo
+AUR-0268,Fernando Almeida Construções Ltda,10.019.028/0001-81,Instaladora,Porto Alegre,RS,Marcos Tavares,2023-09-27,125429,Ativo
+AUR-0269,Juliana Costa Instaladora Ltda,10.019.099/0001-94,Revenda,Ribeirão Preto,SP,Eduarda Carvalho,2024-12-23,67055,Ativo
+AUR-0270,Eduardo Costa Materiais Elétricos Ltda,10.019.170/0001-17,Revenda,Guarulhos,SP,João Bittencourt,2021-07-11,236417,Inativo
+AUR-0271,Ricardo Rodrigues Comércio Elétrico Ltda,10.019.241/0001-30,Revenda,São Paulo,SP,Eduarda Carvalho,2021-09-21,185628,Ativo
+AUR-0272,Ana Santos Engenharia Ltda,10.019.312/0001-43,Revenda,Bauru,SP,Marcos Tavares,2025-04-04,215666,Ativo
+AUR-0273,Camila Rodrigues Construções Ltda,10.019.383/0001-56,Indústria,São Paulo,SP,Carla Mendes,2023-04-07,475190,Ativo
+AUR-0274,Vanessa Costa Instaladora Ltda,10.019.454/0001-69,Revenda,Bauru,SP,Patricia Yoshida,2020-02-22,206274,Ativo
+AUR-0275,Fernando Santos Construções Ltda,10.019.525/0001-82,Construtora,Guarulhos,SP,Patricia Yoshida,2021-11-27,756222,Ativo
+AUR-0276,Juliana Santos Instaladora Ltda,10.019.596/0001-95,Instaladora,Uberlândia,MG,Patricia Yoshida,2022-05-22,176607,Inativo
+AUR-0277,Camila Santos Engenharia Ltda,10.019.667/0001-18,Setor Público,Campinas,SP,Roberto Almeida,2023-12-17,360337,Ativo
+AUR-0278,Fernando Oliveira Engenharia Ltda,10.019.738/0001-31,Revenda,Belo Horizonte,MG,Patricia Yoshida,2023-07-17,181124,Ativo
+AUR-0279,Patrícia Costa Materiais Elétricos Ltda,10.019.809/0001-44,Revenda,São Paulo,SP,Roberto Almeida,2023-08-29,161930,Ativo
+AUR-0280,Juliana Almeida Comércio Elétrico Ltda,10.019.880/0001-57,Instaladora,Jundiaí,SP,João Bittencourt,2024-06-22,159944,Ativo
+AUR-0281,Eduardo Santos Engenharia Ltda,10.019.951/0001-70,Revenda,São José dos Campos,SP,Carla Mendes,2022-05-01,221837,Inativo
+AUR-0282,Fernando Oliveira Comércio Elétrico Ltda,10.020.022/0001-83,Instaladora,Jundiaí,SP,Roberto Almeida,2020-04-18,77056,Ativo
+AUR-0283,Roberto Oliveira Instaladora Ltda,10.020.093/0001-96,Indústria,Ribeirão Preto,SP,Carla Mendes,2022-03-24,458302,Ativo
+AUR-0284,Marcos Fernandes Engenharia Ltda,10.020.164/0001-19,Indústria,Santo André,SP,Eduarda Carvalho,2020-02-01,148107,Ativo
+AUR-0285,Juliana Fernandes Engenharia Ltda,10.020.235/0001-32,Revenda,São Paulo,SP,Roberto Almeida,2023-04-13,239489,Ativo
+AUR-0286,Roberto Fernandes Comércio Elétrico Ltda,10.020.306/0001-45,Instaladora,Juiz de Fora,MG,Roberto Almeida,2024-06-26,98941,Ativo
+AUR-0287,Marcos Fernandes Comércio Elétrico Ltda,10.020.377/0001-58,Instaladora,Santo André,SP,Luana Prado,2024-08-09,136170,Ativo
+AUR-0288,Marcos Fernandes Materiais Elétricos Ltda,10.020.448/0001-71,Indústria,Bauru,SP,Diego Salgueiro,2024-10-11,249777,Ativo
+AUR-0289,Vanessa Almeida Comércio Elétrico Ltda,10.020.519/0001-84,Construtora,Belo Horizonte,MG,Patricia Yoshida,2023-06-08,498455,Ativo
+AUR-0290,Vanessa Oliveira Materiais Elétricos Ltda,10.020.590/0001-97,Revenda,Ribeirão Preto,SP,Patricia Yoshida,2022-10-03,151964,Ativo
+AUR-0291,Roberto Rodrigues Construções Ltda,10.020.661/0001-20,Revenda,Sorocaba,SP,Diego Salgueiro,2024-05-01,238074,Ativo
+AUR-0292,Camila Costa Instaladora Ltda,10.020.732/0001-33,Construtora,Juiz de Fora,MG,Carla Mendes,2022-09-28,511805,Ativo
+AUR-0293,Ana Rodrigues Comércio Elétrico Ltda,10.020.803/0001-46,Instaladora,Sorocaba,SP,João Bittencourt,2021-08-13,158486,Ativo
+AUR-0294,Ana Fernandes Materiais Elétricos Ltda,10.020.874/0001-59,Revenda,São Paulo,SP,Eduarda Carvalho,2021-04-17,145796,Ativo
+AUR-0295,Eduardo Almeida Materiais Elétricos Ltda,10.020.945/0001-72,Revenda,São José dos Campos,SP,Roberto Almeida,2024-04-16,276228,Ativo
+AUR-0296,Marcos Silva Construções Ltda,10.021.016/0001-85,Revenda,Uberlândia,MG,Carla Mendes,2023-12-25,266649,Ativo
+AUR-0297,Roberto Pereira Engenharia Ltda,10.021.087/0001-98,Construtora,Sorocaba,SP,Carla Mendes,2021-09-17,698580,Ativo
+AUR-0298,Eduardo Costa Instaladora Ltda,10.021.158/0001-21,Instaladora,São Paulo,SP,João Bittencourt,2025-09-28,83391,Ativo
+AUR-0299,Ricardo Fernandes Construções Ltda,10.021.229/0001-34,Construtora,São Paulo,SP,João Bittencourt,2024-05-27,389145,Ativo
+AUR-0300,Ana Costa Instaladora Ltda,10.021.300/0001-47,Revenda,São Paulo,SP,João Bittencourt,2024-08-09,241936,Inativo
+AUR-0301,Roberto Oliveira Construções Ltda,10.021.371/0001-60,Instaladora,Curitiba,PR,Roberto Almeida,2023-11-30,118447,Ativo
+AUR-0302,Roberto Rodrigues Comércio Elétrico Ltda,10.021.442/0001-73,Setor Público,Uberlândia,MG,Diego Salgueiro,2024-10-12,411702,Ativo
+AUR-0303,Fernando Almeida Instaladora Ltda,10.021.513/0001-86,Construtora,São José dos Campos,SP,Eduarda Carvalho,2022-12-23,379139,Ativo
+AUR-0304,Vanessa Pereira Construções Ltda,10.021.584/0001-99,Construtora,Ribeirão Preto,SP,Patricia Yoshida,2021-05-12,510221,Ativo
+AUR-0305,Ana Costa Instaladora Ltda,10.021.655/0001-22,Construtora,São Paulo,SP,Roberto Almeida,2025-08-14,500967,Ativo
+AUR-0306,Vanessa Rodrigues Materiais Elétricos Ltda,10.021.726/0001-35,Instaladora,Florianópolis,SC,João Bittencourt,2020-06-21,74598,Ativo
+AUR-0307,Ana Silva Materiais Elétricos Ltda,10.021.797/0001-48,Outros,Santo André,SP,Carla Mendes,2025-01-28,24783,Ativo
+AUR-0308,Ricardo Rodrigues Instaladora Ltda,10.021.868/0001-61,Revenda,Jundiaí,SP,Carla Mendes,2024-01-16,192804,Ativo
+AUR-0309,Patrícia Oliveira Comércio Elétrico Ltda,10.021.939/0001-74,Instaladora,São José dos Campos,SP,Patricia Yoshida,2025-01-05,60715,Ativo
+AUR-0310,Patrícia Silva Engenharia Ltda,10.022.010/0001-87,Revenda,São Paulo,SP,Diego Salgueiro,2024-06-14,251354,Ativo
+AUR-0311,Roberto Santos Construções Ltda,10.022.081/0001-10,Revenda,Guarulhos,SP,João Bittencourt,2023-12-01,74425,Ativo
+AUR-0312,Eduardo Oliveira Materiais Elétricos Ltda,10.022.152/0001-23,Instaladora,Guarulhos,SP,Eduarda Carvalho,2022-09-28,177102,Ativo
+AUR-0313,Fernando Pereira Comércio Elétrico Ltda,10.022.223/0001-36,Construtora,São Paulo,SP,Marcos Tavares,2024-11-21,280782,Ativo
+AUR-0314,Vanessa Oliveira Materiais Elétricos Ltda,10.022.294/0001-49,Revenda,Osasco,SP,Marcos Tavares,2024-08-07,154404,Ativo
+AUR-0315,Ricardo Silva Construções Ltda,10.022.365/0001-62,Indústria,São Paulo,SP,João Bittencourt,2024-01-27,498944,Ativo
+AUR-0316,Fernando Costa Materiais Elétricos Ltda,10.022.436/0001-75,Construtora,Campinas,SP,Patricia Yoshida,2022-03-02,829720,Ativo
+AUR-0317,Ricardo Silva Engenharia Ltda,10.022.507/0001-88,Construtora,Campinas,SP,Eduarda Carvalho,2025-03-28,849298,Ativo
+AUR-0318,Eduardo Almeida Construções Ltda,10.022.578/0001-11,Construtora,Florianópolis,SC,Roberto Almeida,2021-08-13,737686,Ativo
+AUR-0319,Vanessa Costa Instaladora Ltda,10.022.649/0001-24,Revenda,Bauru,SP,João Bittencourt,2020-03-22,265653,Ativo
+AUR-0320,Ricardo Costa Engenharia Ltda,10.022.720/0001-37,Outros,São Paulo,SP,Diego Salgueiro,2025-06-27,32807,Ativo
+AUR-0321,Marcos Rodrigues Materiais Elétricos Ltda,10.022.791/0001-50,Instaladora,Cotia,SP,Marcos Tavares,2023-01-31,42515,Ativo
+AUR-0322,Ana Silva Engenharia Ltda,10.022.862/0001-63,Construtora,Curitiba,PR,Patricia Yoshida,2021-07-30,399289,Ativo
+AUR-0323,Ricardo Oliveira Instaladora Ltda,10.022.933/0001-76,Outros,São Paulo,SP,João Bittencourt,2025-01-20,25564,Ativo
+AUR-0324,Camila Rodrigues Materiais Elétricos Ltda,10.023.004/0001-89,Construtora,São José dos Campos,SP,Roberto Almeida,2023-02-19,498273,Inativo
+AUR-0325,Vanessa Santos Engenharia Ltda,10.023.075/0001-12,Instaladora,Cotia,SP,Marcos Tavares,2020-07-12,75680,Ativo
+AUR-0326,Patrícia Fernandes Materiais Elétricos Ltda,10.023.146/0001-25,Construtora,Uberlândia,MG,Patricia Yoshida,2024-05-29,811957,Inativo
+AUR-0327,Vanessa Silva Engenharia Ltda,10.023.217/0001-38,Indústria,São José dos Campos,SP,Carla Mendes,2022-12-21,279496,Ativo
+AUR-0328,Eduardo Pereira Engenharia Ltda,10.023.288/0001-51,Revenda,São Paulo,SP,Luana Prado,2020-09-06,194600,Ativo
+AUR-0329,Ana Oliveira Construções Ltda,10.023.359/0001-64,Revenda,São Paulo,SP,Carla Mendes,2023-04-06,125497,Ativo
+AUR-0330,Ana Pereira Construções Ltda,10.023.430/0001-77,Revenda,São Paulo,SP,Luana Prado,2023-07-16,157580,Ativo
+AUR-0331,Camila Santos Construções Ltda,10.023.501/0001-90,Revenda,Uberlândia,MG,Carla Mendes,2020-11-23,272152,Ativo
+AUR-0332,Fernando Oliveira Materiais Elétricos Ltda,10.023.572/0001-13,Revenda,Santo André,SP,Diego Salgueiro,2022-09-02,190056,Ativo
+AUR-0333,Vanessa Costa Materiais Elétricos Ltda,10.023.643/0001-26,Instaladora,Juiz de Fora,MG,Patricia Yoshida,2020-05-19,49083,Inativo
+AUR-0334,Patrícia Costa Comércio Elétrico Ltda,10.023.714/0001-39,Instaladora,São Paulo,SP,Luana Prado,2021-09-23,140405,Ativo
+AUR-0335,Ricardo Almeida Instaladora Ltda,10.023.785/0001-52,Revenda,Sorocaba,SP,Marcos Tavares,2022-03-06,150186,Ativo
+AUR-0336,Juliana Almeida Comércio Elétrico Ltda,10.023.856/0001-65,Construtora,Campinas,SP,Luana Prado,2024-08-18,544579,Ativo
+AUR-0337,Marcos Costa Comércio Elétrico Ltda,10.023.927/0001-78,Instaladora,Jundiaí,SP,Patricia Yoshida,2023-10-22,109868,Ativo
+AUR-0338,Camila Silva Materiais Elétricos Ltda,10.023.998/0001-91,Revenda,Porto Alegre,RS,Roberto Almeida,2023-08-23,143362,Ativo
+AUR-0339,Juliana Silva Construções Ltda,10.024.069/0001-14,Revenda,São Paulo,SP,Marcos Tavares,2023-04-20,202114,Inativo
+AUR-0340,Vanessa Costa Engenharia Ltda,10.024.140/0001-27,Revenda,São José dos Campos,SP,João Bittencourt,2022-02-15,60179,Inativo
+AUR-0341,Ricardo Almeida Construções Ltda,10.024.211/0001-40,Instaladora,Bauru,SP,João Bittencourt,2021-04-26,77133,Ativo
+AUR-0342,Roberto Rodrigues Instaladora Ltda,10.024.282/0001-53,Instaladora,São José dos Campos,SP,Marcos Tavares,2021-10-02,119105,Ativo
+AUR-0343,Eduardo Pereira Engenharia Ltda,10.024.353/0001-66,Revenda,Osasco,SP,João Bittencourt,2021-05-13,273504,Ativo
+AUR-0344,Vanessa Almeida Comércio Elétrico Ltda,10.024.424/0001-79,Outros,Campinas,SP,João Bittencourt,2024-08-02,57190,Ativo
+AUR-0345,Patrícia Almeida Materiais Elétricos Ltda,10.024.495/0001-92,Instaladora,Osasco,SP,João Bittencourt,2024-10-04,126813,Ativo
+AUR-0346,Camila Fernandes Construções Ltda,10.024.566/0001-15,Indústria,Sorocaba,SP,Roberto Almeida,2022-11-16,455073,Ativo
+AUR-0347,Juliana Rodrigues Engenharia Ltda,10.024.637/0001-28,Setor Público,Belo Horizonte,MG,Roberto Almeida,2021-07-04,300671,Ativo
+AUR-0348,Vanessa Costa Engenharia Ltda,10.024.708/0001-41,Instaladora,Uberlândia,MG,Carla Mendes,2025-05-19,66588,Ativo
+AUR-0349,Ana Almeida Engenharia Ltda,10.024.779/0001-54,Instaladora,Jundiaí,SP,Marcos Tavares,2024-11-29,108453,Ativo
+AUR-0350,Vanessa Fernandes Construções Ltda,10.024.850/0001-67,Construtora,Belo Horizonte,MG,Diego Salgueiro,2023-11-27,604366,Ativo
+AUR-0351,Camila Costa Engenharia Ltda,10.024.921/0001-80,Revenda,Belo Horizonte,MG,João Bittencourt,2022-10-12,101183,Ativo
+AUR-0352,Fernando Fernandes Engenharia Ltda,10.024.992/0001-93,Instaladora,São Paulo,SP,Patricia Yoshida,2020-12-16,102271,Inativo
+AUR-0353,Patrícia Santos Construções Ltda,10.025.063/0001-16,Indústria,Santo André,SP,Carla Mendes,2020-06-11,447727,Ativo
+AUR-0354,Eduardo Santos Comércio Elétrico Ltda,10.025.134/0001-29,Instaladora,Jundiaí,SP,Marcos Tavares,2021-06-23,144193,Ativo
+AUR-0355,Juliana Pereira Engenharia Ltda,10.025.205/0001-42,Revenda,Sorocaba,SP,Roberto Almeida,2024-01-22,71696,Ativo
+AUR-0356,Camila Rodrigues Comércio Elétrico Ltda,10.025.276/0001-55,Indústria,Campinas,SP,Roberto Almeida,2021-05-31,170700,Ativo
+AUR-0357,Juliana Costa Instaladora Ltda,10.025.347/0001-68,Revenda,Ribeirão Preto,SP,Carla Mendes,2025-05-13,200381,Ativo
+AUR-0358,Vanessa Oliveira Construções Ltda,10.025.418/0001-81,Revenda,Uberlândia,MG,Marcos Tavares,2023-11-18,269833,Ativo
+AUR-0359,Ana Rodrigues Engenharia Ltda,10.025.489/0001-94,Instaladora,Guarulhos,SP,Eduarda Carvalho,2022-11-11,73078,Ativo
+AUR-0360,Ana Rodrigues Comércio Elétrico Ltda,10.025.560/0001-17,Setor Público,Jundiaí,SP,Roberto Almeida,2022-08-28,779290,Ativo
+AUR-0361,Fernando Santos Instaladora Ltda,10.025.631/0001-30,Construtora,Guarulhos,SP,Carla Mendes,2024-08-18,866118,Ativo
+AUR-0362,Eduardo Almeida Instaladora Ltda,10.025.702/0001-43,Revenda,Sorocaba,SP,Patricia Yoshida,2020-04-23,264352,Ativo
+AUR-0363,Fernando Oliveira Comércio Elétrico Ltda,10.025.773/0001-56,Revenda,Jundiaí,SP,Carla Mendes,2022-01-14,69821,Ativo
+AUR-0364,Camila Silva Materiais Elétricos Ltda,10.025.844/0001-69,Construtora,Ribeirão Preto,SP,Patricia Yoshida,2020-03-29,748302,Ativo
+AUR-0365,Patrícia Oliveira Materiais Elétricos Ltda,10.025.915/0001-82,Indústria,Uberlândia,MG,Eduarda Carvalho,2022-02-26,171494,Ativo
+AUR-0366,Patrícia Fernandes Engenharia Ltda,10.025.986/0001-95,Revenda,Belo Horizonte,MG,Eduarda Carvalho,2019-12-18,218591,Ativo
+AUR-0367,Ana Pereira Comércio Elétrico Ltda,10.026.057/0001-18,Construtora,Jundiaí,SP,Carla Mendes,2025-06-06,790299,Ativo
+AUR-0368,Juliana Silva Materiais Elétricos Ltda,10.026.128/0001-31,Instaladora,Santo André,SP,Patricia Yoshida,2020-07-19,55106,Ativo
+AUR-0369,Patrícia Almeida Instaladora Ltda,10.026.199/0001-44,Indústria,Uberlândia,MG,Marcos Tavares,2021-10-31,184945,Ativo
+AUR-0370,Fernando Silva Engenharia Ltda,10.026.270/0001-57,Instaladora,Porto Alegre,RS,Eduarda Carvalho,2023-05-09,63695,Ativo
+AUR-0371,Eduardo Rodrigues Comércio Elétrico Ltda,10.026.341/0001-70,Indústria,São Paulo,SP,Diego Salgueiro,2025-08-27,238023,Ativo
+AUR-0372,Marcos Costa Materiais Elétricos Ltda,10.026.412/0001-83,Construtora,Ribeirão Preto,SP,João Bittencourt,2022-09-01,431614,Ativo
+AUR-0373,Patrícia Fernandes Materiais Elétricos Ltda,10.026.483/0001-96,Instaladora,Curitiba,PR,Eduarda Carvalho,2021-04-20,131412,Ativo
+AUR-0374,Camila Pereira Materiais Elétricos Ltda,10.026.554/0001-19,Construtora,Cotia,SP,Roberto Almeida,2021-12-25,786361,Ativo
+AUR-0375,Eduardo Pereira Engenharia Ltda,10.026.625/0001-32,Indústria,Guarulhos,SP,Roberto Almeida,2023-01-22,290465,Ativo
+AUR-0376,Roberto Silva Instaladora Ltda,10.026.696/0001-45,Revenda,Ribeirão Preto,SP,Marcos Tavares,2021-01-22,165931,Ativo
+AUR-0377,Vanessa Costa Materiais Elétricos Ltda,10.026.767/0001-58,Setor Público,Campinas,SP,João Bittencourt,2020-06-02,318517,Ativo
+AUR-0378,Roberto Oliveira Materiais Elétricos Ltda,10.026.838/0001-71,Indústria,Cotia,SP,Roberto Almeida,2022-11-08,307955,Ativo
+AUR-0379,Camila Santos Engenharia Ltda,10.026.909/0001-84,Revenda,Bauru,SP,Marcos Tavares,2022-04-24,259994,Ativo
+AUR-0380,Eduardo Fernandes Construções Ltda,10.026.980/0001-97,Instaladora,Juiz de Fora,MG,Carla Mendes,2024-12-15,137434,Ativo

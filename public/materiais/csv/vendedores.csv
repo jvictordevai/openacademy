@@ -1,0 +1,12 @@
+id,nome,regiao,tipo,data_admissao,meta_mensal,comissao_pct
+V001,Carla Mendes,SP-Capital,Externo,2019-04-22,380000,2.5
+V002,Marcos Tavares,SP-Capital,Externo,2022-01-10,320000,2.5
+V003,Patricia Yoshida,SP-Capital,Externo,2020-09-03,350000,2.5
+V004,Roberto Almeida,SP-Capital,Externo,2021-06-18,340000,2.5
+V005,João Bittencourt,Interior-SP,Externo,2019-11-12,280000,2.8
+V006,Eduarda Carvalho,Interior-SP,Externo,2023-02-27,260000,2.8
+V007,Diego Salgueiro,Sul-MG,Externo,2022-08-15,240000,3.0
+V008,Luana Prado,Sul-MG,Externo,2024-03-04,200000,3.0
+V009,Fernanda Lima,Inside,Inside,2021-02-01,180000,1.8
+V010,Bruno Sato,Inside,Inside,2022-05-09,170000,1.8
+V011,Renato Falcão,Inside,Inside,2023-10-21,150000,1.8
