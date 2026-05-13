@@ -398,6 +398,15 @@ antes de concluir.</code></pre>
         </div>
         <pre class="!my-0 !rounded-none !border-0 !bg-transparent overflow-x-auto"><code id="prompt-lovable" class="!text-[13px] leading-relaxed text-ink-200 whitespace-pre">Análise aprovada. Agora gere prompt PRONTO para colar no Lovable construir o app.
 
+IMPORTANTE — IDENTIFICAÇÃO EXPLÍCITA DAS PLANILHAS:
+No prompt que você vai gerar, INCLUA os NOMES EXATOS dos arquivos
+das duas planilhas que você acabou de analisar nesta conversa.
+Diga literalmente no prompt: "A planilha de vendas se chama [NOME EXATO
+DO ARQUIVO QUE ANALISEI] e a planilha financeira se chama [NOME EXATO]".
+Isso evita risco de o Lovable conectar no arquivo errado durante o
+onboarding (Drive do empresário pode ter outras planilhas com nomes
+parecidos).
+
 ARQUITETURA NECESSÁRIA:
 - Stack: Lovable + Lovable Cloud (banco interno do Lovable, auth interno,
   sem Supabase ou serviço externo)
@@ -416,9 +425,9 @@ DADOS — IMPORTANTE:
   Use-os. NÃO peça Spreadsheet ID manual. NÃO peça Service Account JSON.
 - Após login Google, o app pede UMA autorização OAuth para acessar Drive
   e Sheets do usuário. Daí em diante, lê as planilhas direto pelo conector.
-- Onboarding: detecta automaticamente as planilhas do Drive pelo nome
-  ("vendas" / "financeiro") OU mostra Google Picker pro usuário clicar
-  no arquivo. Zero campo de ID exposto.
+- Onboarding: o app BUSCA no Drive pelos nomes EXATOS especificados acima.
+  Se encontrar, conecta automaticamente. Se não encontrar (ex: arquivo foi
+  renomeado), mostra Google Picker para o usuário clicar no arquivo correto.
 - Uma planilha alimenta a seção Vendas, outra a seção Financeiro.
 - Mapeia colunas conforme a tabela mestra de KPIs que produzi na análise.
 
@@ -437,7 +446,8 @@ KPIS POR SEÇÃO:
 Use a tabela mestra que você acabou de gerar. Mapeie cada KPI para card,
 gráfico ou tabela conforme recomendado.
 
-Devolva APENAS o texto pronto para colar no Lovable. Sem comentário antes ou
+Devolva APENAS o texto pronto para colar no Lovable, COM os nomes exatos
+dos arquivos das planilhas embutidos no prompt. Sem comentário antes ou
 depois. Em português.</code></pre>
       </div>
 
