@@ -472,68 +472,118 @@ depois. Em português.</code></pre>
       </div>
 
       <p class="text-[17px] text-ink-300 leading-relaxed">
-        Aqui o app sai do mock pra dado real. <strong>Não precisa colar Spreadsheet ID</strong> —
-        o Lovable usa o conector nativo de Google Drive/Sheets via OAuth.
+        Aqui o app sai do mock pra dado real. <strong>Dois prompts em sequência</strong> — primeiro
+        confirma os arquivos conectados, depois manda a arquitetura. Isso evita o Lovable
+        construir OAuth multi-tenant desnecessário.
       </p>
 
       <div class="mt-6 rounded-2xl border border-white/10 bg-white/[0.02] p-6">
         <ol class="space-y-3 pl-0 list-none">
-          <li class="flex gap-3 text-[15px] text-ink-200"><span class="font-mono text-accent-blue font-bold">1.</span> <a href="https://lovable.dev" target="_blank" rel="noreferrer" class="text-accent-blue underline">lovable.dev</a> → <strong>New Project</strong> → cole o prompt da estação 06 → <strong>Send</strong></li>
-          <li class="flex gap-3 text-[15px] text-ink-200"><span class="font-mono text-accent-blue font-bold">2.</span> Lovable Cloud é provisionado automaticamente. Esqueleto monta em 2-3 min.</li>
-          <li class="flex gap-3 text-[15px] text-ink-200"><span class="font-mono text-accent-blue font-bold">3.</span> Quando o app abrir o login, faça <strong>login com Google</strong> + autorize acesso a Drive e Sheets na primeira tela (o OAuth do Lovable Cloud pede uma vez só).</li>
-          <li class="flex gap-3 text-[15px] text-ink-200"><span class="font-mono text-accent-blue font-bold">4.</span> No onboarding interno do app, ele <strong>detecta automaticamente</strong> as planilhas do seu Drive — confirme qual é Vendas e qual é Financeiro.</li>
-          <li class="flex gap-3 text-[15px] text-ink-200"><span class="font-mono text-accent-blue font-bold">5.</span> Se algo deu errado e ele pedir ID manual, cole o prompt de ajuste abaixo no chat do Lovable:</li>
+          <li class="flex gap-3 text-[15px] text-ink-200"><span class="font-mono text-accent-blue font-bold">1.</span> <a href="https://lovable.dev" target="_blank" rel="noreferrer" class="text-accent-blue underline">lovable.dev</a> → <strong>New Project</strong></li>
+          <li class="flex gap-3 text-[15px] text-ink-200"><span class="font-mono text-accent-blue font-bold">2.</span> <strong>Cole o Prompt A abaixo</strong> (verificação de conexão) → <strong>Send</strong></li>
+          <li class="flex gap-3 text-[15px] text-ink-200"><span class="font-mono text-accent-blue font-bold">3.</span> Lovable conecta Drive + Sheets, confirma os 2 arquivos com data e abas</li>
+          <li class="flex gap-3 text-[15px] text-ink-200"><span class="font-mono text-accent-blue font-bold">4.</span> Quando confirmar "Pronto para receber o prompt de arquitetura", <strong>cole o Prompt B</strong> (gerado na estação 06, com os nomes dos arquivos embutidos)</li>
+          <li class="flex gap-3 text-[15px] text-ink-200"><span class="font-mono text-accent-blue font-bold">5.</span> Esqueleto monta em 3-5 min reusando a conexão já estabelecida</li>
         </ol>
       </div>
 
+      <!-- Prompt A · Verificação de conexão -->
       <div class="mt-5 rounded-2xl border border-accent-blue/20 bg-accent-blue/[0.04] overflow-hidden">
         <div class="px-4 py-2.5 border-b border-accent-blue/10 bg-accent-blue/[0.06] flex items-center justify-between">
           <div class="flex items-center gap-2">
             <span class="w-1.5 h-1.5 rounded-full bg-accent-blue animate-pulse"></span>
-            <span class="font-mono text-[10px] uppercase tracking-[0.2em] text-accent-blue">Prompt · Corrigir conexão (se necessário)</span>
+            <span class="font-mono text-[10px] uppercase tracking-[0.2em] text-accent-blue">Prompt A · Verificação de conexão (primeiro)</span>
           </div>
           <button
             type="button"
             class="copy-btn font-mono text-[10px] uppercase tracking-wider text-ink-300 hover:text-ink-100 transition px-2.5 py-1 rounded-md hover:bg-white/5"
-            data-target="prompt-conectar"
+            data-target="prompt-conectar-a"
           >Copiar</button>
         </div>
-        <pre class="!my-0 !rounded-none !border-0 !bg-transparent overflow-x-auto"><code id="prompt-conectar" class="!text-[13px] leading-relaxed text-ink-200 whitespace-pre">Refatore o app eliminando todo o onboarding manual de Spreadsheet IDs e
-Service Account.
+        <pre class="!my-0 !rounded-none !border-0 !bg-transparent overflow-x-auto"><code id="prompt-conectar-a" class="!text-[13px] leading-relaxed text-ink-200 whitespace-pre">Antes de qualquer construção, faça SOMENTE isto:
+
+1. Ative os CONECTORES NATIVOS do Lovable: Google Drive + Google Sheets.
+   NÃO construa fluxo OAuth próprio. NÃO use Service Account JSON.
+   NÃO use Supabase externo — use Lovable Cloud (banco interno).
+
+2. Após conectar, liste os arquivos do meu Drive e identifique os DOIS
+   que vou usar:
+   - Planilha de vendas — nome exato: [NOME EXATO DO SEU ARQUIVO DE VENDAS].xlsx
+   - Planilha financeira — nome exato: [NOME EXATO DO SEU ARQUIVO FINANCEIRO].xlsx
+
+3. Confirme acesso a cada arquivo. Para cada um, mostre:
+   - Nome exato encontrado no Drive
+   - Data da última modificação
+   - Número de abas e nome de cada aba
+
+4. NÃO construa interface, schema de banco ou lógica de sincronização
+   ainda. Só responda confirmando os dois arquivos conectados.
+
+Resposta esperada (formato):
+"Conectado.
+- [nome-vendas].xlsx · modificado em [data] · N abas: [lista]
+- [nome-financeiro].xlsx · modificado em [data] · N abas: [lista]
+Pronto para receber o prompt de arquitetura."
+
+Quando eu mandar o próximo prompt, ele vai conter a arquitetura completa.
+Construa em cima desses arquivos JÁ CONECTADOS, sem onboarding manual
+de Spreadsheet ID nem campo de Service Account.</code></pre>
+      </div>
+
+      <div class="mt-5 rounded-2xl border border-accent-violet/30 bg-accent-violet/[0.04] p-5">
+        <div class="font-mono text-[10px] uppercase tracking-[0.2em] text-accent-violet mb-2">Prompt B · Arquitetura</div>
+        <p class="text-ink-200 text-[15px] leading-relaxed">
+          Depois que Lovable confirmar "Conectado · Pronto para receber prompt de arquitetura",
+          cole aqui o <strong>prompt grande gerado na estação 06</strong>. Ele já vem com os nomes
+          exatos dos arquivos embutidos e o Lovable vai construir em cima da conexão já existente.
+        </p>
+      </div>
+
+      <details class="mt-4 rounded-2xl border border-accent-ember/20 bg-accent-ember/[0.04]">
+        <summary class="cursor-pointer list-none px-5 py-3 flex items-center justify-between [&::-webkit-details-marker]:hidden">
+          <span class="font-mono text-[10px] uppercase tracking-[0.2em] text-accent-ember">Prompt C · Correção emergencial (só se algo deu errado)</span>
+          <span class="font-mono text-xs text-ink-400">⌄</span>
+        </summary>
+        <div class="px-5 pb-5">
+          <p class="text-[13px] text-ink-300 mb-3">
+            Se o Lovable já construiu OAuth próprio, Supabase externo ou pediu Spreadsheet ID
+            manual, cole esse prompt pra corrigir:
+          </p>
+          <div class="rounded-xl border border-white/10 bg-ink-950/60 overflow-hidden">
+            <div class="px-3 py-2 border-b border-white/10 bg-white/[0.02] flex items-center justify-between">
+              <span class="font-mono text-[9px] uppercase tracking-[0.2em] text-accent-ember">prompt corretivo</span>
+              <button
+                type="button"
+                class="copy-btn font-mono text-[9px] uppercase tracking-wider text-ink-300 hover:text-ink-100 transition px-2 py-1 rounded-md hover:bg-white/5"
+                data-target="prompt-conectar-c"
+              >Copiar</button>
+            </div>
+            <pre class="!my-0 !rounded-none !border-0 !bg-transparent overflow-x-auto"><code id="prompt-conectar-c" class="!text-[12px] leading-relaxed text-ink-200 whitespace-pre">Pare a refatoração que você planejou.
+
+Refatore o app eliminando todo o onboarding manual de Spreadsheet IDs,
+Service Account, OAuth próprio com escopos estendidos, e Supabase externo.
 
 CONEXÃO — modo correto:
 - Use os conectores NATIVOS do Lovable: Google Drive + Google Sheets
-- Após login Google, app pede UMA autorização OAuth para Drive e Sheets
-- Onboarding detecta automaticamente as planilhas do Drive pelo nome
-  ("vendas" / "financeiro") OU mostra Google Picker pra clicar no arquivo
-- ZERO campos de ID manual ou Service Account JSON expostos
+- Sem fluxo OAuth próprio multi-tenant
+- ZERO campos de ID manual ou Service Account JSON
 
-REMOVA:
-- Modal pedindo Spreadsheet ID manual
-- Campo de Service Account JSON
-- Tabela user_settings com spreadsheet_id e service_account_json
-
-SUBSTITUA POR:
-- user_settings.vendas_sheet_ref + financeiro_sheet_ref (ref interna
-  do conector, não ID público)
-- Edge Function detect_sheets via conector Drive já autenticado
-- Edge Function pick_sheet recebendo objeto do Google Picker
+ARQUIVOS:
+- Vendas: [NOME EXATO DO ARQUIVO].xlsx
+- Financeira: [NOME EXATO DO ARQUIVO].xlsx
+Localiza pelo nome exato no Drive já conectado.
 
 SINCRONIZAÇÃO — REALTIME OBRIGATÓRIO:
-- NÃO use cron de 6h. Use Watch Channel da Sheets API (push notifications)
-- Edge Function setup_watch registra o canal
-- Edge Function sheets_webhook recebe push, atualiza cache, frontend
-  re-renderiza via realtime do Lovable Cloud (postgres_changes)
-- Latência alvo: &lt; 30 segundos entre alteração na planilha e dashboard
-- Botão "Sincronizar agora" continua existindo como fallback
+- NÃO use cron de 6h
+- Use Watch Channel da Sheets API (push notifications)
+- Latência alvo &lt; 30s
+- Frontend assina realtime postgres_changes do Lovable Cloud
 
-CONFIGURAÇÕES:
-- Mostra "Drive: Conectado · Sheets: Conectado" + botão "Reautorizar"
-- Botão "Trocar planilha" reabre Google Picker (nunca ID manual)
-
-Mantenha KPIs, gráficos, filtros, design system e alertas exatamente
-como estão. Refatore só conexão e sincronização.</code></pre>
-      </div>
+Mantenha KPIs, gráficos, filtros, design system e alertas como estão.
+Refatore só conexão e sincronização.</code></pre>
+          </div>
+        </div>
+      </details>
 
       <div class="mt-5 rounded-2xl border border-accent-blue/30 bg-accent-blue/[0.05] p-5">
         <div class="font-mono text-[10px] uppercase tracking-[0.2em] text-accent-blue mb-2">Entrega</div>
