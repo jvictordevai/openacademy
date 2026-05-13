@@ -396,67 +396,85 @@ antes de concluir.</code></pre>
             data-target="prompt-lovable"
           >Copiar</button>
         </div>
-        <pre class="!my-0 !rounded-none !border-0 !bg-transparent overflow-x-auto"><code id="prompt-lovable" class="!text-[13px] leading-relaxed text-ink-200 whitespace-pre">Análise aprovada. Agora gere O PROMPT B — texto pronto para colar no Lovable
-DEPOIS que ele já confirmou ter conectado os dois arquivos via Prompt A.
+        <pre class="!my-0 !rounded-none !border-0 !bg-transparent overflow-x-auto"><code id="prompt-lovable" class="!text-[13px] leading-relaxed text-ink-200 whitespace-pre">Gere O PROMPT B — pronto para colar no Lovable DEPOIS do Prompt A.
 
-CONTEXTO QUE O LOVABLE JÁ TEM (não repita, mas mencione no Prompt B):
-- Os conectores nativos Google Drive + Google Sheets do Lovable já estão ATIVOS
-- Os DOIS arquivos ESPECÍFICOS já foram identificados e conectados:
-  · Planilha de vendas: [NOME EXATO DO ARQUIVO QUE ANALISEI NESTA CONVERSA]
-  · Planilha financeira: [NOME EXATO DO ARQUIVO QUE ANALISEI NESTA CONVERSA]
-- O conteúdo dessas planilhas JÁ FOI ANALISADO por mim (Claude) nesta conversa.
-  A tabela mestra de KPIs e a arquitetura de 2 seções já foram definidas.
-  O Lovable NÃO precisa reanalisar dados, redefinir KPIs, nem inferir schema.
+OBJETIVO DO PROMPT B: levar Lovable a entregar MVP funcional em UMA
+ÚNICA geração — sem fases, sem confirmações, sem cron, sem webhook,
+sem admin role, sem "sincronizar agora" manual. Quando empresário
+abrir o app pela primeira vez, dashboards já aparecem populados.
 
-ANTI-PADRÕES — INCLUA EXPLICITAMENTE NO PROMPT B:
-- NÃO é multi-tenant. Single-user (eu). Sem OAuth próprio com escopos
-  estendidos, sem Service Account, sem Google Cloud Console.
-- NÃO use Supabase externo, Firebase, ou qualquer serviço fora do Lovable.
-  Use SOMENTE Lovable Cloud (banco interno + auth interno).
-- NÃO construa fluxo de onboarding pedindo Spreadsheet ID, Picker, ou
-  detecção automática — os arquivos já estão conectados.
-- NÃO inferir KPIs nem ler novamente as planilhas para "descobrir"
-  estrutura — use o schema e KPIs já definidos abaixo.
+CONTEXTO (mencione no Prompt B, mas curto):
+- Conectores nativos Drive + Sheets do Lovable já ATIVOS (via Prompt A)
+- Arquivos já conectados:
+  · Vendas: [NOME EXATO DO ARQUIVO QUE ANALISEI NESTA CONVERSA]
+  · Financeiro: [NOME EXATO DO ARQUIVO QUE ANALISEI NESTA CONVERSA]
+- Conteúdo das planilhas já analisado por mim (Claude) nesta conversa.
+  KPIs e arquitetura já decididos abaixo. NÃO reanalise. NÃO redescubra
+  schema. NÃO infira KPIs.
 
-ESTRUTURA DO PROMPT B (gere exatamente nessa ordem):
+REGRAS DE ENGENHARIA — INCLUA EXPLICITAMENTE NO PROMPT B:
+- Entregue MVP completo em uma geração. Sem dividir em fases.
+  Sem pedir confirmação. Sem "próximos turnos".
+- Stack: React + TypeScript + Tailwind + shadcn/ui + Recharts + Lovable
+  Cloud (banco e auth internos). Sem Supabase externo, sem Firebase.
+- Auth: login Google nativo do Lovable Cloud. Single-user. NÃO
+  multi-tenant. Sem OAuth próprio. Sem Service Account. Sem
+  Google Cloud Console. Sem escopos OAuth estendidos.
+- Renderiza DIRETO do conector Sheets. NÃO crie cache em banco com
+  upsert + PK. NÃO use Watch Channel, webhook, pg_cron ou edge
+  function de sync. NÃO crie tela de "sincronizar agora".
+  Não exige admin role nem migrations complexas.
+- Atualização: client polling automático a cada 60 segundos +
+  botão "Atualizar" no header de cada seção (chama a mesma server
+  function que lê do conector).
+- KPIs JÁ DEFINIDOS abaixo. Use as fórmulas exatas. Não infira.
+- Se algum dado faltar na planilha do empresário, mostre Empty
+  State elegante (nunca crash, nunca tela vazia, nunca "em construção").
 
-1. STACK
-   - React + TypeScript + Tailwind + shadcn/ui + Recharts + Lovable Cloud
-   - Sem nenhum serviço externo
-   - Auth: login Google nativo Lovable Cloud (sem escopos extras)
+ESTRUTURA DO PROMPT B (gere nessa ordem):
 
-2. ARQUIVOS JÁ CONECTADOS
-   - Listar os 2 nomes exatos e dizer qual alimenta qual seção
-   - Listar as abas relevantes de cada um
-   - Mencionar que conexão foi feita via conector nativo, já existe
+1. STACK + ARQUIVOS CONECTADOS
+   - 2-3 linhas listando React+TS+Tailwind+shadcn+Recharts+Lovable Cloud
+   - Nomes exatos dos 2 arquivos + qual seção cada um alimenta
+   - Listar abas relevantes de cada um
 
-3. ARQUITETURA DA APP
-   - Sidebar com 2 seções: "Vendas" e "Financeiro"
-   - Cada seção: KPI cards no topo + gráficos no meio + tabela embaixo
-   - Filtros globais no header (período + dimensões recomendadas)
+2. ARQUITETURA DA APP
+   - Sidebar fixa com 2 itens: "Vendas" e "Financeiro" (+ link sutil
+     "Configurações" só pra ver status da conexão)
+   - Cada seção: KPI cards no topo (grid 4-5 cards) + 2-3 gráficos +
+     1 tabela analítica embaixo
+   - Filtros globais no header (período + 1-2 dimensões)
+   - Visual: dark mode, OKLCH azul + violeta + mint, Inter Tight + Inter
    - Mobile: sidebar vira drawer, grids viram coluna única
-   - Visual: dark mode, paleta OKLCH azul + violeta + mint
-   - Tipografia: Inter Tight (display) + Inter (body)
 
-4. KPIS POR SEÇÃO
-   - Listar OS KPIS EXATOS já definidos na tabela mestra que produzi
-   - Para cada KPI: nome, fórmula com coluna da planilha, formato de exibição,
-     em qual componente vai (card, gráfico, tabela), variação MoM/YoY
-   - Marcar alertas semânticos (verde/amarelo/vermelho por threshold já definido)
+3. KPIS POR SEÇÃO
+   - Listar OS KPIS EXATOS da tabela mestra que produzi
+   - Para cada KPI: nome · fórmula com coluna específica · formato
+     (R$ X,XXM · XX% · etc) · em qual componente vai
+   - Variação MoM/YoY com seta verde/vermelha
+   - Bordas semânticas em KPIs em deterioração ≤ -5% MoM
 
-5. SINCRONIZAÇÃO REALTIME
-   - Watch Channel da Sheets API (push notifications)
-   - Webhook recebe → atualiza cache → frontend re-renderiza via realtime
-   - Latência alvo &lt; 30 segundos
-   - Botão "Sincronizar agora" como fallback manual
+4. DADOS — LEITURA DIRETA
+   - Server function única getSheetData(sheetName, range) que usa
+     o conector nativo Sheets do Lovable
+   - Frontend chama via React Query com staleTime 60s + auto-refetch
+   - Botão "Atualizar" em cada seção dispara refetch manual
+   - Última atualização visível no header ("há X segundos")
+   - SEM banco intermediário, SEM upsert, SEM watch channel
 
-6. ESTADOS VISUAIS
-   - Loading (Skeleton), Empty, Erro, KPI piorando/melhorando (bordas semânticas)
+5. ESTADOS VISUAIS
+   - Loading: Skeleton em cada card e gráfico
+   - Empty: ícone Inbox + "Sem dados para esse filtro/período"
+   - Erro de leitura: banner amarelo no topo + retry automático
 
-DEVOLVA: apenas o texto do Prompt B, em português, com os nomes exatos
-dos arquivos embutidos. Sem comentário antes ou depois. Sem perguntas.
-Sem checklist de aprovação. Sem "Confirme o OAuth strategy". Pronto pra
-colar diretamente no Lovable.</code></pre>
+6. ENTREGÁVEL FINAL
+   - Login funcional · 2 dashboards POPULADOS com dado real ·
+     filtros operando · auto-refresh funcionando ·
+     mobile responsivo · zero ação manual necessária
+
+DEVOLVA: apenas o texto do Prompt B, em português. Sem comentário
+antes ou depois. Sem perguntas. Sem checklist de aprovação. Sem
+"confirme o OAuth strategy". Sem cronograma. Pronto pra colar.</code></pre>
       </div>
 
       <div class="mt-5 rounded-2xl border border-accent-blue/30 bg-accent-blue/[0.05] p-5">
